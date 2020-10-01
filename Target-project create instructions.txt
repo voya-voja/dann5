@@ -1,0 +1,41 @@
+These are instructions for creation of a custom C++ Win-x64 library with corresponding .pyd file for 
+python binding using pybind11. On Windows, only Visual Studio 2015 and newer are supported since 
+pybind11 relies on various C++11 (or 14) language features that break older versions of Visual Studio. 
+
+For more instructions go to https://pybind11.readthedocs.io/en/stable/index.html.
+
+The content of 'pybind11' sub-folder is version 'pybind11-2a5a5ec0a47c245fbf1bb1a8a90b4c3278e01693',
+which might require upgrade with newer version of pybind11 package.
+
+INSTALLATION STEPS
+
+1. Copy content of 'pybind11-create-project-pckg.zip' into an empty project folder, e.g. 
+    'target-module-name'.
+
+2. In the file 'CMakeList.txt' replace 'target_module' (in 2 places) with the 'target-module-name'
+
+3. In the file 'src/main.cpp’ replace 'target_module' with 'target-module-name'
+
+4. Using a command prompt execute following commands:
+
+        cd <target-project folder>
+        cd build
+        cmake -A x64 ..
+        cmake --build . --config Release --target target-project-name
+
+    The execution of 'cmake -x64 ..' from <target-module-folder>/build will result in creation of 
+    CMakeCache files and folders for a <target-model> solution. The project will be configured to build
+    x64 library with corresponding <target-model>*.pyd.
+ 
+    The next ‘cmake -build. …’ command will build the solution and create (.sln) and the target-project 
+     (.vcxproj) files in the ‘build’ folder. Moving forward the solution can be updated and managed using 
+    standard Visual Studio IDE.
+
+5. Example code (add & subtract functions) and comments in 'src/main.cpp’ can be removed and
+    replaces by desired content of a ‘target_module’
+
+6. Every new (.cpp) file in ‘target-proejct” should have “#include <pybind11/pybind11.h>” as 
+    1st line
+
+7. To use the target-module from python include the model using the (absolute/relative)
+    path to <target-model>*.pyd file, or copy <target-model>*.pyd and <target-model>*.lib file into the project’s folder.

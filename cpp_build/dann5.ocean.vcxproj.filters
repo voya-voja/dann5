@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\ocean\cpp\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qubo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qdef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qequation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qvar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\BQM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qexpression.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4feae267-f66d-4d2d-8901-fea5b7a36219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{033badf5-b65e-4966-96c4-122ff313faf5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\ocean\cpp\include\Qubo.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Factory.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qint.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qdef.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qvar.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qequation.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\BQM.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qops.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qexpression.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Utility.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
