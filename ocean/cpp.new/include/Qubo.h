@@ -6,23 +6,17 @@
 #include <Eigen/Dense>
 #include <map>
 
-#include <Qubo.h>
+#include <BQM.h>
 
 using namespace std;
 using namespace Eigen;
 
 namespace dann5{
 	namespace ocean {
-		typedef std::pair<string, string> QuboKey;
-		typedef std::map<QuboKey, double> Qubo;
 
-		Qubo& operator+=(Qubo&, const Qubo&);
-		std::ostream& operator << (std::ostream&, const Qubo&);
-
-		class QuboTable
+		class Qubo
 		{
 		public:
-			typedef shared_ptr<QuboTable> Sp;
 
 			struct Size {
 				unsigned nRows;
@@ -41,23 +35,23 @@ namespace dann5{
 			typedef std::pair<string, Matrix<double, 1, Dynamic>> VariableRow;
 
 			VariableComma operator << (const string& variable);
-			QuboTable& operator << (const Labels& variables);
+			Qubo& operator << (const Labels& variables);
 
 			ElementComma operator << (const double& element);
-			QuboTable& operator << (const VariableRow& row);
+			Qubo& operator << (const VariableRow& row);
 
-			// returns default qubo object based on this QuboTable rule using default argument names
-			Qubo qubo() const;
+			// returns default bqm object based on this Qubo rule using default argument names
+			BQM bqm() const;
 
 			// Expects a list of argument names for 2 input and 1 output
-			// returns qubo object based on this Qobo rule using provided argument list
-			Qubo qubo(const Labels&) const;
+			// returns bqm object based on this Qobo rule using provided argument list
+			BQM bqm(const Labels&) const;
 
-			~QuboTable();
+			~Qubo();
 
-			friend std::ostream& operator << (std::ostream&, const QuboTable&); 
+			friend std::ostream& operator << (std::ostream&, const Qubo&); 
 		protected:
-			QuboTable(Size);
+			Qubo(Size);
 
 			virtual Labels format(const Labels&) const;
 		private:
@@ -66,158 +60,158 @@ namespace dann5{
 			MatrixXd		mElements;
 		};
 
-		class QuboTableInOut : public QuboTable
+		class QuboInOut : public Qubo
 		{
 		private:
 		protected:
-			QuboTableInOut();
+			QuboInOut();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
-		class QuboTable2in1out : public QuboTable
+		class Qubo2in1out : public Qubo
 		{
 		private:
 		protected:
-			QuboTable2in1out();
+			Qubo2in1out();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
-		class QuboTable2in2out : public QuboTable
+		class Qubo2in2out : public Qubo
 		{
 		private:
 		protected:
-			QuboTable2in2out();
+			Qubo2in2out();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
 
-		class EqQuboTable : public QuboTableInOut
+		class EqualQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			EqQuboTable();
+			EqualQubo();
 		};
 
-		class NotQuboTable : public QuboTableInOut
+		class NotQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			NotQuboTable();
+			NotQubo();
 		};
 
-		class LtQuboTable : public QuboTableInOut
+		class LessThanQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			LtQuboTable();
+			LessThanQubo();
 		};
 
-		class LeQuboTable : public QuboTableInOut
+		class LessEqualQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			LeQuboTable();
+			LessEqualQubo();
 		};
 
-		class GtQuboTable : public QuboTableInOut
+		class GreaterThanQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			GtQuboTable();
+			GreaterThanQubo();
 		};
 
-		class GeQuboTable : public QuboTableInOut
+		class GreaterEqualQubo : public QuboInOut
 		{
 		private:
 		protected:
 		public:
-			GeQuboTable();
+			GreaterEqualQubo();
 		};
 
-		class AndQuboTable : public QuboTable2in1out
+		class AndQubo : public Qubo2in1out
 		{
 		private:
 		protected:
 		public:
-			AndQuboTable();
+			AndQubo();
 		};
 
-		class NandQuboTable : public QuboTable2in2out
+		class NandQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			NandQuboTable();
+			NandQubo();
 		};
 
-		class OrQuboTable : public QuboTable2in1out
+		class OrQubo : public Qubo2in1out
 		{
 		private:
 		protected:
 		public:
-			OrQuboTable();
+			OrQubo();
 		};
 
-		class NorQuboTable : public QuboTable2in2out
+		class NorQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			NorQuboTable();
+			NorQubo();
 		};
 
-		class NotLeftOrRightQuboTable : public QuboTable2in2out
+		class NotLeftOrRightQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			NotLeftOrRightQuboTable();
+			NotLeftOrRightQubo();
 		};
 
-		class DwNotLeftOrRightQuboTable : public QuboTable2in2out
+		class DwNotLeftOrRightQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			DwNotLeftOrRightQuboTable();
+			DwNotLeftOrRightQubo();
 		};
 
-		class XorQuboTable : public QuboTable2in2out
+		class XorQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			XorQuboTable();
+			XorQubo();
 		};
 
-		typedef XorQuboTable Adder05QuboTable;
+		typedef XorQubo HalfAdderQubo;
 
-		class NxorQuboTable : public QuboTable2in2out
+		class NxorQubo : public Qubo2in2out
 		{
 		private:
 		protected:
 		public:
-			NxorQuboTable();
+			NxorQubo();
 		};
 
-		class AdderQuboTable : public QuboTable
+		class AdderQubo : public Qubo
 		{
 		private:
 		protected:
 			Labels format(const Labels&) const;
 		public:
-			AdderQuboTable();
+			AdderQubo();
 		};
 	};
 };

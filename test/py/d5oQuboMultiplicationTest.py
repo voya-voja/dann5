@@ -5,55 +5,77 @@ Created on Sat Sep  5 17:09:42 2020
 @author: Nebojsa.Vojinovic
 """
 
-import dimod
-import lib.d5o as d5o
+from dann5.d5o import Qvar, Qequation, Qint
+from dimod import ExactSolver
+from dwave.system import DWaveSampler, EmbeddingComposite
+from dwave.cloud.exceptions import SolverNotFoundError
+from dwave.system.samplers import LeapHybridSampler
 
-import dwavebinarycsp as dbc
-from helpers import embedding, solvers, convert
 
-sv_a = d5o.Qdef(3, "a")
-sv_b = d5o.Qdef(3, "b")
-ev_r = sv_a * sv_b
+a = Qvar(2, "a")
+b = Qvar(2, "b")
+c = Qvar(2, "c")
+#d = Qvar(3, "d")
+r_addAbcd = Qequation(Qvar("R", 6))
+r_addAbcd.assign( a * b * c )
 
-qv_p = d5o.Qvar("p", 21)
-qe = d5o.Qequation(qv_p, ev_r)
-qe.push(d5o.QuboVector(sv_a)).push(d5o.QuboVector(sv_b))
+print(r_addAbcd.toString(True))
 
-d = qe.bqm(False).dictionary()
+d = r_addAbcd.qubo(False)
 print("Vectors")
 print(d)
 
-csp = dbc.factories.multiplication_circuit(3)
-print("\nCSP")
-print(csp.constraints)
-# Convert the CSP into BQM bqm
-bqm = dbc.stitch(csp, min_classical_gap=.1)
-
-convert.adjustBQM(bqm)
-
-print("\nBQM")
-print(bqm)
-
-Q = qe.bqm(True).dictionary()
+Q = r_addAbcd.qubo(True)
 
 print(Q)
 
-sampler = dimod.ExactSolver()                   # local
-sampleset = sampler.sample_qubo(Q)
-#sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
-#sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print('a0 = ', sampleset.lowest().samples()[0]['a0'])
-print('a1 = ', sampleset.lowest().samples()[0]['a1'])
-print('a2 = ', sampleset.lowest().samples()[0]['a2'])
-print('b0 = ', sampleset.lowest().samples()[0]['b0'])
-print('b1 = ', sampleset.lowest().samples()[0]['b1'])
-print('b2 = ', sampleset.lowest().samples()[0]['b2'])
 
-print(sampleset.lowest())
+try:
+    qpu_advantage = DWaveSampler(solver={'topology__type': 'pegasus', 'qpu': True})
+    qpu_2000q = DWaveSampler(solver={'topology__type': 'chimera', 'qpu': True})
+    
+    qpus = {'Advantage': qpu_advantage, 'DW-2000Q': qpu_2000q}
 
-print('a0 = ', sampleset.lowest().samples()[1]['a0'])
-print('a1 = ', sampleset.lowest().samples()[1]['a1'])
-print('a2 = ', sampleset.lowest().samples()[1]['a2'])
-print('b0 = ', sampleset.lowest().samples()[1]['b0'])
-print('b1 = ', sampleset.lowest().samples()[1]['b1'])
-print('b2 = ', sampleset.lowest().samples()[1]['b2'])
+    print("Connected to Advantage {} and 2000Q {}.".format(qpu_advantage.solver.id, qpu_2000q.solver.id))
+except SolverNotFoundError:
+    print("Currently a pair of solvers are unavailable for sections comparing QPU technologies. Try those examples later.")
+
+    
+# EmbeddingComposite maps problem elementss to a structured Chimera sampler node adresses
+embedingSampler = ExactSolver()                   # local
+#embedingSampler = EmbeddingComposite(qpu_advantage) 
+#embedingSampler = EmbeddingComposite(qpu_2000q) 
+#embedingSampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
+#embedingSampler = LeapHybridSampler()
+
+# Return num_reads solutions (responses are in the D-Wave's graph of indexed qubits)
+kwargs = {}
+if 'num_reads' in embedingSampler.parameters:
+    kwargs['num_reads'] = 5000
+if 'answer_mode' in embedingSampler.parameters:
+    kwargs['answer_mode'] = 'histogram'
+if 'chain_strength' in embedingSampler.parameters:
+    # strength 5 for R 16, 15, 6, 12 works for both, pegasus and chimera
+    kwargs['chain_strength'] = 5   
+
+sampleset = embedingSampler.sample_qubo(Q, **kwargs)
+#sampleset = embedingSampler.sample_qubo(Q)
+#sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
+
+
+print('   a  b  c  d\n')
+i = 0
+ai = Qint(2)
+bi = Qint(2)
+ci = Qint(2)
+di = Qint(2)
+ci.push(0).push(0)#.push(0)
+di.push(0).push(0)#.push(0)
+for sample in sampleset.lowest().samples():
+    i = i + 1
+    ai.push(sample['a0']).push(sample['a1'])#.push(sample['a2'])
+    bi.push(sample['b0']).push(sample['b1'])#.push(sample['b2'])
+    ci.push(sample['c0']).push(sample['c1'])#.push(sample['c2'])
+#    di.push(sample['d0']).push(sample['d1']).push(sample['d2'])
+    print('{}. {} {} {} {}'.format(i, ai.value(), bi.value(), ci.value(), di.value()))
+#print(sampleset)

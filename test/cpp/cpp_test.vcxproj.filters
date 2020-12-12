@@ -26,6 +26,12 @@
     <ClCompile Include="..\..\ocean\cpp\Qvar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qoperand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
@@ -64,6 +70,12 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\ocean\cpp\include\Utility.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Logger.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

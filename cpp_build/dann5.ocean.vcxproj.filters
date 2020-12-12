@@ -28,6 +28,12 @@
     <ClCompile Include="..\ocean\cpp\Qexpression.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qoperand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
@@ -69,6 +75,12 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ocean\cpp\include\Utility.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Logger.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qoperand.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

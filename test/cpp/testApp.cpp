@@ -1,3 +1,17 @@
+// debug_new.cpp
+// compile by using: cl /EHsc /W4 /D_DEBUG /MDd debug_new.cpp
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
+
+#ifdef _DEBUG
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+// Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
+// allocations to be of _CLIENT_BLOCK type
+#else
+#define DBG_NEW new
+#endif
+
 // TestConsoleApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 #ifndef EIGEN_NO_STATIC_ASSERT
@@ -91,43 +105,43 @@ void test1()
 	Matrix4d fixedMatrix;
 	std::cout << "fixedMatrix is of size " << fixedMatrix.rows() << "x" << fixedMatrix.cols() << std::endl;
 
-	NotQubo neQ;
+	NotQuboTable neQ;
 	std::cout << std::endl << "Not Equal" << std::endl << neQ << std::endl << std::endl;
 
-	AndQubo andQ;
+	AndQuboTable andQ;
 	std::cout << std::endl << "And" << std::endl << andQ << std::endl << std::endl;
 
-	NandQubo nandQ;
+	NandQuboTable nandQ;
 	std::cout << std::endl << "Nand" << std::endl << nandQ << std::endl << std::endl;
 
-	OrQubo orQ;
+	OrQuboTable orQ;
 	std::cout << std::endl << "Or" << std::endl << orQ << std::endl << std::endl;
 
-	NorQubo norQ;
+	NorQuboTable norQ;
 	std::cout << std::endl << "Nor" << std::endl << norQ << std::endl << std::endl;
 
-	NotLeftOrRightQubo nLorRQ;
+	NotLeftOrRightQuboTable nLorRQ;
 	std::cout << std::endl << "Not(left) And right" << std::endl << nLorRQ << std::endl << std::endl;
 
-	DwNotLeftOrRightQubo dWnLorRQ;
+	DwNotLeftOrRightQuboTable dWnLorRQ;
 	std::cout << std::endl << "D-Wave Not(left) And right" << std::endl << dWnLorRQ << std::endl << std::endl;
 
-	NxorQubo nxorQ;
+	NxorQuboTable nxorQ;
 	std::cout << std::endl << "Not Xor" << std::endl << nxorQ << std::endl << std::endl;
 
-	XorQubo xorQ;
+	XorQuboTable xorQ;
 	std::cout << std::endl << "Xor" << std::endl << xorQ << std::endl << std::endl;
 
-	HalfAdderQubo hAdderQ;
+	Adder05QuboTable hAdderQ;
 	std::cout << std::endl << "Half Adder" << std::endl << hAdderQ << std::endl << std::endl;
 
-	AdderQubo fAdderQ;
+	AdderQuboTable fAdderQ;
 	std::cout << std::endl << "Full Adder" << std::endl << fAdderQ << std::endl << std::endl;
 
-	BQM d = nxorQ.bqm();
+	Qubo d = nxorQ.qubo();
 
 	Qint v_na(Index(3)), v_nb(Index(4)), v_nr;
-	v_na << 1, 0, 1;
+	v_na << 1, 0, Qint::cSuperposition;
 	v_nb << 0, 1, 1, 1;
 	std::cout << std::endl << "Va: " << v_na.value() << std::endl << v_na << std::endl << "Vb: " << v_nb.value() << std::endl << v_nb << std::endl;
 	v_nr = v_na & v_nb;
@@ -146,7 +160,6 @@ void test1()
 	std::cout << std::endl << typeid(Qand).name() << std::endl << typeid(Qand).raw_name() << std::endl;
 
 	Qdef blv_a(Index(3), "a"), blv_b(Index(3));
-	blv_b << "b0", "b1", "b2";
 	Qexpression blv_r(blv_a + blv_b);
 	std::cout << std::endl << "BLV R = A + B: " << std::endl << blv_r << std::endl;
 
@@ -167,72 +180,89 @@ void test1()
 
 void test2()
 {
-	Qubo* pq = Factory<string, Qubo>::Instance().create("&");
+	QuboTable::Sp pq = Factory<string, QuboTable>::Instance().create("&");
 	std::cout << std::endl << "And" << std::endl << *pq << std::endl;
-	std::cout << std::endl << pq->bqm() << std::endl;
-	Qubo::Labels arguments(3);
+	std::cout << std::endl << pq->qubo() << std::endl;
+	QuboTable::Labels arguments(3);
 	arguments << "a0", "b0", "r0";
-	std::cout << std::endl << pq->bqm(arguments) << std::endl;
-	delete pq;
+	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, Qubo>::Instance().create("^");
+	pq = Factory<string, QuboTable>::Instance().create("^");
 	std::cout << std::endl << "Half Adder" << std::endl << *pq << std::endl;
-	std::cout << std::endl << pq->bqm() << std::endl;
-	std::cout << std::endl << pq->bqm(arguments) << std::endl;
-	delete pq;
+	std::cout << std::endl << pq->qubo() << std::endl;
+	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, Qubo>::Instance().create("+");
+	pq = Factory<string, QuboTable>::Instance().create("+");
 	std::cout << std::endl << "Full Adder" << std::endl << *pq << std::endl;
-	std::cout << std::endl << pq->bqm() << std::endl;
+	std::cout << std::endl << pq->qubo() << std::endl;
 	arguments.resize(4, NoChange);
 	arguments << "a1", "b1", "x{a1+b1}", "{a1+b1+x{a1+b1}}";
-	std::cout << std::endl << pq->bqm(arguments) << std::endl;
-	delete pq;
+	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, Qubo>::Instance().create("xor");
+	pq = Factory<string, QuboTable>::Instance().create("xor");
 	std::cout << std::endl << "Half Adder" << std::endl << *pq << std::endl ;
-	std::cout << std::endl << pq->bqm() << std::endl;
+	std::cout << std::endl << pq->qubo() << std::endl;
 	arguments.resize(4, NoChange);
 	arguments << "a1", "b1", "{a+b}1", "{c}1";
-	std::cout << std::endl << pq->bqm(arguments) << std::endl << std::endl;
-	delete pq;
+	std::cout << std::endl << pq->qubo(arguments) << std::endl << std::endl;
 
 	Qdef sv_a(3, "a"), sv_b(3, "b");
 	Qexpression ev_r(sv_a * sv_b);
 
 	std::cout << std::endl << "R = A * B: " << std::endl << ev_r << std::endl;
 
-	Qvar qv_p("p", 21), qv_a(sv_a), qv_b(sv_b);
-	Qequation qe(qv_p, ev_r);
-	qe << qv_a << qv_b;
-
-	std::cout << std::endl << qe << std::endl;
-	std::cout << std::endl << qe.bqm(false) << std::endl;
-
 	std::hash<std::string> hashT;
 	std::cout << std::endl << hashT("test") << std::endl;
 
-	std::cout << std::endl << qe.bqm() << std::endl;
 }
 
 void test3()
 {
-	Qdef a(3, "a"), b(3, "b"), c(3, "c");
+/**/
+	Qvar x(3, "x"), y(3, "y"), z(3, "z"), w(3, "w"), vQ("Q", 6);
+	Qequation eQ(vQ);
+	eQ = x + y + z + w;
+	cout << endl << eQ << endl;
+	cout << endl << eQ.toString(true) << endl;
+	cout << endl << eQ.qubo() << endl;
+
+	Qvar a(3, "a"), b(3, "b"), c(3, "c"), vR("R", 6);
+	Qequation eR(vR);
+	eR = a * b;// *c;
+	cout << endl << eR.qubo(false) << endl;
+	cout << endl << eR.toString(true) << endl;
+	cout << endl << eR.toString() << endl;
+	cout << endl << eR.qubo(true) << endl;
+
+	/*
+	Qdef a(3, "a"), b(3, "b"), c(3, "c"), d(3, "d");
+	Qexpression addAbcd(a + b + c + d);
+	Qvar vR("R", 6), vA(a), vB(b), vC(c), vD(d);
+	Qequation r_addAbcd(vR, addAbcd);
+	r_addAbcd << vA << vB << vC << vD;
+	std::cout << std::endl << r_addAbcd << std::endl;
+	std::cout << std::endl << r_addAbcd.qubo(false) << std::endl;
+	std::cout << std::endl << r_addAbcd.qubo() << std::endl;
+
+ 	Qdef a(2, "a"), b(2, "b"), c(2, "c");
 	Qexpression addAbc(a + b + c);
 	Qvar vR("R", 6), vA(a), vB(b), vC(c);
 	Qequation r_addAbc(vR, addAbc);
 	r_addAbc << vA << vB << vC;
 	std::cout << std::endl << r_addAbc << std::endl;
-	std::cout << std::endl << r_addAbc.bqm(false) << std::endl;
-	std::cout << std::endl << r_addAbc.bqm() << std::endl;
+	std::cout << std::endl << r_addAbc.qubo(false) << std::endl;
+	std::cout << std::endl << r_addAbc.qubo() << std::endl;
+	cout << std::endl << r_addAbc.toString() << std::endl;
+	*/
 }
 
 int main()
 {
-	test1();
-	test2();
+//	test1();
+//	test2();
 	test3();
 
+	_CrtDumpMemoryLeaks();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

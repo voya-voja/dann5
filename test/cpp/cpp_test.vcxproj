@@ -89,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_USE_DANN5_LOGGER;_DANN5_LOG_INTO_TXT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\..\..\..\..\AppData\Local\Continuum\anaconda3\envs\ocean2\include;..\..\pybind11\include;..\..\ocean\cpp\include;..\..\..\eigen-master</AdditionalIncludeDirectories>
     </ClCompile>
@@ -154,10 +154,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ocean\cpp\BQM.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Logger.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qdef.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qequation.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qexpression.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qint.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qops.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qvar.cpp" />
@@ -166,6 +168,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\ocean\cpp\include\BQM.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Factory.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Logger.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Utility.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qdef.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qequation.h" />

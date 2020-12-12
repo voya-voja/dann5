@@ -19,52 +19,124 @@ namespace dann5 {
 	namespace ocean {
 
 
-		typedef std::vector<Qvar>	QvarList;
+		typedef std::vector<Qvar>	Qvars;
 
+		// Quantum equation is a coupling of result Q variable via Q expression with
+		// Qvar arguments
 		class Qequation
 		{
 		public:
+			// Default constructor creates Q equation witout a result Q variable so the
+			// result symbol is an empty string
+			Qequation();
+
+			// creates Q equation with a given Q variable as an expected result
+			Qequation(const Qvar&);
+
+			// instantiate a Q equation with result Q variable, resulting Q expression
+			// and corresponding Q variables as arguments of the expression
+			Qequation(const Qvar&, const Qexpression&, const Qvars&);
+
+			//copy constructor
 			Qequation(const Qequation&);
-			Qequation(const Qvar&, const Qexpression&);
-			Qequation(const Qvar&, const Qexpression&, const QvarList&);
+
+			// desruct the Q equation with its members
 			~Qequation();
 
+			// Assignment operator returns a reference of this Q equation with Q result,
+			// expression and arguments same as in right Qequation
+			Qequation& operator=(const Qequation& right);
+
+			// Addition operator returns a new Qequation object with added Q variable
+			// to this Q equation
+			Qequation operator+(const Qvar& right) const;
+
+			// Addition operator returns a new Qequation object resulting from addition
+			// of this and right Q equations
+			Qequation operator+(const Qequation& right) const;
+
+			// Addition operator returns a reference to this Qequation object with added
+			// Q variable
+			Qequation& operator+=(const Qvar& right);
+
+			// Addition operator returns a reference to this Qequation object with added
+			// right Q equation
+			Qequation& operator+=(const Qequation& right);
+
+			// Multiplication operator returns a new Qequation object with multiplied Q
+			// variable with this Q equation
+			Qequation operator*(const Qvar& right) const;
+
+			// Multiplication operator returns a new Qequation object resulting from
+			// multiplication of this and right Q equations
+			Qequation operator*(const Qequation& right) const;
+
+			// Multiplication operator returns a reference to this Qequation object with
+			// multiplied Q variable
+			Qequation& operator*=(const Qvar& right);
+
+			// Multiplication operator returns a reference to this Qequation object with
+			// multiplied right Q equation
+			Qequation& operator*=(const Qequation& right);
+
+			// Returns a number of bit level expressions in this Q equation
 			Index size() const { return mResult.symbol().rows(); }
 
+			// Returns a constant reference to the result of this Q equation
 			const Qvar& result() const { return mResult; }
+
+			// Returns a constant reference to the expression of this Q equation
 			const Qexpression& expression() const { return mExpression; }
-			const QvarList& arguments() const { return mArguments; }
 
-			void addArgument(const Qvar&);
-			Qequation& operator<<(const Qvar&);
+			// Returns a constant reference to the expression arguments of this Q equation
+			const Qvars& arguments() const { return mArguments; }
 
-			BQM bqm(bool applyCondition = true) const;
+			typedef map<string, double> Sample;
+			typedef vector<Sample> Samples;
 
+			void set(Sample& s);
+			void setSamples(Samples& ss);
+
+			// Returns a qubo representation of this Q equation, 
+			// if not finalized, returns a full qubo symbol representation of this Q
+			// equation
+			// if finalized, returns an expression that replaces symbols with values of
+			// Qbits in deterministic states for all the Q variables, i.e. result and
+			// expression arguments
+			Qubo qubo(bool finalized = true) const;
+
+			// Returns a string representation of this Q equation, 
+			// if not decomposed, returns an equation line per Qbit level
+			// if decomposed, returns a line per Qbit operational expression
+			string toString(bool decomposed = false) const;
+
+			// Insert string representation of a Q equation into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qequation&);
 
 		protected:
-			class Corrector
+			class Reduct
 			{
-				typedef std::pair<string, Qbit> Correction;
-				typedef std::map<string, Correction> Corrections;
+				typedef std::pair<string, Qbit> Reduction;
+				typedef std::map<string, Reduction> Reductions;
 			public:
-				static const BQKey cSkip;
-				Corrector(Qequation&);
+				static const QuboKey cSkip;
+				Reduct(Qequation&);
+				~Reduct();
 
-				void init();
-				BQKey correct(const BQKey&, bool) const;
+				void operator() ();
+				QuboKey operator()(const QuboKey&, bool) const;
 			protected:
 			private:
 				Qequation&	mEquation;
-				Corrections mCorrections;
+				Reductions mReductions;
 			};
 		private:
-			Qvar			mResult;
-			Qexpression		mExpression;
-			QvarList		mArguments;
-			Corrector		mCorrector;
-
-			friend class Corrector;
+			Qvar			mResult;		// result variable, e.g. defined as R = 2 with bits R0 = 0, R1 = 1, ...
+			Qexpression		mExpression;	// an expresion, e.g. 'a + b + c', where a, b & c are Qvar instaces
+			Qvars			mArguments;		// the list of expression variables, e.g. {a, b, c} for the Q equation above
+			Reduct			mReduct;		// an instace of object class that symplifies the expression of this Q equation
+			bool			mNoResult;
+			friend class Reduct;
 		};
 	};
 };

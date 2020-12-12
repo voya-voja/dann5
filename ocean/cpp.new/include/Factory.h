@@ -2,8 +2,6 @@
 
 #include <map>
 
-#include <Logger.h>
-
 using namespace std;
 
 namespace dann5 {
@@ -18,7 +16,7 @@ namespace dann5 {
 				return gFactory; 
 			}
 
-			shared_ptr<T> create(K key)
+			T* create(K key)
 			{
 				return mCreators[key]->create();
 			}
@@ -32,14 +30,9 @@ namespace dann5 {
 					:mKey(key)
 				{
 					Factory<K, T>::Instance().add(this);
-					_lc;
 				}
 
-				~Creator() {
-					_ld;
-				}
-
-				virtual shared_ptr<T> create() = 0;
+				virtual T* create() = 0;
 
 				K key() { return mKey; }
 
@@ -50,10 +43,9 @@ namespace dann5 {
 
 		protected:
 		private:
-			Factory() { _lc; }
+			Factory() {}
 			~Factory()
 			{
-				_ld;
 #if FACTORY_DELETE_CREATORS
 				std::map<K, CreatorB<K, T>*>::template iterator at(mCreators.begin());
 				for (; at != mCreators.end(); at++)
@@ -82,9 +74,9 @@ namespace dann5 {
 				:Factory<K,T>::template Creator<K,T>(key)
 			{}
 
-			virtual shared_ptr<T> create()
+			virtual T* create()
 			{
-				return(shared_ptr<T>(new O()));
+				return(new O());
 			}
 
 		protected:

@@ -4,6 +4,7 @@
 #include <Qexpression.h>
 #include <Factory.h>
 
+#include <Logger.h>
 
 using namespace dann5::ocean;
 
@@ -11,32 +12,29 @@ using namespace dann5::ocean;
 /*** Qexpression ***/
 
 Qexpression::Qexpression()
-	: Qoperands()
+	: qbit_def_vector()
 {
+	_lct(toString());
 }
 
 Qexpression::Qexpression(const Qexpression& right)
-	: Qoperands(right)
+	: qbit_def_vector(right)
 {
+	_lct(toString());
 }
 
-Qexpression::Qexpression(Index size)
-	:Qoperands(size)
+Qexpression::Qexpression(const Qdef& symbol)
+	: qbit_def_vector(symbol.rows())
 {
-}
-
-Qexpression::Qexpression(const Qdef& operands)
-	: Qoperands(operands.rows())
-{
-	for (Index at = 0; at < operands.rows(); at++)
-		(*this)(at) = new Qoperand(operands(at));
+	for (Index at = 0; at < rows(); at++)
+		if (at < symbol.rows())
+			(*this)(at) =symbol(at);
+	_lct(toString());
 }
 
 Qexpression::~Qexpression()
 {
-/*	for (auto &pOp : *this)
-		delete pOp;
-		*/
+	_ldt(toString());
 }
 
 Qexpression Qexpression::operator *(const Qdef& right) const
@@ -60,41 +58,42 @@ Qexpression Qexpression::operator *(const Qexpression& right) const
 
 Qexpression& Qexpression::operator *=(const Qexpression& right)
 {
-	Xmatrix xMatrix = thisX(right);	// this * right vectors => xMatrix
+	qbit_def_matrix xMatrix = thisX(right);	// this * right vectors => xMatrix
 	// Rotate xMatrix left-90-digrees to change the values on main diagonal
-	Xmatrix reversedXMatrix = xMatrix.rowwise().reverse();
+	qbit_def_matrix reversedXMatrix = xMatrix.rowwise().reverse();
 	// sum values on all diagonals into 
 	sumDiagonals(reversedXMatrix);
 	return *this;
 }
 
-Qexpression::Xmatrix Qexpression::thisX(const Qexpression& right) const
+qbit_def_matrix Qexpression::thisX(const Qexpression& right) const
 {
-	Xmatrix xMatrix(rows(), right.rows());
+	qbit_def_matrix xMatrix(rows(), right.rows());
 	int carry = 0;
 	std::cout << "Matrix " << rows() << " x " << right.rows() << endl;
-	OperandList operands;
+	Qoperands operands;
 	for (Index atR = 0; atR < rows(); atR++)
 	{
 		for (Index atC = 0; atC < right.rows(); atC++)
 		{
-			Qop* pOp = Factory<string, Qop>::Instance().create("&");
+			Qop::Sp pOp = Factory<string, Qop>::Instance().create("&");
 			operands.push_back((*this)(atR));
 			operands.push_back(right(atC));
-			xMatrix(atR, atC) = pOp->arguments(operands);
-			std::cout << *xMatrix(atR, atC) << " ";
+			pOp->arguments(operands);
+			xMatrix(atR, atC) = dynamic_pointer_cast<Qoperand>(pOp);
+			std::cout << *xMatrix(atR, atC) << " "; //TBR
 			operands.clear();
 		}
-		std::cout << endl;
+		std::cout << endl; //TBR
 	}
 	return xMatrix;
 }
 
-void Qexpression::sumDiagonals(const Qexpression::Xmatrix& xMatrix)
+void Qexpression::sumDiagonals(const qbit_def_matrix& xMatrix)
 {
 	// resize this vector to a # of diagonals + 1 of xMatrix
 	Index size = xMatrix.rows() + xMatrix.cols();
-	resize(size, NoChange);
+	resize(size);
 	Index last = size - 1;
 
 	// Value of 0 bit is the sum of right-most diagonal
@@ -102,19 +101,17 @@ void Qexpression::sumDiagonals(const Qexpression::Xmatrix& xMatrix)
 
 	// add functional object to add diagonal vectors' bit symbols
 	Add add;
-	for (Index at = 0; at < last; at++)
+	for ( 0; *add < last; add++)
 	{
-		bool qbitInitialized = add.isCarryForward();
-		(*this)(at) = add();	// add any carry-forward operands
-
-		Qoperands diagonal = xMatrix.diagonal(atDiagonal);
+		Index at = *add;
+		qbit_def_vector diagonal = xMatrix.diagonal(atDiagonal);
 		Index nDiagElmns = diagonal.rows();
+
 		for (Index atD = 0; atD < nDiagElmns; atD++)
 		{
-			if (!qbitInitialized)
-			{
-				(*this)(at) = diagonal(atD);
-				qbitInitialized = true;
+			if (atD == 0)
+			{	// add any carry-forward operands
+				(*this)(at) = add(diagonal(atD));
 			}
 			else
 			{
@@ -123,10 +120,18 @@ void Qexpression::sumDiagonals(const Qexpression::Xmatrix& xMatrix)
 		}
 		Index atNext = at + 1;
 		--atDiagonal;
-		cout << *(*this)(at) << endl;
+		_lat("sumDiagonals", (*this)(at)->toString());
 	}
-	(*this)(last) = add();	// add any carry-forward operands
-	cout << *(*this)(last) << endl;
+	Qoperand::Sp pOperand = add();
+	if(pOperand != nullptr)
+	{
+		(*this)(last) = pOperand;	// add any carry-forward operands
+		_lat("sumDiagonals", (*this)(last)->toString());
+	}
+	else
+	{
+		resize(last);
+	}
 }
 
 
@@ -147,24 +152,43 @@ Qexpression Qexpression::operator +(const Qexpression& right) const
 	Index tSize = rows(), rSize = right.rows();
 	Index size = rSize > tSize ? rSize : tSize;
 	// allocate extra bit for result for a last carry bit
+	Index allocateSize = size + 1;
+	if (tSize == 0 || rSize == 0)
+		allocateSize = size;
 	Qexpression result(size + 1);
 	// add this and right vectors bit symbols
 	Add add;
 	// number of rows of this vector is one less then in result vector
-	for (Index at = 0; at < size; at++)
+	for (; *add < size; add++)
 	{
+		Index at = *add;
 		if (at < tSize)
 		{
-			result(at) = add((*this)(at));
+			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
 			if (at < rSize)
-				result(at) = add(result(at), right(at));
+				pRight = right(at);
+			if (pLeft == nullptr)
+				pResult = add();
+			else
+				pResult = add(pLeft);
+			if (pRight != nullptr)
+				pResult = add(pResult, pRight);
+			result(at) = pResult;
 		}
 		else
 			result(at) = add(right(at));
-		cout << *result(at) << endl;
+
+		_lat("+", result(at)->toString());
 	}
-	result(size) = add();
-	cout << *result(size) << endl;
+	result(*add) = add();
+	while (result(*add) == nullptr)
+	{
+		size--;
+		add--;
+	}
+	if (size + 1 < result.rows())
+		result.resize(size + 1);
+	_lat("+", result(*add)->toString());
 	return result;
 }
 
@@ -174,80 +198,112 @@ Qexpression& Qexpression::operator +=(const Qexpression& right)
 	return (*this);
 }
 
+string Qexpression::toString() const
+{
+	Index size = rows();
+	string tStr = "eXp[" + to_string(size) + "]={";
+	string s = "size = " + size;
+	for (Index at = 0; at < size; at++)
+	{
+		if ((*this)(at) == nullptr) 
+			tStr += "? | ";
+		else
+			tStr += (*this)(at)->toString() + " | ";
+	}
+	tStr += "}";
+	return tStr;
+}
+
+void Qexpression::resize(Index size)
+{
+	Index oSize = rows();
+	Qexpression temp(*this);
+	qbit_def_vector::resize(size, NoChange);
+	for (Index at = 0; at < size; at++)
+		if (at < oSize)
+			(*this)(at) = temp(at);
+		else
+			(*this)(at) = Qoperand::Sp(new Qoperand(""));
+}
+
+std::ostream& dann5::ocean::operator << (std::ostream& out, const Qexpression& right)
+{
+	out << right.toString();
+	return out;
+}
+
 
 Qexpression::Add::Add()
-{  }
-
-
-Qoperand* Qexpression::Add::operator () (Qoperand* left, Qoperand* right)
+	:mAtBit(0)
 {
-	mOperands.push_back(left);
-	mOperands.push_back(right);
-	Qop* pAdd = Factory<string, Qop>::Instance().create("^");
-
-	Qoperand* pResultAdd = pAdd->arguments(mOperands);
-	Qoperand* pCarry = dynamic_cast<Qaddition*>(pResultAdd)->carry();
-	mCarryForwards.push_back(pCarry);
-
-	mOperands.clear();
-
-	return(pResultAdd);
+	_lc;
 }
 
-Qoperand* Qexpression::Add::operator () (Qoperand* pLeft)
+Qexpression::Add::Add(Index startBitIndex)
+	:mAtBit(startBitIndex)
 {
-	Qoperand* pResultAdd = pLeft;
-	while (!mCarryForwards.empty())
+	_lc;
+}
+
+Qexpression::Add::~Add()
+{
+	_ld;
+}
+
+Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft, const Qoperand::Sp& pRight)
+{
+	// Create new addition operation as xor instance
+	Qaddition::Sp pAddition = dynamic_pointer_cast<Qaddition>(Factory<string, Qop>::Instance().create("^"));
+
+	// assign 2 operands to addition operation
+	Qoperands operands;
+	operands.push_back(pLeft);
+	operands.push_back(pRight);
+	Qaddition::Sp pAdder = pAddition->assign(operands);
+
+	// change addition operation, if assignment upgraded xor (binary) to adder (trinary) operation
+	if (pAdder != nullptr) pAddition = pAdder;
+
+	// push carry operand into FIFO to be processes while adding of next 2 bits
+	CarryItem carryItem(mAtBit + 1, pAddition->carry());
+	mCarryFIFO.push_back(carryItem);
+
+	return(dynamic_pointer_cast<Qoperand>(pAddition));
+}
+
+Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft)
+{
+	Qoperand::Sp pOperand = pLeft;	// return operand argument, if carry FIFO is empty
+
+	// while there are carry bits in FIFO to be added at current bit position
+	while (!mCarryFIFO.empty() && mCarryFIFO.begin()->first <= mAtBit)
 	{
-		mOperands.push_back(pResultAdd);
-
-		// pop first element from  the carry-forward queue
-		mOperands.push_back(*mCarryForwards.begin());
-		mCarryForwards.erase(mCarryForwards.begin());
-
-		Qop* pAdd = Factory<string, Qop>::Instance().create("^");
-
-		pResultAdd = pAdd->arguments(mOperands);
-		mOperands.clear();
+		// pop the first carry operand from  the FIFO
+		Qoperand::Sp pCarry = dynamic_pointer_cast<Qoperand>(mCarryFIFO.begin()->second);
+		mCarryFIFO.erase(mCarryFIFO.begin());
+		
+		if (!pOperand->doesExist(pCarry))
+		{
+			// add operand and carry bits
+			pOperand = (*this)(pOperand, pCarry);
+		}
 	}
-
-	return(pResultAdd);
+	return(pOperand);
 }
 
-Qoperand* Qexpression::Add::operator () ()
+Qoperand::Sp Qexpression::Add::operator () ()
 {
-	if (mCarryForwards.empty()) return new Qoperand;
+	// return null if there are no carry operands in the FIFO
+	Qoperand::Sp pOperand = nullptr;
 
-	// pop first element from the carry-forward queue
-	Qoperand* pResultAdd = *mCarryForwards.begin();
-	mCarryForwards.erase(mCarryForwards.begin());
-
-	while (!mCarryForwards.empty())
+	if(!mCarryFIFO.empty())
 	{
-		mOperands.push_back(pResultAdd);
+		// pop the first carry operand from the FIFO
+		pOperand = dynamic_pointer_cast<Qoperand>(mCarryFIFO.begin()->second);
+		mCarryFIFO.erase(mCarryFIFO.begin());
 
-		// pop first element from  the carry-forward queue
-		mOperands.push_back(*mCarryForwards.begin());
-		mCarryForwards.erase(mCarryForwards.begin());
-
-		Qop* pAdd = Factory<string, Qop>::Instance().create("^");
-
-		pResultAdd = pAdd->arguments(mOperands);
-		mOperands.clear();
+		// add the first carry operand to other carry operands in FIFO at this bit position
+		pOperand = (*this)(pOperand);
 	}
-
-	return(pResultAdd);
-}
-
-bool Qexpression::Add::isCarryForward() const
-{ 
-	return !mCarryForwards.empty();
-}
-
-
-std::ostream& dann5::ocean::operator << (std::ostream& output, const Qexpression& right)
-{
-	for (Index at = 0; at < right.rows(); at++)
-		output << *right(at) << endl;
-	return output;
+	return(pOperand);
 }

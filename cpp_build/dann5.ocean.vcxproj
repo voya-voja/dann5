@@ -98,7 +98,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";dann5.ocean_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";dann5.ocean_EXPORTS;%(PreprocessorDefinitions);_USE_DANN5_LOGGER;_DANN5_LOG_INTO_TXT</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
     <ResourceCompile>
@@ -325,7 +325,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ocean\cpp\BQM.cpp" />
+    <ClCompile Include="..\ocean\cpp\Logger.cpp" />
     <ClCompile Include="..\ocean\cpp\Qexpression.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\ocean\cpp\Qops.cpp" />
     <ClCompile Include="..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\ocean\cpp\main.cpp" />
@@ -338,8 +340,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ocean\cpp\include\BQM.h" />
+    <ClInclude Include="..\ocean\cpp\include\Logger.h" />
     <ClInclude Include="..\ocean\cpp\include\Qexpression.h" />
     <ClInclude Include="..\ocean\cpp\include\Factory.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\ocean\cpp\include\Qops.h" />
     <ClInclude Include="..\ocean\cpp\include\Qint.h" />
     <ClInclude Include="..\ocean\cpp\include\Qubo.h" />

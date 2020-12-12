@@ -11,20 +11,20 @@ using namespace Eigen;
 
 namespace dann5 {
 	namespace ocean {
+		typedef std::pair<string, string> BQKey;
+		typedef std::map<BQKey, double> BQDictionary;
 
-		// a binary quadratic model object
-		class BQM
+		class BQM : public BQDictionary
 		{
 		public:
 			BQM();
 			BQM(const BQM&);
-			~BQM();
 
 			BQM& operator=(const BQM&);
 			BQM operator+(const BQM&) const;
 			BQM& operator+=(const BQM&);
 
-//			BQDictionary& dictionary();
+			BQDictionary& dictionary();
 
 			friend std::ostream& operator << (std::ostream&, const BQM&);
 

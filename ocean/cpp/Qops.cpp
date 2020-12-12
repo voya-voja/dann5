@@ -4,49 +4,9 @@
 
 #include <Qubo.h>
 
+#include <Logger.h>
+
 using namespace dann5::ocean;
-
-
-/*** Operand ***/
-
-Qoperand::Qoperand() {}
-
-Qoperand::Qoperand(const Qoperand& right) 
-	:mIdentity(right.mIdentity)
-{}
-
-Qoperand::Qoperand(const string& identity)
-	:mIdentity(identity)
-{
-
-}
-
-bool Qoperand::rename(const string& stale, const string& fresh)
-{
-	bool reid = mIdentity == stale;
-	if (reid)
-		mIdentity = fresh;
-	return reid;
-}
-
-string Qoperand::toString() const 
-{
-	return mIdentity;
-}
-
-BQM Qoperand::bqm() const
-{
-	return BQM();
-}
-
-Qoperand::~Qoperand() {}
-
-
-std::ostream& dann5::ocean::operator << (std::ostream& output, const Qoperand& right)
-{
-	output << right.toString();
-	return output;
-}
 
 
 /*** Operation ***/
@@ -58,178 +18,334 @@ Qop::Qop()
 
 Qop::Qop(const Qop& right)
 {
-	for (auto &pOp : right.mOperands)
-		mOperands.push_back(pOp);
+	for (auto &pOp : right.mArguments)
+		mArguments.push_back(pOp);
 }
 
 Qop::~Qop()
 {
-	for (auto &pOperand : mOperands)
-		delete pOperand;
 }
 
-Qoperand* Qop::arguments(const OperandList& operands)
+void Qop::releaseArguments()
 {
-	if (operands.size() != argumentsNumber())
-		throw invalid_argument("Arguments number is " + to_string(operands.size()) + " instead of " + to_string(argumentsNumber()));
-	for (auto &pOp : operands)
-		mOperands.push_back(pOp);
-	return(instance());
+	while (mArguments.size() > 0)
+		mArguments.pop_back();
 }
+
+void Qop::arguments(const Qoperands& operands)
+{
+	if (operands.size() != argsNumber())
+		throw invalid_argument("Arguments number is " + to_string(operands.size())
+										+ " instead of " + to_string(argsNumber()));
+	for (auto &pOp : operands)
+		mArguments.push_back(pOp);
+}
+
+Qoperand::Sp Qop::remove(const Qoperand::Sp& pToRemove)
+{
+	Qoperand::Sp pResult = Qoperand::Sp(dynamic_cast<Qoperand*>(this));
+	for (auto at = mArguments.begin(); at != mArguments.end(); at++)
+	{
+		Qoperand::Sp pOperand = (*at);
+		if (pOperand->identity() == pToRemove->identity())
+		{
+			mArguments.erase(at--);
+			if(mArguments.size() == 0)
+			{
+				pResult = nullptr;
+				break;
+			}
+		}
+		else
+		{
+			Qop::Sp pOp = dynamic_pointer_cast<Qop>(pOperand);
+			if(pOp != nullptr)
+				(*at) = pOp->remove(pToRemove);
+		}
+	}
+	return(pResult);
+}
+
+void Qop::labelFor(const string& id)
+{
+	return labelFor(id, -1);
+}
+
+void Qop::labelFor(const string& id, Index index)
+{
+	if(index >= 0)
+		mLabel = dynamic_cast<Qoperand*>(this)->identity() + "|" + id + to_string(index) + "|";
+	size_t size = mArguments.size();
+	for (size_t at = 0; at < size; at++)
+	{
+		Qoperand::Sp pOperand = mArguments[at];
+		Qop::Sp pOp = dynamic_pointer_cast<Qop>(pOperand);
+		if (pOp != nullptr) pOp->labelFor(id + to_string(at), index + 1);
+	}
+}
+
+
+string Qop::toString(bool decomposed, const string& opSymbol) const
+{
+	Qoperands args = arguments();
+	size_t size = args.size();
+	string rStr(""), rest("");
+	if (decomposed && isLabeled())
+		rStr += "\n\t" + label() + " = ";
+	for(size_t atArg = 0; atArg < size; atArg++)
+	{
+		Qoperand::Sp arg = args[atArg];
+		string aStr("?");
+		if (arg != nullptr)
+		{
+			aStr = arg->toString(decomposed);
+			if (decomposed)
+			{
+				// if operand is a sub-peration
+				size_t at = aStr.find(" = ");
+				if (at != string::npos && aStr[0] != Qaddition::Carry::cSymbol[0])
+				{
+					rest += aStr;
+					aStr = aStr.substr(2, at - 2); // extract sub-operation label
+				}
+			}
+		}
+		rStr += aStr;
+		if(atArg != size - 1)
+			rStr += " " + opSymbol + " ";
+	}
+	if (decomposed)
+		rStr += rest;
+	return rStr;
+}
+
+/*** Operator - Unary Operation ***/
+
+
+Qoperator::Qoperator()
+	:Qoperand(), Qop()
+{
+	_lct(toString());
+}
+
+Qoperator::Qoperator(const Qoperator& right)
+	: Qoperand(right), Qop(right)
+{
+	_lct(toString());
+}
+
+Qoperator::Qoperator(const string& identity)
+	: Qoperand(identity), Qop()
+{
+	_lct(toString());
+}
+
+Qoperator::~Qoperator()
+{
+	_ldt(toString());
+}
+
+string Qoperator::toString(bool decomposed) const
+{
+	return Qop::toString(decomposed, identity());
+}
+
+Qubo Qoperator::qubo() const
+{
+	// get sub-qubo from argument operand
+	Qubo aQubo = arguments()[0]->qubo();
+
+	// create QuboTable rule object for this operand
+	QuboTable::Sp pQubo = Factory<string, QuboTable>::Instance().create(identity());
+
+	// use names of argument and this operands as unique string describing arguments
+	QuboTable::Labels qubo_arguments(2);
+	string aName = arguments()[0]->toString();
+	string tName = toString();
+	qubo_arguments << aName, tName;
+
+	Qubo qubo = pQubo->qubo(qubo_arguments);
+	qubo += aQubo;
+
+	return(qubo);
+}
+
 
 /*** BinaryOperation ***/
 
-
 QbiOperation::QbiOperation() 
 	:Qoperand(), Qop()
-{}
+{
+	_lct(toString());
+}
 
 QbiOperation::QbiOperation(const QbiOperation& right) 
 	:Qoperand(right), Qop(right)
-{}
+{
+	_lct(toString());
+}
 
 QbiOperation::QbiOperation(const string& identity)
 	: Qoperand(identity), Qop()
 {
+	_lct(toString());
 }
 
 QbiOperation::~QbiOperation()
-{}
-
-string QbiOperation::toString() const
 {
-	OperandList args = arguments();
-	string rStr = args[0]->toString() + " " +
-		Qoperand::toString() + " " + args[1]->toString();
-	return rStr;
+	_ldt(toString());
 }
 
-bool QbiOperation::rename(const string& stale, const string& fresh)
+string QbiOperation::toString(bool decomposed) const
 {
-	bool reided = Qoperand::rename(stale, fresh);
-	OperandList args = arguments();
-	reided |= args[0]->rename(stale, fresh);
-	reided |= args[1]->rename(stale, fresh);
-	return reided;
+	return Qop::toString(decomposed, identity());
 }
 
-BQM QbiOperation::bqm() const
+Qubo QbiOperation::qubo() const
 {
-	// get sub-bqm's from left and right operand
-	BQM lBqm = arguments()[0]->bqm();
-	BQM rBqm = arguments()[1]->bqm();
+	// get sub-qubo's from left and right operand
+	Qubo lBqm = arguments()[0]->qubo();
+	Qubo rBqm = arguments()[1]->qubo();
 
-	// create Qubo rule object for this operand
-	Qubo* pQubo = Factory<string, Qubo>::Instance().create(identity());
+	// create QuboTable rule object for this operand
+	QuboTable::Sp pQubo = Factory<string, QuboTable>::Instance().create(identity());
 
 	// use names of left, right and this operands as unique string describing arguments
-	Qubo::Labels bqm_arguments(3);
+	QuboTable::Labels qubo_arguments(3);
 	string lName = arguments()[0]->toString();
 	string rName = arguments()[1]->toString();
 	string tName = toString();
-	bqm_arguments << lName, rName, tName;
+	qubo_arguments << lName, rName, tName;
 
-	BQM bqm = pQubo->bqm(bqm_arguments);
-	bqm += lBqm;
-	bqm += rBqm;
+	Qubo qubo = pQubo->qubo(qubo_arguments);
+	qubo += lBqm;
+	qubo += rBqm;
 
-	return(bqm);
+	return(qubo);
 }
-
 
 /*** TrinaryOperation ***/
 
 QtriOperation::QtriOperation()
 	:Qoperand(), Qop()
-{}
+{
+	_lct(toString());
+}
 
 QtriOperation::QtriOperation(const QtriOperation& right)
 	: Qoperand(right), Qop(right)
-{}
+{
+	_lct(toString());
+}
 
 QtriOperation::QtriOperation(const string& identity)
 	: Qoperand(identity), Qop()
 {
+	_lct(toString());
 }
 
 QtriOperation::~QtriOperation()
 {
+	_ldt(toString());
 }
 
-string QtriOperation::toString() const
+string QtriOperation::toString(bool decomposed) const
 {
-	OperandList args = arguments();
-	string rStr = args[0]->toString() + " " +
-		Qoperand::toString() + " " + args[1]->toString() + " " +
-		Qoperand::toString() + " " + args[2]->toString();
-	return rStr;
+	return Qop::toString(decomposed, identity());
 }
 
-bool QtriOperation::rename(const string& stale, const string& fresh)
+Qubo QtriOperation::qubo() const
 {
-	bool reided = Qoperand::rename(stale, fresh);
-	OperandList args = arguments();
-	reided |= args[0]->rename(stale, fresh);
-	reided |= args[1]->rename(stale, fresh);
-	reided |= args[2]->rename(stale, fresh);
-	return reided;
-}
-
-BQM QtriOperation::bqm() const
-{
-	// create Qubo rule object for this operand
-	Qubo* pQubo = Factory<string, Qubo>::Instance().create(identity());
+	// create QuboTable rule object for this operand
+	QuboTable::Sp pQubo = Factory<string, QuboTable>::Instance().create(identity());
 
 	// use names of left, right and this operands as unique string describing arguments
 	string opName1 = arguments()[0]->toString();
 	string opName2 = arguments()[1]->toString();
 	string opName3 = arguments()[2]->toString();
 	string tName = toString();
-	Qubo::Labels bqm_arguments(4);
-	bqm_arguments << opName1, opName2, opName3, tName;
+	QuboTable::Labels qubo_arguments(4);
+	qubo_arguments << opName1, opName2, opName3, tName;
 
-	BQM bqm = pQubo->bqm(bqm_arguments);
-	OperandList operands = arguments();
+	Qubo qubo = pQubo->qubo(qubo_arguments);
+	Qoperands operands = arguments();
 	for (auto &pOperand : operands)
-		bqm += pOperand->bqm();
+		qubo += pOperand->qubo();
 
-	return(bqm);
+	return(qubo);
 }
-
-
-/*** AndOperation ***/
-
-Qand::Qand()
-	:QbiOperation("&")
-{}
-
-Qand::Qand(const Qand& right)
-	: QbiOperation(right)
-{}
-
-Qand::~Qand()
-{}
-
 
 /*** Addition ***/
 
 Qaddition::Qaddition()
-{}
+{
+	mpCarry = Carry::Sp(new Carry(this));
+}
 
 Qaddition::~Qaddition()
 {}
 
-string Qaddition::CarrySymbol(const string& arg)
+Qaddition::Sp Qaddition::assign(const Qoperands& operands)
 {
-	return("x{" + arg + "}");
+	Qop* pAddition = dynamic_cast<Qop*>(this);
+	pAddition->arguments(operands);
+	return nullptr;
 }
 
-Qoperand* Qaddition::carry() const
+Qaddition::Carry::Sp Qaddition::carry()
 {
-	string identifier = Qaddition::CarrySymbol(toString());
-	return(new Qoperand(identifier));
+	if (mpCarry == nullptr)
+		mpCarry = Carry::Sp(new Carry(this));
+	return(mpCarry);
 }
-/*** XorOperation ***/
+
+void Qaddition::carry(const Carry::Sp& pCarry)
+{
+	mpCarry = pCarry;
+	if(pCarry != nullptr)
+		mpCarry->addition(this);
+};
+
+
+/*** Carry Operation ***/
+
+const string Qaddition::Carry::cSymbol = "#";
+
+string Qaddition::Carry::Symbol(const string& operand)
+{
+	return(cSymbol + "|" + operand + "|");
+}
+
+Qaddition::Carry::Carry(Qaddition* pAddition)
+	: Qoperand(cSymbol), mpAddition(pAddition)
+{
+}
+
+Qaddition::Carry::Carry(const Carry& right)
+	: Qoperand(right)
+{}
+
+Qaddition::Carry::~Carry()
+{}
+
+string Qaddition::Carry::toString(bool decomposed) const
+{
+	if (decomposed)
+	{
+		Qop* arg = dynamic_cast<Qop*>(mpAddition);
+		if(arg->isLabeled())
+			return Symbol(arg->label());
+	}
+	Qoperand* arg = dynamic_cast<Qoperand*>(mpAddition);
+	return Symbol(arg->toString(decomposed));
+}
+
+void Qaddition::Carry::addition(Qaddition* pAddition)
+{
+	mpAddition = pAddition;
+}
+
+/*** Xor Operation ***/
 
 Qxor::Qxor()
 	: QbiOperation("^")
@@ -239,47 +355,49 @@ Qxor::Qxor(const Qxor& right)
 	: QbiOperation(right)
 {}
 
-
 Qxor::~Qxor()
 {}
 
-Qoperand* Qxor::clone() const
-{
-	return new Qxor(*this);
-}
-
-Qoperand* Qxor::arguments(const OperandList& operands)
+Qaddition::Sp Qxor::assign(const Qoperands& operands)
 {
 	if (operands[0]->identity() == "^" || operands[1]->identity() == "^")
 	{
-		Qoperand* pXorArg = operands[0];
-		Qoperand* pOperand = operands[1];
-		if (operands[1]->identity() == "^")
+		// identify xor operand
+		Qxor::Sp pXor = nullptr;
+		Qoperand::Sp pOperand = nullptr;
+		try
+		{
+			pXor = dynamic_pointer_cast<Qxor>(operands[0]);
+			pOperand = operands[1];
+		}
+		catch(...)
 		{
 			pOperand = operands[0];
-			Qoperand* pXorArg = operands[1];
+			pXor = dynamic_pointer_cast<Qxor>(operands[1]);
 		}
 
-		Qadder* pAdder = new Qadder;
-		OperandList operands_adder;
-		operands_adder.push_back(dynamic_cast<Qop*>(pXorArg)->arguments()[0]);
-		operands_adder.push_back(dynamic_cast<Qop*>(pXorArg)->arguments()[1]);
-		operands_adder.push_back(pOperand);
+		// replace xor binary-operation with adder trinary-operation
+		Qadder::Sp pAdder = dynamic_pointer_cast<Qadder>(Factory<string, Qop>::Instance().create("+"));
+		pAdder->carry(pXor->carry());
+		pXor->carry(nullptr);
 
-		pAdder->arguments(operands_adder);
-		return pAdder;
+		// push adder's tri arguments
+		Qoperands adder_args;
+		adder_args.push_back(pXor->arguments()[0]);
+		adder_args.push_back(pXor->arguments()[1]);
+		adder_args.push_back(pOperand);
+		pAdder->arguments(adder_args);
+
+		return(pAdder);
 	}
-	Qop::arguments(operands);
-	return this;
-}
-
-string Qxor::toString() const
-{
-	return QbiOperation::toString();
+	else
+	{	// standar processing of asigment, if neither of operands is xor operation
+		return Qaddition::assign(operands);
+	}
 }
 
 
-/*** AdderOperation ***/
+/*** Adder Operation ***/
 
 Qadder::Qadder()
 	: QtriOperation("+")
@@ -292,58 +410,68 @@ Qadder::Qadder(const Qadder& right)
 Qadder::~Qadder()
 {}
 
-
-string Qadder::toString() const
+Qoperand::Sp Qadder::remove(const Qoperand::Sp& pToRemove)
 {
-	return QtriOperation::toString();
+	Qoperand::Sp pResult = Qop::remove(pToRemove);
+	if (pResult.get() == this && arguments().size() == 2)
+	{
+		Qxor::Sp pXor = dynamic_pointer_cast<Qxor>(Factory<string, Qop>::Instance().create("^"));;
+		pXor->carry(dynamic_pointer_cast<Qaddition::Carry>(carry()));
+		carry(nullptr);
+		Qoperands args = arguments();
+		pXor->arguments(args);
+		releaseArguments();
+		pResult = Qoperand::Sp(pXor);
+	}
+	return pResult;
 }
 
-/*** OperandFactory ***/
+/*** Operations Factory ***/
 
 Factory<string, Qop> Factory<string, Qop>::gFactory;
+
+Creator<string, Qop, Qequal> gEqualOperatorCreator_s("=");
+Creator<string, Qop, Qequal> gEqualOperatorCreator("equal");
+
+Creator<string, Qop, Qnot> gNotOperatorCreator_s("~");
+Creator<string, Qop, Qnot> gNotOperatorCreator("not");
+
+Creator<string, Qop, Qlt> gLtOperatorCreator_s("<");
+Creator<string, Qop, Qlt> gLtOperatorCreator("lessthan");
+
+Creator<string, Qop, Qle> gLeOperatorCreator_s("<=");
+Creator<string, Qop, Qle> gLeOperatorCreator("lessequal");
+
+Creator<string, Qop, Qgt> gGtOperatorCreator_s(">");
+Creator<string, Qop, Qgt> gGtOperatorCreator("greaterthan");
+
+Creator<string, Qop, Qge> gGeOperatorCreator_s(">=");
+Creator<string, Qop, Qge> gGeOperatorCreator("greaterequal");
+
+Creator<string, Qop, Qand> gAndOpCreator_s("&");
+Creator<string, Qop, Qand> gAndOpCreator("and");
+
+Creator<string, Qop, QnAnd> gNandOpCreator_s("~&");
+Creator<string, Qop, QnAnd> gNandOpCreator("nand");
+
+Creator<string, Qop, Qor> gOrOpCreator_s("|");
+Creator<string, Qop, Qor> gOrOpCreator("or");
+
+Creator<string, Qop, QnOr> gNorOpCreator_s("~|");
+Creator<string, Qop, QnOr> gNorOpCreator("nor");
 /*
-Creator<string, Operation, EqualOperator> gEqualOperatorCreator_s("=");
-Creator<string, Operation, EqualOperator> gEqualOperatorCreator("equal");
+Creator<string, Qop, QnLeftOrRight> gNleftOrRightOpCreator("notleftorright");
 
-Creator<string, Operation, NotOperator> gNotOperatorCreator_s("~");
-Creator<string, Operation, NotOperator> gNotOperatorCreator("not");
-
-Creator<string, Operation, LessThanOperator> gLessThanOperatorCreator_s("<");
-Creator<string, Operation, LessThanOperator> gLessThanOperatorCreator("lessthan");
-
-Creator<string, Operation, LessEqualOperator> gLessEqualOperatorCreator_s("<=");
-Creator<string, Operation, LessEqualOperator> gLessEqualOperatorCreator("lessequal");
-
-Creator<string, Operation, GreaterThanOperator> gGreaterThanOperatorCreator_s(">");
-Creator<string, Operation, GreaterThanOperator> gGreaterThanOperatorCreator("greaterthan");
-
-Creator<string, Operation, GreaterEqualOperator> gGreaterEqualOperatorCreator_s(">=");
-Creator<string, Operation, GreaterEqualOperator> gGreaterEqualOperatorCreator("greaterequal");
+Creator<string, Qop, DwNotLeftOrRightOp> gNotLeftOrRightOpCreator_dw("dwnotleftorright");
 */
-Creator<string, Qop, Qand> gAndOperationCreator_s("&");
-Creator<string, Qop, Qand> gAndOperationCreator("and");
+Creator<string, Qop, Qxor> gXorOpCreator_s("^");
+Creator<string, Qop, Qxor> gXorOpCreator("xor");
+
+Creator<string, Qop, Qadder05> gHalfAdderOpCreator_s("+05");
+Creator<string, Qop, Qadder05> gHalfAdderOpCreator("halfadder");
 /*
-Creator<string, Operation, NandOperation> gNandOperationCreator_s("~&");
-Creator<string, Operation, NandOperation> gNandOperationCreator("nand");
-
-Creator<string, Operation, OrOperation> gOrOperationCreator_s("|");
-Creator<string, Operation, OrOperation> gOrOperationCreator("or");
-
-Creator<string, Operation, NorOperation> gNorOperationCreator_s("~|");
-Creator<string, Operation, NorOperation> gNorOperationCreator("nor");
-
-Creator<string, Operation, NotLeftOrRightOperation> gNotLeftOrRightOperationCreator("notleftorright");
-
-Creator<string, Operation, DwNotLeftOrRightOperation> gNotLeftOrRightOperationCreator_dw("dwnotleftorright");
+Creator<string, Qop, NxorOp> gNxorOpCreator_s("~^");
+Creator<string, Qop, NxorOp> gNxorOpCreator("nxor");
 */
-Creator<string, Qop, Qxor> gXorOperationCreator_s("^");
-Creator<string, Qop, Qxor> gXorOperationCreator("xor");
-
-Creator<string, Qop, Qadder05> gHalfAdderOperationCreator_s("#");
-Creator<string, Qop, Qadder05> gHalfAdderOperationCreator("halfadder");
-/*
-Creator<string, Operation, NxorOperation> gNxorOperationCreator_s("~^");
-Creator<string, Operation, NxorOperation> gNxorOperationCreator("nxor");
-*/
-Creator<string, Qop, Qadder> gAdderOperationCreator_s("+");
-Creator<string, Qop, Qadder> gAdderOperationCreator("adder");
+Creator<string, Qop, Qadder> gAdderOpCreator_s("+");
+Creator<string, Qop, Qadder> gAdderOpCreator("adder");
