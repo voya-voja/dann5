@@ -5,7 +5,7 @@ Created on Sat Sep  5 17:09:42 2020
 @author: Nebojsa.Vojinovic
 """
 
-from lib.d5o import Qvar, Qequation, Qint
+from dann5.d5o import Qvar, Qequation, Qint
 from dimod import ExactSolver
 from dwave.system import DWaveSampler, EmbeddingComposite
 from dwave.cloud.exceptions import SolverNotFoundError
@@ -20,11 +20,11 @@ r_addAbcd.assign( a + b + c + d )
 
 print(r_addAbcd.toString(True))
 
-d = r_addAbcd.bqm(False).dictionary()
+d = r_addAbcd.qubo(False)
 print("Vectors")
 print(d)
 
-Q = r_addAbcd.bqm(True).dictionary()
+Q = r_addAbcd.qubo(True)
 
 print(Q)
 
@@ -41,10 +41,10 @@ except SolverNotFoundError:
 
     
 # EmbeddingComposite maps problem elementss to a structured Chimera sampler node adresses
-#embedingSampler = ExactSolver()                   # local
+embedingSampler = ExactSolver()                   # local
 #embedingSampler = EmbeddingComposite(qpu_advantage) 
 #embedingSampler = EmbeddingComposite(qpu_2000q) 
-embedingSampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
+#embedingSampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #embedingSampler = LeapHybridSampler()
 
 # Return num_reads solutions (responses are in the D-Wave's graph of indexed qubits)

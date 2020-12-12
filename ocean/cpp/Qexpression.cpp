@@ -80,11 +80,9 @@ qbit_def_matrix Qexpression::thisX(const Qexpression& right) const
 			operands.push_back((*this)(atR));
 			operands.push_back(right(atC));
 			pOp->arguments(operands);
-			xMatrix(atR, atC) = dynamic_pointer_cast<Qoperand>(pOp);
-			std::cout << *xMatrix(atR, atC) << " "; //TBR
+			xMatrix(atR, atC) = pOp;
 			operands.clear();
 		}
-		std::cout << endl; //TBR
 	}
 	return xMatrix;
 }
@@ -268,7 +266,7 @@ Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft, const Qop
 	CarryItem carryItem(mAtBit + 1, pAddition->carry());
 	mCarryFIFO.push_back(carryItem);
 
-	return(dynamic_pointer_cast<Qoperand>(pAddition));
+	return pAddition;
 }
 
 Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft)
@@ -279,7 +277,7 @@ Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft)
 	while (!mCarryFIFO.empty() && mCarryFIFO.begin()->first <= mAtBit)
 	{
 		// pop the first carry operand from  the FIFO
-		Qoperand::Sp pCarry = dynamic_pointer_cast<Qoperand>(mCarryFIFO.begin()->second);
+		Qoperand::Sp pCarry = mCarryFIFO.begin()->second;
 		mCarryFIFO.erase(mCarryFIFO.begin());
 		
 		if (!pOperand->doesExist(pCarry))
@@ -299,7 +297,7 @@ Qoperand::Sp Qexpression::Add::operator () ()
 	if(!mCarryFIFO.empty())
 	{
 		// pop the first carry operand from the FIFO
-		pOperand = dynamic_pointer_cast<Qoperand>(mCarryFIFO.begin()->second);
+		pOperand = mCarryFIFO.begin()->second;
 		mCarryFIFO.erase(mCarryFIFO.begin());
 
 		// add the first carry operand to other carry operands in FIFO at this bit position

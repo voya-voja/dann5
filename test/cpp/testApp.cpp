@@ -214,11 +214,18 @@ void test2()
 	std::hash<std::string> hashT;
 	std::cout << std::endl << hashT("test") << std::endl;
 
+	Qdef a(3, "a"), b(3, "b"), c(3, "c"), d(3, "d");
+	Qexpression addAbcd(a + b + c + d);
+	Qvar vR("R", 6), vA(a), vB(b), vC(c), vD(d);
+	Qvars abcd; abcd.push_back(vA); abcd.push_back(vB); abcd.push_back(vC); abcd.push_back(vD);
+	Qequation r_addAbcd(vR, addAbcd, abcd);
+	std::cout << std::endl << r_addAbcd << std::endl;
+	std::cout << std::endl << r_addAbcd.qubo(false) << std::endl;
+	std::cout << std::endl << r_addAbcd.qubo() << std::endl;
 }
 
 void test3()
 {
-/**/
 	Qvar x(3, "x"), y(3, "y"), z(3, "z"), w(3, "w"), vQ("Q", 6);
 	Qequation eQ(vQ);
 	eQ = x + y + z + w;
@@ -233,27 +240,6 @@ void test3()
 	cout << endl << eR.toString(true) << endl;
 	cout << endl << eR.toString() << endl;
 	cout << endl << eR.qubo(true) << endl;
-
-	/*
-	Qdef a(3, "a"), b(3, "b"), c(3, "c"), d(3, "d");
-	Qexpression addAbcd(a + b + c + d);
-	Qvar vR("R", 6), vA(a), vB(b), vC(c), vD(d);
-	Qequation r_addAbcd(vR, addAbcd);
-	r_addAbcd << vA << vB << vC << vD;
-	std::cout << std::endl << r_addAbcd << std::endl;
-	std::cout << std::endl << r_addAbcd.qubo(false) << std::endl;
-	std::cout << std::endl << r_addAbcd.qubo() << std::endl;
-
- 	Qdef a(2, "a"), b(2, "b"), c(2, "c");
-	Qexpression addAbc(a + b + c);
-	Qvar vR("R", 6), vA(a), vB(b), vC(c);
-	Qequation r_addAbc(vR, addAbc);
-	r_addAbc << vA << vB << vC;
-	std::cout << std::endl << r_addAbc << std::endl;
-	std::cout << std::endl << r_addAbc.qubo(false) << std::endl;
-	std::cout << std::endl << r_addAbc.qubo() << std::endl;
-	cout << std::endl << r_addAbc.toString() << std::endl;
-	*/
 }
 
 int main()

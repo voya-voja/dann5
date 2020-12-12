@@ -19,25 +19,27 @@ namespace dann5 {
 		// An std::vector containing a list of shared pointers pointing to Qoperands
 		typedef std::vector <Qoperand::Sp> Qoperands;
 
-		// An apstraction of a Quantum operation 
-		class Qop
+		// An apstraction of a Quantum operation is a Q operand
+		class Qop : public Qoperand
 		{
 		public:
 			// Qop's shared pointer 
 			typedef shared_ptr<Qop> Sp;
 
-			// Defaut constructor
-			Qop();
+			// An Q operation has identity and should have at least one argument
+			Qop(const string& id, size_t noArguments = 1);
+
 			// Copy constructor
 			Qop(const Qop&);
-			// Destruct Q operation with shared pointers to its Qoperands
+
+			// Destruct Q operation with shared pointers to its arguments
 			~Qop();
 
 			// Return true, if this Qop object is identical to the object pointed by pRight
 			bool isIdentical(const Qop::Sp& pRight) { return(this == pRight.get()); }
 
 			// The Qop's number of arguments
-			virtual size_t argsNumber() const = 0;
+			size_t argsNumber() const { return mNoArguments; }
 
 			// Return Q operation arguments
 			const Qoperands& arguments() const { return mArguments; };
@@ -47,18 +49,16 @@ namespace dann5 {
 			// same as value defined by argsNumber() const
 			virtual void arguments(const Qoperands&);
 
-			// Return a shared pointer to the instance of updated operation after removing 
-			// the given operand from the list of arguments. Return nullptr, if the last 
-			// argument is removed
-			virtual Qoperand::Sp remove(const Qoperand::Sp&);
-
 			void labelFor(const string& id);
 			string label() const { return mLabel; };
 
 			void unlabel() { mLabel = ""; };
 			bool isLabeled() const { return mLabel != ""; };
 
-			string toString(bool decomposed, const string& opSymbol) const;
+			virtual string toString(bool decomposed = false) const;
+
+			// return Qubo presentation of this Qoperand
+			virtual Qubo qubo() const;
 
 		protected:
 			// Remove all the Qoperands from the list of arguments
@@ -71,53 +71,22 @@ namespace dann5 {
 
 		private:
 			Qoperands	mArguments;
+			size_t		mNoArguments;
 			string		mLabel;
 		};
 
-		// A Q operator is a unary Q operation and a Q operand
-		class Qoperator : public Qoperand, public Qop
-		{
-		public:
-			// QunOperation's shared pointer 
-			typedef shared_ptr<Qoperator> Sp;
-
-			// Default constructor
-			Qoperator();
-
-			// Copy constructor
-			Qoperator(const Qoperator&);
-
-			// Instantiate an unary Q operation with a given identity
-			Qoperator(const string&);
-
-			// Destruct Q operation  with a shared pointer to its Qoperand
-			~Qoperator();
-
-			// Return a string representation of unary Q operation
-			virtual string toString(bool decomposed = false) const;
-
-			// The QunOperation has one argument
-			virtual size_t argsNumber() const { return(1); };
-
-			// return Qubo presentation of this QunOperation using corresponding QuboTable 
-			// transformation matrix
-			virtual Qubo qubo() const;
-		protected:
-		private:
-		};
-
 		// A Quntum and is a binary operation
-		class Qequal : public Qoperator
+		class Qequal : public Qop
 		{
 		public:
 			// Qequal's shared pointer 
 			typedef shared_ptr<Qequal> Sp;
 
 			// Instantiate Qequal instance with '&' identity
-			Qequal() : Qoperator("=") {};
+			Qequal() : Qop("=") {};
 
 			// Copy constructor
-			Qequal(const Qequal& right) : Qoperator(right) {};
+			Qequal(const Qequal& right) : Qop(right) {};
 
 			// Destruct Qequal with shared pointers to its Qoperand
 			~Qequal() {};
@@ -130,17 +99,17 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qnot : public Qoperator
+		class Qnot : public Qop
 		{
 		public:
 			// Qnot's shared pointer 
 			typedef shared_ptr<Qnot> Sp;
 
 			// Instantiate Qnot instance with '&' identity
-			Qnot() : Qoperator("~") {};
+			Qnot() : Qop("~") {};
 
 			// Copy constructor
-			Qnot(const Qnot& right) : Qoperator(right) {};
+			Qnot(const Qnot& right) : Qop(right) {};
 
 			// Destruct Qnot with shared pointers to its Qoperand
 			~Qnot() {};
@@ -153,17 +122,17 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qlt : public Qoperator
+		class Qlt : public Qop
 		{
 		public:
 			// Qlt's shared pointer 
 			typedef shared_ptr<Qlt> Sp;
 
 			// Instantiate Qlt instance with '&' identity
-			Qlt() : Qoperator("<") {};
+			Qlt() : Qop("<") {};
 
 			// Copy constructor
-			Qlt(const Qlt& right) : Qoperator(right) {};
+			Qlt(const Qlt& right) : Qop(right) {};
 
 			// Destruct Qlt with shared pointers to its Qoperand
 			~Qlt() {};
@@ -176,17 +145,17 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qle : public Qoperator
+		class Qle : public Qop
 		{
 		public:
 			// Qle's shared pointer 
 			typedef shared_ptr<Qle> Sp;
 
 			// Instantiate Qle instance with '&' identity
-			Qle() : Qoperator("<=") {};
+			Qle() : Qop("<=") {};
 
 			// Copy constructor
-			Qle(const Qle& right) : Qoperator(right) {};
+			Qle(const Qle& right) : Qop(right) {};
 
 			// Destruct Qle with shared pointers to its Qoperand
 			~Qle() {};
@@ -199,17 +168,17 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qgt : public Qoperator
+		class Qgt : public Qop
 		{
 		public:
 			// Qgt's shared pointer 
 			typedef shared_ptr<Qgt> Sp;
 
 			// Instantiate Qgt instance with '&' identity
-			Qgt() : Qoperator(">") {};
+			Qgt() : Qop(">") {};
 
 			// Copy constructor
-			Qgt(const Qgt& right) : Qoperator(right) {};
+			Qgt(const Qgt& right) : Qop(right) {};
 
 			// Destruct Qgt with shared pointers to its Qoperand
 			~Qgt() {};
@@ -222,17 +191,17 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qge : public Qoperator
+		class Qge : public Qop
 		{
 		public:
 			// Qge's shared pointer 
 			typedef shared_ptr<Qge> Sp;
 
 			// Instantiate Qge instance with '&' identity
-			Qge() : Qoperator(">=") {};
+			Qge() : Qop(">=") {};
 
 			// Copy constructor
-			Qge(const Qge& right) : Qoperator(right) {};
+			Qge(const Qge& right) : Qop(right) {};
 
 			// Destruct Qge with shared pointers to its Qoperand
 			~Qge() {};
@@ -244,50 +213,18 @@ namespace dann5 {
 		private:
 		};
 
-		// An binary Q operation is a Q operand as well
-		class QbiOperation : public Qoperand, public Qop
-		{
-		public:
-			// QbiOperation's shared pointer 
-			typedef shared_ptr<QbiOperation> Sp;
-
-			// Default constructor
-			QbiOperation();
-
-			// Copy constructor
-			QbiOperation(const QbiOperation&);
-
-			// Instantiate an binary Q operation with a given identity
-			QbiOperation(const string&);
-
-			// Destruct Q operation  with shared pointers to its two Qoperands
-			~QbiOperation();
-
-			// Return a string representation of binary Q operation
-			virtual string toString(bool decomposed = false) const;
-
-			// The QbiOperation has two argument
-			virtual size_t argsNumber() const { return(2); };
-
-			// return Qubo presentation of this QbiOperation using corresponding QuboTable 
-			// transformation matrix
-			virtual Qubo qubo() const;
-		protected:
-		private:
-		};
-
 		// A Quntum and is a binary operation
-		class Qand : public QbiOperation
+		class Qand : public Qop
 		{
 		public:
 			// Qand's shared pointer 
 			typedef shared_ptr<Qand> Sp;
 
 			// Instantiate Qand instance with '&' identity
-			Qand() : QbiOperation("&") {};
+			Qand() : Qop("&", 2) {};
 
 			// Copy constructor
-			Qand(const Qand& right) : QbiOperation(right) {};
+			Qand(const Qand& right) : Qop(right) {};
 
 			// Destruct Qand with shared pointers to its two Qoperands
 			~Qand() {};
@@ -300,17 +237,17 @@ namespace dann5 {
 		};
 
 		// A Quntum nAnd is a binary operation
-		class QnAnd : public QbiOperation
+		class QnAnd : public Qop
 		{
 		public:
 			// QnAnd's shared pointer 
 			typedef shared_ptr<QnAnd> Sp;
 
 			// Instantiate QnAnd instance with '&' identity
-			QnAnd() : QbiOperation("~&") {};
+			QnAnd() : Qop("~&", 2) {};
 
 			// Copy constructor
-			QnAnd(const QnAnd& right) : QbiOperation(right) {};
+			QnAnd(const QnAnd& right) : Qop(right) {};
 
 			// Destruct QnAnd with shared pointers to its two Qoperands
 			~QnAnd() {};
@@ -323,17 +260,17 @@ namespace dann5 {
 		};
 
 		// A Quntum or is a binary operation
-		class Qor : public QbiOperation
+		class Qor : public Qop
 		{
 		public:
 			// Qor's shared pointer 
 			typedef shared_ptr<Qand> Sp;
 
 			// Instantiate Qor instance with '|' identity
-			Qor() : QbiOperation("|") {};
+			Qor() : Qop("|", 2) {};
 
 			// Copy constructor
-			Qor(const Qor& right) : QbiOperation(right) {};
+			Qor(const Qor& right) : Qop(right) {};
 
 			// Destruct Qor with shared pointers to its two Qoperands
 			~Qor() {};
@@ -346,17 +283,17 @@ namespace dann5 {
 		};
 
 		// A Quntum nOr is a binary operation
-		class QnOr : public QbiOperation
+		class QnOr : public Qop
 		{
 		public:
 			// QnOr's shared pointer 
 			typedef shared_ptr<Qand> Sp;
 
 			// Instantiate QnOr instance with '|' identity
-			QnOr() : QbiOperation("~|") {};
+			QnOr() : Qop("~|", 2) {};
 
 			// Copy constructor
-			QnOr(const QnOr& right) : QbiOperation(right) {};
+			QnOr(const QnOr& right) : Qop(right) {};
 
 			// Destruct QnOr with shared pointers to its two Qoperands
 			~QnOr() {};
@@ -369,15 +306,14 @@ namespace dann5 {
 		};
 
 
-		// An abstraction od Q addition
-		class Qaddition
+		// A Q addition is a specific implementation of a Q operation
+		class Qaddition : public Qop
 		{
 		public:
 			// Qaddition's shared pointer 
 			typedef shared_ptr<Qaddition> Sp;
 
-
-			// A Quntum carry is an operand
+			// A Quntum carry is an operand defined by a Q addition
 			class Carry : public Qoperand
 			{
 			public:
@@ -413,14 +349,19 @@ namespace dann5 {
 				Qaddition* mpAddition;	// A parent Q addition
 			};
 
-			// Deafult constructor
-			Qaddition();
+			// An Q addition has identity and should have at least two argument
+			Qaddition(const string& id, size_t noArguments = 2);
+
+			// Copy constructor
+			Qaddition(const Qaddition& right);
 
 			// Destruct the Q addition instance with a shared pointer to its carry operand
 			~Qaddition();
 
-			// Return a shared pointer to Q addition object appropriate for assigned 
-			// operands list
+			// Assignes the arguments to this additon and returns nullptr
+			// Override if assignment of operands should triger creation of different
+			// Q addition object and return a shared pointer to a newlly created Q addition
+			// object
 			virtual Qaddition::Sp assign(const Qoperands&);
 
 			// Assign a share point to a new Q carry operand
@@ -428,9 +369,6 @@ namespace dann5 {
 
 			// Return a share pointer to Q carry operand of this Qaddition
 			virtual Carry::Sp carry();
-
-			// Override to return string representation of this Qaddition
-//			virtual string toString() const = 0;
 		protected:
 
 		private:
@@ -438,27 +376,28 @@ namespace dann5 {
 		};
 
 		// A Quntum xOr is a binary Q addition operation
-		class Qxor : public Qaddition, public QbiOperation
+		class Qxor : public Qaddition
 		{
 		public:
 			// Qxor's shared pointer 
 			typedef shared_ptr<Qxor> Sp;
 			
 			// Default constructor
-			Qxor();
-
+			Qxor() : Qaddition("^") {};
+			
 			// Copy constructor
-			Qxor(const Qxor&);
+			Qxor(const Qxor& right) : Qaddition(right) {};
 
 			// Destruct the Q xor instance with a shared pointer to its carry operand
 			// and two arguments
-			~Qxor();
+			~Qxor() {};
 
-			// Return a shared pointer to this object if one of the operands is QxOr
-			// object, otherwise return a shared pointer to a new Q adder object ineriting
-			// two arguments of Qxor operand and other operand, resulting in conversion of
-			// two xor binary operations, e.g. ^(^(a0, b0), c0) to one adder trinary operation,
-			// e.g. +(a0, b0, c0)
+			// Return a shared pointer to this object if non of the operands is QxOr object,
+			// otherwise return a shared pointer to a new Q adder object inheriting two
+			// two arguments of Qxor operand and the other operand, resulting in conversion
+			// of two xOr binary operations (this and one of the operands) into trinary
+			// Qadder operation, e.g. (x ^ y) ^ z) or x ^ (y ^ z) is converted into a
+			// single adder operation, x + y + z
 			virtual Qaddition::Sp assign(const Qoperands&);
 
 			// Return a Qoperand's shared pointer pointing to a copy of this object 
@@ -470,60 +409,21 @@ namespace dann5 {
 		// A Quntum xOr is also Q half adder
 		typedef Qxor Qadder05;
 
-
-		// An trinary Q operation is a Q operand as well
-		class QtriOperation : public Qoperand, public Qop
-		{
-		public:
-			// QtriOperation's shared pointer 
-			typedef shared_ptr<QtriOperation> Sp;
-
-			// Default constructor
-			QtriOperation();
-
-			// Copy constructor
-			QtriOperation(const QtriOperation&);
-
-			// Instantiate an trinary Q operation with a given identity
-			QtriOperation(const string&);
-
-			// Destruct Q operation with shared pointers to its three Qoperands
-			~QtriOperation();
-
-			// Return a string representation of trinary Q operation
-			virtual string toString(bool decomposed = false) const;
-
-			// The QtriOperation has three argument
-			virtual size_t argsNumber() const { return(3); };
-
-			// return Qubo presentation of this QtriOperation using corresponding QuboTable 
-			// transformation matrix
-			virtual Qubo qubo() const;
-
-		protected:
-		private:
-		};
-
-		class Qadder : public Qaddition, public QtriOperation
+		class Qadder : public Qaddition
 		{
 		public:
 			// QtriOperation's shared pointer 
 			typedef shared_ptr<Qadder> Sp;
 
 			// Default constructor
-			Qadder();
+			Qadder() : Qaddition("+", 3) {};
 
 			// Copy constructor
-			Qadder(const Qadder&);
+			Qadder(const Qadder& right) : Qaddition(right) {};
 
 			// Destruct the Q adder instance with a shared pointer to its carry operand
 			// and two arguments
-			~Qadder();
-
-			// Return a shared pointer to this Qadder, if shared pointer is not pointing 
-			// to any of adders three arguments, otherwise return a shared pointer to a 
-			// new QxOr operation with two remaining arguments
-			virtual Qoperand::Sp remove(const Qoperand::Sp& pToRemove);
+			~Qadder() {};
 
 			// Return a Qoperand's shared pointer pointing to a copy of this object 
 			virtual Qoperand::Sp clone() const { return Qoperand::Sp(new Qadder(*this)); };

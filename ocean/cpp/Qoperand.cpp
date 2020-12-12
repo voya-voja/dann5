@@ -8,11 +8,6 @@ using namespace dann5::ocean;
 
 /*** Operand ***/
 
-Qoperand::Qoperand()
-{
-	_lct(toString());
-}
-
 Qoperand::Qoperand(const Qoperand& right)
 	:mIdentity(right.mIdentity)
 {

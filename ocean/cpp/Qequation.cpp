@@ -198,7 +198,8 @@ string Qequation::toString(bool decomposed) const
 		Qoperand::Sp pOperand = mExpression(at);
 		string exprStr = "";
 		Qop::Sp pOp = nullptr;
-		if(decomposed) pOp = dynamic_pointer_cast<Qop>(pOperand);
+		if(decomposed) 
+			pOp = dynamic_pointer_cast<Qop>(pOperand);
 		// if the operand is an operation, create its and its operands' labels
 		if (pOp != nullptr) 
 			pOp->labelFor(to_string(at));

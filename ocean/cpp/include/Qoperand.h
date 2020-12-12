@@ -22,11 +22,13 @@ namespace dann5 {
 			typedef shared_ptr<Qoperand> Sp;
 
 			// Instantiate an empty Q operand
-			Qoperand();
+//			Qoperand();
 			// Instantiate a Q operand with identity
-			Qoperand(const string&);
+			Qoperand(const string& id);
+
 			// Copy constructor
 			Qoperand(const Qoperand&);
+
 			// destruct the operand
 			~Qoperand();
 
@@ -46,7 +48,7 @@ namespace dann5 {
 			virtual Qoperand::Sp clone() const { return Sp(new Qoperand(*this)); };
 
 			// return string presentation of this Qoperand
-			virtual string toString(bool reduced = false) const;
+			virtual string toString(bool decomposed = false) const;
 
 			// return Qubo presentation of this Qoperand
 			virtual Qubo qubo() const;
