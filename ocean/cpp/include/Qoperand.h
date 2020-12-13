@@ -21,8 +21,6 @@ namespace dann5 {
 			// Qoperand's shared pointer 
 			typedef shared_ptr<Qoperand> Sp;
 
-			// Instantiate an empty Q operand
-//			Qoperand();
 			// Instantiate a Q operand with identity
 			Qoperand(const string& id);
 

@@ -227,14 +227,36 @@ string Qequation::toString(bool decomposed) const
 	}
 	return sEquation;
 }
-void Qequation::setSamples(Samples& ss)
+
+string Qequation::solutions() const
 {
-	_la("setSample");
+	string values("");
+	for (auto sample : mSolutions)
+	{
+		for (auto arg : mArguments)
+		{
+			Qdef symbol = arg.symbol();
+			Qint value(arg.value().rows());
+			int atBit = 0;
+			for (auto bitSymbol : symbol)
+				value[atBit++] = sample[bitSymbol->identity()];
+			values += symbol.name() + " = " + value.toString() + "; ";
+		}
+		values += "\n";
+	}
+	_lat("solutions", values);
+	return(values);
 }
 
-void Qequation::set(Sample& s)
+void Qequation::add(Sample& sample)
 {
-	_lat("set", to_string(s["a0 & b0"]));
+	mSolutions.push_back(sample);
+}
+
+void Qequation::set(Samples& samples)
+{
+	_lat("solutions", to_string(samples.size()) + " of samples");
+	mSolutions = samples;
 }
 
 std::ostream& dann5::ocean::operator<<(std::ostream& out, const Qequation& qe)

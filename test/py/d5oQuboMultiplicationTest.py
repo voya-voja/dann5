@@ -12,20 +12,21 @@ from dwave.cloud.exceptions import SolverNotFoundError
 from dwave.system.samplers import LeapHybridSampler
 
 
-a = Qvar(2, "a")
-b = Qvar(2, "b")
+a = Qvar(3, "a")
+#b = Qvar(2, "b")
+b = Qvar("b", 2)
 c = Qvar(2, "c")
 #d = Qvar(3, "d")
-r_addAbcd = Qequation(Qvar("R", 6))
-r_addAbcd.assign( a * b * c )
+r_xAbcd = Qequation(Qvar("R", 6))
+r_xAbcd.assign( a * b * c )
 
-print(r_addAbcd.toString(True))
+print(r_xAbcd.toString(True))
 
-d = r_addAbcd.qubo(False)
+d = r_xAbcd.qubo(False)
 print("Vectors")
 print(d)
 
-Q = r_addAbcd.qubo(True)
+Q = r_xAbcd.qubo(True)
 
 print(Q)
 
@@ -62,20 +63,6 @@ sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q)
 #sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
 
-
-print('   a  b  c  d\n')
-i = 0
-ai = Qint(2)
-bi = Qint(2)
-ci = Qint(2)
-di = Qint(2)
-ci.push(0).push(0)#.push(0)
-di.push(0).push(0)#.push(0)
-for sample in sampleset.lowest().samples():
-    i = i + 1
-    ai.push(sample['a0']).push(sample['a1'])#.push(sample['a2'])
-    bi.push(sample['b0']).push(sample['b1'])#.push(sample['b2'])
-    ci.push(sample['c0']).push(sample['c1'])#.push(sample['c2'])
-#    di.push(sample['d0']).push(sample['d1']).push(sample['d2'])
-    print('{}. {} {} {} {}'.format(i, ai.value(), bi.value(), ci.value(), di.value()))
-#print(sampleset)
+samples = [dict(sample) for sample in sampleset.lowest().samples()]
+r_xAbcd.set(samples)
+print(r_xAbcd.solutions())

@@ -13,8 +13,8 @@ from dwave.system.samplers import LeapHybridSampler
 
 a = Qvar(3, "a")
 b = Qvar(3, "b")
-c = Qvar(3, "c")
-d = Qvar(3, "d")
+c = Qvar(2, "c")
+d = Qvar(2, "d")
 r_addAbcd = Qequation(Qvar("R", 15))
 r_addAbcd.assign( a + b + c + d )
 
@@ -61,21 +61,6 @@ sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q)
 #sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
 
-
-print('   a  b  c  d\n')
-i = 0
-ai = Qint(3)
-bi = Qint(3)
-ci = Qint(3)
-di = Qint(3)
-ci.push(0).push(0).push(0)
-di.push(0).push(0).push(0)
-for sample in sampleset.lowest().samples():
-    i = i + 1
-    ai.push(sample['a0']).push(sample['a1']).push(sample['a2'])
-    bi.push(sample['b0']).push(sample['b1']).push(sample['b2'])
-    ci.push(sample['c0']).push(sample['c1']).push(sample['c2'])
-    di.push(sample['d0']).push(sample['d1']).push(sample['d2'])
-    print('{}. {} {} {} {}'.format(i, ai.value(), bi.value(), ci.value(), di.value()))
-#print(sampleset)
-
+samples = [dict(sample) for sample in sampleset.lowest().samples()]
+r_addAbcd.set(samples)
+print(r_addAbcd.solutions())

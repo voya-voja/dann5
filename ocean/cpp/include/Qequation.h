@@ -91,11 +91,12 @@ namespace dann5 {
 			// Returns a constant reference to the expression arguments of this Q equation
 			const Qvars& arguments() const { return mArguments; }
 
-			typedef map<string, double> Sample;
+			typedef map<string, Qbit> Sample;
 			typedef vector<Sample> Samples;
 
-			void set(Sample& s);
-			void setSamples(Samples& ss);
+			string solutions() const;
+			void add(Sample& sample);
+			void set(Samples& samples);
 
 			// Returns a qubo representation of this Q equation, 
 			// if not finalized, returns a full qubo symbol representation of this Q
@@ -136,6 +137,8 @@ namespace dann5 {
 			Qvars			mArguments;		// the list of expression variables, e.g. {a, b, c} for the Q equation above
 			Reduct			mReduct;		// an instace of object class that symplifies the expression of this Q equation
 			bool			mNoResult;
+			Samples			mSolutions;
+
 			friend class Reduct;
 		};
 	};

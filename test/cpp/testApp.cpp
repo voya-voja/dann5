@@ -233,13 +233,41 @@ void test3()
 	cout << endl << eQ.toString(true) << endl;
 	cout << endl << eQ.qubo() << endl;
 
-	Qvar a(3, "a"), b(3, "b"), c(3, "c"), vR("R", 6);
+	Qvar a(2, "a"), b(2, "b"), c(2, "c"), vR("R", 6);
 	Qequation eR(vR);
-	eR = a * b;// *c;
+	eR = a * b *c;
 	cout << endl << eR.qubo(false) << endl;
 	cout << endl << eR.toString(true) << endl;
 	cout << endl << eR.toString() << endl;
 	cout << endl << eR.qubo(true) << endl;
+
+	Qequation::Sample sample;
+	sample["# | R1 | "] = 0;
+	sample["# | R2 | "] = 0;
+	sample["# | R3 | "] = 0;
+	sample["# | a0 & b1 ^ a1 & b0 | "] = 0;
+	sample["# | a1 & b1 ^ # | a0 & b1 ^ a1 & b0 || "] = 0;
+	sample["# | a1 & b1 ^ # | a0 & b1 ^ a1 & b0 || &c0"] = 0;
+	sample["# | a1 & b1 ^ # | a0 & b1 ^ a1 & b0 || &c1"] = 0;
+	sample["a0"] = 0;
+	sample["a0 & b0"] = 0;
+	sample["a0 & b0 & c1"] = 0;
+	sample["a0 & b1"] = 0;
+	sample["a0 & b1 ^ a1 & b0"] = 1;
+	sample["a0 & b1 ^ a1 & b0 & c0"] = 1;
+	sample["a0 & b1 ^ a1 & b0 & c1"] = 0;
+	sample["a1"] = 1;
+	sample["a1 & b0"] = 1;
+	sample["a1 & b1"] = 1;
+	sample["a1 & b1 ^ # | a0 & b1 ^ a1 & b0 | "] = 1;
+	sample["a1 & b1 ^ # | a0 & b1 ^ a1 & b0 | &c0"] = 1;
+	sample["a1 & b1 ^ # | a0 & b1 ^ a1 & b0 | &c1"] = 0;
+	sample["b0"] = 1;
+	sample["b1"] = 1;
+	sample["c0"] = 1;
+	sample["c1"] = 0;
+	eR.add(sample);
+	cout << endl << eR.solutions() << endl;
 }
 
 int main()

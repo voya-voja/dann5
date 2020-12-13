@@ -262,6 +262,6 @@ void Qint::resize(Index size, const Qbit& qBit)
 string Qint::toString() const
 {
 	long v = value();
-	if (v = cUnknown) return "(S)";
+	if (v == cUnknown) return "(S)";
 	return(to_string(v));
 }
