@@ -158,9 +158,9 @@
     <ClCompile Include="..\..\ocean\cpp\Qdef.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qequation.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qexpression.cpp" />
-    <ClCompile Include="..\..\ocean\cpp\Qint.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qops.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Qtype.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qvar.cpp" />
     <ClCompile Include="testApp.cpp" />
@@ -170,11 +170,11 @@
     <ClInclude Include="..\..\ocean\cpp\include\Factory.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Logger.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Utility.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qdef.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qequation.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qexpression.h" />
-    <ClInclude Include="..\..\ocean\cpp\include\Qint.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qops.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qubo.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qvar.h" />

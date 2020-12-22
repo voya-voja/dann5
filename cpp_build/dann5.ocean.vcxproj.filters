@@ -7,9 +7,6 @@
     <ClCompile Include="..\ocean\cpp\Qubo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ocean\cpp\Qint.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\ocean\cpp\Qdef.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -34,6 +31,9 @@
     <ClCompile Include="..\ocean\cpp\Qoperand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qtype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
@@ -51,9 +51,6 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ocean\cpp\include\Factory.h">
-      <Filter>Include Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\ocean\cpp\include\Qint.h">
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ocean\cpp\include\Qdef.h">
@@ -81,6 +78,9 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ocean\cpp\include\Qoperand.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qtype.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

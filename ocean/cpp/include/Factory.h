@@ -70,7 +70,7 @@ namespace dann5 {
 				mCreators[creator->key()] = creator;
 			}
 
-			static Factory<K, T>			gFactory;
+			static Factory<K, T>		gFactory;
 			std::map<K, Creator<K, T>*>	mCreators;
 		};
 

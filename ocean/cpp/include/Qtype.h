@@ -12,11 +12,134 @@ using namespace Eigen;
 namespace dann5 {
 	namespace ocean {
 
+		class Qtype
+		{
+		public:
+		protected:
+		private:
+		};
+
 		// Quantum bit is in superposition state for any value except 0 and 1 
-		typedef unsigned char Qbit;
+		typedef unsigned char q_bit;
+
+		class Qbit : public Qtype
+		{
+		public:
+			// Qbit default superposition value, 
+			// though any value except 0 and 1 will be considered superposition
+			static const q_bit cSuperposition = 255;
+
+			// Qbit superposition and Qint undefiined string representation
+			static const string cSuporpositionSign;	// the Qint/Qbit unknown sign is "(S)"
+
+			// default constructor puts Qbit into supperposition state
+			Qbit() : mValue(cSuperposition) {};
+
+			// copy constructor
+			Qbit(const Qbit& right) : mValue(right.mValue) {};
+
+			// Initialized Qbit object with a value 0 or 1, for any other value puts 
+			// Qbit into superposition state
+			Qbit(q_bit value) : mValue(value)
+			{
+				if (value > 1) mValue = cSuperposition;
+			};
+
+			operator q_bit() { return mValue; };
+			operator const q_bit() const { return mValue; };
+
+			Qbit& operator=(const Qbit right) 
+			{ 
+				mValue = right.mValue;
+				return(*this);
+			};
+			Qbit& operator&=(const Qbit right)
+			{
+				if (mValue == cSuperposition || mValue == cSuperposition)
+					mValue = cSuperposition;
+				else
+					mValue &= right.mValue;
+				return(*this);
+			};
+			Qbit& operator|=(const Qbit right)
+			{
+				if (mValue == cSuperposition || mValue == cSuperposition)
+					mValue = cSuperposition;
+				else
+					mValue |= right.mValue;
+				return(*this);
+			};
+			Qbit& operator^=(const Qbit right)
+			{
+				if (mValue == cSuperposition || mValue == cSuperposition)
+					mValue = cSuperposition;
+				else
+					mValue ^= right.mValue;
+				return(*this);
+			};
+
+		protected:
+		private:
+			q_bit mValue;
+		};
+
+
+		class Qbool : public Qtype
+		{
+		public:
+			// default constructor puts Qbool into supperposition state
+			Qbool() : mValue(Qbit::cSuperposition) {};
+
+			// copy constructor
+			Qbool(const Qbool& right) : mValue(right.mValue) {};
+
+			// Initialized Qbool object with a value 0 or 1, for any other value puts 
+			// Qbool into superposition state
+			Qbool(bool value) : mValue(value) {};
+
+			operator bool() { return mValue; };
+			operator const bool() const { return mValue; };
+
+			Qbool& operator=(const Qbool right)
+			{
+				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+					mValue = Qbit::cSuperposition;
+				else
+					mValue = right.mValue;
+				return(*this);
+			};
+			Qbool& operator&=(const Qbool right)
+			{
+				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+					mValue = Qbit::cSuperposition;
+				else
+					mValue &= right.mValue;
+				return(*this);
+			};
+			Qbool& operator|=(const Qbool right)
+			{
+				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+					mValue = Qbit::cSuperposition;
+				else
+					mValue |= right.mValue;
+				return(*this);
+			};
+			Qbool& operator^=(const Qbool right)
+			{
+				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+					mValue = Qbit::cSuperposition;
+				else
+					mValue ^= right.mValue;
+				return(*this);
+			};
+
+		protected:
+		private:
+			q_bit mValue;
+		};
 
 		// Quantum integer is a vector of Qbits
-		typedef Matrix<Qbit, Dynamic, 1> q_int;
+		typedef Matrix<q_bit, Dynamic, 1> q_int;
 
 		// Support for Qint << operator
 		typedef Eigen::CommaInitializer<q_int> QintInitializer;
@@ -25,15 +148,11 @@ namespace dann5 {
 		class Qint : public q_int
 		{
 		public:
-			// Qbit default superposition value, 
-			// though any value except 0 and 1 will be considered superposition
-			static const Qbit cSuperposition = 255;
-
 			// the Qint is undefined, if any of its Qbits is in superposition state
 			static const long cUnknown = LONG_MIN;
 
 			// Qbit superposition and Qint undefiined string representation
-			static const string cUnknownSign;	// the Qint/Qbit unknown sign is "(S)"
+			static const string cUnknownSign;	// the Qint/Qbit unknown sign is "(U)"
 
 			// instantiate a Q integer without any Q bits
 			Qint();
@@ -58,7 +177,7 @@ namespace dann5 {
 			long value() const;
 
 			// return true, if any Qbit is in superposition state
-			bool isSuperposition() const;
+			bool isUnknown() const;
 
 			// An insertion operator (<<) to be used in combination with list operator (,);
 			// as per example:
@@ -135,14 +254,14 @@ namespace dann5 {
 
 			// Resize the Qint as a vector of Qbits to a new size
 			// if the new size is bigger, assign qBit value to additional Qbits
-			void resize(Index size, const Qbit& qBit = cSuperposition);
+			void resize(Index size, const Qbit& qBit = Qbit::cSuperposition);
 
 			// If undefined, return "(S)", otherwise convert value to string
 			string toString() const;
 
 		protected:
 			// Used by
-			typedef Matrix<Qbit, Dynamic, Dynamic> QbitMatrix;
+			typedef Matrix<q_bit, Dynamic, Dynamic> QbitMatrix;
 
 		private:
 		};

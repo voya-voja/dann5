@@ -5,7 +5,7 @@
 #include <utility>
 #include <Eigen/Dense>
 
-#include <Qint.h>
+#include <Qtype.h>
 #include <Qdef.h>
 #include <Qvar.h>
 #include <Qexpression.h>
@@ -91,7 +91,7 @@ namespace dann5 {
 			// Returns a constant reference to the expression arguments of this Q equation
 			const Qvars& arguments() const { return mArguments; }
 
-			typedef map<string, Qbit> Sample;
+			typedef map<string, q_bit> Sample;
 			typedef vector<Sample> Samples;
 
 			string solutions() const;

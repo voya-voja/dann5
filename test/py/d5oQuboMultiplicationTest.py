@@ -12,7 +12,7 @@ from dwave.cloud.exceptions import SolverNotFoundError
 from dwave.system.samplers import LeapHybridSampler
 
 
-a = Qvar(3, "a")
+a = Qvar(2, "a")
 #b = Qvar(2, "b")
 b = Qvar("b", 2)
 c = Qvar(2, "c")

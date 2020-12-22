@@ -222,7 +222,7 @@ string Qequation::toString(bool decomposed) const
 		reduces.push_back(pair<string, string>(carryExpression, carryResultSymbol));
 
 		// add a string representing an equation for the current Qbit
-		string resultV = to_string(mResult.value()(at));
+		string resultV = to_string(q_bit(mResult.value()(at)));
 		sEquation += "| " + resultS + " = " + resultV + " |" + " = " + exprStr + "\n";
 	}
 	return sEquation;
@@ -298,7 +298,7 @@ void Qequation::Reduct::operator() ()
 			// capture expression of carry forward operands in expression
 			expression = Qaddition::Carry::Symbol(expression);
 			symbol = Qaddition::Carry::Symbol(symbol);
-			value = Qint::cSuperposition;
+			value = Qbit::cSuperposition;
 			Reduction carryCorrect(symbol, value);
 			mReductions[expression] = carryCorrect;
 		}
@@ -334,18 +334,18 @@ QuboKey Qequation::Reduct::operator() (const QuboKey& original, bool ready) cons
 		{
 			// The 2nd half of a key of a quadratic element should be updated with replacement symbol
 			Reduction correct2nd = (*found2ndAt).second;
-			if (!ready || (correct1st.second == Qint::cSuperposition && correct2nd.second == Qint::cSuperposition))
+			if (!ready || (correct1st.second == Qbit::cSuperposition && correct2nd.second == Qbit::cSuperposition))
 			{
 				// Always just replace 1st and 2nd symbols without applying condition
 				// or replace 1st and 2nd symbols in binaryquadratic element when condition values are not defined (not 0 or 1)
 				key = QuboKey(correct1st.first, correct2nd.first);
 			}
-			else if (correct1st.second == Qint::cSuperposition && correct2nd.second == 1)
+			else if (correct1st.second == Qbit::cSuperposition && correct2nd.second == 1)
 			{
 				// otherwise replace with a linear element using 1st replacement when its condition value is 1
 				key = QuboKey(correct1st.first, correct1st.first);
 			}
-			else if (correct1st.second == 1 && correct2nd.second == Qint::cSuperposition)
+			else if (correct1st.second == 1 && correct2nd.second == Qbit::cSuperposition)
 			{
 				// otherwise replace with a linear element using 2nd replacement when its condition value is 1
 				key = QuboKey(correct2nd.first, correct2nd.first);
@@ -359,7 +359,7 @@ QuboKey Qequation::Reduct::operator() (const QuboKey& original, bool ready) cons
 		else
 		{
 			// Just 1st half of a key of a quadratic element should be updated with replacement symbol
-			if (!ready || correct1st.second == Qint::cSuperposition)
+			if (!ready || correct1st.second == Qbit::cSuperposition)
 			{
 				// Always just replace 1st symbol without applying condition
 				// or replace 1st symbol in binaryquadratic element when condition value is not defined (not 0 or 1)
@@ -381,7 +381,7 @@ QuboKey Qequation::Reduct::operator() (const QuboKey& original, bool ready) cons
 	{
 		// Just 2st half of a key of a quadratic element should be updated with replacement symbol
 		Reduction reduction = (*found2ndAt).second;
-		if (!ready || reduction.second == Qint::cSuperposition)
+		if (!ready || reduction.second == Qbit::cSuperposition)
 		{
 			key = QuboKey(original.first, reduction.first);
 		}

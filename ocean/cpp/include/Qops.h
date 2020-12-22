@@ -76,23 +76,23 @@ namespace dann5 {
 		};
 
 		// A Quntum and is a binary operation
-		class Qequal : public Qop
+		class Qeq : public Qop
 		{
 		public:
-			// Qequal's shared pointer 
-			typedef shared_ptr<Qequal> Sp;
+			// Qeq's shared pointer 
+			typedef shared_ptr<Qeq> Sp;
 
-			// Instantiate Qequal instance with '&' identity
-			Qequal() : Qop("=") {};
+			// Instantiate Qeq instance with '&' identity
+			Qeq() : Qop("=") {};
 
 			// Copy constructor
-			Qequal(const Qequal& right) : Qop(right) {};
+			Qeq(const Qeq& right) : Qop(right) {};
 
-			// Destruct Qequal with shared pointers to its Qoperand
-			~Qequal() {};
+			// Destruct Qeq with shared pointers to its Qoperand
+			~Qeq() {};
 
 			// Return a Qoperand's shared pointer pointing to a copy of this object 
-			virtual Qoperand::Sp clone() const { return Qoperand::Sp(new Qequal(*this)); };
+			virtual Qoperand::Sp clone() const { return Qoperand::Sp(new Qeq(*this)); };
 
 		protected:
 		private:

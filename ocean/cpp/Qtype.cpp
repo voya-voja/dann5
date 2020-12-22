@@ -1,17 +1,23 @@
 #include <math.h> 
-#include <Qint.h>
+#include <Qtype.h>
 
 #include <Logger.h>
 
 using namespace dann5::ocean;
 
-/*** QBitVector ***/
+/*** Qbit ***/
 
-const string Qint::cUnknownSign = "(S)";
+const string Qbit::cSuporpositionSign = "(S)";
+
+
+
+/*** Qint ***/
+
+const string Qint::cUnknownSign = "(U)";
 
 
 Qint::Qint()
-	:q_int(cSuperposition)
+	:q_int(Qbit::cSuperposition)
 {
 	_lc;
 }
@@ -26,7 +32,7 @@ Qint::Qint(Index size)
 	: q_int(size)
 {
 	for (Index at = 0; at < rows(); at++)
-		(*this)(at) = cSuperposition;
+		(*this)(at) = Qbit::cSuperposition;
 	_lc;
 }
 
@@ -67,7 +73,7 @@ Qint Qint::operator ~() const
 	{
 		Qbit rqb = result(at);
 		if (rqb > 1)	// Qbit in superposition state
-			result(at) = cSuperposition;
+			result(at) = Qbit::cSuperposition;
 		else            // Qbit in definite state
 			result(at) = (result(at) + 1) % 2;
 	}
@@ -87,7 +93,7 @@ long Qint::value() const
 	return value;
 }
 
-bool Qint::isSuperposition() const
+bool Qint::isUnknown() const
 {
 	for (Index at = 0; at < rows(); at++)
 	{
@@ -112,7 +118,7 @@ Qint& Qint::operator &=(const Qint& right)
 	{
 		Qbit tqb = (*this)(at), rqb = right(at);
 		if (tqb > 1 || rqb > 1)
-			(*this)(at) = cSuperposition;
+			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) &= rqb;
 	}
@@ -135,7 +141,7 @@ Qint& Qint::operator |=(const Qint& right)
 	{
 		Qbit tqb = (*this)(at), rqb = right(at);
 		if (tqb > 1 || rqb > 1)
-			(*this)(at) = cSuperposition;
+			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) |= rqb;
 	}
@@ -157,7 +163,7 @@ Qint& Qint::operator ^=(const Qint& right)
 	{
 		Qbit tqb = (*this)(at), rqb = right(at);
 		if (tqb > 1 || rqb > 1)
-			(*this)(at) = cSuperposition;
+			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) ^= rqb;
 	}
@@ -184,7 +190,7 @@ Qint& Qint::operator +=(const Qint& right)
 		Qbit t((*this)(at)), r(right(at));
 		superposition = (t > 1) || (r > 1);
 		if (superposition)
-			(*this)(at) = cSuperposition;
+			(*this)(at) = Qbit::cSuperposition;
 		else
 		{
 			carry = t + r + carry;
@@ -232,7 +238,7 @@ Qint& Qint::operator *=(const Qint& right)
 			carry += qb;
 		}
 		if (superpositon)
-			(*this)(at) = cSuperposition;
+			(*this)(at) = Qbit::cSuperposition;
 		else
 		{
 			(*this)(at) = carry % 2;
@@ -241,7 +247,7 @@ Qint& Qint::operator *=(const Qint& right)
 		--atDiagonal;
 	}
 	if (superpositon)
-		(*this)(rows() - 1) = cSuperposition;
+		(*this)(rows() - 1) = Qbit::cSuperposition;
 	else
 		(*this)(rows() - 1) = carry;
 	return *this;

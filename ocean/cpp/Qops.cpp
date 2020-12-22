@@ -240,8 +240,8 @@ Qaddition::Sp Qxor::assign(const Qoperands& operands)
 
 Factory<string, Qop> Factory<string, Qop>::gFactory;
 
-Creator<string, Qop, Qequal> gEqualOperatorCreator_s("=");
-Creator<string, Qop, Qequal> gEqualOperatorCreator("equal");
+Creator<string, Qop, Qeq> gEqualOperatorCreator_s("=");
+Creator<string, Qop, Qeq> gEqualOperatorCreator("equal");
 
 Creator<string, Qop, Qnot> gNotOperatorCreator_s("~");
 Creator<string, Qop, Qnot> gNotOperatorCreator("not");

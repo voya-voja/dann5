@@ -66,134 +66,134 @@ namespace dann5{
 			MatrixXd		mElements;
 		};
 
-		class QuboTableInOut : public QuboTable
+		class OperatorQT : public QuboTable
 		{
 		private:
 		protected:
-			QuboTableInOut();
+			OperatorQT();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
-		class QuboTable2in1out : public QuboTable
+		class BinaryOpQT : public QuboTable
 		{
 		private:
 		protected:
-			QuboTable2in1out();
+			BinaryOpQT();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
-		class QuboTable2in2out : public QuboTable
+		class BinaryOp2OutQT : public QuboTable
 		{
 		private:
 		protected:
-			QuboTable2in2out();
+			BinaryOp2OutQT();
 
 			virtual Labels format(const Labels&) const;
 		public:
 		};
 
 
-		class EqQuboTable : public QuboTableInOut
+		class EqQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			EqQuboTable();
+			EqQT();
 		};
 
-		class NotQuboTable : public QuboTableInOut
+		class NotQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			NotQuboTable();
+			NotQT();
 		};
 
-		class LtQuboTable : public QuboTableInOut
+		class LtQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			LtQuboTable();
+			LtQT();
 		};
 
-		class LeQuboTable : public QuboTableInOut
+		class LeQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			LeQuboTable();
+			LeQT();
 		};
 
-		class GtQuboTable : public QuboTableInOut
+		class GtQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			GtQuboTable();
+			GtQT();
 		};
 
-		class GeQuboTable : public QuboTableInOut
+		class GeQT : public OperatorQT
 		{
 		private:
 		protected:
 		public:
-			GeQuboTable();
+			GeQT();
 		};
 
-		class AndQuboTable : public QuboTable2in1out
+		class AndQT : public BinaryOpQT
 		{
 		private:
 		protected:
 		public:
-			AndQuboTable();
+			AndQT();
 		};
 
-		class NandQuboTable : public QuboTable2in2out
+		class NandQT : public BinaryOp2OutQT
 		{
 		private:
 		protected:
 		public:
-			NandQuboTable();
+			NandQT();
 		};
 
-		class OrQuboTable : public QuboTable2in1out
+		class OrQT : public BinaryOpQT
 		{
 		private:
 		protected:
 		public:
-			OrQuboTable();
+			OrQT();
 		};
 
-		class NorQuboTable : public QuboTable2in2out
+		class NorQT : public BinaryOp2OutQT
 		{
 		private:
 		protected:
 		public:
-			NorQuboTable();
+			NorQT();
 		};
 
-		class NotLeftOrRightQuboTable : public QuboTable2in2out
+		class NotLeftOrRightQT : public BinaryOp2OutQT
 		{
 		private:
 		protected:
 		public:
-			NotLeftOrRightQuboTable();
+			NotLeftOrRightQT();
 		};
 
-		class DwNotLeftOrRightQuboTable : public QuboTable2in2out
+		class DwNotLeftOrRightQT : public BinaryOp2OutQT
 		{
 		private:
 		protected:
 		public:
-			DwNotLeftOrRightQuboTable();
+			DwNotLeftOrRightQT();
 		};
 
-		class XorQuboTable : public QuboTable2in2out
+		class XorQuboTable : public BinaryOp2OutQT
 		{
 		private:
 		protected:
@@ -203,7 +203,7 @@ namespace dann5{
 
 		typedef XorQuboTable Adder05QuboTable;
 
-		class NxorQuboTable : public QuboTable2in2out
+		class NxorQuboTable : public BinaryOp2OutQT
 		{
 		private:
 		protected:

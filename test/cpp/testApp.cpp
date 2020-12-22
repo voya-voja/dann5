@@ -22,7 +22,7 @@
 #include <Eigen\Dense>
 
 #include <Qubo.h>
-#include <Qint.h>
+#include <Qtype.h>
 #include <Qvar.h>
 #include <Qexpression.h>
 #include <Qequation.h>
@@ -105,25 +105,25 @@ void test1()
 	Matrix4d fixedMatrix;
 	std::cout << "fixedMatrix is of size " << fixedMatrix.rows() << "x" << fixedMatrix.cols() << std::endl;
 
-	NotQuboTable neQ;
+	NotQT neQ;
 	std::cout << std::endl << "Not Equal" << std::endl << neQ << std::endl << std::endl;
 
-	AndQuboTable andQ;
+	AndQT andQ;
 	std::cout << std::endl << "And" << std::endl << andQ << std::endl << std::endl;
 
-	NandQuboTable nandQ;
+	NandQT nandQ;
 	std::cout << std::endl << "Nand" << std::endl << nandQ << std::endl << std::endl;
 
-	OrQuboTable orQ;
+	OrQT orQ;
 	std::cout << std::endl << "Or" << std::endl << orQ << std::endl << std::endl;
 
-	NorQuboTable norQ;
+	NorQT norQ;
 	std::cout << std::endl << "Nor" << std::endl << norQ << std::endl << std::endl;
 
-	NotLeftOrRightQuboTable nLorRQ;
+	NotLeftOrRightQT nLorRQ;
 	std::cout << std::endl << "Not(left) And right" << std::endl << nLorRQ << std::endl << std::endl;
 
-	DwNotLeftOrRightQuboTable dWnLorRQ;
+	DwNotLeftOrRightQT dWnLorRQ;
 	std::cout << std::endl << "D-Wave Not(left) And right" << std::endl << dWnLorRQ << std::endl << std::endl;
 
 	NxorQuboTable nxorQ;
@@ -141,7 +141,7 @@ void test1()
 	Qubo d = nxorQ.qubo();
 
 	Qint v_na(Index(3)), v_nb(Index(4)), v_nr;
-	v_na << 1, 0, Qint::cSuperposition;
+	v_na << 1, 0, Qbit::cSuperposition;
 	v_nb << 0, 1, 1, 1;
 	std::cout << std::endl << "Va: " << v_na.value() << std::endl << v_na << std::endl << "Vb: " << v_nb.value() << std::endl << v_nb << std::endl;
 	v_nr = v_na & v_nb;
@@ -268,6 +268,46 @@ void test3()
 	sample["c1"] = 0;
 	eR.add(sample);
 	cout << endl << eR.solutions() << endl;
+}
+
+void test4()
+{
+	// constants
+	Qvar _7("7", 7), _8("8", 8);
+	// valiables
+	Qvar prime(6, "p"), p8(3, "p8"), p7m(3, "p7m");
+	// equations
+	Qequation p8E1(p8), p8E2(p8), p8E(p8), p7mE1(p7m), p7mE2(p7m);
+//	p7mE1 = prime & _7;
+	p8E1 = p7m;
+	p8E2 = prime;
+	p7mE2 = p8 * _8;
+	/*
+	Qcondition p7m_lt8, p7m_ge8;
+	p7m_lt8 ? p7m < _8 : p8E;
+	ptm_ge8 ? ~(p7m < 8) : p7mE2;
+
+	Qrutine p_ge8R("prime >= 8");
+	p_ge8R << pm7E1 << p7m_lt8 << ptm_ge8;
+
+	Qcondition p_lt8, p_ge8;
+	p_lt8 ? prime < _8 : p8E2;
+	p_ge8 ? ~(p7m < 8) : p_ge8R;
+
+	Qfunction p_mod_8F("prime % 8");
+	p_mod_8F << p_lt8 << p_ge8;
+
+	Qrutine program("Find prime numbers");
+	// constants
+	Qvar _2("2", 2), _3("3", 3);
+	// variables
+	Qvar s(3, "s"), t(3,"t");
+	Qequation pE(prime), p8E(p8);
+	Qcondition p8_eq3;
+	p8E = p_mod_8;
+	p8_eq3 ? p8 = _3 : pE = s * s + _2 * t * t;
+
+	*/
 }
 
 int main()

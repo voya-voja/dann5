@@ -119,12 +119,12 @@ std::ostream& dann5::ocean::operator<< (std::ostream& stream, const QuboTable& r
 	return(stream);
 }
 
-QuboTableInOut::QuboTableInOut()
+OperatorQT::OperatorQT()
 	:QuboTable(QuboTable::Size(2))
 {
 }
 
-QuboTable::Labels QuboTableInOut::format(const QuboTable::Labels& args) const
+QuboTable::Labels OperatorQT::format(const QuboTable::Labels& args) const
 {
 	if (args.rows() == 2) return args;
 
@@ -133,22 +133,22 @@ QuboTable::Labels QuboTableInOut::format(const QuboTable::Labels& args) const
 	return(fArgs);
 }
 
-QuboTable2in1out::QuboTable2in1out()
+BinaryOpQT::BinaryOpQT()
 	:QuboTable(QuboTable::Size(3))
 {
 }
 
-QuboTable::Labels QuboTable2in1out::format(const QuboTable::Labels& arg) const
+QuboTable::Labels BinaryOpQT::format(const QuboTable::Labels& arg) const
 {
 	return(arg);
 }
 
-QuboTable2in2out::QuboTable2in2out()
+BinaryOp2OutQT::BinaryOp2OutQT()
 	:QuboTable(QuboTable::Size(4))
 {
 }
 
-QuboTable::Labels QuboTable2in2out::format(const QuboTable::Labels& args) const
+QuboTable::Labels BinaryOp2OutQT::format(const QuboTable::Labels& args) const
 {
 	if (args.rows() == 4) return args;
 
@@ -158,56 +158,56 @@ QuboTable::Labels QuboTable2in2out::format(const QuboTable::Labels& args) const
 }
 
 
-EqQuboTable::EqQuboTable()
-	:QuboTableInOut()
+EqQT::EqQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this <<  1,  -2,
 			  0,   1;
 }
 
-NotQuboTable::NotQuboTable()
-	:QuboTableInOut()
+NotQT::NotQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this << -1,  2, 
 			  0, -1;
 }
 
-LtQuboTable::LtQuboTable()
-	:QuboTableInOut()
+LtQT::LtQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this <<  2,   4,
 			  0,  -6;
 }
 
-LeQuboTable::LeQuboTable()
-	:QuboTableInOut()
+LeQT::LeQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this <<  4,  -4,
 			  0,   0;
 }
 
-GtQuboTable::GtQuboTable()
-	:QuboTableInOut()
+GtQT::GtQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this << -6,   4,
 			  0,   2;
 }
 
-GeQuboTable::GeQuboTable()
-	:QuboTableInOut()
+GeQT::GeQT()
+	:OperatorQT()
 {
 	*this << "a", "r";
 	*this <<  0,  -4,
 			  0,   4;
 }
 
-AndQuboTable::AndQuboTable()
-	:QuboTable2in1out()
+AndQT::AndQT()
+	:BinaryOpQT()
 {
 	*this << "a", "b", "r";
 	*this <<  0,   1,  -2,
@@ -215,8 +215,8 @@ AndQuboTable::AndQuboTable()
 			  0,   0,   3;
 }
 
-NandQuboTable::NandQuboTable()
-	:QuboTable2in2out()
+NandQT::NandQT()
+	:BinaryOp2OutQT()
 {
 	// assuming x = 1 - ab
 	*this << "a", "b", "r", "x";
@@ -226,8 +226,8 @@ NandQuboTable::NandQuboTable()
 			  0,   0,   0,   5;
 }
 
-OrQuboTable::OrQuboTable()
-	:QuboTable2in1out()
+OrQT::OrQT()
+	:BinaryOpQT()
 {
 	*this << "a", "b", "r";
 	*this <<  1, 1, -2,
@@ -235,8 +235,8 @@ OrQuboTable::OrQuboTable()
 			  0, 0,  1;
 }
 
-NorQuboTable::NorQuboTable()
-	:QuboTable2in2out()
+NorQT::NorQT()
+	:BinaryOp2OutQT()
 {
 	// assuming x = 1 - ab
 	*this << "a", "b", "r", "x";
@@ -246,8 +246,8 @@ NorQuboTable::NorQuboTable()
 			  0,   0,   0,   3;
 }
 
-NotLeftOrRightQuboTable::NotLeftOrRightQuboTable()
-	:QuboTable2in2out()
+NotLeftOrRightQT::NotLeftOrRightQT()
+	:BinaryOp2OutQT()
 {
 	*this << "a", "b", "r", "x";
 	*this << -1,   1,   2,  -3,
@@ -257,8 +257,8 @@ NotLeftOrRightQuboTable::NotLeftOrRightQuboTable()
 }
 
 
-DwNotLeftOrRightQuboTable::DwNotLeftOrRightQuboTable()
-	:QuboTable2in2out()
+DwNotLeftOrRightQT::DwNotLeftOrRightQT()
+	:BinaryOp2OutQT()
 {
 	*this << "a", "b", "r", "x";
 	*this << -1,   4,   2,  -6,
@@ -268,7 +268,7 @@ DwNotLeftOrRightQuboTable::DwNotLeftOrRightQuboTable()
 }
 
 XorQuboTable::XorQuboTable()
-	:QuboTable2in2out()
+	:BinaryOp2OutQT()
 {
 	*this << "a", "b", "r", "x";
 	*this << 1, 2, -2, -4,
@@ -278,7 +278,7 @@ XorQuboTable::XorQuboTable()
 }
 
 NxorQuboTable::NxorQuboTable()
-	:QuboTable2in2out()
+	:BinaryOp2OutQT()
 {
 	*this << "a", "b","r", "x";
 	*this << -1,  2, -4,  2,
@@ -313,39 +313,39 @@ QuboTable::Labels AdderQuboTable::format(const QuboTable::Labels& args) const
 
 Factory<string, QuboTable> Factory<string, QuboTable>::gFactory;
 
-Creator<string, QuboTable, EqQuboTable> gEqualQuboCreator_s("=");
-Creator<string, QuboTable, EqQuboTable> gEqualQuboCreator("equal");
+Creator<string, QuboTable, EqQT> gEqualQuboCreator_s("=");
+Creator<string, QuboTable, EqQT> gEqualQuboCreator("equal");
 
-Creator<string, QuboTable, NotQuboTable> gNotQuboCreator_s("~");
-Creator<string, QuboTable, NotQuboTable> gNotQuboCreator("not");
+Creator<string, QuboTable, NotQT> gNotQuboCreator_s("~");
+Creator<string, QuboTable, NotQT> gNotQuboCreator("not");
 
-Creator<string, QuboTable, LtQuboTable> gLessThanQuboCreator_s("<");
-Creator<string, QuboTable, LtQuboTable> gLessThanQuboCreator("lessthan");
+Creator<string, QuboTable, LtQT> gLessThanQuboCreator_s("<");
+Creator<string, QuboTable, LtQT> gLessThanQuboCreator("lessthan");
 
-Creator<string, QuboTable, LeQuboTable> gLessEqualQuboCreator_s("<=");
-Creator<string, QuboTable, LeQuboTable> gLessEqualQuboCreator("lessequal");
+Creator<string, QuboTable, LeQT> gLessEqualQuboCreator_s("<=");
+Creator<string, QuboTable, LeQT> gLessEqualQuboCreator("lessequal");
 
-Creator<string, QuboTable, GtQuboTable> gGreaterThanQuboCreator_s(">");
-Creator<string, QuboTable, GtQuboTable> gGreaterThanQuboCreator("greaterthan");
+Creator<string, QuboTable, GtQT> gGreaterThanQuboCreator_s(">");
+Creator<string, QuboTable, GtQT> gGreaterThanQuboCreator("greaterthan");
 
-Creator<string, QuboTable, GeQuboTable> gGreaterEqualQuboCreator_s(">=");
-Creator<string, QuboTable, GeQuboTable> gGreaterEqualQuboCreator("greaterequal");
+Creator<string, QuboTable, GeQT> gGreaterEqualQuboCreator_s(">=");
+Creator<string, QuboTable, GeQT> gGreaterEqualQuboCreator("greaterequal");
 
-Creator<string, QuboTable, AndQuboTable> gAndQuboCreator_s("&");
-Creator<string, QuboTable, AndQuboTable> gAndQuboCreator("and");
+Creator<string, QuboTable, AndQT> gAndQuboCreator_s("&");
+Creator<string, QuboTable, AndQT> gAndQuboCreator("and");
 
-Creator<string, QuboTable, NandQuboTable> gNandQuboCreator_s("~&");
-Creator<string, QuboTable, NandQuboTable> gNandQuboCreator("nand");
+Creator<string, QuboTable, NandQT> gNandQuboCreator_s("~&");
+Creator<string, QuboTable, NandQT> gNandQuboCreator("nand");
 
-Creator<string, QuboTable, OrQuboTable> gOrQuboCreator_s("|");
-Creator<string, QuboTable, OrQuboTable> gOrQuboCreator("or");
+Creator<string, QuboTable, OrQT> gOrQuboCreator_s("|");
+Creator<string, QuboTable, OrQT> gOrQuboCreator("or");
 
-Creator<string, QuboTable, NorQuboTable> gNorQuboCreator_s("~|");
-Creator<string, QuboTable, NorQuboTable> gNorQuboCreator("nor");
+Creator<string, QuboTable, NorQT> gNorQuboCreator_s("~|");
+Creator<string, QuboTable, NorQT> gNorQuboCreator("nor");
 
-Creator<string, QuboTable, NotLeftOrRightQuboTable> gNotLeftOrRightQuboCreator("notleftorright");
+Creator<string, QuboTable, NotLeftOrRightQT> gNotLeftOrRightQuboCreator("notleftorright");
 
-Creator<string, QuboTable, DwNotLeftOrRightQuboTable> gNotLeftOrRightQuboCreator_dw("dwnotleftorright");
+Creator<string, QuboTable, DwNotLeftOrRightQT> gNotLeftOrRightQuboCreator_dw("dwnotleftorright");
 
 Creator<string, QuboTable, XorQuboTable> gXorQuboCreator_s("^");
 Creator<string, QuboTable, XorQuboTable> gXorQuboCreator("xor");

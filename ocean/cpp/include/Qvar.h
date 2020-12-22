@@ -2,7 +2,7 @@
 
 #include <pybind11/pybind11.h>
 
-#include <Qint.h>
+#include <Qtype.h>
 #include <Qdef.h>
 
 using namespace std;
@@ -70,7 +70,7 @@ namespace dann5 {
 
 			// Resize the Qvar as a vector of Qbit definitions and values to a new size
 			// if the new size is bigger, assign qBit value to additional Qbits
-			void resize(Index size, const Qbit& qBit = Qint::cSuperposition);
+			void resize(Index size, const Qbit& qBit = Qbit::cSuperposition);
 
 			// Return Qdef and Qint string representations of this variable
 			string toString(bool bitFormat = true) const;

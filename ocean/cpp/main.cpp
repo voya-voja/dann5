@@ -7,7 +7,7 @@
 #include <Qdef.h>
 #include <Qexpression.h>
 #include <Qequation.h>
-#include <Qubo.h>
+#include <Qtype.h>
 
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
@@ -49,51 +49,51 @@ PYBIND11_MODULE(d5o, m) {
 	.def("qubo", (Qubo(QuboTable::*)(const QuboTable::Labels&) const) &QuboTable::qubo, "Qubo qubo with the input list of arguments");
 
 	// specify C++ class->baseclass specialization
-	py::class_<EqQuboTable, QuboTable>(m, "EqQuboTable")
+	py::class_<EqQT, QuboTable>(m, "EqQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<NotQuboTable, QuboTable>(m, "NotQuboTable")
+	py::class_<NotQT, QuboTable>(m, "NotQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<LtQuboTable, QuboTable>(m, "LtQuboTable")
+	py::class_<LtQT, QuboTable>(m, "LtQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<LeQuboTable, QuboTable>(m, "LeQuboTable")
+	py::class_<LeQT, QuboTable>(m, "LeQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<GtQuboTable, QuboTable>(m, "GtQuboTable")
+	py::class_<GtQT, QuboTable>(m, "GtQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<GeQuboTable, QuboTable>(m, "GeQuboTable")
+	py::class_<GeQT, QuboTable>(m, "GeQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<AndQuboTable, QuboTable>(m, "AndQuboTable")
+	py::class_<AndQT, QuboTable>(m, "AndQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<NandQuboTable, QuboTable>(m, "NandQuboTable")
+	py::class_<NandQT, QuboTable>(m, "NandQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<OrQuboTable, QuboTable>(m, "OrQuboTable")
+	py::class_<OrQT, QuboTable>(m, "OrQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<NorQuboTable, QuboTable>(m, "NorQubo")
+	py::class_<NorQT, QuboTable>(m, "NorQubo")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<NotLeftOrRightQuboTable, QuboTable>(m, "NotLeftOrRightQuboTable")
+	py::class_<NotLeftOrRightQT, QuboTable>(m, "NotLeftOrRightQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
-	py::class_<DwNotLeftOrRightQuboTable, QuboTable>(m, "DwNotLeftOrRightQuboTable")
+	py::class_<DwNotLeftOrRightQT, QuboTable>(m, "DwNotLeftOrRightQT")
 		.def(py::init<>());
 
 	// specify C++ class->baseclass specialization
@@ -112,7 +112,7 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<>());
 
 	py::class_<QintInitializer>(m, "QintInitializer")
-		.def("push", (QintInitializer& (QintInitializer::*)(const Qbit&)) &QintInitializer::operator,);
+		.def("push", (QintInitializer& (QintInitializer::*)(const q_bit&)) &QintInitializer::operator,);
 
 	py::class_<Qint>(m, "Qint", 
 		R"pbdoc( Quantum bit is in superposition state for any value except 0 and 1)pbdoc")
