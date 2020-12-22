@@ -91,12 +91,23 @@ namespace dann5 {
 			// Returns a constant reference to the expression arguments of this Q equation
 			const Qvars& arguments() const { return mArguments; }
 
+			// A semple is defined as a dictionary (map) of symbol nodes and their values.
+			// The node names are defined by qubo() for each Q equation
 			typedef map<string, q_bit> Sample;
+
+			// A list of samples with the same list of nodes and different combination of values
 			typedef vector<Sample> Samples;
 
-			string solutions() const;
+			// Add a sample with a node list defined by qubo() of this Q equation
 			void add(Sample& sample);
+
+			// Set a sample set with a node list defined by qubo() of this Q equation
+			// the combination of node values should be different for each sample
 			void set(Samples& samples);
+
+			// For existing samples, returns a string representation of all solutions of 
+			// this Q euation
+			string solutions() const;
 
 			// Returns a qubo representation of this Q equation, 
 			// if not finalized, returns a full qubo symbol representation of this Q

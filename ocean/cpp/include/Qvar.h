@@ -73,6 +73,8 @@ namespace dann5 {
 			void resize(Index size, const Qbit& qBit = Qbit::cSuperposition);
 
 			// Return Qdef and Qint string representations of this variable
+			// when bitFormat is true, teh string representation are variable bit 
+			// symbols and values, otherwise returns sybol name and corrsponding value
 			string toString(bool bitFormat = true) const;
 
 			// Insert string representation of a Q variable into an output stream
