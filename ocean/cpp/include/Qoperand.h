@@ -49,7 +49,7 @@ namespace dann5 {
 			virtual string toString(bool decomposed = false) const;
 
 			// return Qubo presentation of this Qoperand
-			virtual Qubo qubo() const;
+			virtual Qubo qubo(bool finalized = true) const;
 
 			// Insert string representation of a Qoperand into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qoperand&);
@@ -57,5 +57,8 @@ namespace dann5 {
 		private:
 			string mIdentity;	// The identity of a Qoperand
 		};
+
+		// An std::vector containing a list of shared pointers pointing to Qoperands
+		typedef std::vector <Qoperand::Sp> Qoperands;
 	};
 };

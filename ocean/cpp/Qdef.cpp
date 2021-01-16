@@ -17,47 +17,55 @@ string Qdef::AutoName()
 }
 
 Qdef::Qdef()
-	:qbit_def_vector(), mSymbol(Qdef::AutoName())
+	:qbit_def_vector(), mDefinition(Qdef::AutoName())
 {
-	_lct(mSymbol);
+	_lct(mDefinition);
 }
 
 Qdef::Qdef(const Qdef& right)
-	:qbit_def_vector(right), mSymbol(right.mSymbol)
+	:qbit_def_vector(right), mDefinition(right.mDefinition)
 {
-	_lct(mSymbol);
+	_lct(mDefinition);
 }
 
 Qdef::Qdef(Index size)
-	: qbit_def_vector(size), mSymbol(Qdef::AutoName())
+	: qbit_def_vector(size), mDefinition(Qdef::AutoName())
 {
-	for (Index at = 0; at < size; at++)
-	{
-		(*this)(at) = Qoperand::Sp(new Qoperand(mSymbol + to_string(at)));
-	}
-	_lct(mSymbol);
+	initialize(size);
 }
 
 Qdef::Qdef(Index size, const string& name)
-	: qbit_def_vector(size), mSymbol(name)
+	: qbit_def_vector(size), mDefinition(name)
+{
+	initialize(size);
+}
+
+void Qdef::initialize(Index size)
 {
 	for (Index at = 0; at < size; at++)
 	{
-		(*this)(at) = Qoperand::Sp(new Qoperand(name + to_string(at)));
+		(*this)(at) = operand(at);
 	}
-	_lct(mSymbol);
+	_lct(mDefinition);
+}
+
+
+Qoperand::Sp Qdef::operand(Index level)
+{
+	string identifier = mDefinition + to_string(level);
+	return Qoperand::Sp(new Qoperand(identifier));
 }
 
 Qdef::~Qdef()
 {
-	_ldt(mSymbol);
+	_ldt(mDefinition);
 }
 
 void Qdef::concatenate(const Qdef& right, const string& sign)
 {
 	Index size(rows()), rSize(right.rows());
 	if (size < rSize) resize(rSize);
-	mSymbol += sign + right.mSymbol;
+	mDefinition += sign + right.mDefinition;
 	for (Index at = 0; at < size; at++)
 	{
 		string id = (*this)(at)->identity();
@@ -68,11 +76,124 @@ void Qdef::concatenate(const Qdef& right, const string& sign)
 		}
 		else
 		{
-			rId = right.mSymbol + to_string(at);
+			rId = right.mDefinition + to_string(at);
 
 		}
 		(*this)(at)->identity(id + sign + rId);
 	}
+}
+
+Qdef& Qdef::operator~()
+{
+	string sign = "~";
+	Index size(rows());
+	mDefinition = sign + mDefinition;
+	for (Index at = 0; at < size; at++)
+	{
+		string id = (*this)(at)->identity();
+		(*this)(at)->identity(sign + id);
+	}
+	return(*this);
+}
+
+Qdef& Qdef::operator&=(const Qdef& right)
+{
+	concatenate(right, "&");
+	return(*this);
+}
+
+Qexpression Qdef::operator &(const Qdef& right) const
+{
+	Qexpression result(*this);
+	result &= right;
+	return result;
+}
+
+Qexpression Qdef::operator &(const Qexpression& right) const
+{
+	Qexpression result(*this);
+	result &= right;
+	return result;
+}
+
+Qdef& Qdef::operator|=(const Qdef& right)
+{
+	concatenate(right, "|");
+	return(*this);
+}
+
+Qexpression Qdef::operator |(const Qdef& right) const
+{
+	Qexpression result(*this);
+	result |= right;
+	return result;
+}
+
+Qexpression Qdef::operator |(const Qexpression& right) const
+{
+	Qexpression result(*this);
+	result |= right;
+	return result;
+}
+
+Qdef& Qdef::nandMutable(const Qdef& right)
+{
+	concatenate(right, "~&");
+	return(*this);
+}
+
+Qexpression Qdef::nand(const Qdef& right) const
+{
+	Qexpression result(*this);
+	result.nandMutable(right);
+	return result;
+}
+
+Qexpression Qdef::nand(const Qexpression& right) const
+{
+	Qexpression result(*this);
+	result.nandMutable(right);
+	return result;
+}
+
+Qdef& Qdef::norMutable(const Qdef& right)
+{
+	concatenate(right, "~|");
+	return(*this);
+}
+
+Qexpression Qdef::nor(const Qdef& right) const
+{
+	Qexpression result(*this);
+	result.norMutable(right);
+	return result;
+}
+
+Qexpression Qdef::nor(const Qexpression& right) const
+{
+	Qexpression result(*this);
+	result.norMutable(right);
+	return result;
+}
+
+Qdef& Qdef::operator^=(const Qdef& right)
+{
+	concatenate(right, "^");
+	return(*this);
+}
+
+Qexpression Qdef::operator ^(const Qdef& right) const
+{
+	Qexpression result(*this);
+	result ^= right;
+	return result;
+}
+
+Qexpression Qdef::operator ^(const Qexpression& right) const
+{
+	Qexpression result(*this);
+	result ^= right;
+	return result;
 }
 
 Qdef& Qdef::operator+=(const Qdef& right)
@@ -124,5 +245,5 @@ void Qdef::resize(Index size)
 		if (at < oSize)
 			(*this)(at) = temp(at);
 		else
-			(*this)(at) = Qoperand::Sp(new Qoperand(mSymbol + to_string(at)));
+			(*this)(at) = operand(at);
 }

@@ -27,6 +27,9 @@
 #include <Qexpression.h>
 #include <Qequation.h>
 #include <Factory.h>
+#include <Qcondition.h>
+#include <Qrutine.h>
+#include <Qfunction.h>
 
 using namespace Eigen;
 
@@ -126,16 +129,16 @@ void test1()
 	DwNotLeftOrRightQT dWnLorRQ;
 	std::cout << std::endl << "D-Wave Not(left) And right" << std::endl << dWnLorRQ << std::endl << std::endl;
 
-	NxorQuboTable nxorQ;
+	NxorQT nxorQ;
 	std::cout << std::endl << "Not Xor" << std::endl << nxorQ << std::endl << std::endl;
 
-	XorQuboTable xorQ;
+	XorQT xorQ;
 	std::cout << std::endl << "Xor" << std::endl << xorQ << std::endl << std::endl;
 
-	Adder05QuboTable hAdderQ;
+	Adder05QT hAdderQ;
 	std::cout << std::endl << "Half Adder" << std::endl << hAdderQ << std::endl << std::endl;
 
-	AdderQuboTable fAdderQ;
+	AdderQT fAdderQ;
 	std::cout << std::endl << "Full Adder" << std::endl << fAdderQ << std::endl << std::endl;
 
 	Qubo d = nxorQ.qubo();
@@ -180,26 +183,26 @@ void test1()
 
 void test2()
 {
-	QuboTable::Sp pq = Factory<string, QuboTable>::Instance().create("&");
+	QuboTable::Sp pq = Factory<string, QuboTable>::Instance().create(AndQT::cMark);
 	std::cout << std::endl << "And" << std::endl << *pq << std::endl;
 	std::cout << std::endl << pq->qubo() << std::endl;
 	QuboTable::Labels arguments(3);
 	arguments << "a0", "b0", "r0";
 	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, QuboTable>::Instance().create("^");
+	pq = Factory<string, QuboTable>::Instance().create(XorQT::cMark);
 	std::cout << std::endl << "Half Adder" << std::endl << *pq << std::endl;
 	std::cout << std::endl << pq->qubo() << std::endl;
 	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, QuboTable>::Instance().create("+");
+	pq = Factory<string, QuboTable>::Instance().create(AdderQT::cMark);
 	std::cout << std::endl << "Full Adder" << std::endl << *pq << std::endl;
 	std::cout << std::endl << pq->qubo() << std::endl;
 	arguments.resize(4, NoChange);
 	arguments << "a1", "b1", "x{a1+b1}", "{a1+b1+x{a1+b1}}";
 	std::cout << std::endl << pq->qubo(arguments) << std::endl;
 
-	pq = Factory<string, QuboTable>::Instance().create("xor");
+	pq = Factory<string, QuboTable>::Instance().create(XorQT::cName);
 	std::cout << std::endl << "Half Adder" << std::endl << *pq << std::endl ;
 	std::cout << std::endl << pq->qubo() << std::endl;
 	arguments.resize(4, NoChange);
@@ -241,7 +244,7 @@ void test3()
 	cout << endl << eR.toString() << endl;
 	cout << endl << eR.qubo(true) << endl;
 
-	Qequation::Sample sample;
+	Qrutine::Sample sample;
 	sample["# | R1 | "] = 0;
 	sample["# | R2 | "] = 0;
 	sample["# | R3 | "] = 0;
@@ -266,10 +269,12 @@ void test3()
 	sample["b1"] = 1;
 	sample["c0"] = 1;
 	sample["c1"] = 0;
-	eR.add(sample);
-	cout << endl << eR.solutions() << endl;
+	Qrutine aRutine("test", eR);
+	aRutine.add(sample);
+	cout << endl << aRutine.solutions() << endl;
 }
 
+// (5.1) p = s^2 + 2t^2	when p == 3(mod 8) s==t==1(mod 2) gcd(s,t) = 1
 void test4()
 {
 	// constants
@@ -278,43 +283,128 @@ void test4()
 	Qvar prime(6, "p"), p8(3, "p8"), p7m(3, "p7m");
 	// equations
 	Qequation p8E1(p8), p8E2(p8), p8E(p8), p7mE1(p7m), p7mE2(p7m);
-//	p7mE1 = prime & _7;
+	p7mE1 = prime & _7;
 	p8E1 = p7m;
 	p8E2 = prime;
 	p7mE2 = p8 * _8;
-	/*
+
 	Qcondition p7m_lt8, p7m_ge8;
-	p7m_lt8 ? p7m < _8 : p8E;
-	ptm_ge8 ? ~(p7m < 8) : p7mE2;
+	p7m_lt8 = (p7m < _8) << p8E;
+	p7m_ge8 = ~(p7m < _8) << p7mE2;	// not sure operator~
 
 	Qrutine p_ge8R("prime >= 8");
-	p_ge8R << pm7E1 << p7m_lt8 << ptm_ge8;
+	p_ge8R << p7mE1 << p7m_lt8 << p7m_ge8;
 
 	Qcondition p_lt8, p_ge8;
-	p_lt8 ? prime < _8 : p8E2;
-	p_ge8 ? ~(p7m < 8) : p_ge8R;
+	p_lt8 = (prime < _8) << p8E2;
+	p_ge8 = ~(p7m < _8) << p_ge8R;
 
-	Qfunction p_mod_8F("prime % 8");
-	p_mod_8F << p_lt8 << p_ge8;
+	Qfunction p_mod_8("prime % 8");
+	p_mod_8 << p_lt8 << p_ge8;
 
 	Qrutine program("Find prime numbers");
 	// constants
 	Qvar _2("2", 2), _3("3", 3);
 	// variables
 	Qvar s(3, "s"), t(3,"t");
-	Qequation pE(prime), p8E(p8);
+	Qequation pE(prime);
 	Qcondition p8_eq3;
-	p8E = p_mod_8;
-	p8_eq3 ? p8 = _3 : pE = s * s + _2 * t * t;
+	pE = s * s + _2 * t * t;
+	p8_eq3 = (_3 == p_mod_8) << pE;
+	program << p8_eq3; // << s==t==1(mod 2) << gcd(s,t) = 1
+}
 
-	*/
+// (5.2) p = s^2 + 4t^2	when p == 5(mod 8) s==t==1(mod 2) gcd(s,t) = 1
+void test5()
+{
+	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	// constants
+	Qvar _1("1",1), _2("2", 2), _4("4", 4), _5("5", 5), _8("8", 8);
+	// variables
+	Qvar prime(6, "p"), s(3, "s"), t(3, "t");
+	Qequation pE(prime), gcdE(_1);
+	Qcondition p8_eq5, s2_eq1, t2_eq1;
+	pE = Qpow(s, 2) + _4 * Qpow(t, 2);
+	p8_eq5 = (Qmod(prime,_8) == _5) << pE;
+	s2_eq1 = (Qmod(s, _2) == _1) << p8_eq5;
+	t2_eq1 = (Qmod(t, _2) == _1) << s2_eq1;
+	gcdE = Qgcd(s, t);
+	program << t2_eq1 << gcdE;
+}
+
+// (5.3) p = s^2 + 4st + 2t^2	when p == 7(mod 8) s==t==1(mod 2) gcd(s,t) = 1
+void test6()
+{
+	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	// constants
+	Qvar _1("1", 1), _2("2", 2), _4("4", 4), _7("7", 7), _8("8", 8);
+	// variables
+	Qvar prime(6, "p"), s(3, "s"), t(3, "t");
+	Qequation pE(prime), gcdE(_1);
+	Qcondition p8_eq5, s2_eq1, t2_eq1;
+	pE = Qpow(s, 2) + _4 * s * t + _2 * Qpow(t, 2);
+	p8_eq5 = (Qmod(prime, _8) == _7) << pE;
+	s2_eq1 = (Qmod(s, _2) == _1) << p8_eq5;
+	t2_eq1 = (Qmod(t, _2) == _1) << s2_eq1;
+	gcdE = Qgcd(s, t);
+	program << t2_eq1 << gcdE;
+}
+
+
+void test5short()
+{
+	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	// constants
+	Qvar _4("4", 4), _5("5", 5), _8("8", 8);
+	// variables
+	Qvar p(3, "p"), s(2, "s"), t(2, "t");
+	Qequation eq(p);
+	Qcondition cond;
+	eq = Qpow(s, 2) + _4 * Qpow(t, 2);
+	cond = (Qmod(p, _8) == _5) << eq;
+	program << cond;
+}
+
+void test7()
+{
+	Qdef a(Index(3), "a"), b(Index(3));
+	Qexpression r(a.nand(b));
+	std::cout << std::endl << "BLV R = A ~& B: " << std::endl << r << std::endl;
+	Qexpression e(a.nor(b));
+	std::cout << std::endl << "BLV R = A ~| B: " << std::endl << e << std::endl;
+}
+
+void testQpow()
+{
+	Qvar x(2, "x"), y("y", 4), y1("y", 4);
+	Qequation ey(y);
+	ey = Qpow(x, 2);
+	cout << endl << ey.toString(true) << endl;
+	cout << endl << ey.qubo(false) << endl;
+	cout << endl << ey.qubo(true) << endl;
+
+	Qequation et(y1);
+	et = x * x;
+	cout << endl << et.toString(true) << endl;
+	cout << endl << et.qubo(false) << endl;
+	cout << endl << et.qubo(true) << endl;
+}
+
+void testSubAndDiv()
+{
+	Qvar a(2, "a"), b(2, "b"), s("s", 4), d("d", 4);
+	Qequation eS(s - a);
+//	eS = a - b;
+	cout << endl << eS.toString() << endl;
+	Qequation eD(d / b);
+//	eD = a - b;
+	cout << endl << eD.toString() << endl;
 }
 
 int main()
 {
-//	test1();
-//	test2();
-	test3();
+	testSubAndDiv();
+//	test5short();
 
 	_CrtDumpMemoryLeaks();
 }

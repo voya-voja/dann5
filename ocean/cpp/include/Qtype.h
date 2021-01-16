@@ -215,6 +215,32 @@ namespace dann5 {
 			// Return reference of this object
 			Qint& operator |=(const Qint&);
 
+			// An 'nand' operator returns a new Qint with logical 'nand' applied on 
+			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// in superposition state, if any of corresponding Qbits of this or right 
+			// object was in superposition state
+			Qint nand(const Qint& right) const;
+
+			// An 'nand' operator changes this Qint instance by applying logical 'nand' on
+			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// be in superposition state, if it is or if corresponding Qbit of right object 
+			// was in superposition state.
+			// Return reference of this object
+			Qint& nandMutable(const Qint& right);
+
+			// An 'nor' operator returns a new Qint with logical 'nor' applied on 
+			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// in superposition state, if any of corresponding Qbits of this or right 
+			// object was in superposition state
+			Qint nor(const Qint& right) const;
+
+			// An 'nor' operator changes this Qint instance by applying logical 'nor' on
+			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// be in superposition state, if it is or if corresponding Qbit of right object 
+			// was in superposition state.
+			// Return reference of this object
+			Qint& norMutable(const Qint& right);
+
 			// An 'xor' operator returns a new Qint with logical 'xor' applied on 
 			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 

@@ -23,18 +23,230 @@ Qexpression::Qexpression(const Qexpression& right)
 	_lct(toString());
 }
 
-Qexpression::Qexpression(const Qdef& symbol)
-	: qbit_def_vector(symbol.rows())
+Qexpression::Qexpression(const Qdef& definition)
+	: qbit_def_vector(definition.rows())
 {
 	for (Index at = 0; at < rows(); at++)
-		if (at < symbol.rows())
-			(*this)(at) =symbol(at);
+		if (at < definition.rows())
+			(*this)(at) =definition(at);
 	_lct(toString());
 }
 
 Qexpression::~Qexpression()
 {
 	_ldt(toString());
+}
+
+Qexpression Qexpression::operation(const string& opMark, const Qexpression& right) const
+{
+	Index tSize = rows(), rSize = right.rows();
+	Index size = rSize > tSize ? rSize : tSize;
+	Qexpression result(size);
+	Qoperands operands;
+	for (Index at = 0; at < size; at++)
+	{
+		if (at < tSize)
+		{
+			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
+			if (at < rSize)
+				pRight = right(at);
+			if (pLeft != nullptr && pRight != nullptr)
+			{
+
+				Qop::Sp pOp = Factory<string, Qop>::Instance().create(opMark);
+				operands.push_back(pLeft);
+				operands.push_back(pRight);
+				pOp->arguments(operands);
+				pResult = pOp;
+				operands.clear();
+			}
+			else if (pLeft != nullptr)
+				pResult = pLeft;
+			else if (pRight != nullptr)
+				pResult = pRight;
+			result(at) = pResult;
+		}
+		else
+			result(at) = right(at);
+	}
+	_lat(opMark, result.toString());
+	return(result);
+}
+
+Qexpression Qexpression::operator &(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator&(re);
+}
+
+Qexpression& Qexpression::operator &=(const Qdef& right)
+{
+	Qexpression re(right);
+	return operator &=(re);
+}
+
+Qexpression Qexpression::operator &(const Qexpression& right) const
+{
+		return operation(AndQT::cMark, right);
+}
+
+Qexpression& Qexpression::operator &=(const Qexpression& right)
+{
+	(*this) = (*this) & right;
+	return (*this);
+}
+
+Qexpression Qexpression::operator |(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator|(re);
+}
+
+Qexpression& Qexpression::operator |=(const Qdef& right)
+{
+	Qexpression re(right);
+	return operator |=(re);
+}
+
+Qexpression Qexpression::operator |(const Qexpression& right) const
+{
+	return operation(OrQT::cMark, right);
+}
+
+Qexpression& Qexpression::operator |=(const Qexpression& right)
+{
+	(*this) = (*this) | right;
+	return (*this);
+}
+
+Qexpression Qexpression::nand(const Qdef& right) const
+{
+	Qexpression re(right);
+	return nand(re);
+}
+
+Qexpression& Qexpression::nandMutable(const Qdef& right)
+{
+	Qexpression re(right);
+	return nandMutable(re);
+}
+
+Qexpression Qexpression::nand(const Qexpression& right) const
+{
+	return operation(NandQT::cMark, right);
+}
+
+Qexpression& Qexpression::nandMutable(const Qexpression& right)
+{
+	(*this) = this->nand(right);
+	return (*this);
+}
+
+Qexpression Qexpression::nor(const Qdef& right) const
+{
+	Qexpression re(right);
+	return nor(re);
+}
+
+Qexpression& Qexpression::norMutable(const Qdef& right)
+{
+	Qexpression re(right);
+	return norMutable(re);
+}
+
+Qexpression Qexpression::nor(const Qexpression& right) const
+{
+	return operation(NorQT::cMark, right);
+}
+
+Qexpression& Qexpression::norMutable(const Qexpression& right)
+{
+	(*this) = this->nor(right);
+	return (*this);
+}
+
+Qexpression Qexpression::operator ^(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator^(re);
+}
+
+Qexpression& Qexpression::operator ^=(const Qdef& right)
+{
+	Qexpression re(right);
+	return operator ^=(re);
+}
+
+Qexpression Qexpression::operator ^(const Qexpression& right) const
+{
+	return operation(XorQT::cMark, right);
+}
+
+Qexpression& Qexpression::operator ^=(const Qexpression& right)
+{
+	(*this) = (*this) ^ right;
+	return (*this);
+}
+
+Qexpression Qexpression::operator +(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator+(re);
+}
+
+Qexpression& Qexpression::operator +=(const Qdef& right)
+{
+	Qexpression re(right);
+	return operator +=(re);
+}
+
+Qexpression Qexpression::operator +(const Qexpression& right) const
+{
+	Index tSize = rows(), rSize = right.rows();
+	Index size = rSize > tSize ? rSize : tSize;
+	// allocate extra bit for result for a last carry bit
+	Index allocateSize = size + 1;
+	if (tSize == 0 || rSize == 0)
+		allocateSize = size;
+	Qexpression result(allocateSize);
+	// add this and right vectors bit symbols
+	Add add;
+	// number of rows of this vector is one less then in result vector
+	for (; *add < size; add++)
+	{
+		Index at = *add;
+		if (at < tSize)
+		{
+			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
+			if (at < rSize)
+				pRight = right(at);
+			if (pLeft == nullptr)
+				pResult = add();
+			else
+				pResult = add(pLeft);
+			if (pRight != nullptr)
+				pResult = add(pResult, pRight);
+			result(at) = pResult;
+		}
+		else
+			result(at) = add(right(at));
+	}
+	result(*add) = add();
+	while (result(*add) == nullptr)
+	{
+		size--;
+		add--;
+	}
+	if (size + 1 < result.rows())
+		result.resize(size + 1);
+	_lat("+", result.toString());
+	return result;
+}
+
+Qexpression& Qexpression::operator +=(const Qexpression& right)
+{
+	(*this) = (*this) + right;
+	return (*this);
 }
 
 Qexpression Qexpression::operator *(const Qdef& right) const
@@ -76,7 +288,7 @@ qbit_def_matrix Qexpression::thisX(const Qexpression& right) const
 	{
 		for (Index atC = 0; atC < right.rows(); atC++)
 		{
-			Qop::Sp pOp = Factory<string, Qop>::Instance().create("&");
+			Qop::Sp pOp = Factory<string, Qop>::Instance().create(AndQT::cMark);
 			operands.push_back((*this)(atR));
 			operands.push_back(right(atC));
 			pOp->arguments(operands);
@@ -132,86 +344,6 @@ void Qexpression::sumDiagonals(const qbit_def_matrix& xMatrix)
 	}
 }
 
-
-Qexpression Qexpression::operator +(const Qdef& right) const
-{
-	Qexpression re(right);
-	return operator+(re);
-}
-
-Qexpression& Qexpression::operator +=(const Qdef& right)
-{
-	Qexpression re(right);
-	return operator +=(re);
-}
-
-Qexpression Qexpression::operator +(const Qexpression& right) const
-{
-	Index tSize = rows(), rSize = right.rows();
-	Index size = rSize > tSize ? rSize : tSize;
-	// allocate extra bit for result for a last carry bit
-	Index allocateSize = size + 1;
-	if (tSize == 0 || rSize == 0)
-		allocateSize = size;
-	Qexpression result(size + 1);
-	// add this and right vectors bit symbols
-	Add add;
-	// number of rows of this vector is one less then in result vector
-	for (; *add < size; add++)
-	{
-		Index at = *add;
-		if (at < tSize)
-		{
-			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
-			if (at < rSize)
-				pRight = right(at);
-			if (pLeft == nullptr)
-				pResult = add();
-			else
-				pResult = add(pLeft);
-			if (pRight != nullptr)
-				pResult = add(pResult, pRight);
-			result(at) = pResult;
-		}
-		else
-			result(at) = add(right(at));
-
-		_lat("+", result(at)->toString());
-	}
-	result(*add) = add();
-	while (result(*add) == nullptr)
-	{
-		size--;
-		add--;
-	}
-	if (size + 1 < result.rows())
-		result.resize(size + 1);
-	_lat("+", result(*add)->toString());
-	return result;
-}
-
-Qexpression& Qexpression::operator +=(const Qexpression& right)
-{
-	(*this) = (*this) + right;
-	return (*this);
-}
-
-string Qexpression::toString() const
-{
-	Index size = rows();
-	string tStr = "eXp[" + to_string(size) + "]={";
-	string s = "size = " + size;
-	for (Index at = 0; at < size; at++)
-	{
-		if ((*this)(at) == nullptr) 
-			tStr += "? | ";
-		else
-			tStr += (*this)(at)->toString() + " | ";
-	}
-	tStr += "}";
-	return tStr;
-}
-
 void Qexpression::resize(Index size)
 {
 	Index oSize = rows();
@@ -222,6 +354,22 @@ void Qexpression::resize(Index size)
 			(*this)(at) = temp(at);
 		else
 			(*this)(at) = Qoperand::Sp(new Qoperand(""));
+}
+
+string Qexpression::toString() const
+{
+	Index size = rows();
+	string tStr = "eXp[" + to_string(size) + "]={";
+	string s = "size = " + size;
+	for (Index at = 0; at < size; at++)
+	{
+		if ((*this)(at) == nullptr)
+			tStr += "? | ";
+		else
+			tStr += (*this)(at)->toString() + "; ";
+	}
+	tStr += "}";
+	return tStr;
 }
 
 std::ostream& dann5::ocean::operator << (std::ostream& out, const Qexpression& right)
@@ -251,7 +399,7 @@ Qexpression::Add::~Add()
 Qoperand::Sp Qexpression::Add::operator () (const Qoperand::Sp& pLeft, const Qoperand::Sp& pRight)
 {
 	// Create new addition operation as xor instance
-	Qaddition::Sp pAddition = dynamic_pointer_cast<Qaddition>(Factory<string, Qop>::Instance().create("^"));
+	Qaddition::Sp pAddition = dynamic_pointer_cast<Qaddition>(Factory<string, Qop>::Instance().create(XorQT::cMark));
 
 	// assign 2 operands to addition operation
 	Qoperands operands;

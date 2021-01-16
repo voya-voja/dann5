@@ -16,9 +16,6 @@ using namespace Eigen;
 namespace dann5 {
 	namespace ocean {
 
-		// An std::vector containing a list of shared pointers pointing to Qoperands
-		typedef std::vector <Qoperand::Sp> Qoperands;
-
 		// An apstraction of a Quantum operation is a Q operand
 		class Qop : public Qoperand
 		{
@@ -58,7 +55,7 @@ namespace dann5 {
 			virtual string toString(bool decomposed = false) const;
 
 			// return Qubo presentation of this Qoperand
-			virtual Qubo qubo() const;
+			virtual Qubo qubo(bool finalized = true) const;
 
 		protected:
 			// Remove all the Qoperands from the list of arguments
@@ -317,12 +314,12 @@ namespace dann5 {
 			class Carry : public Qoperand
 			{
 			public:
-				const static string cSymbol;	// The carry opernd symbol is #
+				const static string cSymbol;	// The carry opernd definition is #
 
 				// Q carry's shared pointer 
 				typedef shared_ptr<Carry> Sp;
 
-				// Return converted given string to Q carry symbol, e.g. 'a0 ^ b0' is 
+				// Return converted given string to Q carry definition, e.g. 'a0 ^ b0' is 
 				// converted into '#{a0 ^ b0}'
 				static string Symbol(const string&);
 

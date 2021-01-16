@@ -32,7 +32,7 @@ namespace dann5 {
 					:mKey(key)
 				{
 					Factory<K, T>::Instance().add(this);
-					_lc;
+					_lc; 
 				}
 
 				~Creator() {

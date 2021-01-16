@@ -7,7 +7,7 @@ Created on Mon Jul 27 14:06:44 2020
 #from dwave.system import DWaveSampler, EmbeddingComposite
 import dimod
 import lib.d5o as d5o
-
+ 
 print("\nEQ gate")
 eqQ = d5o.EqualQubo()
 Q = eqQ.bqm().dictionary()

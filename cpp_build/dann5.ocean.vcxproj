@@ -325,10 +325,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ocean\cpp\BQM.cpp" />
+    <ClCompile Include="..\ocean\cpp\Global.cpp" />
     <ClCompile Include="..\ocean\cpp\Logger.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qcondition.cpp" />
     <ClCompile Include="..\ocean\cpp\Qexpression.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qfunction.cpp" />
     <ClCompile Include="..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\ocean\cpp\Qops.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qrutine.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qstatement.cpp" />
     <ClCompile Include="..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\ocean\cpp\main.cpp" />
     <ClCompile Include="..\ocean\cpp\Qtype.cpp" />
@@ -337,14 +342,23 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\ocean\cpp\Qvar.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\test\py\d5oQuboAdditionTest.py" />
+    <None Include="..\test\py\d5oQuboMultiplicationTest.py" />
+    <None Include="..\test\py\d5oQuboTest.py" />
+    <None Include="..\test\py\DWbqmTest.py" />
+    <None Include="Debug\d5o.cp38-win_amd64.pyd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ocean\cpp\include\BQM.h" />
     <ClInclude Include="..\ocean\cpp\include\Logger.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qcondition.h" />
     <ClInclude Include="..\ocean\cpp\include\Qexpression.h" />
     <ClInclude Include="..\ocean\cpp\include\Factory.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qfunction.h" />
     <ClInclude Include="..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\ocean\cpp\include\Qops.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qrutine.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qstatement.h" />
     <ClInclude Include="..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\ocean\cpp\include\Qubo.h" />
     <ClInclude Include="..\ocean\cpp\include\Qequation.h" />

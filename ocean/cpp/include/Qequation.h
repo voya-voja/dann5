@@ -5,11 +5,8 @@
 #include <utility>
 #include <Eigen/Dense>
 
-#include <Qtype.h>
-#include <Qdef.h>
 #include <Qvar.h>
-#include <Qexpression.h>
-#include <Qubo.h>
+#include <Qstatement.h>
 
 using namespace std;
 using namespace Eigen;
@@ -18,16 +15,15 @@ using namespace Eigen;
 namespace dann5 {
 	namespace ocean {
 
-
-		typedef std::vector<Qvar>	Qvars;
+		class Qrutine;
 
 		// Quantum equation is a coupling of result Q variable via Q expression with
 		// Qvar arguments
-		class Qequation
+		class Qequation : public Qstatement
 		{
 		public:
 			// Default constructor creates Q equation witout a result Q variable so the
-			// result symbol is an empty string
+			// result definition is an empty string
 			Qequation();
 
 			// creates Q equation with a given Q variable as an expected result
@@ -46,6 +42,87 @@ namespace dann5 {
 			// Assignment operator returns a reference of this Q equation with Q result,
 			// expression and arguments same as in right Qequation
 			Qequation& operator=(const Qequation& right);
+			Qequation& operator=(const Qvar& right);
+
+			// And operator returns a new Qequation object with after applying
+			// and operation on this Q equation and right Q variable
+			Qequation operator&(const Qvar& right) const;
+
+			// And operator returns a new Qequation object resulting after applying
+			// and operation on this and right Q equations
+			Qequation operator&(const Qequation& right) const;
+
+			// And operator returns a reference to this Qequation object after applying
+			// and operation on right Q variable
+			Qequation& operator&=(const Qvar& right);
+
+			// And operator returns a reference to this Qequation object after applying
+			// and operation on right Q equation
+			Qequation& operator&=(const Qequation& right);
+
+			// Or operator returns a new Qequation object with after applying
+			// or operation on this Q equation and right Q variable
+			Qequation operator|(const Qvar& right) const;
+
+			// Or operator returns a new Qequation object resulting after applying
+			// or operation on this and right Q equations
+			Qequation operator|(const Qequation& right) const;
+
+			// Or operator returns a reference to this Qequation object after applying
+			// or operation on right Q variable
+			Qequation& operator|=(const Qvar& right);
+
+			// Or operator returns a reference to this Qequation object after applying
+			// or operation on right Q equation
+			Qequation& operator|=(const Qequation& right);
+
+			// Nand operator returns a new Qequation object with after applying
+			// nand operation on this Q equation and right Q variable
+			Qequation nand(const Qvar& right) const;
+
+			// Nand operator returns a new Qequation object resulting after applying
+			// nand operation on this and right Q equations
+			Qequation nand(const Qequation& right) const;
+
+			// Nand operator returns a reference to this Qequation object after applying
+			// nand operation on right Q variable
+			Qequation& nandMutable(const Qvar& right);
+
+			// Nand operator returns a reference to this Qequation object after applying
+			// nand operation on right Q equation
+			Qequation& nandMutable(const Qequation& right);
+
+			// Nor operator returns a new Qequation object with after applying
+			// nor operation on this Q equation and right Q variable
+			Qequation nor(const Qvar& right) const;
+
+			// Nor operator returns a new Qequation object resulting after applying
+			// nor operation on this and right Q equations
+			Qequation nor(const Qequation& right) const;
+
+			// Nor operator returns a reference to this Qequation object after applying
+			// nor operation on right Q variable
+			Qequation& norMutable(const Qvar& right);
+
+			// Nor operator returns a reference to this Qequation object after applying
+			// nor operation on right Q equation
+			Qequation& norMutable(const Qequation& right);
+
+			// Xor operator returns a new Qequation object with after applying
+			// xor operation on this Q equation and right Q variable
+			Qequation operator^(const Qvar& right) const;
+
+			// Xor operator returns a new Qequation object resulting after applying
+			// xor operation on this and right Q equations
+			Qequation operator^(const Qequation& right) const;
+
+			// Xor operator returns a reference to this Qequation object after applying
+			// xor operation on right Q variable
+			Qequation& operator^=(const Qvar& right);
+
+			// Xor operator returns a reference to this Qequation object after applying
+			// xor operation on right Q equation
+			Qequation& operator^=(const Qequation& right);
 
 			// Addition operator returns a new Qequation object with added Q variable
 			// to this Q equation
@@ -63,6 +140,14 @@ namespace dann5 {
 			// right Q equation
 			Qequation& operator+=(const Qequation& right);
 
+			// Subtraction operator returns a Q rutine instance with 2 Q equations with 
+			// same result. One with the expression of this Q equation and the other
+			// with multiplying expression of the result of this Q equation and the
+			// right Q variable, e.g. for a Q variabble z, equation with result y and 
+			// expression x, and rutine 'sub':
+			// y = x - z	=>	sub << S_y = x << S_y = y + z
+			Qrutine operator-(const Qvar& right) const;
+
 			// Multiplication operator returns a new Qequation object with multiplied Q
 			// variable with this Q equation
 			Qequation operator*(const Qvar& right) const;
@@ -79,19 +164,37 @@ namespace dann5 {
 			// multiplied right Q equation
 			Qequation& operator*=(const Qequation& right);
 
+			// Division operator returns a Qrutine instance with 2 Q equations with same
+			// result, one with the expression of this Q equation and the other with
+			// multiplying expression of the result of this Q equation and the right Q 
+			// variable, e.g. for a Q variabble z, equation with result y and expression
+			// x, and rutine 'div':
+			// y = x / z	=>	div << D_y = x << D_y = y * z
+			Qrutine operator/(const Qvar& right) const;
+
 			// Returns a number of bit level expressions in this Q equation
-			Index size() const { return mResult.symbol().rows(); }
+			Index size() const { return mResult.definition().rows(); }
 
 			// Returns a constant reference to the result of this Q equation
 			const Qvar& result() const { return mResult; }
 
-			// Returns a constant reference to the expression of this Q equation
-			const Qexpression& expression() const { return mExpression; }
+			// Returns a qubo representation of this Q equation, 
+			// if not finalized, returns a full qubo definition representation of this Q
+			// equation
+			// if finalized, returns an expression that replaces symbols with values of
+			// Qbits in deterministic states for all the Q variables, i.e. result and
+			// expression arguments
+			Qubo qubo(bool finalized = true, Index level = Eigen::Infinity) const;
 
-			// Returns a constant reference to the expression arguments of this Q equation
-			const Qvars& arguments() const { return mArguments; }
+			// Returns a string representation of this Q equation, 
+			// if not decomposed, returns an equation line per Qbit level
+			// if decomposed, returns a line per Qbit operational expression
+			virtual string toString(bool decomposed = false, Index level = Eigen::Infinity) const;
 
-			// A semple is defined as a dictionary (map) of symbol nodes and their values.
+			// returns a shared_pointer on a cloned instance of this Q statement
+			virtual Qstatement::Sp clone() const { return Qstatement::Sp(new Qequation(*this)); };
+
+			// A semple is defined as a dictionary (map) of definition nodes and their values.
 			// The node names are defined by qubo() for each Q equation
 			typedef map<string, q_bit> Sample;
 
@@ -106,21 +209,8 @@ namespace dann5 {
 			void set(Samples& samples);
 
 			// For existing samples, returns a string representation of all solutions of 
-			// this Q euation
+			// this Q rutine
 			string solutions() const;
-
-			// Returns a qubo representation of this Q equation, 
-			// if not finalized, returns a full qubo symbol representation of this Q
-			// equation
-			// if finalized, returns an expression that replaces symbols with values of
-			// Qbits in deterministic states for all the Q variables, i.e. result and
-			// expression arguments
-			Qubo qubo(bool finalized = true) const;
-
-			// Returns a string representation of this Q equation, 
-			// if not decomposed, returns an equation line per Qbit level
-			// if decomposed, returns a line per Qbit operational expression
-			string toString(bool decomposed = false) const;
 
 			// Insert string representation of a Q equation into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qequation&);
@@ -132,23 +222,33 @@ namespace dann5 {
 				typedef std::map<string, Reduction> Reductions;
 			public:
 				static const QuboKey cSkip;
+				// construct reduction object of a given Q equation
 				Reduct(Qequation&);
+
+				// destructor
 				~Reduct();
 
+				// prepare reduction information for a given Q equation 
 				void operator() ();
-				QuboKey operator()(const QuboKey&, bool) const;
+
+				// Returns a reduced key derived from a given Qubo key by applying
+				// reduction rules for this Q equation. 
+				// If finalized is true, it will apply discretionary Qbit values for the
+				// Q equation result and arguments.
+				// Otherwise, it will just symplify keys using result Qbit definitions
+				QuboKey operator()(const QuboKey& key, bool finalized) const;
+
 			protected:
 			private:
 				Qequation&	mEquation;
 				Reductions mReductions;
 			};
+
 		private:
 			Qvar			mResult;		// result variable, e.g. defined as R = 2 with bits R0 = 0, R1 = 1, ...
-			Qexpression		mExpression;	// an expresion, e.g. 'a + b + c', where a, b & c are Qvar instaces
-			Qvars			mArguments;		// the list of expression variables, e.g. {a, b, c} for the Q equation above
 			Reduct			mReduct;		// an instace of object class that symplifies the expression of this Q equation
 			bool			mNoResult;
-			Samples			mSolutions;
+			Samples	mSolutions;
 
 			friend class Reduct;
 		};

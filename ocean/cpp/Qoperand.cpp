@@ -36,7 +36,7 @@ bool Qoperand::doesExist(const Qoperand::Sp& pRight) const
 	return(tStr.find(rStr) != string::npos);
 };
 
-Qubo Qoperand::qubo() const
+Qubo Qoperand::qubo(bool finalized) const
 {
 	return Qubo();
 }

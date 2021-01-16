@@ -3,8 +3,6 @@
 
 using namespace dann5;
 
-auto_ptr<Logger> Logger::mpSingleton;
-
 Logger& Logger::Instance() 
 {
 	if (mpSingleton.get() == nullptr)

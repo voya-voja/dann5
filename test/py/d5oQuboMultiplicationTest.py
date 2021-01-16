@@ -12,19 +12,19 @@ from dwave.cloud.exceptions import SolverNotFoundError
 from dwave.system.samplers import LeapHybridSampler
 
 
-a = Qvar(2, "a")
-#b = Qvar(2, "b")
-b = Qvar("b", 2)
+a = Qvar(3, "a")
+b = Qvar(2, "b")
 c = Qvar(2, "c")
-#d = Qvar(3, "d")
+d = Qvar(3, "d")
 r_xAbcd = Qequation(Qvar("R", 6))
-r_xAbcd.assign( a * b * c )
+r_xAbcd.assign( a * b * c)
 
+print(r_xAbcd.toString(False))
 print(r_xAbcd.toString(True))
 
-d = r_xAbcd.qubo(False)
+qT = r_xAbcd.qubo(False)
 print("Vectors")
-print(d)
+print(qT)
 
 Q = r_xAbcd.qubo(True)
 
@@ -43,8 +43,8 @@ except SolverNotFoundError:
 
     
 # EmbeddingComposite maps problem elementss to a structured Chimera sampler node adresses
-embedingSampler = ExactSolver()                   # local
-#embedingSampler = EmbeddingComposite(qpu_advantage) 
+#embedingSampler = ExactSolver()                   # local
+embedingSampler = EmbeddingComposite(qpu_advantage) 
 #embedingSampler = EmbeddingComposite(qpu_2000q) 
 #embedingSampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #embedingSampler = LeapHybridSampler()

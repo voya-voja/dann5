@@ -4,7 +4,7 @@ Created on Mon Sep  7 14:36:28 2020
 
 @author: Nebojsa.Vojinovic
 """
-
+ 
 
 import penaltymodel.core as pm
 from dwave.system import DWaveSampler, EmbeddingComposite

@@ -4,6 +4,7 @@
 
 using namespace dann5::ocean;
 
+/**** Qubo ****/
 
 std::ostream& dann5::ocean::operator<< (std::ostream& stream, const Qubo& right)
 {
@@ -26,6 +27,8 @@ Qubo& dann5::ocean::operator+=(Qubo& left, const Qubo& right)
 	return left;
 }
 
+/**** Qubo Table ****/
+
 QuboTable::QuboTable(Size size)
 	:mVariables(size.nCols), mElements(size.nRows, size.nCols)
 {
@@ -41,18 +44,18 @@ inline QuboTable::VariableComma QuboTable::operator << (const string& variable)
 {
 	return mVariables << variable;
 }
-
+/*
 QuboTable& QuboTable::operator << (const Labels& variables)
 {
 	mVariables = variables;
 	return *this;
 }
-
+*/
 inline QuboTable::ElementComma QuboTable::operator << (const double& element)
 {
 	return mElements << element;
 }
-
+/*
 QuboTable& QuboTable::operator << (const VariableRow& row)
 {
 	int c, r = -1;
@@ -66,7 +69,7 @@ QuboTable& QuboTable::operator << (const VariableRow& row)
 
 	return *this;
 }
-
+*/
 Qubo QuboTable::qubo() const
 {
 	int c, r;
@@ -119,6 +122,7 @@ std::ostream& dann5::ocean::operator<< (std::ostream& stream, const QuboTable& r
 	return(stream);
 }
 
+/**** Operator Qubo Table ****/
 OperatorQT::OperatorQT()
 	:QuboTable(QuboTable::Size(2))
 {
@@ -133,6 +137,9 @@ QuboTable::Labels OperatorQT::format(const QuboTable::Labels& args) const
 	return(fArgs);
 }
 
+
+/**** Binary operation Qubo Table ****/
+
 BinaryOpQT::BinaryOpQT()
 	:QuboTable(QuboTable::Size(3))
 {
@@ -142,6 +149,9 @@ QuboTable::Labels BinaryOpQT::format(const QuboTable::Labels& arg) const
 {
 	return(arg);
 }
+
+
+/**** Binary operation Qubo Table with two outputs ****/
 
 BinaryOp2OutQT::BinaryOp2OutQT()
 	:QuboTable(QuboTable::Size(4))
@@ -158,6 +168,8 @@ QuboTable::Labels BinaryOp2OutQT::format(const QuboTable::Labels& args) const
 }
 
 
+/**** Equal operator Qubo Table ****/
+
 EqQT::EqQT()
 	:OperatorQT()
 {
@@ -165,6 +177,8 @@ EqQT::EqQT()
 	*this <<  1,  -2,
 			  0,   1;
 }
+
+/**** Not operator Qubo Table ****/
 
 NotQT::NotQT()
 	:OperatorQT()
@@ -174,6 +188,8 @@ NotQT::NotQT()
 			  0, -1;
 }
 
+/**** Less-than operator Qubo Table ****/
+
 LtQT::LtQT()
 	:OperatorQT()
 {
@@ -181,6 +197,8 @@ LtQT::LtQT()
 	*this <<  2,   4,
 			  0,  -6;
 }
+
+/**** Less-equal operator Qubo Table ****/
 
 LeQT::LeQT()
 	:OperatorQT()
@@ -190,6 +208,8 @@ LeQT::LeQT()
 			  0,   0;
 }
 
+/**** Greater-than operator Qubo Table ****/
+
 GtQT::GtQT()
 	:OperatorQT()
 {
@@ -197,6 +217,8 @@ GtQT::GtQT()
 	*this << -6,   4,
 			  0,   2;
 }
+
+/**** Greater-equal operator Qubo Table ****/
 
 GeQT::GeQT()
 	:OperatorQT()
@@ -206,6 +228,8 @@ GeQT::GeQT()
 			  0,   4;
 }
 
+/**** And binary operation Qubo Table ****/
+
 AndQT::AndQT()
 	:BinaryOpQT()
 {
@@ -214,6 +238,8 @@ AndQT::AndQT()
 			  0,   0,  -2,
 			  0,   0,   3;
 }
+
+/**** Nand binary operation Qubo Table with two outputs****/
 
 NandQT::NandQT()
 	:BinaryOp2OutQT()
@@ -226,6 +252,8 @@ NandQT::NandQT()
 			  0,   0,   0,   5;
 }
 
+/**** Or binary operation Qubo Table ****/
+
 OrQT::OrQT()
 	:BinaryOpQT()
 {
@@ -234,6 +262,8 @@ OrQT::OrQT()
 			  0, 1, -2,
 			  0, 0,  1;
 }
+
+/**** Nand binary operation Qubo Table with two outputs****/
 
 NorQT::NorQT()
 	:BinaryOp2OutQT()
@@ -246,6 +276,8 @@ NorQT::NorQT()
 			  0,   0,   0,   3;
 }
 
+/**** Not-left-or-right binary operation Qubo Table with two outputs****/
+
 NotLeftOrRightQT::NotLeftOrRightQT()
 	:BinaryOp2OutQT()
 {
@@ -256,6 +288,7 @@ NotLeftOrRightQT::NotLeftOrRightQT()
 			  0,   0,   0,   5;
 }
 
+/**** DWave not-left-or-right binary operation Qubo Table with two outputs****/
 
 DwNotLeftOrRightQT::DwNotLeftOrRightQT()
 	:BinaryOp2OutQT()
@@ -267,7 +300,9 @@ DwNotLeftOrRightQT::DwNotLeftOrRightQT()
 			  0,   0,   0,   9;
 }
 
-XorQuboTable::XorQuboTable()
+/**** Xor binary operation Qubo Table with two outputs****/
+
+XorQT::XorQT()
 	:BinaryOp2OutQT()
 {
 	*this << "a", "b", "r", "x";
@@ -277,7 +312,9 @@ XorQuboTable::XorQuboTable()
 			 0, 0,  0,  4; 
 }
 
-NxorQuboTable::NxorQuboTable()
+/**** Nxor binary operation Qubo Table with two outputs****/
+
+NxorQT::NxorQT()
 	:BinaryOp2OutQT()
 {
 	*this << "a", "b","r", "x";
@@ -287,7 +324,9 @@ NxorQuboTable::NxorQuboTable()
 			  0,  0,  0, -1;
 }
 
-AdderQuboTable::AdderQuboTable()
+/**** Adder trinary operation Qubo Table with two outputs****/
+
+AdderQT::AdderQT()
 	:QuboTable(QuboTable::Size(5))
 {
 	*this << "a", "b", "c", "s", "x";
@@ -298,7 +337,7 @@ AdderQuboTable::AdderQuboTable()
 			 0, 0, 0,  0,  4;
 }
 
-QuboTable::Labels AdderQuboTable::format(const QuboTable::Labels& args) const
+QuboTable::Labels AdderQT::format(const QuboTable::Labels& args) const
 {
 	if (args.rows() == 5) return args;
 
@@ -310,51 +349,3 @@ QuboTable::Labels AdderQuboTable::format(const QuboTable::Labels& args) const
 
 	return(fAdderArgs);
 }
-
-Factory<string, QuboTable> Factory<string, QuboTable>::gFactory;
-
-Creator<string, QuboTable, EqQT> gEqualQuboCreator_s("=");
-Creator<string, QuboTable, EqQT> gEqualQuboCreator("equal");
-
-Creator<string, QuboTable, NotQT> gNotQuboCreator_s("~");
-Creator<string, QuboTable, NotQT> gNotQuboCreator("not");
-
-Creator<string, QuboTable, LtQT> gLessThanQuboCreator_s("<");
-Creator<string, QuboTable, LtQT> gLessThanQuboCreator("lessthan");
-
-Creator<string, QuboTable, LeQT> gLessEqualQuboCreator_s("<=");
-Creator<string, QuboTable, LeQT> gLessEqualQuboCreator("lessequal");
-
-Creator<string, QuboTable, GtQT> gGreaterThanQuboCreator_s(">");
-Creator<string, QuboTable, GtQT> gGreaterThanQuboCreator("greaterthan");
-
-Creator<string, QuboTable, GeQT> gGreaterEqualQuboCreator_s(">=");
-Creator<string, QuboTable, GeQT> gGreaterEqualQuboCreator("greaterequal");
-
-Creator<string, QuboTable, AndQT> gAndQuboCreator_s("&");
-Creator<string, QuboTable, AndQT> gAndQuboCreator("and");
-
-Creator<string, QuboTable, NandQT> gNandQuboCreator_s("~&");
-Creator<string, QuboTable, NandQT> gNandQuboCreator("nand");
-
-Creator<string, QuboTable, OrQT> gOrQuboCreator_s("|");
-Creator<string, QuboTable, OrQT> gOrQuboCreator("or");
-
-Creator<string, QuboTable, NorQT> gNorQuboCreator_s("~|");
-Creator<string, QuboTable, NorQT> gNorQuboCreator("nor");
-
-Creator<string, QuboTable, NotLeftOrRightQT> gNotLeftOrRightQuboCreator("notleftorright");
-
-Creator<string, QuboTable, DwNotLeftOrRightQT> gNotLeftOrRightQuboCreator_dw("dwnotleftorright");
-
-Creator<string, QuboTable, XorQuboTable> gXorQuboCreator_s("^");
-Creator<string, QuboTable, XorQuboTable> gXorQuboCreator("xor");
-
-Creator<string, QuboTable, Adder05QuboTable> gHalfAdderQuboCreator_s("+05");
-Creator<string, QuboTable, Adder05QuboTable> gHalfAdderQuboCreator("halfadder");
-
-Creator<string, QuboTable, NxorQuboTable> gNxorQuboCreator_s("~^");
-Creator<string, QuboTable, NxorQuboTable> gNxorQuboCreator("nxor");
-
-Creator<string, QuboTable, AdderQuboTable> gAdderQuboCreator_s("+");
-Creator<string, QuboTable, AdderQuboTable> gAdderQuboCreator("adder");

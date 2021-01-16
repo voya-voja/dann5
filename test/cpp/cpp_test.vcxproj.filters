@@ -32,6 +32,21 @@
     <ClCompile Include="..\..\ocean\cpp\Qtype.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qrutine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qstatement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qcondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qfunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
@@ -76,6 +91,18 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\ocean\cpp\include\Qtype.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qstatement.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qrutine.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qcondition.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qfunction.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

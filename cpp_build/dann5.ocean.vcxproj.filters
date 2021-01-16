@@ -34,6 +34,21 @@
     <ClCompile Include="..\ocean\cpp\Qtype.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qcondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qstatement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qfunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qrutine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
@@ -44,6 +59,12 @@
     </Filter>
     <Filter Include="Include Files">
       <UniqueIdentifier>{033badf5-b65e-4966-96c4-122ff313faf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dann5">
+      <UniqueIdentifier>{060cdbe2-801e-4cca-b19f-7fc249898d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="py_test">
+      <UniqueIdentifier>{28b4804d-d000-4045-abee-9ea46bf91650}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -83,5 +104,34 @@
     <ClInclude Include="..\ocean\cpp\include\Qtype.h">
       <Filter>Include Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qcondition.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qfunction.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qrutine.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qstatement.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\d5o.cp38-win_amd64.pyd">
+      <Filter>dann5</Filter>
+    </None>
+    <None Include="..\test\py\d5oQuboAdditionTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="..\test\py\d5oQuboMultiplicationTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="..\test\py\d5oQuboTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="..\test\py\DWbqmTest.py">
+      <Filter>py_test</Filter>
+    </None>
   </ItemGroup>
 </Project>

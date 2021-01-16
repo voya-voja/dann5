@@ -20,9 +20,9 @@ r_addAbcd.assign( a + b + c + d )
 
 print(r_addAbcd.toString(True))
 
-d = r_addAbcd.qubo(False)
+qT = r_addAbcd.qubo(False)
 print("Vectors")
-print(d)
+print(qT)
 
 Q = r_addAbcd.qubo(True)
 
@@ -55,7 +55,7 @@ if 'answer_mode' in embedingSampler.parameters:
     kwargs['answer_mode'] = 'histogram'
 if 'chain_strength' in embedingSampler.parameters:
     # strength 10 for R 16, 15, 6, works for both, pegasus and chimera
-    kwargs['chain_strength'] = 10   
+    kwargs['chain_strength'] = 6   
 
 sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q)

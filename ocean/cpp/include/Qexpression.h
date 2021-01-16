@@ -24,7 +24,7 @@ namespace dann5 {
 			// An emty Q extression
 			Qexpression();
 
-			// A identity Q extression initialized with a single Q defined symbol
+			// A identity Q extression initialized with a single Q defined definition
 			Qexpression(const Qdef&);
 
 			// Copy constructor
@@ -32,6 +32,91 @@ namespace dann5 {
 
 			// Destruct the Q expression instance with containing Qdef and Q
 			~Qexpression();
+
+			// And operator returns a new Qexpression object by adding Qbits within
+			// this Q expression and right Q defined symbols operand where this object
+			// is a left operand
+			Qexpression operator &(const Qdef&) const;
+
+			// And operator updates this Qexpression object by adding Qbits within
+			// this and right Q defined symbols operand where this object is a left operand
+			Qexpression& operator &=(const Qdef&);
+
+			// And operator returns a new Qexpression object with adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression operator &(const Qexpression&) const;
+
+			// And operator updates this Qexpression object by adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression& operator &=(const Qexpression&);
+
+			// Or operator returns a new Qexpression object by adding Qbits within
+			// this Q expression and right Q defined symbols operand where this object
+			// is a left operand
+			Qexpression operator |(const Qdef&) const;
+
+			// Or operator updates this Qexpression object by adding Qbits within
+			// this and right Q defined symbols operand where this object is a left operand
+			Qexpression& operator |=(const Qdef&);
+
+			// Or operator returns a new Qexpression object with adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression operator |(const Qexpression&) const;
+
+			// Or operator updates this Qexpression object by adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression& operator |=(const Qexpression&);
+
+			// Nand operator returns a new Qexpression object by adding Qbits within
+			// this Q expression and right Q defined symbols operand where this object
+			// is a left operand
+			Qexpression nand(const Qdef&) const;
+
+			// Nand operator updates this Qexpression object by adding Qbits within
+			// this and right Q defined symbols operand where this object is a left operand
+			Qexpression& nandMutable(const Qdef&);
+
+			// Nand operator returns a new Qexpression object with adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression nand(const Qexpression&) const;
+
+			// Nand operator updates this Qexpression object by adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression& nandMutable(const Qexpression&);
+
+			// Nor operator returns a new Qexpression object by adding Qbits within
+			// this Q expression and right Q defined symbols operand where this object
+			// is a left operand
+			Qexpression nor(const Qdef&) const;
+
+			// Nor operator updates this Qexpression object by adding Qbits within
+			// this and right Q defined symbols operand where this object is a left operand
+			Qexpression& norMutable(const Qdef&);
+
+			// Nor operator returns a new Qexpression object with adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression nor(const Qexpression&) const;
+
+			// Nor operator updates this Qexpression object by adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression& norMutable(const Qexpression&);
+
+			// Xor operator returns a new Qexpression object by adding Qbits within
+			// this Q expression and right Q defined symbols operand where this object
+			// is a left operand
+			Qexpression operator ^(const Qdef&) const;
+
+			// Xor operator updates this Qexpression object by adding Qbits within
+			// this and right Q defined symbols operand where this object is a left operand
+			Qexpression& operator ^=(const Qdef&);
+
+			// Xor operator returns a new Qexpression object with adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression operator ^(const Qexpression&) const;
+
+			// Xor operator updates this Qexpression object by adding Qbits within
+			// this and right Q expression where this object is a left operand
+			Qexpression& operator ^=(const Qexpression&);
 
 			// Addition operator returns a new Qexpression object by adding Qbits within
 			// this Q expression and right Q defined symbols operand where this object
@@ -77,14 +162,19 @@ namespace dann5 {
 			// Insert string representation of a Q expression into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qexpression&);
 		protected:
-			// Return Q bit symbol matrix that is result of matrix multiplication of two
+			// Return Q bit definition matrix that is result of matrix multiplication of two
 			// Q bit vectors, this and right Q expression objects
 			virtual qbit_def_matrix thisX(const Qexpression& right) const;
 
-			// Updates this Q expression by summarizing diagonals of given Q bit symbol
+			// Updates this Q expression by summarizing diagonals of given Q bit definition
 			// matrix. The size of resulting Q expression vector is
 			// #_of_rows + #_of_cols - 1
 			virtual void sumDiagonals(const qbit_def_matrix&);
+
+			// Return Qexpression created by applying operation mark on this and right
+			// Q expression objects. The number of bit levels of resulting Q expression
+			// is equal to number of bit levels of larger Q expression operand
+			Qexpression operation(const string& opMark, const Qexpression& right) const;
 
 		private:
 			// An add functional object augmenting Qexprfession addition operators 

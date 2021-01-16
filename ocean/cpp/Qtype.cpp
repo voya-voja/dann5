@@ -112,12 +112,16 @@ Qint Qint::operator &(const Qint& right) const
 
 Qint& Qint::operator &=(const Qint& right)
 {
-	if (rows() < right.rows())
-		resize(right.rows());
-	for (Index at = 0; at < rows(); at++)
+	Index rsize = right.rows();
+	Index size = rows();
+	if (size < rsize)
+		resize(rsize);	// this Qint has to have same or more Qbits as right
+	for (Index at = 0; at < size; at++)
 	{
-		Qbit tqb = (*this)(at), rqb = right(at);
-		if (tqb > 1 || rqb > 1)
+		Qbit tqb = (*this)(at), rqb = 0;
+		if(at < rsize)
+			rqb = right(at);
+		if (tqb > 1 || rqb > 1)	// if either bits is in superposition
 			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) &= rqb;
@@ -132,15 +136,70 @@ Qint Qint::operator |(const Qint& right) const
 	return result;
 }
 
-
 Qint& Qint::operator |=(const Qint& right)
 {
-	if (rows() < right.rows())
-		resize(right.rows());
-	for (Index at = 0; at < rows(); at++)
+	Index rsize = right.rows();
+	Index size = rows();
+	if (size < rsize)
+		resize(rsize);	// this Qint has to have same or more Qbits as right
+	for (Index at = 0; at < size; at++)
 	{
-		Qbit tqb = (*this)(at), rqb = right(at);
-		if (tqb > 1 || rqb > 1)
+		Qbit tqb = (*this)(at), rqb = 0;
+		if (at < rsize)
+			rqb = right(at);
+		if (tqb > 1 || rqb > 1)	// if either bits is in superposition
+			(*this)(at) = Qbit::cSuperposition;
+		else
+			(*this)(at) |= rqb;
+	}
+	return *this;
+}
+
+Qint Qint::nand(const Qint& right) const
+{
+	Qint result(*this);
+	result.nandMutable(right);
+	return result;
+}
+
+Qint& Qint::nandMutable(const Qint& right)
+{
+	Index rsize = right.rows();
+	Index size = rows();
+	if (size < rsize)
+		resize(rsize);	// this Qint has to have same or more Qbits as right
+	for (Index at = 0; at < size; at++)
+	{
+		Qbit tqb = (*this)(at), rqb = 0;
+		if (at < rsize)
+			rqb = right(at);
+		if (tqb > 1 || rqb > 1)	// if either bits is in superposition
+			(*this)(at) = Qbit::cSuperposition;
+		else
+			(*this)(at) &= rqb;
+	}
+	return *this;
+}
+
+Qint Qint::nor(const Qint& right) const
+{
+	Qint result(*this);
+	result.norMutable(right);
+	return result;
+}
+
+Qint& Qint::norMutable(const Qint& right)
+{
+	Index rsize = right.rows();
+	Index size = rows();
+	if (size < rsize)
+		resize(rsize);	// this Qint has to have same or more Qbits as right
+	for (Index at = 0; at < size; at++)
+	{
+		Qbit tqb = (*this)(at), rqb = 0;
+		if (at < rsize)
+			rqb = right(at);
+		if (tqb > 1 || rqb > 1)	// if either bits is in superposition
 			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) |= rqb;
@@ -157,12 +216,16 @@ Qint Qint::operator ^(const Qint& right) const
 
 Qint& Qint::operator ^=(const Qint& right)
 {
-	if (rows() < right.rows())
-		resize(right.rows());
+	Index rsize = right.rows();
+	Index size = rows();
+	if (size < rsize)
+		resize(rsize);	// this Qint has to have same or more Qbits as right
 	for (Index at = 0; at < rows(); at++)
 	{
-		Qbit tqb = (*this)(at), rqb = right(at);
-		if (tqb > 1 || rqb > 1)
+		Qbit tqb = (*this)(at), rqb = 0;
+		if (at < rsize)
+			rqb = right(at);
+		if (tqb > 1 || rqb > 1)	// if either bits is in superposition
 			(*this)(at) = Qbit::cSuperposition;
 		else
 			(*this)(at) ^= rqb;

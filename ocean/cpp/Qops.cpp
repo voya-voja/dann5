@@ -95,7 +95,7 @@ string Qop::toString(bool decomposed) const
 }
 
 // return Qubo presentation of this Qoperand
-Qubo Qop::qubo() const
+Qubo Qop::qubo(bool finalized) const
 {
 	Qoperands args = arguments();
 	size_t size = args.size();
@@ -104,7 +104,7 @@ Qubo Qop::qubo() const
 	for (size_t atArg = 0; atArg < size; atArg++)
 	{
 		// add sub-qubo from argument operand
-		argsQubo += args[atArg]->qubo();
+		argsQubo += args[atArg]->qubo(finalized);
 
 		// use names of argument and this operands as unique string describing arguments
 		string aName = arguments()[atArg]->toString();
@@ -234,54 +234,3 @@ Qaddition::Sp Qxor::assign(const Qoperands& operands)
 		return Qaddition::assign(operands);
 	}
 }
-
-
-/*** Operations Factory ***/
-
-Factory<string, Qop> Factory<string, Qop>::gFactory;
-
-Creator<string, Qop, Qeq> gEqualOperatorCreator_s("=");
-Creator<string, Qop, Qeq> gEqualOperatorCreator("equal");
-
-Creator<string, Qop, Qnot> gNotOperatorCreator_s("~");
-Creator<string, Qop, Qnot> gNotOperatorCreator("not");
-
-Creator<string, Qop, Qlt> gLtOperatorCreator_s("<");
-Creator<string, Qop, Qlt> gLtOperatorCreator("lessthan");
-
-Creator<string, Qop, Qle> gLeOperatorCreator_s("<=");
-Creator<string, Qop, Qle> gLeOperatorCreator("lessequal");
-
-Creator<string, Qop, Qgt> gGtOperatorCreator_s(">");
-Creator<string, Qop, Qgt> gGtOperatorCreator("greaterthan");
-
-Creator<string, Qop, Qge> gGeOperatorCreator_s(">=");
-Creator<string, Qop, Qge> gGeOperatorCreator("greaterequal");
-
-Creator<string, Qop, Qand> gAndOpCreator_s("&");
-Creator<string, Qop, Qand> gAndOpCreator("and");
-
-Creator<string, Qop, QnAnd> gNandOpCreator_s("~&");
-Creator<string, Qop, QnAnd> gNandOpCreator("nand");
-
-Creator<string, Qop, Qor> gOrOpCreator_s("|");
-Creator<string, Qop, Qor> gOrOpCreator("or");
-
-Creator<string, Qop, QnOr> gNorOpCreator_s("~|");
-Creator<string, Qop, QnOr> gNorOpCreator("nor");
-/*
-Creator<string, Qop, QnLeftOrRight> gNleftOrRightOpCreator("notleftorright");
-
-Creator<string, Qop, DwNotLeftOrRightOp> gNotLeftOrRightOpCreator_dw("dwnotleftorright");
-*/
-Creator<string, Qop, Qxor> gXorOpCreator_s("^");
-Creator<string, Qop, Qxor> gXorOpCreator("xor");
-
-Creator<string, Qop, Qadder05> gHalfAdderOpCreator_s("+05");
-Creator<string, Qop, Qadder05> gHalfAdderOpCreator("halfadder");
-/*
-Creator<string, Qop, NxorOp> gNxorOpCreator_s("~^");
-Creator<string, Qop, NxorOp> gNxorOpCreator("nxor");
-*/
-Creator<string, Qop, Qadder> gAdderOpCreator_s("+");
-Creator<string, Qop, Qadder> gAdderOpCreator("adder");
