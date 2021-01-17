@@ -249,7 +249,7 @@ endif()
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
         "$<$<CONFIG:Debug>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37"
+			"C:/Users/Nebojsa.Vojinovic/AppData/Local/Continuum/anaconda3/envs/ocean38/libs/Python38"
         ">"
     )
 endif()

@@ -48,11 +48,6 @@ set(Source_Files
 )
 source_group("Source Files" FILES ${Source_Files})
 
-set(dann5
-    "Debug/d5o.cp38-win_amd64.pyd"
-)
-source_group("dann5" FILES ${dann5})
-
 set(py_test
     "../test/py/d5oQuboAdditionTest.py"
     "../test/py/d5oQuboMultiplicationTest.py"
@@ -65,7 +60,6 @@ set(ALL_FILES
     ${no_group_source_files}
     ${Include_Files}
     ${Source_Files}
-    ${dann5}
     ${py_test}
 )
 
@@ -132,16 +126,16 @@ endif()
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     set_target_properties(${PROJECT_NAME} PROPERTIES
         ARCHIVE_OUTPUT_NAME_DEBUG          "d5o"
-        ARCHIVE_OUTPUT_NAME_MINSIZEREL     "dann5.ocean"
-        ARCHIVE_OUTPUT_NAME_RELEASE        "dann5.ocean"
-        ARCHIVE_OUTPUT_NAME_RELWITHDEBINFO "dann5.ocean"
+        ARCHIVE_OUTPUT_NAME_MINSIZEREL     "d5o"
+        ARCHIVE_OUTPUT_NAME_RELEASE        "d5o"
+        ARCHIVE_OUTPUT_NAME_RELWITHDEBINFO "d5o"
     )
 elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     set_target_properties(${PROJECT_NAME} PROPERTIES
         ARCHIVE_OUTPUT_NAME_DEBUG          "d5o"
-        ARCHIVE_OUTPUT_NAME_MINSIZEREL     "dann5.ocean"
-        ARCHIVE_OUTPUT_NAME_RELEASE        "dann5.ocean"
-        ARCHIVE_OUTPUT_NAME_RELWITHDEBINFO "dann5.ocean"
+        ARCHIVE_OUTPUT_NAME_MINSIZEREL     "d5o"
+        ARCHIVE_OUTPUT_NAME_RELEASE        "d5o"
+        ARCHIVE_OUTPUT_NAME_RELWITHDEBINFO "d5o"
     )
 endif()
 ################################################################################
@@ -188,39 +182,17 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_include_directories(${PROJECT_NAME} PUBLIC
-        "$<$<CONFIG:Debug>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../ocean/cpp/include;"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../eigen-master;"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/include"
-        ">"
-        "$<$<CONFIG:MinSizeRel>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "$<$<CONFIG:RelWithDebInfo>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "${CMAKE_CURRENT_SOURCE_DIR}/../pybind11/include"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ocean/cpp/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../eigen-master;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/Lib/site-packages/pybind11/include"
     )
 elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     target_include_directories(${PROJECT_NAME} PUBLIC
-        "$<$<CONFIG:Debug>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../ocean/cpp/include;"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../eigen-master;"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/include"
-        ">"
-        "$<$<CONFIG:MinSizeRel>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "$<$<CONFIG:RelWithDebInfo>:"
-            "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include"
-        ">"
-        "${CMAKE_CURRENT_SOURCE_DIR}/../pybind11/include"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../ocean/cpp/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../eigen-master;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/include;"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/Lib/site-packages/pybind11/include"
     )
 endif()
 
@@ -400,21 +372,7 @@ endif()
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "$<$<CONFIG:Debug>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean38\libs\Python38"
-        ">"
-        "$<$<CONFIG:MinSizeRel>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
-        "$<$<CONFIG:RelWithDebInfo>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/libs/Python38;"
         "kernel32;"
         "user32;"
         "gdi32;"
@@ -428,21 +386,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     )
 elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "$<$<CONFIG:Debug>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean38\libs\Python38"
-        ">"
-        "$<$<CONFIG:MinSizeRel>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
-        "$<$<CONFIG:RelWithDebInfo>:"
-            "C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37;"
-            "-LTCG"
-        ">"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../AppData\Local\Continuum\anaconda3\envs\ocean38\libs\Python38;"
         "kernel32;"
         "user32;"
         "gdi32;"

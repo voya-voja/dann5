@@ -60,9 +60,6 @@
     <Filter Include="Include Files">
       <UniqueIdentifier>{033badf5-b65e-4966-96c4-122ff313faf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="dann5">
-      <UniqueIdentifier>{060cdbe2-801e-4cca-b19f-7fc249898d87}</UniqueIdentifier>
-    </Filter>
     <Filter Include="py_test">
       <UniqueIdentifier>{28b4804d-d000-4045-abee-9ea46bf91650}</UniqueIdentifier>
     </Filter>
@@ -118,9 +115,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug\d5o.cp38-win_amd64.pyd">
-      <Filter>dann5</Filter>
-    </None>
     <None Include="..\test\py\d5oQuboAdditionTest.py">
       <Filter>py_test</Filter>
     </None>

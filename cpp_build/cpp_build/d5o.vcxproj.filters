@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\BQM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qcondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qdef.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qequation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qexpression.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qfunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qoperand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qops.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qrutine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qstatement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qtype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qubo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\Qvar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\BQM.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Factory.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Logger.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qcondition.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qdef.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qequation.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qexpression.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qfunction.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qoperand.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qops.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qrutine.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qstatement.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qtype.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qubo.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Qvar.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\ocean\cpp\include\Utility.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\cpp_build\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
+    <None Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\test\py\d5oQuboAdditionTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\test\py\d5oQuboMultiplicationTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\test\py\d5oQuboTest.py">
+      <Filter>py_test</Filter>
+    </None>
+    <None Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\test\py\DWbqmTest.py">
+      <Filter>py_test</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{D39A4992-CB61-3509-8A80-CAC7341F60E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BADC9828-4AF4-3076-B3CD-354B0617BC5B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="py_test">
+      <UniqueIdentifier>{D14D4AE0-9C91-3225-BC90-176BE132B921}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
