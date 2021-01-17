@@ -5,7 +5,7 @@ Created on Sat Sep  5 17:09:42 2020
 @author: Nebojsa.Vojinovic
 """
 
-from dann5.d5o import Qvar, Qequation, Qint
+from dann5.d5o import Qvar, Qequation
 from dimod import ExactSolver
 from dwave.system import DWaveSampler, EmbeddingComposite
 from dwave.cloud.exceptions import SolverNotFoundError
@@ -15,17 +15,18 @@ a = Qvar(3, "a")
 b = Qvar(3, "b")
 c = Qvar(2, "c")
 d = Qvar(2, "d")
-r_addAbcd = Qequation(Qvar("R", 15))
-r_addAbcd.assign( a + b)# + c + d )
+A = Qvar("A", 15)
+eA = Qequation(A)
+eA.assign( a + b + c + d )
 
-print(r_addAbcd.toString(False))
-print(r_addAbcd.toString(True))
+print(eA.toString(False, -1))
+print(eA.toString(True, -1))
 
-qT = r_addAbcd.qubo(False)
+qT = eA.qubo(False, -1)
 print("Vectors")
 print(qT)
 
-Q = r_addAbcd.qubo(True)
+Q = eA.qubo(True, -1)
 
 print(Q)
 
@@ -63,5 +64,5 @@ sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
 
 samples = [dict(sample) for sample in sampleset.lowest().samples()]
-r_addAbcd.set(samples)
-print(r_addAbcd.solutions())
+eA.set(samples)
+print(eA.solutions())

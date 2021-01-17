@@ -17,17 +17,16 @@ b = Qvar(2, "b")
 c = Qvar(2, "c")
 d = Qvar(2, "d")
 X = Qvar("X", 6)
-eX = Qequation(X)
-eX.assign( a * b * c)
+eD = Qequation(X / a)
 
-print(eX.toString(False, -1))
-print(eX.toString(True, -1))
+print(eD.toString(False, -1))
+print(eD.toString(True, -1))
 
-qT = eX.qubo(False, -1)
+qT = eD.qubo(False, -1)
 print("Vectors")
 print(qT)
 
-Q = eX.qubo(True, -1)
+Q = eD.qubo(True, -1)
 
 print(Q)
 
@@ -65,5 +64,5 @@ sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
 
 samples = [dict(sample) for sample in sampleset.lowest().samples()]
-eX.set(samples)
-print(eX.solutions())
+eD.set(samples)
+print(eD.solutions())

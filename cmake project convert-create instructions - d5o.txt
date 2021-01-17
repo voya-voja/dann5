@@ -1,0 +1,17 @@
+1. Install cmake_converter into a python environment:
+	pip install cmake_converter
+   for additional instructions read https://cmakeconverter.readthedocs.io/en/latest/install.html
+   github is at https://github.com/pavelliavonau/cmakeconverter
+
+2. To run it use:
+	a) windows script:
+		vs2cm_convert.bat
+	b) in anaconda 3 environment promp:
+		python [env_path]\Lib\site-packages\cmake_converter\main.py
+    running without arguments will display the usage instructions
+    for more information on parameters readmain.py
+    https://github.com/pavelliavonau/cmakeconverter/blob/develop/cmake_converter/main.py
+
+3. To create a dann5.ocean solution in new IDE use:
+	cmake -S "[repos_path\]dann5" -B "[repos_path\]dann5\build" -G "[IDE OS description]"
+   where [IDE OS description] can be "Visual Studio 15 2017 Win64"

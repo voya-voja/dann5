@@ -392,8 +392,8 @@ void testQpow()
 
 void testSubAndDiv()
 {
-	Qvar a(2, "a"), b(2, "b"), s("s", 4), d("d", 4);
-	Qequation eS(s - a);
+	Qvar a(3, "a"), b(3, "b"), c(2, "c"), d(2, "d"), R("r", 15);
+	Qequation eS(R - a);
 //	eS = a - b;
 	cout << endl << eS.toString() << endl;
 	Qequation eD(d / b);
@@ -403,24 +403,24 @@ void testSubAndDiv()
 
 void testAddition()
 {
-	Qvar a(3, "a"), b(3, "b"), c(2, "c"), d(2, "d"), R("R", 15);
-	Qequation r_addAbcd(R);
-	r_addAbcd = a + b +c + d;
-	cout << endl << r_addAbcd.toString() << endl;
-	cout << endl << r_addAbcd.toString(true) << endl;
-	cout << endl << r_addAbcd.qubo(false) << endl;
-	cout << endl << r_addAbcd.qubo() << endl;
+	Qvar a(3, "a"), b(3, "b"), c(2, "c"), d(2, "d"), A("A", 15);
+	Qequation eA(A);
+	eA = a + b + c + d;
+	cout << endl << eA.toString() << endl;
+	cout << endl << eA.toString(true) << endl;
+	cout << endl << eA.qubo(false) << endl;
+	cout << endl << eA.qubo() << endl;
 }
 
 void testMultiplication()
 {
-	Qvar a(3, "a"), b(2, "b"), c(2, "c"), d(2, "d"), R("R", 6);
-	Qequation r_xAbcd(R);
-	r_xAbcd = a * b * c;
-	cout << endl << r_xAbcd.toString() << endl;
-	cout << endl << r_xAbcd.toString(true) << endl;
-	cout << endl << r_xAbcd.qubo(false) << endl;
-	cout << endl << r_xAbcd.qubo() << endl;
+	Qvar a(3, "a"), b(2, "b"), c(2, "c"), d(2, "d"), X("X", 6);
+	Qequation eX(X);
+	eX = a * b * c;
+	cout << endl << eX.toString() << endl;
+	cout << endl << eX.toString(true) << endl;
+	cout << endl << eX.qubo(false) << endl;
+	cout << endl << eX.qubo() << endl;
 }
 
 
