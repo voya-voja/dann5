@@ -41,6 +41,20 @@ namespace dann5 {
 			// desruct the Q equation with its members
 			~Qrutine();
 
+			// Returns a qubo representation of this Q rutine, 
+			// if not finalized, returns a full qubo definition representation
+			// if finalized, returns an expression that replaces symbols with values of
+			// Qbits in deterministic states for all the Q variables within Q rutine
+			Qubo qubo(bool finalized = true) const;
+
+			// Returns a string representation of this Q rutine, 
+			// if not decomposed, returns an equation line per Qbit level
+			// if decomposed, returns a line per Qbit operational expressions
+			string toString(bool decomposed = false) const;
+
+			// Return a shared pointer to a copy of this Q definition
+			virtual Qdef::Sp clone() const { return Sp(new Qrutine(*this)); };
+
 			// An insertion operator (<<) to add a new statement into this Q rutine
 			Qrutine& operator<<(const Qstatement& right);
 
@@ -65,20 +79,6 @@ namespace dann5 {
 			// For existing samples, returns a string representation of all solutions of 
 			// this Q rutine
 			string solutions() const;
-
-			// Returns a qubo representation of this Q rutine, 
-			// if not finalized, returns a full qubo definition representation
-			// if finalized, returns an expression that replaces symbols with values of
-			// Qbits in deterministic states for all the Q variables within Q rutine
-			Qubo qubo(bool finalized = true) const;
-
-			// Returns a string representation of this Q rutine, 
-			// if not decomposed, returns an equation line per Qbit level
-			// if decomposed, returns a line per Qbit operational expressions
-			string toString(bool decomposed = false) const;
-
-			// Return a shared pointer to a copy of this Q definition
-			virtual Qdef::Sp clone() const { return Sp(new Qrutine(*this)); };
 
 			// Insert string representation of a Q rutine into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qrutine&);

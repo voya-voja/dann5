@@ -29,8 +29,8 @@ namespace dann5 {
 			// though any value except 0 and 1 will be considered superposition
 			static const q_bit cSuperposition = 255;
 
-			// Qbit superposition and Qint undefiined string representation
-			static const string cSuporpositionSign;	// the Qint/Qbit unknown sign is "(S)"
+			// Qbit superposition and Qnni undefiined string representation
+			static const string cSuporpositionSign;	// the Qnni/Qbit unknown sign is "(S)"
 
 			// default constructor puts Qbit into supperposition state
 			Qbit() : mValue(cSuperposition) {};
@@ -138,39 +138,37 @@ namespace dann5 {
 			q_bit mValue;
 		};
 
-		// Quantum integer is a vector of Qbits
-		typedef Matrix<q_bit, Dynamic, 1> q_int;
+		// Quantum non-negatve integer is a vector of Qbits
+		typedef Matrix<q_bit, Dynamic, 1> q_nni;
 
-		// Support for Qint << operator
-		typedef Eigen::CommaInitializer<q_int> QintInitializer;
+		// Support for Qnni << operator
+		typedef Eigen::CommaInitializer<q_nni> QintInitializer;
 
-		// Quantum integer, as a vector of Qubits, implements arithmetic operations
-		class Qint : public q_int
+		// Quantum non-negative integer, as a vector of Qubits, implements arithmetic operations
+		class Qnni : public q_nni
 		{
 		public:
-			// the Qint is undefined, if any of its Qbits is in superposition state
+			// the Qnni is undefined, if any of its Qbits is in superposition state
 			static const long cUnknown = LONG_MIN;
 
-			// Qbit superposition and Qint undefiined string representation
-			static const string cUnknownSign;	// the Qint/Qbit unknown sign is "(U)"
+			// Qbit superposition and Qnni undefiined string representation
+			static const string cUnknownSign;	// the Qnni/Qbit unknown sign is "(U)"
 
 			// instantiate a Q integer without any Q bits
-			Qint();
+			Qnni();
 
 			// instantiate a Q integer with a given # of Qbits in superposition state
-			Qint(Index size);
+			Qnni(Index size);
 
 			// instantiate a Q integer with a given value,
 			// the # of Qbits is determined by the # of bits in a given value
-			Qint(long value);
+			Qnni(long value);
 
 			// copy constructor
-			Qint(const Qint&);
+			Qnni(const Qnni&);
 
 			// denstruct the Q integer with its Qbits
-			~Qint();
-
-			Qint& operator =(const Qint&);
+			~Qnni();
 
 			// return cUnknown, if any Qbit is in superposition state,
 			// otherwise return corresponding long integer
@@ -179,106 +177,111 @@ namespace dann5 {
 			// return true, if any Qbit is in superposition state
 			bool isUnknown() const;
 
+			// get Q definition's n(umber) o(f) b(its)
+			Index nobs() const { return rows(); }
+
+			Qnni& operator =(const Qnni&);
+
 			// An insertion operator (<<) to be used in combination with list operator (,);
 			// as per example:
-			//		Qint qi(Index(3)); 
+			//		Qnni qi(Index(3)); 
 			//		qi << 1, 0, 1;
 			QintInitializer operator <<(const Qbit&);
 
-			// An inversion operator returns a new Qint with inversed values of all Qbits
+			// An inversion operator returns a new Qnni with inversed values of all Qbits
 			// in definite states, i.e. 0 or 1
-			Qint operator ~() const;
+			Qnni operator ~() const;
 
-			// An 'and' operator returns a new Qint with logical 'and' applied on 
-			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// An 'and' operator returns a new Qnni with logical 'and' applied on 
+			// corresponding Qbits of this and right Qnni objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 
 			// object was in superposition state
-			Qint operator &(const Qint&) const;
+			Qnni operator &(const Qnni&) const;
 
-			// An 'and' operator changes this Qint instance by applying logical 'and' on
-			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// An 'and' operator changes this Qnni instance by applying logical 'and' on
+			// corresponding Qbits of this and right Qnni object. A resulting Qbit is
 			// be in superposition state, if it is or if corresponding Qbit of right object 
 			// was in superposition state.
 			// Return reference of this object
-			Qint& operator &=(const Qint&);
+			Qnni& operator &=(const Qnni&);
 
-			// An 'or' operator returns a new Qint with logical 'or' applied on 
-			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// An 'or' operator returns a new Qnni with logical 'or' applied on 
+			// corresponding Qbits of this and right Qnni objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 
 			// object was in superposition state
-			Qint operator |(const Qint&) const;
+			Qnni operator |(const Qnni&) const;
 
-			// An 'or' operator changes this Qint instance by applying logical 'or' on
-			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// An 'or' operator changes this Qnni instance by applying logical 'or' on
+			// corresponding Qbits of this and right Qnni object. A resulting Qbit is
 			// be in superposition state, if it is or if corresponding Qbit of right object 
 			// was in superposition state.
 			// Return reference of this object
-			Qint& operator |=(const Qint&);
+			Qnni& operator |=(const Qnni&);
 
-			// An 'nand' operator returns a new Qint with logical 'nand' applied on 
-			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// An 'nand' operator returns a new Qnni with logical 'nand' applied on 
+			// corresponding Qbits of this and right Qnni objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 
 			// object was in superposition state
-			Qint nand(const Qint& right) const;
+			Qnni nand(const Qnni& right) const;
 
-			// An 'nand' operator changes this Qint instance by applying logical 'nand' on
-			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// An 'nand' operator changes this Qnni instance by applying logical 'nand' on
+			// corresponding Qbits of this and right Qnni object. A resulting Qbit is
 			// be in superposition state, if it is or if corresponding Qbit of right object 
 			// was in superposition state.
 			// Return reference of this object
-			Qint& nandMutable(const Qint& right);
+			Qnni& nandMutable(const Qnni& right);
 
-			// An 'nor' operator returns a new Qint with logical 'nor' applied on 
-			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// An 'nor' operator returns a new Qnni with logical 'nor' applied on 
+			// corresponding Qbits of this and right Qnni objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 
 			// object was in superposition state
-			Qint nor(const Qint& right) const;
+			Qnni nor(const Qnni& right) const;
 
-			// An 'nor' operator changes this Qint instance by applying logical 'nor' on
-			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// An 'nor' operator changes this Qnni instance by applying logical 'nor' on
+			// corresponding Qbits of this and right Qnni object. A resulting Qbit is
 			// be in superposition state, if it is or if corresponding Qbit of right object 
 			// was in superposition state.
 			// Return reference of this object
-			Qint& norMutable(const Qint& right);
+			Qnni& norMutable(const Qnni& right);
 
-			// An 'xor' operator returns a new Qint with logical 'xor' applied on 
-			// corresponding Qbits of this and right Qint objects. A resulting Qbit is
+			// An 'xor' operator returns a new Qnni with logical 'xor' applied on 
+			// corresponding Qbits of this and right Qnni objects. A resulting Qbit is
 			// in superposition state, if any of corresponding Qbits of this or right 
 			// object was in superposition state
-			Qint operator ^(const Qint&) const;
+			Qnni operator ^(const Qnni&) const;
 
-			// An 'xor' operator changes this Qint instance by applying logical 'xor' on
-			// corresponding Qbits of this and right Qint object. A resulting Qbit is
+			// An 'xor' operator changes this Qnni instance by applying logical 'xor' on
+			// corresponding Qbits of this and right Qnni object. A resulting Qbit is
 			// be in superposition state, if it is or if corresponding Qbit of right object 
 			// was in superposition state.
 			// Return reference of this object
-			Qint& operator ^=(const Qint&);
+			Qnni& operator ^=(const Qnni&);
 
-			// An 'addition' operator returns a new Qint with added values of this and
+			// An 'addition' operator returns a new Qnni with added values of this and
 			// right objects. A resulting Qbit corresponding to a Qbit of this or right
 			// object that is in superposition state, and any subsequent resulting Qbit,
 			// will be in superposition state.
-			Qint operator +(const Qint&) const;
+			Qnni operator +(const Qnni&) const;
 
-			// An 'addition' operator returns a reference to this Qint object with added 
+			// An 'addition' operator returns a reference to this Qnni object with added 
 			// values of this and right object. A Qbit in superposition state, or 
 			// corresponding to a Qbit of the right object that is in superposition state, 
 			// together with any subsequent Qbit, will be in superposition state.
-			Qint& operator +=(const Qint&);
+			Qnni& operator +=(const Qnni&);
 
-			// An 'multiplication' operator returns a new Qint with multiplied values of
+			// An 'multiplication' operator returns a new Qnni with multiplied values of
 			// this and right objects. A resulting Qbit corresponding to a Qbit of this
 			// or right object that is in superposition state, and any subsequent
 			// resulting Qbit, will be in superposition state.
-			Qint operator *(const Qint&) const;
+			Qnni operator *(const Qnni&) const;
 
-			// An 'multiplication' operator returns a reference to this Qint object with 
+			// An 'multiplication' operator returns a reference to this Qnni object with 
 			// multiplied values of this and right object. A Qbit in superposition state,
 			// or corresponding to a Qbit of the right object that is in superposition 
 			// state, together with any subsequent Qbit, will be in superposition state.
-			Qint& operator *=(const Qint&);
+			Qnni& operator *=(const Qnni&);
 
-			// Resize the Qint as a vector of Qbits to a new size
+			// Resize the Qnni as a vector of Qbits to a new size
 			// if the new size is bigger, assign qBit value to additional Qbits
 			void resize(Index size, const Qbit& qBit = Qbit::cSuperposition);
 

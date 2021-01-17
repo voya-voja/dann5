@@ -16,8 +16,9 @@ b = Qvar(3, "b")
 c = Qvar(2, "c")
 d = Qvar(2, "d")
 r_addAbcd = Qequation(Qvar("R", 15))
-r_addAbcd.assign( a + b + c + d )
+r_addAbcd.assign( a + b)# + c + d )
 
+print(r_addAbcd.toString(False))
 print(r_addAbcd.toString(True))
 
 qT = r_addAbcd.qubo(False)

@@ -39,9 +39,17 @@ Qvar::Qvar(const Qdef& definition)
 	_lct(mpDefinition->name() + " = " + mValue.toString());
 }
 
-Qvar::Qvar(const Qdef& definition, const Qint& value)
+Qvar::Qvar(const Qdef& definition, const Qnni& value)
 	: mpDefinition(definition.clone()), mValue(value)
 {
+	Index vn(mValue.nobs()), dn(mpDefinition->nobs());
+	if (vn != dn)
+	{
+		if (vn < dn) 
+			mValue.resize(dn);
+		else 
+			mpDefinition->resize(vn);
+	}
 	_lct(mpDefinition->name() + " = " + mValue.toString());
 }
 
@@ -283,12 +291,12 @@ string Qvar::toString(bool bitFormat) const
 	string vStr = "";
 	if (bitFormat)
 	{
-		for (Index at = 0; at < mpDefinition->rows(); at++)
+		for (Index at = 0; at < mpDefinition->nobs(); at++)
 		{
 			vStr += (*mpDefinition)(at)->identity() + " = ";
 			Qbit v = mValue(at);
 			if (v > 1)	// supperposition
-				vStr += Qint::cUnknownSign;
+				vStr += Qnni::cUnknownSign;
 			else
 				vStr += to_string(v);
 			vStr += "\n";

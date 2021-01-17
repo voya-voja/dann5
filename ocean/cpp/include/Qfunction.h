@@ -55,8 +55,8 @@ namespace dann5 {
 		public:
 			// dividend ÷ divisor = quotient + remainder
 			Qmod(const Qvar& dividend, const Qvar& divisor);
-			Qmod(const Qvar& dividend, const Qint& divisor);
-			Qmod(const Qdef& dividend, const Qint& divisor);
+			Qmod(const Qvar& dividend, const Qnni& divisor);
+			Qmod(const Qdef& dividend, const Qnni& divisor);
 			Qmod(const Qdef& dividend, const Qvar& divisor);
 		protected:
 		private:

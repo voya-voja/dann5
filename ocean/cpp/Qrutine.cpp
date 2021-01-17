@@ -29,7 +29,7 @@ Qrutine::Qrutine(const string& name, const Qstatement& statement)
 {
 	Qdef::name(name);
 	mStatements.push_back(statement.clone());
-	Index size = statement.size();
+	Index size = statement.nobs();
 	initialize(size);
 }
 
@@ -40,7 +40,7 @@ Qrutine::Qrutine(const string& name, const Qstatements& statements)
 	Index size = 1;
 	for (auto statement : mStatements)
 	{
-		Index sSize = statement->size();
+		Index sSize = statement->nobs();
 		if (size < sSize)
 			size = sSize;
 	}
@@ -137,7 +137,7 @@ string Qrutine::solutions() const
 			for (auto arg : args)
 			{
 				Qdef definition = as_const(arg).definition();
-				Qint value(as_const(arg).value().rows());
+				Qnni value(as_const(arg).value().nobs());
 				int atBit = 0;
 				for (auto bitSymbol : definition)
 					value[atBit++] = sample[bitSymbol->identity()];

@@ -24,10 +24,10 @@ Qexpression::Qexpression(const Qexpression& right)
 }
 
 Qexpression::Qexpression(const Qdef& definition)
-	: qbit_def_vector(definition.rows())
+	: qbit_def_vector(definition.nobs())
 {
-	for (Index at = 0; at < rows(); at++)
-		if (at < definition.rows())
+	for (Index at = 0; at < nobs(); at++)
+		if (at < definition.nobs())
 			(*this)(at) =definition(at);
 	_lct(toString());
 }
@@ -39,7 +39,7 @@ Qexpression::~Qexpression()
 
 Qexpression Qexpression::operation(const string& opMark, const Qexpression& right) const
 {
-	Index tSize = rows(), rSize = right.rows();
+	Index tSize = nobs(), rSize = right.nobs();
 	Index size = rSize > tSize ? rSize : tSize;
 	Qexpression result(size);
 	Qoperands operands;
@@ -202,7 +202,7 @@ Qexpression& Qexpression::operator +=(const Qdef& right)
 
 Qexpression Qexpression::operator +(const Qexpression& right) const
 {
-	Index tSize = rows(), rSize = right.rows();
+	Index tSize = nobs(), rSize = right.nobs();
 	Index size = rSize > tSize ? rSize : tSize;
 	// allocate extra bit for result for a last carry bit
 	Index allocateSize = size + 1;
@@ -237,7 +237,7 @@ Qexpression Qexpression::operator +(const Qexpression& right) const
 		size--;
 		add--;
 	}
-	if (size + 1 < result.rows())
+	if (size + 1 < result.nobs())
 		result.resize(size + 1);
 	_lat("+", result.toString());
 	return result;
@@ -280,13 +280,13 @@ Qexpression& Qexpression::operator *=(const Qexpression& right)
 
 qbit_def_matrix Qexpression::thisX(const Qexpression& right) const
 {
-	qbit_def_matrix xMatrix(rows(), right.rows());
+	qbit_def_matrix xMatrix(nobs(), right.nobs());
 	int carry = 0;
-	std::cout << "Matrix " << rows() << " x " << right.rows() << endl;
+	std::cout << "Matrix " << nobs() << " x " << right.nobs() << endl;
 	Qoperands operands;
-	for (Index atR = 0; atR < rows(); atR++)
+	for (Index atR = 0; atR < nobs(); atR++)
 	{
-		for (Index atC = 0; atC < right.rows(); atC++)
+		for (Index atC = 0; atC < right.nobs(); atC++)
 		{
 			Qop::Sp pOp = Factory<string, Qop>::Instance().create(AndQT::cMark);
 			operands.push_back((*this)(atR));
@@ -346,7 +346,7 @@ void Qexpression::sumDiagonals(const qbit_def_matrix& xMatrix)
 
 void Qexpression::resize(Index size)
 {
-	Index oSize = rows();
+	Index oSize = nobs();
 	Qexpression temp(*this);
 	qbit_def_vector::resize(size, NoChange);
 	for (Index at = 0; at < size; at++)
@@ -358,7 +358,7 @@ void Qexpression::resize(Index size)
 
 string Qexpression::toString() const
 {
-	Index size = rows();
+	Index size = nobs();
 	string tStr = "eXp[" + to_string(size) + "]={";
 	string s = "size = " + size;
 	for (Index at = 0; at < size; at++)

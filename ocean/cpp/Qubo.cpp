@@ -72,39 +72,33 @@ QuboTable& QuboTable::operator << (const VariableRow& row)
 */
 Qubo QuboTable::qubo() const
 {
-	int c, r;
-	QuboKey key;
-	Qubo dict;
+	return(createQubo(mVariables));
 
-	for (r = 0; r < mElements.rows(); r++)
-	{
-		key.first = mVariables(r);
-		for (c = r; c < mElements.cols(); c++)
-		{
-			key.second = mVariables(c);
-			dict[key] = mElements(r, c);
-		}
-	}
-	return dict;
 }
 
 Qubo QuboTable::qubo(const Labels& arguments) const
 {
-	int c, r;
-	QuboKey key;
-	Qubo dict;
-
 	Labels args = format(arguments);
 	Labels variables(mVariables);
 	for (Index at = 0; at < args.rows(); at++)
 		variables(at) = args(at);
+	return(createQubo(variables));
+}
+
+Qubo QuboTable::createQubo(const Labels& variables) const
+{
+	int c, r;
+	QuboKey key;
+	Qubo dict;
 	for (r = 0; r < mElements.rows(); r++)
 	{
 		key.first = variables(r);
 		for (c = 0; c < mElements.cols(); c++)
 		{
 			key.second = variables(c);
-			dict[key] = mElements(r, c);
+			double element = mElements(r, c);
+			if (element != 0 || key.first == key.second)
+				dict[key] = element;
 		}
 	}
 	return dict;

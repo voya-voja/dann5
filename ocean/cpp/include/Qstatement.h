@@ -42,7 +42,7 @@ namespace dann5 {
 			~Qstatement();
 
 			// Returns a number of bit level expressions in this Q equation
-			Index size() const { return mExpression.rows(); }
+			Index nobs() const { return mExpression.rows(); }
 
 			// Returns a constant reference to the expression of this Q equation
 			const Qexpression& expression() const { return mExpression; }

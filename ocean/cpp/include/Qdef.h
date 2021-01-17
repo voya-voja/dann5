@@ -50,6 +50,14 @@ namespace dann5 {
 			// Set a new name of the Q defined definition
 			void name(const string& s) { mDefinition = s; }
 
+			// get Q definition's n(umber) o(f) b(its)
+			Index nobs() const { return rows(); }
+
+			// Resize the Qdef as a vector of qbit definitions to a new size
+			void resize(Index size);
+
+			// Return a shared pointer to a copy of this Q definition
+			virtual Qdef::Sp clone() const { return Sp(new Qdef(*this)); };
 
 			// A condition negation
 			Qdef& operator~();
@@ -192,12 +200,6 @@ namespace dann5 {
 			// expressions of Qbits within this Q defined symbols and right Qexpression
 			// operand where this object is a left operand
 			Qexpression operator *(const Qexpression&) const;
-
-			// Resize the Qdef as a vector of qbit definitions to a new size
-			void resize(Index size);
-
-			// Return a shared pointer to a copy of this Q definition
-			virtual Qdef::Sp clone() const { return Sp(new Qdef(*this)); };
 
 		protected:
 			// Concatenates right object to this object using 'concatenation sign, which

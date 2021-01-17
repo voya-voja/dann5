@@ -143,7 +143,7 @@ void test1()
 
 	Qubo d = nxorQ.qubo();
 
-	Qint v_na(Index(3)), v_nb(Index(4)), v_nr;
+	Qnni v_na(Index(3)), v_nb(Index(4)), v_nr;
 	v_na << 1, 0, Qbit::cSuperposition;
 	v_nb << 0, 1, 1, 1;
 	std::cout << std::endl << "Va: " << v_na.value() << std::endl << v_na << std::endl << "Vb: " << v_nb.value() << std::endl << v_nb << std::endl;
@@ -401,9 +401,33 @@ void testSubAndDiv()
 	cout << endl << eD.toString() << endl;
 }
 
+void testAddition()
+{
+	Qvar a(3, "a"), b(3, "b"), c(2, "c"), d(2, "d"), R("R", 15);
+	Qequation r_addAbcd(R);
+	r_addAbcd = a + b +c + d;
+	cout << endl << r_addAbcd.toString() << endl;
+	cout << endl << r_addAbcd.toString(true) << endl;
+	cout << endl << r_addAbcd.qubo(false) << endl;
+	cout << endl << r_addAbcd.qubo() << endl;
+}
+
+void testMultiplication()
+{
+	Qvar a(3, "a"), b(2, "b"), c(2, "c"), d(2, "d"), R("R", 6);
+	Qequation r_xAbcd(R);
+	r_xAbcd = a * b * c;
+	cout << endl << r_xAbcd.toString() << endl;
+	cout << endl << r_xAbcd.toString(true) << endl;
+	cout << endl << r_xAbcd.qubo(false) << endl;
+	cout << endl << r_xAbcd.qubo() << endl;
+}
+
+
 int main()
 {
-	testSubAndDiv();
+	testMultiplication();
+//	testSubAndDiv();
 //	test5short();
 
 	_CrtDumpMemoryLeaks();

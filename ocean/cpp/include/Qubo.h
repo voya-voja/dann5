@@ -95,6 +95,9 @@ namespace dann5{
 			// A specific implementation override to map specific Qubo variables to its 
 			// generic node names
 			virtual Labels format(const Labels&) const;
+
+			// creates a Qubo from thistable for given variables
+			virtual Qubo createQubo(const Labels& variables) const;
 		private:
 
 			Labels			mVariables;	// Qubo table defualt node names

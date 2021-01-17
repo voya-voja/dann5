@@ -63,7 +63,7 @@ Qdef::~Qdef()
 
 void Qdef::concatenate(const Qdef& right, const string& sign)
 {
-	Index size(rows()), rSize(right.rows());
+	Index size(nobs()), rSize(right.nobs());
 	if (size < rSize) resize(rSize);
 	mDefinition += sign + right.mDefinition;
 	for (Index at = 0; at < size; at++)
@@ -86,7 +86,7 @@ void Qdef::concatenate(const Qdef& right, const string& sign)
 Qdef& Qdef::operator~()
 {
 	string sign = "~";
-	Index size(rows());
+	Index size(nobs());
 	mDefinition = sign + mDefinition;
 	for (Index at = 0; at < size; at++)
 	{
@@ -238,7 +238,7 @@ Qexpression Qdef::operator *(const Qexpression& right) const
 
 void Qdef::resize(Index size)
 {
-	Index oSize = rows();
+	Index oSize = nobs();
 	Qdef temp(*this);
 	qbit_def_vector::resize(size, NoChange);
 	for (Index at = 0; at < size; at++)

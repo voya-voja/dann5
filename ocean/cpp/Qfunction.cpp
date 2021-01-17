@@ -45,7 +45,7 @@ Qfunction::~Qfunction()
 
 Qfunction& Qfunction::operator<<(const Qstatement& right)
 {
-	Index size(mpRutine->size()), rSize(right.size());
+	Index size(mpRutine->nobs()), rSize(right.nobs());
 	if (size < rSize)
 		resize(rSize);
 
@@ -79,13 +79,13 @@ Qmod::Qmod(const Qvar& dividend, const Qvar& divisor)
 
 }
 
-Qmod::Qmod(const Qvar& dividend, const Qint& divisor)
+Qmod::Qmod(const Qvar& dividend, const Qnni& divisor)
 	: Qfunction("mod")
 {
 
 }
 
-Qmod::Qmod(const Qdef& dividend, const Qint& divisor)
+Qmod::Qmod(const Qdef& dividend, const Qnni& divisor)
 	: Qfunction("mod")
 {
 

@@ -33,6 +33,15 @@ namespace dann5 {
 			// Destruct the Q expression instance with containing Qdef and Q
 			~Qexpression();
 
+			// get Q expression's n(umber) o(f) b(its)
+			Index nobs() const { return rows(); }
+
+			// Resize the Qexpression as a vector of qbit definitions to a new size
+			void resize(Index size);
+
+			// Return a string representation of this Q expression
+			string toString() const;
+
 			// And operator returns a new Qexpression object by adding Qbits within
 			// this Q expression and right Q defined symbols operand where this object
 			// is a left operand
@@ -152,12 +161,6 @@ namespace dann5 {
 			// Multiplication operator updates this Qexpression object by multiplying
 			// Qbits within this and right Q expression where this object is a left operand
 			Qexpression& operator *=(const Qexpression&);
-
-			// Resize the Qexpression as a vector of qbit definitions to a new size
-			void resize(Index size);
-
-			// Return a string representation of this Q expression
-			string toString() const;
 
 			// Insert string representation of a Q expression into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qexpression&);

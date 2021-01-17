@@ -147,8 +147,8 @@ Creator<string, QuboTable, XorQT> gXorQTcreator(XorQT::cName);
 
 /**** Nxor binary operation Qubo Table with two outputs****/
 
-const string NxorQT::cMark = "^";
-const string NxorQT::cName = "xor";
+const string NxorQT::cMark = "~^";
+const string NxorQT::cName = "nxor";
 
 /**** Factory Creator's of Nxor binary operation Qubo Table ****/
 Creator<string, QuboTable, NxorQT> gNxorQTcreator_m(NxorQT::cMark);

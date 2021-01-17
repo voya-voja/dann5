@@ -45,7 +45,7 @@ Qcondition& Qcondition::operator=(const Qcondition& right)
 	arguments().clear();
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() = right.expression();
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	return(*this);
 }
 
@@ -134,7 +134,7 @@ Qcondition& Qcondition::nor(const Qcondition& right)
 Qubo Qcondition::qubo(bool finalized, Index level) const
 {
 	bool iterateAll = level == Eigen::Infinity;
-	Index last = (iterateAll ? size() - 1 : level);
+	Index last = (iterateAll ? nobs() - 1 : level);
 	Qubo rawBqm;
 	for (Index at = 0; at <= last; at++)
 		if (iterateAll || (!iterateAll && at == level))
@@ -160,7 +160,7 @@ Qubo Qcondition::qubo(bool finalized, Index level) const
 string Qcondition::toString(bool decomposed, Index level) const
 {
 	bool iterateAll = level == Eigen::Infinity;
-	Index last = (iterateAll ? size() - 1 : level);
+	Index last = (iterateAll ? nobs() - 1 : level);
 	string sEquation = "";
 	vector<pair<string, string> > reduces;
 	for (Index at = 0; at <=  last; at++)

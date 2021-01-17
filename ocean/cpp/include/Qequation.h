@@ -172,9 +172,6 @@ namespace dann5 {
 			// y = x / z	=>	div << D_y = x << D_y = y * z
 			Qrutine operator/(const Qvar& right) const;
 
-			// Returns a number of bit level expressions in this Q equation
-			Index size() const { return mResult.definition().rows(); }
-
 			// Returns a constant reference to the result of this Q equation
 			const Qvar& result() const { return mResult; }
 

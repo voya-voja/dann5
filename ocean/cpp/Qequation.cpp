@@ -24,7 +24,7 @@ Qequation::Qequation(const Qequation& right)
 }
 
 Qequation::Qequation(const Qvar& result)
-	: Qstatement(result.definition().size()), mResult(result), mReduct(*this), mNoResult(false)
+	: Qstatement(result.nobs()), mResult(result), mReduct(*this), mNoResult(false)
 {
 	_lct(toString());
 }
@@ -32,10 +32,20 @@ Qequation::Qequation(const Qvar& result)
 Qequation::Qequation(const Qvar& result, const Qexpression& equation, const Qvars& arguments)
 	: Qstatement(equation, arguments), mResult(result), mReduct(*this), mNoResult(false)
 {
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().rows())
-		mResult.resize(size);
-	mReduct();
+	// ensure result Q variable and equation Q expression have same number-of-bits
+	Index n(nobs()), rn(mResult.nobs());
+	if (n != rn)
+	{
+		if (n < rn)
+		{
+			expression().resize(rn);
+		}
+		else
+		{
+			mResult.resize(n);
+		}
+	}
+	mReduct();	// reduct the equation to prepare 
 	_lct(toString());
 }
 
@@ -49,10 +59,9 @@ Qequation& Qequation::operator=(const Qvar& right)
 	arguments().clear();
 	arguments().push_back(right);
 	expression() = right.definition();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	return(*this);
 }
 
@@ -66,10 +75,9 @@ Qequation& Qequation::operator=(const Qequation& right)
 	arguments().clear();
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() = right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	return(*this);
 }
 
@@ -90,7 +98,7 @@ Qequation Qequation::operator&(const Qequation& right) const
 Qequation& Qequation::operator&=(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -99,9 +107,9 @@ Qequation& Qequation::operator&=(const Qvar& right)
 	{
 		expression() &= right.definition();
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("&=\n", toString(true));
 	return(*this);
 }
@@ -117,11 +125,9 @@ Qequation& Qequation::operator&=(const Qequation& right)
 		mResult &= right.mResult;
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() &= right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("&=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("&= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -143,7 +149,7 @@ Qequation Qequation::operator|(const Qequation& right) const
 Qequation& Qequation::operator|=(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -152,9 +158,9 @@ Qequation& Qequation::operator|=(const Qvar& right)
 	{
 		expression() |= right.definition();
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("|=\n", toString(true));
 	return(*this);
 }
@@ -170,11 +176,9 @@ Qequation& Qequation::operator|=(const Qequation& right)
 		mResult |= right.mResult;
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() |= right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("|=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("|= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -196,7 +200,7 @@ Qequation Qequation::nand(const Qequation& right) const
 Qequation& Qequation::nandMutable(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -205,9 +209,9 @@ Qequation& Qequation::nandMutable(const Qvar& right)
 	{
 		expression().nandMutable(right.definition());
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("~&=\n", toString(true));
 	return(*this);
 }
@@ -223,11 +227,9 @@ Qequation& Qequation::nandMutable(const Qequation& right)
 		mResult.nandMutable(right.mResult);
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression().nandMutable(right.expression());
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("~&=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("~&= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -249,7 +251,7 @@ Qequation Qequation::nor(const Qequation& right) const
 Qequation& Qequation::norMutable(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -258,9 +260,9 @@ Qequation& Qequation::norMutable(const Qvar& right)
 	{
 		expression().norMutable(right.definition());
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("~|=\n", toString(true));
 	return(*this);
 }
@@ -276,11 +278,9 @@ Qequation& Qequation::norMutable(const Qequation& right)
 		mResult.norMutable(right.mResult);
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression().norMutable(right.expression());
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("~|=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("~|= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -302,7 +302,7 @@ Qequation Qequation::operator^(const Qequation& right) const
 Qequation& Qequation::operator^=(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -311,9 +311,9 @@ Qequation& Qequation::operator^=(const Qvar& right)
 	{
 		expression() ^= right.definition();
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("^=\n", toString(true));
 	return(*this);
 }
@@ -329,11 +329,9 @@ Qequation& Qequation::operator^=(const Qequation& right)
 		mResult ^= right.mResult;
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() ^= right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("^=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("^= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -355,7 +353,7 @@ Qequation Qequation::operator+(const Qequation& right) const
 Qequation& Qequation::operator+=(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -364,9 +362,9 @@ Qequation& Qequation::operator+=(const Qvar& right)
 	{	
 		expression() += right.definition();
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat( "+=\n", toString(true) );
 	return(*this);
 }
@@ -382,11 +380,9 @@ Qequation& Qequation::operator+=(const Qequation& right)
 		mResult += right.mResult;
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() += right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("+=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("+= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -403,7 +399,7 @@ Qrutine Qequation::operator-(const Qvar& subtrahend) const
 
 	// create subtraction rutine
 	string rName = "dfrnc = " + mResult.definition().name() + " - " + subtrahend.definition().name();
-	Qrutine subtraction(size(), rName);
+	Qrutine subtraction(nobs(), rName);
 	subtraction << (*this) << minuend;
 	return subtraction;
 }
@@ -425,7 +421,7 @@ Qequation Qequation::operator*(const Qequation& right) const
 Qequation& Qequation::operator*=(const Qvar& right)
 {
 	arguments().push_back(right);
-	Index size = expression().rows();
+	Index size = expression().nobs();
 	if (size == 0)
 	{
 		expression() = Qexpression(right.definition());
@@ -434,9 +430,9 @@ Qequation& Qequation::operator*=(const Qvar& right)
 	{
 		expression() *= right.definition();
 	}
-	size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("+=\n", toString(true));
 	return(*this);
 }
@@ -452,11 +448,9 @@ Qequation& Qequation::operator*=(const Qequation& right)
 		mResult *= right.mResult;
 	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
 	expression() *= right.expression();
-	Index size = expression().rows();
-	if (size > as_const(mResult).definition().size())
-		mResult.resize(size, 0);
-	_lat("+=\n", toString(true));
-	mReduct();
+	if (nobs() > mResult.nobs())
+		mResult.resize(nobs(), 0);
+	mReduct();	// prepare for qubo() call 
 	_lat("+= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -473,7 +467,7 @@ Qrutine Qequation::operator/(const Qvar& divisor) const
 
 	// create multiplication rutine
 	string rName = "qtnt = " + mResult.definition().name() + " / " + divisor.definition().name();
-	Qrutine multiplication(size(), rName);
+	Qrutine multiplication(nobs(), rName);
 	multiplication << (*this) << dividend;
 	return multiplication;
 }
@@ -481,14 +475,21 @@ Qrutine Qequation::operator/(const Qvar& divisor) const
 Qubo Qequation::qubo(bool finalized, Index level) const
 {
 	bool iterateAll = level == Eigen::Infinity;
-	Index last = (iterateAll ? size() - 1 : level);
-	Qubo rawBqm;
+	Index last = (iterateAll ? nobs() - 1 : level);
+	Qubo rawQubo;
 	for (Index at = 0; at <= last; at++)
+	{
 		if(iterateAll || (!iterateAll && at == level))
-			rawBqm += expression()(at)->qubo(finalized);
+		{
+			Qubo qubo = expression()(at)->qubo(finalized);
+			rawQubo += qubo;
+//			cout << endl << expression()(at)->toString();
+//			cout << endl << qubo << endl << rawQubo << endl;
+		}
+	}
 
 	Qubo qubo;	// Updated Qubo
-	for (auto at = rawBqm.begin(); at != rawBqm.end(); at++)
+	for (auto at = rawQubo.begin(); at != rawQubo.end(); at++)
 	{
 		// remove all quadratic elements with bias 0
 		if (((*at).first.first != (*at).first.second) && ((*at).second == 0))
@@ -507,7 +508,7 @@ Qubo Qequation::qubo(bool finalized, Index level) const
 string Qequation::toString(bool decomposed, Index level) const
 {
 	bool iterateAll = level == Eigen::Infinity;
-	Index last = (iterateAll ? size() - 1 : level);
+	Index last = (iterateAll ? nobs() - 1 : level);
 	string sEquation = "";
 	vector<pair<string, string> > reduces;
 	for (Index at = 0; at <= last; at++)
@@ -566,7 +567,7 @@ string Qequation::solutions() const
 		for (auto arg : args)
 		{
 			Qdef definition = as_const(arg).definition();
-			Qint value(as_const(arg).value().rows());
+			Qnni value(as_const(arg).value().nobs());
 			int atBit = 0;
 			for (auto bitSymbol : definition)
 				value[atBit++] = sample[bitSymbol->identity()];
@@ -603,7 +604,7 @@ void Qequation::Reduct::operator() ()
 {
 	string definition(""), expression("");
 
-	for (Index at = 0; at < mEquation.size(); at++)
+	for (Index at = 0; at < mEquation.nobs(); at++)
 	{
 		// capture result expression and reduction
 		Qoperand::Sp pOperand = mEquation.expression()(at);
@@ -627,7 +628,7 @@ void Qequation::Reduct::operator() ()
 	// capture reductions for arguments with values different from cSuperposition (i.e. 0 or 1)
 	for (auto atArg = mEquation.arguments().cbegin(); atArg != mEquation.arguments().cend(); atArg++)
 	{
-		for (Index at = 0; at < (*atArg).definition().rows(); at++)
+		for (Index at = 0; at < (*atArg).definition().nobs(); at++)
 		{
 			Qbit value = (*atArg).value()(at);
 			if (value < 2)

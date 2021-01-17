@@ -11,34 +11,34 @@ const string Qbit::cSuporpositionSign = "(S)";
 
 
 
-/*** Qint ***/
+/*** Qnni ***/
 
-const string Qint::cUnknownSign = "(U)";
+const string Qnni::cUnknownSign = "(U)";
 
 
-Qint::Qint()
-	:q_int(Qbit::cSuperposition)
+Qnni::Qnni()
+	:q_nni(Qbit::cSuperposition)
 {
 	_lc;
 }
 
-Qint::Qint(const Qint& right)
-	: q_int(right)
+Qnni::Qnni(const Qnni& right)
+	: q_nni(right)
 {
 	_lc;
 }
 
-Qint::Qint(Index size)
-	: q_int(size)
+Qnni::Qnni(Index size)
+	: q_nni(size)
 {
-	for (Index at = 0; at < rows(); at++)
+	for (Index at = 0; at < nobs(); at++)
 		(*this)(at) = Qbit::cSuperposition;
 	_lc;
 }
 
 
-Qint::Qint(long value)
-	: q_int(int(std::log(double(value))/std::log(2.0)) + 1)
+Qnni::Qnni(long value)
+	: q_nni(int(std::log(double(value))/std::log(2.0)) + 1)
 {
 	long v = value;
 	int bitIndex = 0;
@@ -50,26 +50,26 @@ Qint::Qint(long value)
 	_lc;
 }
 
-Qint::~Qint()
+Qnni::~Qnni()
 {
 	_ld;
 }
 
-Qint& Qint::operator =(const Qint& right)
+Qnni& Qnni::operator =(const Qnni& right)
 {
-	q_int::operator=(right);
+	q_nni::operator=(right);
 	return *this;
 }
 
-QintInitializer Qint::operator <<(const Qbit& right)
+QintInitializer Qnni::operator <<(const Qbit& right)
 {
-	return QintInitializer(*static_cast<q_int*>(this), right);
+	return QintInitializer(*static_cast<q_nni*>(this), right);
 }
 
-Qint Qint::operator ~() const
+Qnni Qnni::operator ~() const
 {
-	Qint result(*this);
-	for (Index at = 0; at < result.rows(); at++)
+	Qnni result(*this);
+	for (Index at = 0; at < result.nobs(); at++)
 	{
 		Qbit rqb = result(at);
 		if (rqb > 1)	// Qbit in superposition state
@@ -80,10 +80,10 @@ Qint Qint::operator ~() const
 	return result;
 }
 
-long Qint::value() const
+long Qnni::value() const
 {
 	long value = 0;
-	for (Index at = 0; at < rows(); at++)
+	for (Index at = 0; at < nobs(); at++)
 	{
 		Qbit qbit = (*this)(at);
 		// Qbit greater than 1 is in superposition state
@@ -93,9 +93,9 @@ long Qint::value() const
 	return value;
 }
 
-bool Qint::isUnknown() const
+bool Qnni::isUnknown() const
 {
-	for (Index at = 0; at < rows(); at++)
+	for (Index at = 0; at < nobs(); at++)
 	{
 		// Qbit greater than 1 is in superposition state
 		if ((*this)(at) > 1) return(true);
@@ -103,19 +103,19 @@ bool Qint::isUnknown() const
 	return(false);
 }
 
-Qint Qint::operator &(const Qint& right) const
+Qnni Qnni::operator &(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result &= right;
 	return result;
 }
 
-Qint& Qint::operator &=(const Qint& right)
+Qnni& Qnni::operator &=(const Qnni& right)
 {
-	Index rsize = right.rows();
-	Index size = rows();
+	Index rsize = right.nobs();
+	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qint has to have same or more Qbits as right
+		resize(rsize);	// this Qnni has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -129,19 +129,19 @@ Qint& Qint::operator &=(const Qint& right)
 	return *this;
 }
 
-Qint Qint::operator |(const Qint& right) const
+Qnni Qnni::operator |(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result |= right;
 	return result;
 }
 
-Qint& Qint::operator |=(const Qint& right)
+Qnni& Qnni::operator |=(const Qnni& right)
 {
-	Index rsize = right.rows();
-	Index size = rows();
+	Index rsize = right.nobs();
+	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qint has to have same or more Qbits as right
+		resize(rsize);	// this Qnni has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -155,19 +155,19 @@ Qint& Qint::operator |=(const Qint& right)
 	return *this;
 }
 
-Qint Qint::nand(const Qint& right) const
+Qnni Qnni::nand(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result.nandMutable(right);
 	return result;
 }
 
-Qint& Qint::nandMutable(const Qint& right)
+Qnni& Qnni::nandMutable(const Qnni& right)
 {
-	Index rsize = right.rows();
-	Index size = rows();
+	Index rsize = right.nobs();
+	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qint has to have same or more Qbits as right
+		resize(rsize);	// this Qnni has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -181,19 +181,19 @@ Qint& Qint::nandMutable(const Qint& right)
 	return *this;
 }
 
-Qint Qint::nor(const Qint& right) const
+Qnni Qnni::nor(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result.norMutable(right);
 	return result;
 }
 
-Qint& Qint::norMutable(const Qint& right)
+Qnni& Qnni::norMutable(const Qnni& right)
 {
-	Index rsize = right.rows();
-	Index size = rows();
+	Index rsize = right.nobs();
+	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qint has to have same or more Qbits as right
+		resize(rsize);	// this Qnni has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -207,20 +207,20 @@ Qint& Qint::norMutable(const Qint& right)
 	return *this;
 }
 
-Qint Qint::operator ^(const Qint& right) const
+Qnni Qnni::operator ^(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result ^= right;
 	return result;
 }
 
-Qint& Qint::operator ^=(const Qint& right)
+Qnni& Qnni::operator ^=(const Qnni& right)
 {
-	Index rsize = right.rows();
-	Index size = rows();
+	Index rsize = right.nobs();
+	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qint has to have same or more Qbits as right
-	for (Index at = 0; at < rows(); at++)
+		resize(rsize);	// this Qnni has to have same or more Qbits as right
+	for (Index at = 0; at < nobs(); at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
 		if (at < rsize)
@@ -233,22 +233,22 @@ Qint& Qint::operator ^=(const Qint& right)
 	return *this;
 }
 
-Qint Qint::operator +(const Qint& right) const
+Qnni Qnni::operator +(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result += right;
 	return result;
 }
 
 
-Qint& Qint::operator +=(const Qint& right)
+Qnni& Qnni::operator +=(const Qnni& right)
 {
-	if (rows() < right.rows())
-		resize(right.rows());
+	if (nobs() < right.nobs())
+		resize(right.nobs());
 	int carry = 0;
 	bool superposition = false;
-	Qint temp(rows() + 1);
-	for (Index at = 0; at < rows(); at++)
+	Qnni temp(nobs() + 1);
+	for (Index at = 0; at < nobs(); at++)
 	{
 		Qbit t((*this)(at)), r(right(at));
 		superposition = (t > 1) || (r > 1);
@@ -264,22 +264,22 @@ Qint& Qint::operator +=(const Qint& right)
 	}
 	if (!superposition && carry == 1)
 	{
-		temp(rows()) = carry;
+		temp(nobs()) = carry;
 		*this = temp;
 	}
 	return *this;
 }
 
-Qint Qint::operator *(const Qint& right) const
+Qnni Qnni::operator *(const Qnni& right) const
 {
-	Qint result(*this);
+	Qnni result(*this);
 	result *= right;
 	return result;
 }
 
-Qint& Qint::operator *=(const Qint& right)
+Qnni& Qnni::operator *=(const Qnni& right)
 {
-	QbitMatrix xMatrix = q_int(*this) * right.transpose();
+	QbitMatrix xMatrix = q_nni(*this) * right.transpose();
 	QbitMatrix reversedXMatrix = xMatrix.rowwise().reverse();
 
 	// resize this vector to a # of diagonals + 1 of xMatrix
@@ -291,9 +291,9 @@ Qint& Qint::operator *=(const Qint& right)
 	bool superpositon = false;
 	// Value of 0 bit is the sum of right-most diagonal 
 	Index atDiagonal = reversedXMatrix.cols() - 1;
-	for (Index at = 0; at < rows() - 1; at++)
+	for (Index at = 0; at < nobs() - 1; at++)
 	{
-		q_int diagonal = reversedXMatrix.diagonal(atDiagonal);
+		q_nni diagonal = reversedXMatrix.diagonal(atDiagonal);
 		for (Index atD = 0; atD < diagonal.rows() && !superpositon; atD++)
 		{
 			Qbit qb = diagonal(atD);
@@ -310,17 +310,17 @@ Qint& Qint::operator *=(const Qint& right)
 		--atDiagonal;
 	}
 	if (superpositon)
-		(*this)(rows() - 1) = Qbit::cSuperposition;
+		(*this)(nobs() - 1) = Qbit::cSuperposition;
 	else
-		(*this)(rows() - 1) = carry;
+		(*this)(nobs() - 1) = carry;
 	return *this;
 }
 
-void Qint::resize(Index size, const Qbit& qBit)
+void Qnni::resize(Index size, const Qbit& qBit)
 {
-	Index oSize = rows();
-	Qint temp(*this);
-	q_int::resize(size, NoChange);
+	Index oSize = nobs();
+	Qnni temp(*this);
+	q_nni::resize(size, NoChange);
 	for (Index at = 0; at < size; at++)
 		if (at < oSize)
 			(*this)(at) = temp(at);
@@ -328,7 +328,7 @@ void Qint::resize(Index size, const Qbit& qBit)
 			(*this)(at) = qBit;
 }
 
-string Qint::toString() const
+string Qnni::toString() const
 {
 	long v = value();
 	if (v == cUnknown) return "(S)";

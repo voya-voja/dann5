@@ -33,7 +33,7 @@ PYBIND11_MODULE(d5o, m) {
 
 			Qubo
 			QuboTable
-			Qint
+			Qnni
 			Qdef
 			Qexpression
 			Qvar
@@ -115,14 +115,17 @@ PYBIND11_MODULE(d5o, m) {
 	py::class_<QintInitializer>(m, "QintInitializer")
 		.def("push", (QintInitializer& (QintInitializer::*)(const q_bit&)) &QintInitializer::operator,);
 
-	py::class_<Qint>(m, "Qint", 
+	py::class_<Qnni>(m, "Qnni", 
 		R"pbdoc( Quantum bit is in superposition state for any value except 0 and 1)pbdoc")
 		.def(py::init<>())
-		.def(py::init<const Qint&>())
+		.def(py::init<const Qnni&>())
 		.def(py::init<Index>())
 		.def(py::init<long>())
-		.def("assign", &Qint::operator=)
-		.def("push", &Qint::operator<<)
+		.def("nobs", &Qnni::nobs)
+		.def("value", &Qnni::value)
+		.def("resize", &Qnni::resize)
+		.def("assign", &Qnni::operator=)
+		.def("push", &Qnni::operator<<)
 		.def(-py::self)
 		.def(py::self & py::self)
 		.def(py::self &= py::self)
@@ -133,9 +136,7 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::self + py::self)
 		.def(py::self += py::self)
 		.def(py::self * py::self)
-		.def(py::self *= py::self)
-		.def("value", &Qint::value)
-		.def("resize", &Qint::resize);
+		.def(py::self *= py::self);
 
 	py::class_<Qdef>(m, "Qdef", 
 		R"pbdoc( Quantum definition of a definition defines Q bit definition names in a vector)pbdoc")
@@ -143,15 +144,17 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<const Qdef&>())
 		.def(py::init<Index>())
 		.def(py::init<Index, const std::string&>())
+		.def("nobs", &Qdef::nobs)
+		.def("resize", &Qdef::resize)
 		.def(py::self + py::self)
-		.def(py::self * py::self)
-		.def("resize", &Qdef::resize);
+		.def(py::self * py::self);
 
 	py::class_<Qexpression>(m, "Qexpression", 
 		R"pbdoc( Quantum expression of arithmetic Q operations with Q defined symbols as operands)pbdoc")
 		.def(py::init<>())
 		.def(py::init<const Qexpression&>())
 		.def(py::init<const Qdef&>())
+		.def("nobs", &Qexpression::nobs)
 		.def(py::self + py::self)
 		.def(py::self += py::self)
 		.def(py::self + Qdef())
@@ -162,9 +165,9 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::self *= Qdef());
 
 	py::class_<Qvar>(m, "Qvar",
-		R"pbdoc( Quantum variable has a variable definition definition, Qdef, and its value, Qint. 
+		R"pbdoc( Quantum variable has a variable definition definition, Qdef, and its value, Qnni. 
 			Default constructor: creates a quantum variable with default name defined and
-			Qint value with 0 bits:
+			Qnni value with 0 bits:
 				v0 = Qvar()
 
 			Overloaded constructor: instantiates a Q variable with a given definition name
@@ -179,14 +182,14 @@ PYBIND11_MODULE(d5o, m) {
 			Overloaded constructor: instantiates a Q variable with a given definition Q definition,
 			the bits are in superposition state:
 				c_def = Qdef(3, "c"), .e.g. c definition with c0, c1 and c2 bits
-				c = Qvar(c_def), e.g. defines a variable with Qint value, where c0, c1 and c2 bits
+				c = Qvar(c_def), e.g. defines a variable with Qnni value, where c0, c1 and c2 bits
 								 are in superposition state
 				
 			Overloaded constructor: instantiates a Q variable with a given definition Q definition and
 			given Q int value:
 				c_def = Qdef(3, "c"), .e.g. c definition with c0, c1 and c2 bits
-				c_val = Qint(3), e.g. instantiates an quantum integer with bits 0 and 1, whcih are set to 1
-				c = Qvar(c_def, c_val), e.g. defines a variable with Qint value 3, where c0 and c1 bits set to 1 
+				c_val = Qnni(3), e.g. instantiates an quantum integer with bits 0 and 1, whcih are set to 1
+				c = Qvar(c_def, c_val), e.g. defines a variable with Qnni value 3, where c0 and c1 bits set to 1 
 										and c2 bit set to 0
 
 			Copy constructor: creates a quantum variable with a same name and value as right object:
@@ -195,34 +198,34 @@ PYBIND11_MODULE(d5o, m) {
 				myVar = Qvar(right)
 
 			Addition operator returns this Qvar object by adding right to this Q variable objects' 
-			Qdef and Qint members:
+			Qdef and Qnni members:
 				a += b
 
 			Addition operator returns Qequation object by adding this and right Q variable objects'
-			Qdef and Qint members:
+			Qdef and Qnni members:
 				fx = a + c
 
 			Addition operator where Q variable is left and Q equation right argument. Returns Qequation
-			object by adding it self and its Qdef and Qint members to the Q equation:
+			object by adding it self and its Qdef and Qnni members to the Q equation:
 				fy = v0 + fx
 			
 			Multiplication operator returns this Qvar object by multiplying right to this Q variable
-			objects' Qdef and Qint members:
+			objects' Qdef and Qnni members:
 				a *= b
 
 			Multiplication operator returns Qequation object by multiplying this and right Q variable
-			objects' Qdef and Qint members:
+			objects' Qdef and Qnni members:
 				fm = a * c
 
 			Multiplication operator where Q variable is left and Q equation right argument. Returns
-			Qequation object by adding its Qdef and Qint members to the Q equation:
+			Qequation object by adding its Qdef and Qnni members to the Q equation:
 				fm2 = v0 * fm
 
 			definition() returns a variable definition name
 
 			value() returns a variable integer value
 
-			toString(bool bitForamt) returns Qdef and Qint string representations of this
+			toString(bool bitForamt) returns Qdef and Qnni string representations of this
 				variable. When bitFormat is true, the string representation are variable bit 
 				symbols and values, otherwise returns sybol name and corrsponding value
 
@@ -235,8 +238,13 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<const string&, long>())
 		.def(py::init<Index, const string&>())
 		.def(py::init<const Qdef&>())
-		.def(py::init<const Qdef&, const Qint&>())
+		.def(py::init<const Qdef&, const Qnni&>())
 		.def(py::init<const Qvar&>())
+		.def("nobs", &Qvar::nobs)
+		.def("definition", static_cast<const Qdef& (Qvar::*)() const>(&Qvar::definition), "return Qdef")
+		.def("value", static_cast<const Qnni& (Qvar::*)() const>(&Qvar::value), "return Qnni")
+		.def("toString", &Qvar::toString)
+		.def("resize", &Qvar::resize)
 		.def( (~ py::self) )
 		.def(py::self == py::self)
 		.def(py::self != py::self)
@@ -266,17 +274,14 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::self *= py::self)
 		.def(py::self * py::self)
 		.def(py::self * Qequation())
-		.def(py::self / py::self)
-		.def("definition", static_cast<const Qdef& (Qvar::*)() const>(&Qvar::definition), "return Qdef")
-		.def("value", static_cast<const Qint& (Qvar::*)() const>(&Qvar::value), "return Qint")
-		.def("toString", &Qvar::toString)
-		.def("resize", &Qvar::resize);
+		.def(py::self / py::self);
 
 	py::class_<Qstatement>(m, "Qstatement")
 //		.def(py::init<>())
 //		.def(py::init<const Qstatement&>())
 //		.def(py::init<Index>())
 //		.def(py::init<const Qexpression&, const Qvars&>())
+		.def("nobs", &Qstatement::nobs)
 		.def("expression", static_cast<const Qexpression& (Qstatement::*)() const>(&Qstatement::expression), "return const Qexpression&")
 		.def("expression", static_cast<Qexpression& (Qstatement::*)()>(&Qstatement::expression), "return Qexpression&")
 		.def("arguments", static_cast<const Qvars& (Qstatement::*)() const>(&Qstatement::arguments), "return const Qvars&")
@@ -370,6 +375,12 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<const Qequation&>())
 		.def(py::init<const Qvar&>())
 		.def(py::init<const Qvar&, const Qexpression&, const Qvars&>())
+		.def("solutions", &Qequation::solutions)
+		.def("add", &Qequation::add)
+		.def("set", &Qequation::set)
+		.def("toString", &Qequation::toString)
+		.def("result", &Qequation::result)
+		.def("qubo", &Qequation::qubo)
 		.def("assign", static_cast<Qequation& (Qequation::*)(const Qequation&)>(&Qequation::operator=), "assign Qequation")
 		.def("assign", static_cast<Qequation& (Qequation::*)(const Qvar&)>(&Qequation::operator=), "assign Qequation")
 		.def(py::self & py::self)
@@ -399,14 +410,7 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::self * py::self)
 		.def(py::self *= py::self)
 		.def(py::self * Qvar())
-		.def(py::self *= Qvar())
-		.def("size", &Qequation::size)
-		.def("solutions", &Qequation::solutions)
-		.def("add", &Qequation::add)
-		.def("set", &Qequation::set)
-		.def("toString", &Qequation::toString)
-		.def("result", &Qequation::result)
-		.def("qubo", &Qequation::qubo);
+		.def(py::self *= Qvar());
 
 
 		// specify C++ class->baseclass specialization

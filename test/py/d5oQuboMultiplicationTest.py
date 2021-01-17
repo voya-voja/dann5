@@ -15,7 +15,7 @@ from dwave.system.samplers import LeapHybridSampler
 a = Qvar(3, "a")
 b = Qvar(2, "b")
 c = Qvar(2, "c")
-d = Qvar(3, "d")
+d = Qvar(2, "d")
 r_xAbcd = Qequation(Qvar("R", 6))
 r_xAbcd.assign( a * b * c)
 
