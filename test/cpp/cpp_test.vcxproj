@@ -91,7 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_USE_DANN5_LOGGER;_DANN5_LOG_INTO_TXT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\..\..\AppData\Local\Continuum\anaconda3\envs\ocean2\include;..\..\pybind11\include;..\..\ocean\cpp\include;..\..\..\eigen-master</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include;../../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/Lib/site-packages/pybind11/include;../../ocean/cpp/include;../../../eigen-master</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,7 +163,7 @@
     <ClCompile Include="..\..\ocean\cpp\Qfunction.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qops.cpp" />
-    <ClCompile Include="..\..\ocean\cpp\Qrutine.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Qroutine.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qstatement.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qtype.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qubo.cpp" />
@@ -177,7 +177,7 @@
     <ClInclude Include="..\..\ocean\cpp\include\Qcondition.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qfunction.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h" />
-    <ClInclude Include="..\..\ocean\cpp\include\Qrutine.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Qroutine.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qstatement.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Utility.h" />

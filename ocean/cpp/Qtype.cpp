@@ -11,24 +11,24 @@ const string Qbit::cSuporpositionSign = "(S)";
 
 
 
-/*** Qnni ***/
+/*** Qwhole ***/
 
-const string Qnni::cUnknownSign = "(U)";
+const string Qwhole::cUnknownSign = "(U)";
 
 
-Qnni::Qnni()
+Qwhole::Qwhole()
 	:q_nni(Qbit::cSuperposition)
 {
 	_lc;
 }
 
-Qnni::Qnni(const Qnni& right)
+Qwhole::Qwhole(const Qwhole& right)
 	: q_nni(right)
 {
 	_lc;
 }
 
-Qnni::Qnni(Index size)
+Qwhole::Qwhole(Index size)
 	: q_nni(size)
 {
 	for (Index at = 0; at < nobs(); at++)
@@ -37,7 +37,7 @@ Qnni::Qnni(Index size)
 }
 
 
-Qnni::Qnni(long value)
+Qwhole::Qwhole(long value)
 	: q_nni(int(std::log(double(value))/std::log(2.0)) + 1)
 {
 	long v = value;
@@ -50,25 +50,25 @@ Qnni::Qnni(long value)
 	_lc;
 }
 
-Qnni::~Qnni()
+Qwhole::~Qwhole()
 {
 	_ld;
 }
 
-Qnni& Qnni::operator =(const Qnni& right)
+Qwhole& Qwhole::operator =(const Qwhole& right)
 {
 	q_nni::operator=(right);
 	return *this;
 }
 
-QintInitializer Qnni::operator <<(const Qbit& right)
+QintInitializer Qwhole::operator <<(const Qbit& right)
 {
 	return QintInitializer(*static_cast<q_nni*>(this), right);
 }
 
-Qnni Qnni::operator ~() const
+Qwhole Qwhole::operator ~() const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	for (Index at = 0; at < result.nobs(); at++)
 	{
 		Qbit rqb = result(at);
@@ -80,7 +80,7 @@ Qnni Qnni::operator ~() const
 	return result;
 }
 
-long Qnni::value() const
+long Qwhole::value() const
 {
 	long value = 0;
 	for (Index at = 0; at < nobs(); at++)
@@ -93,7 +93,7 @@ long Qnni::value() const
 	return value;
 }
 
-bool Qnni::isUnknown() const
+bool Qwhole::isUnknown() const
 {
 	for (Index at = 0; at < nobs(); at++)
 	{
@@ -103,19 +103,19 @@ bool Qnni::isUnknown() const
 	return(false);
 }
 
-Qnni Qnni::operator &(const Qnni& right) const
+Qwhole Qwhole::operator &(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result &= right;
 	return result;
 }
 
-Qnni& Qnni::operator &=(const Qnni& right)
+Qwhole& Qwhole::operator &=(const Qwhole& right)
 {
 	Index rsize = right.nobs();
 	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qnni has to have same or more Qbits as right
+		resize(rsize);	// this Qwhole has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -129,19 +129,19 @@ Qnni& Qnni::operator &=(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::operator |(const Qnni& right) const
+Qwhole Qwhole::operator |(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result |= right;
 	return result;
 }
 
-Qnni& Qnni::operator |=(const Qnni& right)
+Qwhole& Qwhole::operator |=(const Qwhole& right)
 {
 	Index rsize = right.nobs();
 	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qnni has to have same or more Qbits as right
+		resize(rsize);	// this Qwhole has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -155,19 +155,19 @@ Qnni& Qnni::operator |=(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::nand(const Qnni& right) const
+Qwhole Qwhole::nand(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result.nandMutable(right);
 	return result;
 }
 
-Qnni& Qnni::nandMutable(const Qnni& right)
+Qwhole& Qwhole::nandMutable(const Qwhole& right)
 {
 	Index rsize = right.nobs();
 	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qnni has to have same or more Qbits as right
+		resize(rsize);	// this Qwhole has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -181,19 +181,19 @@ Qnni& Qnni::nandMutable(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::nor(const Qnni& right) const
+Qwhole Qwhole::nor(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result.norMutable(right);
 	return result;
 }
 
-Qnni& Qnni::norMutable(const Qnni& right)
+Qwhole& Qwhole::norMutable(const Qwhole& right)
 {
 	Index rsize = right.nobs();
 	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qnni has to have same or more Qbits as right
+		resize(rsize);	// this Qwhole has to have same or more Qbits as right
 	for (Index at = 0; at < size; at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -207,19 +207,19 @@ Qnni& Qnni::norMutable(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::operator ^(const Qnni& right) const
+Qwhole Qwhole::operator ^(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result ^= right;
 	return result;
 }
 
-Qnni& Qnni::operator ^=(const Qnni& right)
+Qwhole& Qwhole::operator ^=(const Qwhole& right)
 {
 	Index rsize = right.nobs();
 	Index size = nobs();
 	if (size < rsize)
-		resize(rsize);	// this Qnni has to have same or more Qbits as right
+		resize(rsize);	// this Qwhole has to have same or more Qbits as right
 	for (Index at = 0; at < nobs(); at++)
 	{
 		Qbit tqb = (*this)(at), rqb = 0;
@@ -233,21 +233,21 @@ Qnni& Qnni::operator ^=(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::operator +(const Qnni& right) const
+Qwhole Qwhole::operator +(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result += right;
 	return result;
 }
 
 
-Qnni& Qnni::operator +=(const Qnni& right)
+Qwhole& Qwhole::operator +=(const Qwhole& right)
 {
 	if (nobs() < right.nobs())
 		resize(right.nobs());
 	int carry = 0;
 	bool superposition = false;
-	Qnni temp(nobs() + 1);
+	Qwhole temp(nobs() + 1);
 	for (Index at = 0; at < nobs(); at++)
 	{
 		Qbit t((*this)(at)), r(right(at));
@@ -270,14 +270,14 @@ Qnni& Qnni::operator +=(const Qnni& right)
 	return *this;
 }
 
-Qnni Qnni::operator *(const Qnni& right) const
+Qwhole Qwhole::operator *(const Qwhole& right) const
 {
-	Qnni result(*this);
+	Qwhole result(*this);
 	result *= right;
 	return result;
 }
 
-Qnni& Qnni::operator *=(const Qnni& right)
+Qwhole& Qwhole::operator *=(const Qwhole& right)
 {
 	QbitMatrix xMatrix = q_nni(*this) * right.transpose();
 	QbitMatrix reversedXMatrix = xMatrix.rowwise().reverse();
@@ -316,10 +316,10 @@ Qnni& Qnni::operator *=(const Qnni& right)
 	return *this;
 }
 
-void Qnni::resize(Index size, const Qbit& qBit)
+void Qwhole::resize(Index size, const Qbit& qBit)
 {
 	Index oSize = nobs();
-	Qnni temp(*this);
+	Qwhole temp(*this);
 	q_nni::resize(size, NoChange);
 	for (Index at = 0; at < size; at++)
 		if (at < oSize)
@@ -328,7 +328,7 @@ void Qnni::resize(Index size, const Qbit& qBit)
 			(*this)(at) = qBit;
 }
 
-string Qnni::toString() const
+string Qwhole::toString() const
 {
 	long v = value();
 	if (v == cUnknown) return "(S)";

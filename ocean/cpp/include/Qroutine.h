@@ -16,51 +16,51 @@ namespace dann5 {
 	namespace ocean {
 
 
-		// Quantum rutine is a Q definition of sequence of logical Q statements
-		class Qrutine : public Qdef
+		// Quantum routine is a Q definition of sequence of logical Q statements
+		class Qroutine : public Qdef
 		{
 		public:
-			// Qrutine's shared pointer 
-			typedef shared_ptr<Qrutine> Sp;
+			// Qroutine's shared pointer 
+			typedef shared_ptr<Qroutine> Sp;
 
-			// creates Q rutine with a name 
-			Qrutine(const string&);
+			// creates Q routine with a name 
+			Qroutine(const string&);
 
-			// creates Q rutine with a rutine name and size of resulting variable
-			Qrutine(Index size, const string&);
+			// creates Q routine with a routine name and size of resulting variable
+			Qroutine(Index size, const string&);
 
-			// creates a named Q rutine with a given Q statement 
-			Qrutine(const string&, const Qstatement&);
+			// creates a named Q routine with a given Q statement 
+			Qroutine(const string&, const Qstatement&);
 
-			// creates a named Q rutine with a given list of Q statements
-			Qrutine(const string&, const Qstatements&);
+			// creates a named Q routine with a given list of Q statements
+			Qroutine(const string&, const Qstatements&);
 
 			//copy constructor
-			Qrutine(const Qrutine&);
+			Qroutine(const Qroutine&);
 
 			// desruct the Q equation with its members
-			~Qrutine();
+			~Qroutine();
 
-			// Returns a qubo representation of this Q rutine, 
+			// Returns a qubo representation of this Q routine, 
 			// if not finalized, returns a full qubo definition representation
 			// if finalized, returns an expression that replaces symbols with values of
-			// Qbits in deterministic states for all the Q variables within Q rutine
+			// Qbits in deterministic states for all the Q variables within Q routine
 			Qubo qubo(bool finalized = true) const;
 
-			// Returns a string representation of this Q rutine, 
+			// Returns a string representation of this Q routine, 
 			// if not decomposed, returns an equation line per Qbit level
 			// if decomposed, returns a line per Qbit operational expressions
 			string toString(bool decomposed = false) const;
 
 			// Return a shared pointer to a copy of this Q definition
-			virtual Qdef::Sp clone() const { return Sp(new Qrutine(*this)); };
+			virtual Qdef::Sp clone() const { return Sp(new Qroutine(*this)); };
 
-			// An insertion operator (<<) to add a new statement into this Q rutine
-			Qrutine& operator<<(const Qstatement& right);
+			// An insertion operator (<<) to add a new statement into this Q routine
+			Qroutine& operator<<(const Qstatement& right);
 
 			// An insertion operator (<<) to add statements from an existing
-			// rutine into this one
-			Qrutine& operator<<(const Qrutine& right);
+			// routine into this one
+			Qroutine& operator<<(const Qroutine& right);
 
 			// A semple is defined as a dictionary (map) of definition nodes and their values.
 			// The node names are defined by qubo() for each Q equation
@@ -77,11 +77,11 @@ namespace dann5 {
 			void set(Samples& samples);
 
 			// For existing samples, returns a string representation of all solutions of 
-			// this Q rutine
+			// this Q routine
 			string solutions() const;
 
-			// Insert string representation of a Q rutine into an output stream
-			friend std::ostream& operator << (std::ostream&, const Qrutine&);
+			// Insert string representation of a Q routine into an output stream
+			friend std::ostream& operator << (std::ostream&, const Qroutine&);
 
 		protected:
 			class Operand : public Qoperand
@@ -91,7 +91,7 @@ namespace dann5 {
 				typedef shared_ptr<Operand> Sp;
 
 				// Instantiate a Q operand with identity
-				Operand(Index level, Qrutine& pRutine);
+				Operand(Index level, Qroutine& pRutine);
 
 				// Copy constructor
 				Operand(const Operand&);
@@ -111,7 +111,7 @@ namespace dann5 {
 			protected:
 			private:
 				Index mLevel;
-				Qrutine* mpRutine;
+				Qroutine* mpRutine;
 			};
 
 			void initialize(Index size);

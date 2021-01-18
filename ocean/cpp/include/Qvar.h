@@ -18,7 +18,7 @@ namespace dann5 {
 		// executed when condition is true
 		class Qcondition;
 
-		// Quantum variable has a variable definition definition (Qdef) and its value (Qnni)
+		// Quantum variable has a variable definition definition (Qdef) and its value (Qwhole)
 		class Qvar
 		{
 		public:
@@ -33,7 +33,7 @@ namespace dann5 {
 			// the bits are in superposition state
 			Qvar(const Qdef&);
 			// instantiate a Q variable with a given definition Q definition and given Q int value 
-			Qvar(const Qdef&, const Qnni&);
+			Qvar(const Qdef&, const Qwhole&);
 			// copy constructor 
 			Qvar(const Qvar&);
 			// destruct the variable with its definition Q definition and Q int value
@@ -43,12 +43,12 @@ namespace dann5 {
 			const Qdef& definition() const { return *mpDefinition; }
 
 			// get variable's value
-			const Qnni& value() const { return mValue; }
+			const Qwhole& value() const { return mValue; }
 
 			// get Q variable's n(umber) o(f) b(its)
 			Index nobs() const { return mpDefinition->nobs(); }
 
-			// A condition negation
+			// A inversion operator
 			Qvar operator~() const;
 
 			// Equal operator returns Q condition object by combining 
@@ -76,7 +76,7 @@ namespace dann5 {
 			Qcondition operator<=(const Qvar& right) const;
 
 			// And operator returns this Qvar object as this & right of  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& operator&=(const Qvar& right);
 
 			// And operator returns a Qequation object with expression this & right and  
@@ -89,7 +89,7 @@ namespace dann5 {
 			Qequation operator&(const Qequation& right) const;
 
 			// Or operator returns this Qvar object as this | right of  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& operator|=(const Qvar& right);
 
 			// Or operator returns a Qequation object with expression this | right and  
@@ -102,7 +102,7 @@ namespace dann5 {
 			Qequation operator|(const Qequation& right) const;
 
 			// Xor operator returns this Qvar object as this ^ right of  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& operator^=(const Qvar& right);
 
 			// Xor operator returns a Qequation object with expression this ^ right and  
@@ -115,7 +115,7 @@ namespace dann5 {
 			Qequation operator^(const Qequation& right) const;
 
 			// Nand operator returns this Qvar object as this ~& right of  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& nandMutable(const Qvar& right);
 
 			// Nand operator returns a Qequation object with expression this ~& right and  
@@ -128,7 +128,7 @@ namespace dann5 {
 			Qequation nand(const Qequation& right) const;
 
 			// Nor operator returns this Qvar object as this ~| right of  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& norMutable(const Qvar& right);
 
 			// Nor operator returns a Qequation object with expression this ~| right and  
@@ -141,15 +141,15 @@ namespace dann5 {
 			Qequation nor(const Qequation& right) const;
 
 			// Addition operator returns this Qvar object by adding right to this  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qvar& operator+=(const Qvar& right);
 
 			// Addition operator returns Qequation object by adding this and right  
-			// Q variable objects' Qdef and Qnni members
+			// Q variable objects' Qdef and Qwhole members
 			Qequation operator+(const Qvar& right) const;
 
 			// Addition operator where Q variable is left and Q equation right argument.
-			// Returns Qequation object by adding its Qdef and Qnni members to the
+			// Returns Qequation object by adding its Qdef and Qwhole members to the
 			// Q equation
 			Qequation operator+(const Qequation& right) const;
 
@@ -161,15 +161,15 @@ namespace dann5 {
 			Qequation operator-(const Qvar& right) const;
 
 			// Multiplication operator returns this Qvar object by multiplying right to  
-			// this Q variable objects' Qdef and Qnni members
+			// this Q variable objects' Qdef and Qwhole members
 			Qvar& operator*=(const Qvar& right);
 
 			// Multiplication operator returns Qequation object by multiplying this and
-			// right Q variable objects' Qdef and Qnni members
+			// right Q variable objects' Qdef and Qwhole members
 			Qequation operator*(const Qvar& right) const;
 
 			// Multiplication operator where Q variable is left and Q equation right
-			// argument. Returns Qequation object by adding its Qdef and Qnni members to the
+			// argument. Returns Qequation object by adding its Qdef and Qwhole members to the
 			// Q equation
 			Qequation operator*(const Qequation& right) const;
 
@@ -184,7 +184,7 @@ namespace dann5 {
 			// if the new size is bigger, assign qBit value to additional Qbits
 			void resize(Index size, const Qbit& qBit = Qbit::cSuperposition);
 
-			// Return Qdef and Qnni string representations of this variable
+			// Return Qdef and Qwhole string representations of this variable
 			// when bitFormat is true, teh string representation are variable bit 
 			// symbols and values, otherwise returns sybol name and corrsponding value
 			string toString(bool bitFormat = true) const;
@@ -198,11 +198,11 @@ namespace dann5 {
 			Qdef::Sp definition() { return mpDefinition; }
 
 			// get variable's value
-			Qnni& value() { return mValue; }
+			Qwhole& value() { return mValue; }
 
 		private:
 			Qdef::Sp mpDefinition;	// The variable definition
-			Qnni mValue;			// The variable value
+			Qwhole mValue;			// The variable value
 		};
 
 		// An std::vector containing a list of Q variables

@@ -28,7 +28,7 @@
 #include <Qequation.h>
 #include <Factory.h>
 #include <Qcondition.h>
-#include <Qrutine.h>
+#include <Qroutine.h>
 #include <Qfunction.h>
 
 using namespace Eigen;
@@ -143,7 +143,7 @@ void test1()
 
 	Qubo d = nxorQ.qubo();
 
-	Qnni v_na(Index(3)), v_nb(Index(4)), v_nr;
+	Qwhole v_na(Index(3)), v_nb(Index(4)), v_nr;
 	v_na << 1, 0, Qbit::cSuperposition;
 	v_nb << 0, 1, 1, 1;
 	std::cout << std::endl << "Va: " << v_na.value() << std::endl << v_na << std::endl << "Vb: " << v_nb.value() << std::endl << v_nb << std::endl;
@@ -244,7 +244,7 @@ void test3()
 	cout << endl << eR.toString() << endl;
 	cout << endl << eR.qubo(true) << endl;
 
-	Qrutine::Sample sample;
+	Qroutine::Sample sample;
 	sample["# | R1 | "] = 0;
 	sample["# | R2 | "] = 0;
 	sample["# | R3 | "] = 0;
@@ -269,7 +269,7 @@ void test3()
 	sample["b1"] = 1;
 	sample["c0"] = 1;
 	sample["c1"] = 0;
-	Qrutine aRutine("test", eR);
+	Qroutine aRutine("test", eR);
 	aRutine.add(sample);
 	cout << endl << aRutine.solutions() << endl;
 }
@@ -292,7 +292,7 @@ void test4()
 	p7m_lt8 = (p7m < _8) << p8E;
 	p7m_ge8 = ~(p7m < _8) << p7mE2;	// not sure operator~
 
-	Qrutine p_ge8R("prime >= 8");
+	Qroutine p_ge8R("prime >= 8");
 	p_ge8R << p7mE1 << p7m_lt8 << p7m_ge8;
 
 	Qcondition p_lt8, p_ge8;
@@ -302,7 +302,7 @@ void test4()
 	Qfunction p_mod_8("prime % 8");
 	p_mod_8 << p_lt8 << p_ge8;
 
-	Qrutine program("Find prime numbers");
+	Qroutine program("Find prime numbers");
 	// constants
 	Qvar _2("2", 2), _3("3", 3);
 	// variables
@@ -317,7 +317,7 @@ void test4()
 // (5.2) p = s^2 + 4t^2	when p == 5(mod 8) s==t==1(mod 2) gcd(s,t) = 1
 void test5()
 {
-	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	Qroutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
 	// constants
 	Qvar _1("1",1), _2("2", 2), _4("4", 4), _5("5", 5), _8("8", 8);
 	// variables
@@ -335,7 +335,7 @@ void test5()
 // (5.3) p = s^2 + 4st + 2t^2	when p == 7(mod 8) s==t==1(mod 2) gcd(s,t) = 1
 void test6()
 {
-	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	Qroutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
 	// constants
 	Qvar _1("1", 1), _2("2", 2), _4("4", 4), _7("7", 7), _8("8", 8);
 	// variables
@@ -353,7 +353,7 @@ void test6()
 
 void test5short()
 {
-	Qrutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
+	Qroutine program("Find prime numbers with Qmod, Qpow and Qgcd functions");
 	// constants
 	Qvar _4("4", 4), _5("5", 5), _8("8", 8);
 	// variables

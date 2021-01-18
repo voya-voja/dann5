@@ -6,7 +6,7 @@
 #include <Eigen/Dense>
 
 #include <Qexpression.h>
-#include <Qrutine.h>
+#include <Qroutine.h>
 
 using namespace std;
 using namespace Eigen;
@@ -18,14 +18,14 @@ namespace dann5 {
 		class Qfunction : public Qvar
 		{
 		public:
-			// creates Q function with a rutine name 
+			// creates Q function with a routine name 
 			Qfunction(const string&);
 
-			// creates Q function with a rutine name and size of resulting variable
+			// creates Q function with a routine name and size of resulting variable
 			Qfunction(Index size, const string&);
 
 			// A identity Q extression initialized with a single Q defined definition
-			Qfunction(const Qrutine&);
+			Qfunction(const Qroutine&);
 
 			// Copy constructor
 			Qfunction(const Qfunction&);
@@ -33,10 +33,10 @@ namespace dann5 {
 			// Destruct the Q expression instance with containing Qdef and Q
 			~Qfunction();
 
-			const Qrutine& rutine() const { return *mpRutine; };
+			const Qroutine& routine() const { return *mpRutine; };
 
 			Qfunction& operator<<(const Qstatement& right);
-			Qfunction& operator<<(const Qrutine& right);
+			Qfunction& operator<<(const Qroutine& right);
 
 			// Return a string representation of this Q expression
 			string toString(bool decomposed = false) const;
@@ -44,10 +44,10 @@ namespace dann5 {
 			// Insert string representation of a Q expression into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qfunction&);
 		protected:
-			Qrutine& rutine() { return *mpRutine; };
+			Qroutine& routine() { return *mpRutine; };
 
 		private:
-			Qrutine::Sp mpRutine;
+			Qroutine::Sp mpRutine;
 		};
 
 		class Qmod : public Qfunction
@@ -55,8 +55,8 @@ namespace dann5 {
 		public:
 			// dividend ÷ divisor = quotient + remainder
 			Qmod(const Qvar& dividend, const Qvar& divisor);
-			Qmod(const Qvar& dividend, const Qnni& divisor);
-			Qmod(const Qdef& dividend, const Qnni& divisor);
+			Qmod(const Qvar& dividend, const Qwhole& divisor);
+			Qmod(const Qdef& dividend, const Qwhole& divisor);
 			Qmod(const Qdef& dividend, const Qvar& divisor);
 		protected:
 		private:

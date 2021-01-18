@@ -46,7 +46,7 @@
     <ClCompile Include="..\ocean\cpp\Qfunction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ocean\cpp\Qrutine.cpp">
+    <ClCompile Include="..\ocean\cpp\Qroutine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -107,10 +107,10 @@
     <ClInclude Include="..\ocean\cpp\include\Qfunction.h">
       <Filter>Include Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\ocean\cpp\include\Qrutine.h">
+    <ClInclude Include="..\ocean\cpp\include\Qstatement.h">
       <Filter>Include Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\ocean\cpp\include\Qstatement.h">
+    <ClInclude Include="..\ocean\cpp\include\Qroutine.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

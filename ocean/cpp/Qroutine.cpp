@@ -1,5 +1,5 @@
 #include <math.h> 
-#include <Qrutine.h>
+#include <Qroutine.h>
 #include <Utility.h>
 
 #include <Logger.h>
@@ -9,14 +9,14 @@ using namespace dann5::ocean;
 /*** QuboEquation ***/
 
 
-Qrutine::Qrutine(const string& name)
+Qroutine::Qroutine(const string& name)
 	: Qdef()
 {
 	Qdef::name(name);
 	_lct(toString());
 }
 
-Qrutine::Qrutine(Index size, const string& name)
+Qroutine::Qroutine(Index size, const string& name)
 	: Qdef()
 {
 	Qdef::name(name);
@@ -24,7 +24,7 @@ Qrutine::Qrutine(Index size, const string& name)
 }
 
 
-Qrutine::Qrutine(const string& name, const Qstatement& statement)
+Qroutine::Qroutine(const string& name, const Qstatement& statement)
 	: Qdef()
 {
 	Qdef::name(name);
@@ -33,7 +33,7 @@ Qrutine::Qrutine(const string& name, const Qstatement& statement)
 	initialize(size);
 }
 
-Qrutine::Qrutine(const string& name, const Qstatements& statements)
+Qroutine::Qroutine(const string& name, const Qstatements& statements)
 	: Qdef(), mStatements(statements)
 {
 	Qdef::name(name);
@@ -47,14 +47,14 @@ Qrutine::Qrutine(const string& name, const Qstatements& statements)
 	initialize(size);
 }
 
-Qrutine::Qrutine(const Qrutine& right)
+Qroutine::Qroutine(const Qroutine& right)
 	: Qdef(right), mStatements(right.mStatements), mSolutions(right.mSolutions)
 {
 	initialize(right.size());
 	_lct(toString());
 }
 
-void Qrutine::initialize(Index size)
+void Qroutine::initialize(Index size)
 {
 	qbit_def_vector::resize(size);
 	for (Index at = 0; at < size; at++)
@@ -64,32 +64,32 @@ void Qrutine::initialize(Index size)
 	_lct(toString());
 }
 
-Qoperand::Sp Qrutine::operand(Index level)
+Qoperand::Sp Qroutine::operand(Index level)
 {
 	return Qoperand::Sp(new Operand(level, *this));
 }
 
-Qrutine::~Qrutine()
+Qroutine::~Qroutine()
 {
 	_ldt(toString());
 }
 
-Qrutine& Qrutine::operator<<(const Qstatement& statement)
+Qroutine& Qroutine::operator<<(const Qstatement& statement)
 {
 	mStatements.push_back(statement.clone());
 	return(*this);
 }
 
-Qrutine& Qrutine::operator<<(const Qrutine& rutine)
+Qroutine& Qroutine::operator<<(const Qroutine& routine)
 {
-	for (auto statement : rutine.mStatements)
+	for (auto statement : routine.mStatements)
 	{
 		mStatements.push_back(statement);
 	}
 	return(*this);
 }
 
-Qubo Qrutine::qubo(bool finalized) const
+Qubo Qroutine::qubo(bool finalized) const
 {
 	Qubo qubo;
 	for (auto statement : mStatements)
@@ -99,34 +99,34 @@ Qubo Qrutine::qubo(bool finalized) const
 	return(qubo);
 }
 
-string Qrutine::toString(bool decomposed) const
+string Qroutine::toString(bool decomposed) const
 {
-	string rutineStr(name() + ":\n");
+	string routineStr(name() + ":\n");
 	for (auto statement : (*this))
 	{
-		rutineStr += "\t" + statement->toString(decomposed);
+		routineStr += "\t" + statement->toString(decomposed);
 	}
-	return(rutineStr);
+	return(routineStr);
 }
 
-ostream& dann5::ocean::operator << (std::ostream& out, const Qrutine& r)
+ostream& dann5::ocean::operator << (std::ostream& out, const Qroutine& r)
 {
 	out << r.toString();
 	return out;
 }
 
-void Qrutine::add(Sample& sample)
+void Qroutine::add(Sample& sample)
 {
 	mSolutions.push_back(sample);
 }
 
-void Qrutine::set(Samples& samples)
+void Qroutine::set(Samples& samples)
 {
 	_lat("solutions", to_string(samples.size()) + " of samples");
 	mSolutions = samples;
 }
 
-string Qrutine::solutions() const
+string Qroutine::solutions() const
 {
 	string values("");
 	for (auto sample : mSolutions)
@@ -137,7 +137,7 @@ string Qrutine::solutions() const
 			for (auto arg : args)
 			{
 				Qdef definition = as_const(arg).definition();
-				Qnni value(as_const(arg).value().nobs());
+				Qwhole value(as_const(arg).value().nobs());
 				int atBit = 0;
 				for (auto bitSymbol : definition)
 					value[atBit++] = sample[bitSymbol->identity()];
@@ -150,24 +150,24 @@ string Qrutine::solutions() const
 	return(values);
 }
 
-Qrutine::Operand::Operand(Index level, Qrutine& rutine)
-	:Qoperand(rutine.name() + to_string(level)), mpRutine(&rutine), mLevel(level)
+Qroutine::Operand::Operand(Index level, Qroutine& routine)
+	:Qoperand(routine.name() + to_string(level)), mpRutine(&routine), mLevel(level)
 {
 
 }
 
-Qrutine::Operand::Operand(const Operand& right)
+Qroutine::Operand::Operand(const Operand& right)
 	:Qoperand(right), mpRutine(right.mpRutine), mLevel(right.mLevel)
 {
 
 }
 
-Qrutine::Operand::~Operand()
+Qroutine::Operand::~Operand()
 {
 
 }
 
-string Qrutine::Operand::toString(bool decomposed) const
+string Qroutine::Operand::toString(bool decomposed) const
 {
 	string rOpStr(identity());
 	if (decomposed)
@@ -181,7 +181,7 @@ string Qrutine::Operand::toString(bool decomposed) const
 	return rOpStr;
 }
 
-Qubo Qrutine::Operand::qubo(bool finalized) const
+Qubo Qroutine::Operand::qubo(bool finalized) const
 {
 	Qubo qubo(Qoperand::qubo(finalized ));
 	for (auto pStatement : mpRutine->mStatements)

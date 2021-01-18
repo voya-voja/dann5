@@ -15,7 +15,7 @@ using namespace Eigen;
 namespace dann5 {
 	namespace ocean {
 
-		class Qrutine;
+		class Qroutine;
 
 		// Quantum equation is a coupling of result Q variable via Q expression with
 		// Qvar arguments
@@ -140,13 +140,13 @@ namespace dann5 {
 			// right Q equation
 			Qequation& operator+=(const Qequation& right);
 
-			// Subtraction operator returns a Q rutine instance with 2 Q equations with 
+			// Subtraction operator returns a Q routine instance with 2 Q equations with 
 			// same result. One with the expression of this Q equation and the other
 			// with multiplying expression of the result of this Q equation and the
 			// right Q variable, e.g. for a Q variabble z, equation with result y and 
-			// expression x, and rutine 'sub':
+			// expression x, and routine 'sub':
 			// y = x - z	=>	sub << S_y = x << S_y = y + z
-			Qrutine operator-(const Qvar& right) const;
+			Qroutine operator-(const Qvar& right) const;
 
 			// Multiplication operator returns a new Qequation object with multiplied Q
 			// variable with this Q equation
@@ -164,13 +164,13 @@ namespace dann5 {
 			// multiplied right Q equation
 			Qequation& operator*=(const Qequation& right);
 
-			// Division operator returns a Qrutine instance with 2 Q equations with same
+			// Division operator returns a Qroutine instance with 2 Q equations with same
 			// result, one with the expression of this Q equation and the other with
 			// multiplying expression of the result of this Q equation and the right Q 
 			// variable, e.g. for a Q variabble z, equation with result y and expression
-			// x, and rutine 'div':
+			// x, and routine 'div':
 			// y = x / z	=>	div << D_y = x << D_y = y * z
-			Qrutine operator/(const Qvar& right) const;
+			Qroutine operator/(const Qvar& right) const;
 
 			// Returns a constant reference to the result of this Q equation
 			const Qvar& result() const { return mResult; }
@@ -206,7 +206,7 @@ namespace dann5 {
 			void set(Samples& samples);
 
 			// For existing samples, returns a string representation of all solutions of 
-			// this Q rutine
+			// this Q routine
 			string solutions() const;
 
 			// Insert string representation of a Q equation into an output stream

@@ -1,7 +1,7 @@
 #include <math.h> 
 #include <Qequation.h>
 #include <Utility.h>
-#include <Qrutine.h>
+#include <Qroutine.h>
 
 #include <Logger.h>
 
@@ -387,7 +387,7 @@ Qequation& Qequation::operator+=(const Qequation& right)
 	return(*this);
 }
 
-Qrutine Qequation::operator-(const Qvar& subtrahend) const
+Qroutine Qequation::operator-(const Qvar& subtrahend) const
 {
 	// define difference variable with the same size as subtrahend argument
 	Qvar difference(subtrahend.definition().size(), "dfrnc");
@@ -397,9 +397,9 @@ Qrutine Qequation::operator-(const Qvar& subtrahend) const
 	Qequation minuend(mResult);
 	minuend = difference + subtrahend;
 
-	// create subtraction rutine
+	// create subtraction routine
 	string rName = "dfrnc = " + mResult.definition().name() + " - " + subtrahend.definition().name();
-	Qrutine subtraction(nobs(), rName);
+	Qroutine subtraction(nobs(), rName);
 	subtraction << (*this) << minuend;
 	return subtraction;
 }
@@ -455,7 +455,7 @@ Qequation& Qequation::operator*=(const Qequation& right)
 	return(*this);
 }
 
-Qrutine Qequation::operator/(const Qvar& divisor) const
+Qroutine Qequation::operator/(const Qvar& divisor) const
 {
 	// define quatient variable with same size as divisor 
 	Qvar quotient(divisor.definition().size(), "qtnt");
@@ -465,9 +465,9 @@ Qrutine Qequation::operator/(const Qvar& divisor) const
 	Qequation dividend(mResult);
 	dividend = quotient * divisor;
 
-	// create multiplication rutine
+	// create multiplication routine
 	string rName = "qtnt = " + mResult.definition().name() + " / " + divisor.definition().name();
-	Qrutine multiplication(nobs(), rName);
+	Qroutine multiplication(nobs(), rName);
 	multiplication << (*this) << dividend;
 	return multiplication;
 }
@@ -567,7 +567,7 @@ string Qequation::solutions() const
 		for (auto arg : args)
 		{
 			Qdef definition = as_const(arg).definition();
-			Qnni value(as_const(arg).value().nobs());
+			Qwhole value(as_const(arg).value().nobs());
 			int atBit = 0;
 			for (auto bitSymbol : definition)
 				value[atBit++] = sample[bitSymbol->identity()];

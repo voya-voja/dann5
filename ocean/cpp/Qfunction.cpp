@@ -11,30 +11,30 @@ using namespace dann5::ocean;
 
 
 Qfunction::Qfunction(const string& name)
-	: Qvar(Qrutine(name))
+	: Qvar(Qroutine(name))
 {
-	mpRutine = dynamic_pointer_cast<Qrutine>(definition());
+	mpRutine = dynamic_pointer_cast<Qroutine>(definition());
 	_lct(toString());
 }
 
 Qfunction::Qfunction(Index size, const string& name)
-	: Qvar(Qrutine(size, name))
+	: Qvar(Qroutine(size, name))
 {
-	mpRutine = dynamic_pointer_cast<Qrutine>(definition());
+	mpRutine = dynamic_pointer_cast<Qroutine>(definition());
 	_lct(toString());
 }
 
-Qfunction::Qfunction(const Qrutine& rutine)
-	: Qvar(rutine)
+Qfunction::Qfunction(const Qroutine& routine)
+	: Qvar(routine)
 {
-	mpRutine = dynamic_pointer_cast<Qrutine>(definition());
+	mpRutine = dynamic_pointer_cast<Qroutine>(definition());
 	_lct(toString());
 }
 
 Qfunction::Qfunction(const Qfunction& right)
 	:Qvar(right)
 {
-	mpRutine = dynamic_pointer_cast<Qrutine>(definition());
+	mpRutine = dynamic_pointer_cast<Qroutine>(definition());
 	_lct(toString());
 }
 
@@ -49,13 +49,13 @@ Qfunction& Qfunction::operator<<(const Qstatement& right)
 	if (size < rSize)
 		resize(rSize);
 
-	rutine() << right;
+	routine() << right;
 	return(*this);
 }
 
-Qfunction& Qfunction::operator<<(const Qrutine& right)
+Qfunction& Qfunction::operator<<(const Qroutine& right)
 {
-	rutine() << right;
+	routine() << right;
 	return(*this);
 }
 
@@ -63,7 +63,7 @@ Qfunction& Qfunction::operator<<(const Qrutine& right)
 string Qfunction::toString(bool decomposed) const
 {
 	string funcStr(Qvar::toString(decomposed));
-	funcStr += rutine().toString(decomposed);
+	funcStr += routine().toString(decomposed);
 	return funcStr;
 }
 
@@ -79,13 +79,13 @@ Qmod::Qmod(const Qvar& dividend, const Qvar& divisor)
 
 }
 
-Qmod::Qmod(const Qvar& dividend, const Qnni& divisor)
+Qmod::Qmod(const Qvar& dividend, const Qwhole& divisor)
 	: Qfunction("mod")
 {
 
 }
 
-Qmod::Qmod(const Qdef& dividend, const Qnni& divisor)
+Qmod::Qmod(const Qdef& dividend, const Qwhole& divisor)
 	: Qfunction("mod")
 {
 

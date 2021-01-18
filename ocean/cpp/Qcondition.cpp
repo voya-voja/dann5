@@ -22,13 +22,13 @@ Qcondition::Qcondition(const Qcondition& right)
 	_lct(toString());
 }
 
-Qcondition::Qcondition(const Qrutine& action)
+Qcondition::Qcondition(const Qroutine& action)
 	: Qstatement(), mAction(action)
 {
 	_lct(toString());
 }
 
-Qcondition::Qcondition(const Qrutine& action, const Qexpression& equation, const Qvars& arguments)
+Qcondition::Qcondition(const Qroutine& action, const Qexpression& equation, const Qvars& arguments)
 	: Qstatement(equation, arguments), mAction(action)
 {
 	_lct(toString());
@@ -55,7 +55,7 @@ Qcondition& Qcondition::operator<<(const Qstatement& right)
 	return(*this);
 }
 
-Qcondition& Qcondition::operator<<(const Qrutine& right)
+Qcondition& Qcondition::operator<<(const Qroutine& right)
 {
 	mAction << right;
 	return(*this);

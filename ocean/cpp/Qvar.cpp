@@ -39,7 +39,7 @@ Qvar::Qvar(const Qdef& definition)
 	_lct(mpDefinition->name() + " = " + mValue.toString());
 }
 
-Qvar::Qvar(const Qdef& definition, const Qnni& value)
+Qvar::Qvar(const Qdef& definition, const Qwhole& value)
 	: mpDefinition(definition.clone()), mValue(value)
 {
 	Index vn(mValue.nobs()), dn(mpDefinition->nobs());
@@ -296,7 +296,7 @@ string Qvar::toString(bool bitFormat) const
 			vStr += (*mpDefinition)(at)->identity() + " = ";
 			Qbit v = mValue(at);
 			if (v > 1)	// supperposition
-				vStr += Qnni::cUnknownSign;
+				vStr += Qwhole::cUnknownSign;
 			else
 				vStr += to_string(v);
 			vStr += "\n";

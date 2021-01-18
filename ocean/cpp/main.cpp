@@ -33,7 +33,7 @@ PYBIND11_MODULE(d5o, m) {
 
 			Qubo
 			QuboTable
-			Qnni
+			Qwhole
 			Qdef
 			Qexpression
 			Qvar
@@ -115,17 +115,17 @@ PYBIND11_MODULE(d5o, m) {
 	py::class_<QintInitializer>(m, "QintInitializer")
 		.def("push", (QintInitializer& (QintInitializer::*)(const q_bit&)) &QintInitializer::operator,);
 
-	py::class_<Qnni>(m, "Qnni", 
+	py::class_<Qwhole>(m, "Qwhole", 
 		R"pbdoc( Quantum bit is in superposition state for any value except 0 and 1)pbdoc")
 		.def(py::init<>())
-		.def(py::init<const Qnni&>())
+		.def(py::init<const Qwhole&>())
 		.def(py::init<Index>())
 		.def(py::init<long>())
-		.def("nobs", &Qnni::nobs)
-		.def("value", &Qnni::value)
-		.def("resize", &Qnni::resize)
-		.def("assign", &Qnni::operator=)
-		.def("push", &Qnni::operator<<)
+		.def("nobs", &Qwhole::nobs)
+		.def("value", &Qwhole::value)
+		.def("resize", &Qwhole::resize)
+		.def("assign", &Qwhole::operator=)
+		.def("push", &Qwhole::operator<<)
 		.def(-py::self)
 		.def(py::self & py::self)
 		.def(py::self &= py::self)
@@ -165,9 +165,9 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::self *= Qdef());
 
 	py::class_<Qvar>(m, "Qvar",
-		R"pbdoc( Quantum variable has a variable definition definition, Qdef, and its value, Qnni. 
+		R"pbdoc( Quantum variable has a variable definition definition, Qdef, and its value, Qwhole. 
 			Default constructor: creates a quantum variable with default name defined and
-			Qnni value with 0 bits:
+			Qwhole value with 0 bits:
 				v0 = Qvar()
 
 			Overloaded constructor: instantiates a Q variable with a given definition name
@@ -182,14 +182,14 @@ PYBIND11_MODULE(d5o, m) {
 			Overloaded constructor: instantiates a Q variable with a given definition Q definition,
 			the bits are in superposition state:
 				c_def = Qdef(3, "c"), .e.g. c definition with c0, c1 and c2 bits
-				c = Qvar(c_def), e.g. defines a variable with Qnni value, where c0, c1 and c2 bits
+				c = Qvar(c_def), e.g. defines a variable with Qwhole value, where c0, c1 and c2 bits
 								 are in superposition state
 				
 			Overloaded constructor: instantiates a Q variable with a given definition Q definition and
 			given Q int value:
 				c_def = Qdef(3, "c"), .e.g. c definition with c0, c1 and c2 bits
-				c_val = Qnni(3), e.g. instantiates an quantum integer with bits 0 and 1, whcih are set to 1
-				c = Qvar(c_def, c_val), e.g. defines a variable with Qnni value 3, where c0 and c1 bits set to 1 
+				c_val = Qwhole(3), e.g. instantiates an quantum integer with bits 0 and 1, whcih are set to 1
+				c = Qvar(c_def, c_val), e.g. defines a variable with Qwhole value 3, where c0 and c1 bits set to 1 
 										and c2 bit set to 0
 
 			Copy constructor: creates a quantum variable with a same name and value as right object:
@@ -198,34 +198,34 @@ PYBIND11_MODULE(d5o, m) {
 				myVar = Qvar(right)
 
 			Addition operator returns this Qvar object by adding right to this Q variable objects' 
-			Qdef and Qnni members:
+			Qdef and Qwhole members:
 				a += b
 
 			Addition operator returns Qequation object by adding this and right Q variable objects'
-			Qdef and Qnni members:
+			Qdef and Qwhole members:
 				fx = a + c
 
 			Addition operator where Q variable is left and Q equation right argument. Returns Qequation
-			object by adding it self and its Qdef and Qnni members to the Q equation:
+			object by adding it self and its Qdef and Qwhole members to the Q equation:
 				fy = v0 + fx
 			
 			Multiplication operator returns this Qvar object by multiplying right to this Q variable
-			objects' Qdef and Qnni members:
+			objects' Qdef and Qwhole members:
 				a *= b
 
 			Multiplication operator returns Qequation object by multiplying this and right Q variable
-			objects' Qdef and Qnni members:
+			objects' Qdef and Qwhole members:
 				fm = a * c
 
 			Multiplication operator where Q variable is left and Q equation right argument. Returns
-			Qequation object by adding its Qdef and Qnni members to the Q equation:
+			Qequation object by adding its Qdef and Qwhole members to the Q equation:
 				fm2 = v0 * fm
 
 			definition() returns a variable definition name
 
 			value() returns a variable integer value
 
-			toString(bool bitForamt) returns Qdef and Qnni string representations of this
+			toString(bool bitForamt) returns Qdef and Qwhole string representations of this
 				variable. When bitFormat is true, the string representation are variable bit 
 				symbols and values, otherwise returns sybol name and corrsponding value
 
@@ -238,11 +238,11 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<const string&, long>())
 		.def(py::init<Index, const string&>())
 		.def(py::init<const Qdef&>())
-		.def(py::init<const Qdef&, const Qnni&>())
+		.def(py::init<const Qdef&, const Qwhole&>())
 		.def(py::init<const Qvar&>())
 		.def("nobs", &Qvar::nobs)
 		.def("definition", static_cast<const Qdef& (Qvar::*)() const>(&Qvar::definition), "return Qdef")
-		.def("value", static_cast<const Qnni& (Qvar::*)() const>(&Qvar::value), "return Qnni")
+		.def("value", static_cast<const Qwhole& (Qvar::*)() const>(&Qvar::value), "return Qwhole")
 		.def("toString", &Qvar::toString)
 		.def("resize", &Qvar::resize)
 		.def( (~ py::self) )

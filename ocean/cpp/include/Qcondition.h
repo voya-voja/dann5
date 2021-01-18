@@ -7,7 +7,7 @@
 
 #include <Qvar.h>
 #include <Qstatement.h>
-#include <Qrutine.h>
+#include <Qroutine.h>
 
 using namespace std;
 using namespace Eigen;
@@ -27,11 +27,11 @@ namespace dann5 {
 			Qcondition();
 
 			// creates Q equation with a given Q variable as an expected result
-			Qcondition(const Qrutine&);
+			Qcondition(const Qroutine&);
 
 			// instantiate a Q equation with result Q variable, resulting Q expression
 			// and corresponding Q variables as arguments of the expression
-			Qcondition(const Qrutine&, const Qexpression&, const Qvars&);
+			Qcondition(const Qroutine&, const Qexpression&, const Qvars&);
 
 			//copy constructor
 			Qcondition(const Qcondition&);
@@ -47,8 +47,8 @@ namespace dann5 {
 			Qcondition& operator<<(const Qstatement& right);
 
 			// An insertion operator (<<) to add statements from an existing
-			// rutine into this Q condition actions
-			Qcondition& operator<<(const Qrutine& right);
+			// routine into this Q condition actions
+			Qcondition& operator<<(const Qroutine& right);
 
 			// A condition negation
 			Qcondition& operator~();
@@ -115,7 +115,7 @@ namespace dann5 {
 		protected:
 
 		private:
-			Qrutine			mAction;		// a rutine to be activated when condition is true
+			Qroutine			mAction;		// a routine to be activated when condition is true
 		};
 	};
 };

@@ -332,7 +332,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\ocean\cpp\Qfunction.cpp" />
     <ClCompile Include="..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\ocean\cpp\Qops.cpp" />
-    <ClCompile Include="..\ocean\cpp\Qrutine.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qroutine.cpp" />
     <ClCompile Include="..\ocean\cpp\Qstatement.cpp" />
     <ClCompile Include="..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\ocean\cpp\main.cpp" />
@@ -356,7 +356,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\ocean\cpp\include\Qfunction.h" />
     <ClInclude Include="..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\ocean\cpp\include\Qops.h" />
-    <ClInclude Include="..\ocean\cpp\include\Qrutine.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qroutine.h" />
     <ClInclude Include="..\ocean\cpp\include\Qstatement.h" />
     <ClInclude Include="..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\ocean\cpp\include\Qubo.h" />
