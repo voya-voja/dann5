@@ -139,13 +139,13 @@ namespace dann5 {
 		};
 
 		// Quantum non-negatve integer is a vector of Qbits
-		typedef Matrix<q_bit, Dynamic, 1> q_nni;
+		typedef Matrix<q_bit, Dynamic, 1> q_binary;
 
 		// Support for Qwhole << operator
-		typedef Eigen::CommaInitializer<q_nni> QintInitializer;
+		typedef Eigen::CommaInitializer<q_binary> QintInitializer;
 
 		// Quantum non-negative integer, as a vector of Qubits, implements arithmetic operations
-		class Qwhole : public q_nni
+		class Qwhole : public q_binary
 		{
 		public:
 			// the Qwhole is undefined, if any of its Qbits is in superposition state

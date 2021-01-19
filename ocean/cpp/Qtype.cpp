@@ -17,19 +17,19 @@ const string Qwhole::cUnknownSign = "(U)";
 
 
 Qwhole::Qwhole()
-	:q_nni(Qbit::cSuperposition)
+	:q_binary(Qbit::cSuperposition)
 {
 	_lc;
 }
 
 Qwhole::Qwhole(const Qwhole& right)
-	: q_nni(right)
+	: q_binary(right)
 {
 	_lc;
 }
 
 Qwhole::Qwhole(Index size)
-	: q_nni(size)
+	: q_binary(size)
 {
 	for (Index at = 0; at < nobs(); at++)
 		(*this)(at) = Qbit::cSuperposition;
@@ -38,7 +38,7 @@ Qwhole::Qwhole(Index size)
 
 
 Qwhole::Qwhole(long value)
-	: q_nni(int(std::log(double(value))/std::log(2.0)) + 1)
+	: q_binary(int(std::log(double(value))/std::log(2.0)) + 1)
 {
 	long v = value;
 	int bitIndex = 0;
@@ -57,13 +57,13 @@ Qwhole::~Qwhole()
 
 Qwhole& Qwhole::operator =(const Qwhole& right)
 {
-	q_nni::operator=(right);
+	q_binary::operator=(right);
 	return *this;
 }
 
 QintInitializer Qwhole::operator <<(const Qbit& right)
 {
-	return QintInitializer(*static_cast<q_nni*>(this), right);
+	return QintInitializer(*static_cast<q_binary*>(this), right);
 }
 
 Qwhole Qwhole::operator ~() const
@@ -279,7 +279,7 @@ Qwhole Qwhole::operator *(const Qwhole& right) const
 
 Qwhole& Qwhole::operator *=(const Qwhole& right)
 {
-	QbitMatrix xMatrix = q_nni(*this) * right.transpose();
+	QbitMatrix xMatrix = q_binary(*this) * right.transpose();
 	QbitMatrix reversedXMatrix = xMatrix.rowwise().reverse();
 
 	// resize this vector to a # of diagonals + 1 of xMatrix
@@ -293,7 +293,7 @@ Qwhole& Qwhole::operator *=(const Qwhole& right)
 	Index atDiagonal = reversedXMatrix.cols() - 1;
 	for (Index at = 0; at < nobs() - 1; at++)
 	{
-		q_nni diagonal = reversedXMatrix.diagonal(atDiagonal);
+		q_binary diagonal = reversedXMatrix.diagonal(atDiagonal);
 		for (Index atD = 0; atD < diagonal.rows() && !superpositon; atD++)
 		{
 			Qbit qb = diagonal(atD);
@@ -320,7 +320,7 @@ void Qwhole::resize(Index size, const Qbit& qBit)
 {
 	Index oSize = nobs();
 	Qwhole temp(*this);
-	q_nni::resize(size, NoChange);
+	q_binary::resize(size, NoChange);
 	for (Index at = 0; at < size; at++)
 		if (at < oSize)
 			(*this)(at) = temp(at);
