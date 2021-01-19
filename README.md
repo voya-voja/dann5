@@ -91,7 +91,9 @@ Dann5 d5o library is in active development on Windows x64 as a primary OS. A Mac
   2.	Create Dann5 as a sub-folder of
    -	your python project folder; or
    -	site-packages folder for your python environment, e.g. for anaconda distribution, on windows, the path should be:
-    > C:\Users\<user_name>\AppData\Local\Continuum\anaconda3\envs\<env_name>\Lib\site-packages
+   
+        > C:\Users\<user_name>\AppData\Local\Continuum\anaconda3\envs\<env_name>\Lib\site-packages
+    
   3.	Copy d5o.cp38-win_amd64.pyd into Dann5 sub-folder
 
 ####	Install package from source code
