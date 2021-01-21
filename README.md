@@ -87,8 +87,8 @@ To compile Dann5 d5o source code in addition to above prerequisites
 Dann5 d5o library is in active development on Windows x64 as a primary OS. A Mac OS X/Linux version and package installation will be released soon.
 
 #### Install Windows x64 version from this repository into python project or environment
-  1.	Download d5o.cp38-win_amd64.pyd file from [debug folder](cpp_build/Debug) 
-  2.	Create Dann5 as a sub-folder of
+  1.	Download dann5 folder with d5o.cp38-win_amd64.pyd library from [examples folder](examples) 
+  2.	Make dann5 a sub-folder of
    -	your python project folder; or
    -	site-packages folder for your python environment, e.g. for anaconda distribution, on windows, the path should be:
    
@@ -103,7 +103,7 @@ Dann5 d5o library is in active development on Windows x64 as a primary OS. A Mac
     -	d5o.cp38-win_amd64.pyd for windows and python x64
     -	d5o.cp38-win_amd32.pyd for windows and python x32
     -	d5o.so for Mac OS X or Linux
-  3.	Deploy d5o library into Dann5 folder within your python project or environment as described above in Windows x64 version installation
+  3.	Deploy d5o library into dann5 folder within your python project or environment as described above in Windows x64 version installation
   
 ### Use
 After installing d5o library as per instructions above, use released features in your python source code:
@@ -120,6 +120,8 @@ After installing d5o library as per instructions above, use released features in
   > print(eA.toString(True, -1))
   
   > print(eA.qubo(True, -1))
+
+Or use Jupyter Notebook [examples](examples) to review Dann5 d50 functionality. 
 
 ## Bugs, issues and contributing
 Contributions to this project are welcome.

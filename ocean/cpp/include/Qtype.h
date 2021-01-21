@@ -154,20 +154,20 @@ namespace dann5 {
 			// Qbit superposition and Qwhole undefiined string representation
 			static const string cUnknownSign;	// the Qwhole/Qbit unknown sign is "(U)"
 
-			// instantiate a Q integer without any Q bits
+			// instantiate a Q whole without any Q bits
 			Qwhole();
 
-			// instantiate a Q integer with a given # of Qbits in superposition state
+			// instantiate a Q whole with a given # of Qbits in superposition state
 			Qwhole(Index size);
 
-			// instantiate a Q integer with a given value,
+			// instantiate a Q whole with a given value,
 			// the # of Qbits is determined by the # of bits in a given value
 			Qwhole(long value);
 
 			// copy constructor
 			Qwhole(const Qwhole&);
 
-			// denstruct the Q integer with its Qbits
+			// denstruct the Q whole with its Qbits
 			~Qwhole();
 
 			// return cUnknown, if any Qbit is in superposition state,

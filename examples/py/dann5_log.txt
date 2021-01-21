@@ -1,0 +1,2054 @@
+Object Type, Action, Address, Text, countIf(C:C_ C2), =COUNTIFS(B:B_" deallocate"_C:C_C2)
+'class dann5::Logger * __ptr64', allocate, 000001EAF2F38C30
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E68E0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5700
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5670
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5E38
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5850
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5D10
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5B40
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5640
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5C50
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E56D0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6488
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E64E8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5CE0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5DB8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6340
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6518
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5610
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6370
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E60F8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E56A0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E55E0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5790
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5EC0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5820
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6228
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6310
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6008
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E5730
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E63D8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E63A8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6068
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E6288
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::QuboTable> * __ptr64', allocate, 00007FF8041E57F0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6900
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5BF0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E62E0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5F20
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5E90
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5B10
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5F78
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E57C0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5FA8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E60C8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5B98
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6258
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5C20
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6038
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5EF0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6178
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6548
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E64B8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E61A8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6578
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5880
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5C80
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E55B0
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5FD8
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E6098
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5760
+'class dann5::ocean::Factory<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop>::Creator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class dann5::ocean::Qop> * __ptr64', allocate, 00007FF8041E5CB0
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8140, 'v0_'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8100, 'v1_'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F80C0, 'v2_'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8080, 'v3_'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8080, 'v3_'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F80C0, 'v2_'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8100, 'v1_'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8140, 'v0_'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F7F50, 'v4_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8788, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F7F50, 'v4_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8780
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF44C3EE0, 'v5_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F87D0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F87C0
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F87E0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8780, ''
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F7F50, 'v6_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F86D8, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F7F50, 'v6_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F86D0
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548A90, 'v7_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8720
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8710
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F8730
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F86D0, ''
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F7F50, 'v8_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8628, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F7F50, 'v8_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8620
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4546E90, 'v9_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8670
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8660
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F8680
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8620, ''
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F7F50, 'v10_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8560, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F7F50, 'v10_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8558
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547290, 'v11_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F85A8
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8598
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F85B8
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8558, ''
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F7F50, 'v12_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8498, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F7F50, 'v12_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8490
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547510, 'v13_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F84E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F84D0
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F84F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8490, ''
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8490, ''
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F84F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F84D0, 'v13_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F84E0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547510, 'v13_'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8490
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8498, 'eXp[0]={}'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8558, ''
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F85B8
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8598, 'v11_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F85A8
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547290, 'v11_'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8558
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8560, 'eXp[0]={}'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8620, ''
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F8680
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8660, 'v9_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8670
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4546E90, 'v9_'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8620
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8628, 'eXp[0]={}'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F86D0, ''
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F8730
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8710, 'v7_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8720
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4548A90, 'v7_'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F86D0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F86D8, 'eXp[0]={}'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8780, ''
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F87E0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F87C0, 'v5_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F87D0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF44C3EE0, 'v5_'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8780
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8788, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547B90, 'v14_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8A80
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8A70
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547F10, 'v15_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8A58
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8A48
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548810, 'v16_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8A30
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8A20
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547610, 'v17_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8A08
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F89F8
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548490, 'v18_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F89E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F89D0
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548590, 'v19_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F89B8
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F89A8
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547910, 'v20_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8970
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8960
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547F90, 'v21_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8948
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8938
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547990, 'v22_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8900
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F88F0
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547510, 'v23_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F88D8
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F88C8
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F88C8, 'v23_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F88D8
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547510, 'v23_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F88F0, 'v22_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8900
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547990, 'v22_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8938, 'v21_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8948
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547F90, 'v21_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8960, 'v20_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8970
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547910, 'v20_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F89A8, 'v19_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F89B8
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4548590, 'v19_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F89D0, 'v18_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F89E0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4548490, 'v18_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F89F8, 'v17_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8A08
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547610, 'v17_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8A20, 'v16_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8A30
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4548810, 'v16_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8A48, 'v15_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8A58
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547F10, 'v15_'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8A70, 'v14_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8A80
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4547B90, 'v14_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4542990, 'a0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4542220, 'a1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4542680, 'a2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4541D50, 'a3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548C10, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4552EE0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4552ED0, 'a = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4541EA0, 'b0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45428B0, 'b1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4542B50, 'b2'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548590, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4552220
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4552210, 'b = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44F5850, 'A0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE710, 'A1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE1D0, 'A2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE320, 'A3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4547F90, 'A'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4552CA0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4552C90, 'A = 15'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE940, 'v24_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE080, 'v24_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CEDA0, 'v24_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE630, 'v24_3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8ED0, 'v24_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF450B8A8, 'eXp[4]={v24_0; v24_1; v24_2; v24_3; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8ED0, 'v24_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF450B8A0
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF450B8F0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF450B8E0, 'A = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF450B900
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF450B8A0, '| A0 = 1 | = v24_0
+| A1 = 1 | = v24_1
+| A2 = 1 | = v24_2
+| A3 = 1 | = v24_3
+'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8E00, 'v25_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8F48, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8E00, 'v25_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8F40
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4546D90, 'v26_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8F90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8F80
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F8FA0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8F40, ''
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4552700
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF45526F0, 'a = (S)'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8E90, 'eXp[4]={a0; a1; a2; a3; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8E90, 'eXp[4]={a0; a1; a2; a3; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8D30, 'v26_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE400, 'v26_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE9B0, 'v26_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CDEC0, 'v26_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE6A0, 'v26_3'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8D30, 'v26_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8D78
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8D78
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3F8F40, '| v26_0 = 205 | = a0
+| v26_1 = 205 | = a1
+| v26_2 = 205 | = a2
+| v26_3 = 205 | = a3
+'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF45471C0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF45471B0, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF45471A0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4547190, 'a = (S)'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF45526F0, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4552700
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8DB8, 'eXp[3]={b0; b1; b2; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE240, 'v27_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE2B0, 'v27_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE7F0, 'v27_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE470, 'v27_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE4E0, 'v27_4'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8AF0, 'v27_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8AC8, 'eXp[5]={v27_0; v27_1; v27_2; v27_3; v27_4; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8AF0, 'v27_'
+'class dann5::ocean::Qexpression::Add * __ptr64', allocate, 000000614C3F8B38
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554D40, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547510, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE240, 'v27_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45541E0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4548790, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45546C0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4548810, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554930, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4546F10, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4546F10, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4548810, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF45546C0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF45541E0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE2B0, 'v27_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555CB0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547610, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4548810, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45546C0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4548890, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4548890, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4548810, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555CB0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE7F0, 'v27_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554A00, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4548810, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE470, 'v27_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE4E0, 'v27_4'
+'class dann5::ocean::Qexpression const * __ptr64', +, 000000614C3F8F48, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8D50, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression::Add * __ptr64', deallocate, 000000614C3F8B38
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8AC8, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8D50, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8DB8, 'eXp[3]={b0; b1; b2; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8D30, 'v26_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CE240, 'v26_4'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8D30, 'v26_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8D78
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8D78
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3F8F40, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F9078, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4548720
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4548710, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4548740
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4548730, 'b = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F9070
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F90C0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F90B0, 'v26_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F90D0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F9070, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8F40, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F8FA0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8F80, 'v26_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8F90
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8F40
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4547190, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF45471A0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF45471B0, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF45471C0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8F48, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F9250, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF45489A0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4548990, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF45489C0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF45489B0, 'b = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F9248
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F9298
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F9288, 'v26_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F92A8
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F9248, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F9070, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F90D0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F90B0, 'v26_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F90C0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F9070
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4548710, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4548720
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4548730, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4548740
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F9078, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF450B998, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4546F20
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4546F10, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4546F40
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4546F30, 'b = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF450B990
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF450B9E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF450B9D0, 'v26_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF450B9F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF450B990, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F9248, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F92A8
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F9288, 'v26_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F9298
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F9248
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4548990, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF45489A0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF45489B0, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF45489C0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F9250, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4548720
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4548710, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4548740
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4548730, 'b = (S)'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE630, 'v24_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CEDA0, 'v24_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE080, 'v24_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE940, 'v24_0'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8F60, 'A'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CDFA0, 'A4'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8F60, 'A'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8FA8
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8FA8
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000001EAF450B990, '| v26_0 = 205 | = a0 ^ b0
+| v26_1 = 205 | = a1 + #|v26_0| + b1
+| v26_2 = 205 | = a2 + #|v26_1| + b2
+| v26_3 = 205 | = a3 ^ #|v26_2|
+| v26_4 = 0 | = #|v26_3|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000001EAF450B9F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF450B9D0, 'v26_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF450B9E0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4546D90, 'v26_'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE240, 'v26_4'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE6A0, 'v26_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CDEC0, 'v26_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE9B0, 'v26_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44CE400, 'v26_0'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000001EAF450B990
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4546F10, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4546F20
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4546F30, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4546F40
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000001EAF450B998, 'eXp[5]={a0 ^ b0; a1 + #|a0 ^ b0| + b1; a2 + #|a1 + #|a0 ^ b0| + b1| + b2; a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2|; #|a3 ^ #|a2 + #|a1 + #|a0 ^ b0| + b1| + b2||; }'
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CEB00
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CEB00
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CE010
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CE010
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CE9B0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CE9B0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44D4320
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44D4320
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CE940
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CE940
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CEB70
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CEB70
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF44CE630
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF44CE630
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF4588760
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF4588760
+'class dann5::ocean::Qequation * __ptr64', solutions, 000001EAF450B8A0, '8 of samples'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'b'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'b = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qequation const * __ptr64', solutions, 000001EAF450B8A0, 'a = 13; b = 2; 
+a = 12; b = 3; 
+a = 14; b = 1; 
+a = 15; b = 0; 
+a = 11; b = 4; 
+a = 10; b = 5; 
+a = 8; b = 7; 
+a = 9; b = 6; 
+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CEA20, 'x0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CEB70, 'x1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CEA90, 'x2'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548A90, 'x'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BEC50
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BEC40, 'x = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DA80, 'y0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E7A0, 'y1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DF50, 'y2'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4548B10, 'y'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BFAF0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BFAE0, 'y = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E490, 'P0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DB60, 'P1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E180, 'P2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D150, 'P3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E110, 'P4'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4546D90, 'P'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BF490
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BF480, 'P = 21'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DE00, 'v28_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DFC0, 'v28_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E030, 'v28_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D8C0, 'v28_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DD90, 'v28_4'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8ED0, 'v28_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF0587DE8, 'eXp[5]={v28_0; v28_1; v28_2; v28_3; v28_4; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8ED0, 'v28_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF0587DE0
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF0587E30
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF0587E20, 'P = 21'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF0587E40
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF0587DE0, '| P0 = 1 | = v28_0
+| P1 = 0 | = v28_1
+| P2 = 1 | = v28_2
+| P3 = 0 | = v28_3
+| P4 = 1 | = v28_4
+'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50BF480, 'P = 21'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50BF490
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8DE0, 'v29_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8F28, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8DE0, 'v29_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F8F20
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4546F10, 'v30_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8F70
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F8F60
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F8F80
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F8F20, ''
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BF070
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BF060, 'x = (S)'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8E70, 'eXp[3]={x0; x1; x2; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8E70, 'eXp[3]={x0; x1; x2; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8D10, 'v30_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DAF0, 'v30_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E500, 'v30_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DBD0, 'v30_2'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8D10, 'v30_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8D58
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8D58
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3F8F20, '| v30_0 = 205 | = x0
+| v30_1 = 205 | = x1
+| v30_2 = 205 | = x2
+'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4546FC0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4546FB0, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4546FA0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4546F90, 'x = (S)'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50BF060, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50BF070
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8D98, 'eXp[3]={y0; y1; y2; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC9F0, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC1B0, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CD530, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC270, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC330, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC030, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC3F0, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CC630, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44CCB70, '&'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F8998, 'eXp[3]={x0; x1; x2; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E9D0, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E0A0, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DE70, ''
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8998, 'eXp[3]={x0; x1; x2; }'
+'class dann5::ocean::Qexpression::Add * __ptr64', allocate, 000000614C3F8AB8
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, 'x0 & y0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554C70, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547190, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, 'x0 & y1 ^ x1 & y0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547290, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554E10, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547310, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555BE0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547990, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4547990, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4547310, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554E10, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554E10, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547310, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, 'x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554EE0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547390, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547410, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555970, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547B90, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4547B90, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4547410, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554EE0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E9D0, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554EE0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547410, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, 'x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547990, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554FB0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4547B90, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45552F0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44C3EE0, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF44C3EE0, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4547B90, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554FB0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E0A0, ''
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, 'x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DE70, ''
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3F8F28, '#|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||'
+'class dann5::ocean::Qexpression::Add * __ptr64', deallocate, 000000614C3F8AB8
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8D98, 'eXp[3]={y0; y1; y2; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8D10, 'v30_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E570, 'v30_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E960, 'v30_4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D540, 'v30_5'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8D10, 'v30_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8D58
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8D58
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3F8F20, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = &|100| ^ &|110|
+	&|100| = x0 & y1
+	&|110| = x1 & y0
+| v30_2 = 205 | = +|200| ^ &|210|
+	+|200| = &|2001| + #|v30_1| + &|2021|
+	&|2001| = x0 & y2
+	&|2021| = x1 & y1
+	&|210| = x2 & y0
+| v30_3 = 0 | = +|300| ^ &|310|
+	+|300| = &|3001| + #|+|200|| + #|v30_2|
+	&|3001| = x1 & y2
+	&|310| = x2 & y1
+| v30_4 = 0 | = &|400| + #|+|300|| + #|v30_3|
+	&|400| = x2 & y2
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F9058, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5DC0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5DB0, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5DE0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5DD0, 'y = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F9050
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F90A0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F9090, 'v30_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F90B0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F9050, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F8F20, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F8F80
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F8F60, 'v30_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8F70
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F8F20
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4546F90, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4546FA0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4546FB0, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4546FC0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F8F28, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3F9230, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5FC0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5FB0, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5FE0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5FD0, 'y = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3F9228
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F9278
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3F9268, 'v30_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3F9288
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3F9228, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F9050, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F90B0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F9090, 'v30_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F90A0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F9050
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5DB0, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5DC0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5DD0, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5DE0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F9058, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF0587FC8, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5F40
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5F30, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F5F60
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F5F50, 'y = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF0587FC0
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF0588010
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF0588000, 'v30_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF0588020
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF0587FC0, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3F9228, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3F9288
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3F9268, 'v30_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F9278
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3F9228
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5FB0, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5FC0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5FD0, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5FE0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3F9230, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F6140
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F6130, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50F6160
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50F6150, 'y = (S)'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DD90, 'v28_4'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D8C0, 'v28_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E030, 'v28_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DFC0, 'v28_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DE00, 'v28_0'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3F8F60, 'P'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E420, 'P5'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3F8F60, 'P'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3F8FA8
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3F8FA8
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000001EAF0587FC0, '| v30_0 = 205 | = x0 & y0
+| v30_1 = 205 | = x0 & y1 ^ x1 & y0
+| v30_2 = 205 | = x0 & y2 + #|v30_1| + x1 & y1 ^ x2 & y0
+| v30_3 = 0 | = x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2| ^ x2 & y1
+| v30_4 = 0 | = x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|v30_1| + x1 & y1| + #|v30_2|| + #|v30_3|
+| v30_5 = 0 | = #|v30_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000001EAF0588020
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF0588000, 'v30_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF0588010
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4546F10, 'v30_'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D540, 'v30_5'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E960, 'v30_4'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E570, 'v30_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DBD0, 'v30_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E500, 'v30_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DAF0, 'v30_0'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000001EAF0587FC0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5F30, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5F40
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF50F5F50, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF50F5F60
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000001EAF0587FC8, 'eXp[6]={x0 & y0; x0 & y1 ^ x1 & y0; x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0; x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1; x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1|; #|x2 & y2 + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0|| + #|x1 & y2 + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1| + #|x0 & y2 + #|x0 & y1 ^ x1 & y0| + x1 & y1 ^ x2 & y0| ^ x2 & y1||; }'
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E0A0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E0A0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E500
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E500
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D230
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D230
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DFC0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DFC0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DD90
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DD90
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E500
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E500
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E9D0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E9D0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D620
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D620
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E880
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E880
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D690
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D690
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DBD0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DBD0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E340
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E340
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E9D0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E9D0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D000
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D000
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DFC0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DFC0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DA10
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DA10
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E1F0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E1F0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E730
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E730
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E570
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E570
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E880
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E880
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520DD20
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520DD20
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D850
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D850
+'class dann5::ocean::Qequation * __ptr64', solutions, 000001EAF0587DE0, '2 of samples'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'x = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'x'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'x'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'y = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'y'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'y'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'x = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'x'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'x'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'x = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'y = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'y'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'y'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'y = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qequation const * __ptr64', solutions, 000001EAF0587DE0, 'x = 3; y = 7; 
+x = 7; y = 3; 
+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D700, 'a0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E960, 'a1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DA10, 'a2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E0A0, 'a3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E9D0, 'a4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DD20, 'a5'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF50F5A30, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BF2B0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BF2A0, 'a = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D9A0, 'T0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DE00, 'T1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DD90, 'T2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DAF0, 'T3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF50F5AB0, 'T'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF50BFDF0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF50BFDE0, 'T = 13'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E570, 'dfrnc0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E5E0, 'dfrnc1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E730, 'dfrnc2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DFC0, 'dfrnc3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DCB0, 'dfrnc4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D770, 'dfrnc5'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF50F5D30, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC038
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC028, 'dfrnc = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E260, 'v31_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DEE0, 'v31_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DBD0, 'v31_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E2D0, 'v31_3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBEF0, 'v31_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC098, 'eXp[4]={v31_0; v31_1; v31_2; v31_3; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBEF0, 'v31_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC090
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC0E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC0D0, 'T = 13'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC0F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC090, '| T0 = 1 | = v31_0
+| T1 = 0 | = v31_1
+| T2 = 1 | = v31_2
+| T3 = 1 | = v31_3
+'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBDF0, 'v32_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBF38, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBDF0, 'v32_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FBF30
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF4546F10, 'v33_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBF80
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FBF70
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FBF90
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FBF30, ''
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF51F3590
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF51F3580, 'dfrnc = (S)'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBE80, 'eXp[6]={dfrnc0; dfrnc1; dfrnc2; dfrnc3; dfrnc4; dfrnc5; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBE80, 'eXp[6]={dfrnc0; dfrnc1; dfrnc2; dfrnc3; dfrnc4; dfrnc5; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBD20, 'v33_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E030, 'v33_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D4D0, 'v33_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E340, 'v33_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E3B0, 'v33_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E6C0, 'v33_4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D310, 'v33_5'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBD20, 'v33_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBD68
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBD68
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3FBF30, '| v33_0 = 205 | = dfrnc0
+| v33_1 = 205 | = dfrnc1
+| v33_2 = 205 | = dfrnc2
+| v33_3 = 205 | = dfrnc3
+| v33_4 = 205 | = dfrnc4
+| v33_5 = 205 | = dfrnc5
+'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4547BC0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4547BB0, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF4547BA0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF4547B90, 'dfrnc = (S)'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF51F3580, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF51F3590
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBDA8, 'eXp[6]={a0; a1; a2; a3; a4; a5; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E810, 'v34_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E8F0, 'v34_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E880, 'v34_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EA40, 'v34_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EAB0, 'v34_4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EB20, 'v34_5'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520CF90, 'v34_6'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBAE0, 'v34_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBAB8, 'eXp[7]={v34_0; v34_1; v34_2; v34_3; v34_4; v34_5; v34_6; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBAE0, 'v34_'
+'class dann5::ocean::Qexpression::Add * __ptr64', allocate, 000000614C3FBB28
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555700, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF44C3EE0, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E810, 'v34_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555E50, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209280, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45557D0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209680, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554FB0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209300, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5209300, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5209680, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF45557D0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555E50, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E8F0, 'v34_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208E00, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208A80, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45553C0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208D00, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208D00, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208A80, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555220, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E880, 'v34_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5207B80, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555D80, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5207980, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555220, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208100, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208100, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5207980, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555D80, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EA40, 'v34_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208A00, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208480, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555630, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208700, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208700, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208480, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EAB0, 'v34_4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208900, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208580, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555D80, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208600, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208600, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208580, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555560, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EB20, 'v34_5'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520CF90, 'v34_6'
+'class dann5::ocean::Qexpression const * __ptr64', +, 000000614C3FBF38, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBD40, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression::Add * __ptr64', deallocate, 000000614C3FBB28
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBAB8, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBD40, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBDA8, 'eXp[6]={a0; a1; a2; a3; a4; a5; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBD20, 'v33_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D7E0, 'v33_6'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBD20, 'v33_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBD68
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBD68
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3FBF30, '| v33_0 = 205 | = dfrnc0 ^ a0
+| v33_1 = 205 | = dfrnc1 + #|v33_0| + a1
+| v33_2 = 205 | = dfrnc2 + #|v33_1| + a2
+| v33_3 = 205 | = dfrnc3 + #|v33_2| + a3
+| v33_4 = 205 | = dfrnc4 + #|v33_3| + a4
+| v33_5 = 205 | = dfrnc5 + #|v33_4| + a5
+| v33_6 = 0 | = #|v33_5|
+'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC158, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5208310
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5208300, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5208330
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5208320, 'a = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC150
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC1A0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC190, 'v33_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC1B0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC150, '| v33_0 = 205 | = dfrnc0 ^ a0
+| v33_1 = 205 | = dfrnc1 + #|v33_0| + a1
+| v33_2 = 205 | = dfrnc2 + #|v33_1| + a2
+| v33_3 = 205 | = dfrnc3 + #|v33_2| + a3
+| v33_4 = 205 | = dfrnc4 + #|v33_3| + a4
+| v33_5 = 205 | = dfrnc5 + #|v33_4| + a5
+| v33_6 = 0 | = #|v33_5|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FBF30, '| v33_0 = 205 | = dfrnc0 ^ a0
+| v33_1 = 205 | = dfrnc1 + #|v33_0| + a1
+| v33_2 = 205 | = dfrnc2 + #|v33_1| + a2
+| v33_3 = 205 | = dfrnc3 + #|v33_2| + a3
+| v33_4 = 205 | = dfrnc4 + #|v33_3| + a4
+| v33_5 = 205 | = dfrnc5 + #|v33_4| + a5
+| v33_6 = 0 | = #|v33_5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FBF90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FBF70, 'v33_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBF80
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FBF30
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4547B90, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4547BA0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF4547BB0, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF4547BC0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBF38, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207E90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207E80, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207EB0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207EA0, 'a = (S)'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E2D0, 'v31_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DBD0, 'v31_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520DEE0, 'v31_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E260, 'v31_0'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBE00, 'T'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E8F0, 'T4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DEE0, 'T5'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D380, 'T6'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBE00, 'T'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBE48
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBE48
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC150, '| v33_0 = 205 | = dfrnc0 ^ a0
+| v33_1 = 205 | = dfrnc1 + #|v33_0| + a1
+| v33_2 = 205 | = dfrnc2 + #|v33_1| + a2
+| v33_3 = 205 | = dfrnc3 + #|v33_2| + a3
+| v33_4 = 205 | = dfrnc4 + #|v33_3| + a4
+| v33_5 = 205 | = dfrnc5 + #|v33_4| + a5
+| v33_6 = 0 | = #|v33_5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC1B0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC190, 'v33_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC1A0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF4546F10, 'v33_'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D7E0, 'v33_6'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D310, 'v33_5'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E6C0, 'v33_4'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E3B0, 'v33_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E340, 'v33_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D4D0, 'v33_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E030, 'v33_0'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC150
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5208300, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5208310
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5208320, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5208330
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC158, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC298, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A80, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207AB0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207AA0, 'a = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC290
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC2E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC2D0, 'T = 13'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC2F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC290, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC090, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC0F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC0D0, 'T = 13'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC0E0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC090
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207E80, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207E90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207EA0, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207EB0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC098, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC028, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC038
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC470, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A10
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A00, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A30
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A20, 'a = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC468
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC4B8
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC4A8, 'T = 13'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC4C8
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC468, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC290, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC2F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC2D0, 'T = 13'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC2E0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC290
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A80, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207AA0, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207AB0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC298, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF0588388, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207F10
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207F00, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207F30
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207F20, 'a = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF0588380
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF05883D0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF05883C0, 'T = 13'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF05883E0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF0588380, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC468, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC4C8
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC4A8, 'T = 13'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC4B8
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC468
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A00, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A10
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A20, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A30
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC470, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF296D3D8, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5208990
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5208980, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF52089B0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF52089A0, 'a = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF296D3D0
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF296D420
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF296D410, 'T = 13'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF296D430
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF296D3D0, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000001EAF0588380, '| T0 = 1 | = dfrnc0 ^ a0
+| T1 = 0 | = dfrnc1 + #|T0| + a1
+| T2 = 1 | = dfrnc2 + #|T1| + a2
+| T3 = 1 | = dfrnc3 + #|T2| + a3
+| T4 = 0 | = dfrnc4 + #|T3| + a4
+| T5 = 0 | = dfrnc5 + #|T4| + a5
+| T6 = 0 | = #|T5|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000001EAF05883E0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF05883C0, 'T = 13'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF05883D0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000001EAF0588380
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207F00, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207F10
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207F20, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207F30
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000001EAF0588388, 'eXp[7]={dfrnc0 ^ a0; dfrnc1 + #|dfrnc0 ^ a0| + a1; dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2; dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3; dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4; dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5; #|dfrnc5 + #|dfrnc4 + #|dfrnc3 + #|dfrnc2 + #|dfrnc1 + #|dfrnc0 ^ a0| + a1| + a2| + a3| + a4| + a5|; }'
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E6C0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D460
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D460
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E260
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E260
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D310
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520E810
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520E810
+'class dann5::ocean::Qequation * __ptr64', solutions, 000001EAF296D3D0, '14 of samples'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'dfrnc'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'dfrnc = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'a'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'a = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qequation const * __ptr64', solutions, 000001EAF296D3D0, 'dfrnc = 0; a = 13; 
+dfrnc = 1; a = 12; 
+dfrnc = 3; a = 10; 
+dfrnc = 2; a = 11; 
+dfrnc = 6; a = 7; 
+dfrnc = 7; a = 6; 
+dfrnc = 5; a = 8; 
+dfrnc = 4; a = 9; 
+dfrnc = 12; a = 1; 
+dfrnc = 13; a = 0; 
+dfrnc = 10; a = 3; 
+dfrnc = 11; a = 2; 
+dfrnc = 9; a = 4; 
+dfrnc = 8; a = 5; 
+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D8C0, 'd0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E260, 'd1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520DBD0, 'd2'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF5209380, 'd'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF51F3950
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF51F3940, 'd = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D310, 'M0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D850, 'M1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D460, 'M2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E030, 'M3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF5208500, 'M'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF51F4310
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF51F4300, 'M = 15'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E2D0, 'qtnt0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D3F0, 'qtnt1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E340, 'qtnt2'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF5207E00, 'qtnt'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC038
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC028, 'qtnt = (S)'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EA40, 'v35_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E3B0, 'v35_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E810, 'v35_2'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EAB0, 'v35_3'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBEF0, 'v35_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC098, 'eXp[4]={v35_0; v35_1; v35_2; v35_3; }'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBEF0, 'v35_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC090
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC0E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC0D0, 'M = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC0F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC090, '| M0 = 1 | = v35_0
+| M1 = 1 | = v35_1
+| M2 = 1 | = v35_2
+| M3 = 1 | = v35_3
+'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBDF0, 'v36_'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBF38, 'eXp[0]={}'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBDF0, 'v36_'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FBF30
+'class dann5::ocean::Qdef * __ptr64', allocate, 000001EAF5207880, 'v37_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBF80
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FBF70
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FBF90
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FBF30, ''
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF51F3110
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF51F3100, 'qtnt = (S)'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBE80, 'eXp[3]={qtnt0; qtnt1; qtnt2; }'
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBE80, 'eXp[3]={qtnt0; qtnt1; qtnt2; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBD20, 'v37_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EB20, 'v37_0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D5B0, 'v37_1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D620, 'v37_2'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBD20, 'v37_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBD68
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBD68
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3FBF30, '| v37_0 = 205 | = qtnt0
+| v37_1 = 205 | = qtnt1
+| v37_2 = 205 | = qtnt2
+'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207AB0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207AA0, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A80, 'qtnt = (S)'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF51F3100, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF51F3110
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FBDA8, 'eXp[3]={d0; d1; d2; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209910, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209E50, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A2D0, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209FD0, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A150, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A210, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A810, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A390, '&'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520A450, '&'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FB9A8, 'eXp[3]={qtnt0; qtnt1; qtnt2; }'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520CF90, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EDC0, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EC00, ''
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FB9A8, 'eXp[3]={qtnt0; qtnt1; qtnt2; }'
+'class dann5::ocean::Qexpression::Add * __ptr64', allocate, 000000614C3FBAC8
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, 'qtnt0 & d0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4554BA0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208580, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, 'qtnt0 & d1 ^ qtnt1 & d0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45557D0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208380, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208700, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555CB0, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5207780, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5207780, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208700, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF45557D0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF45557D0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208800, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, 'qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209580, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208480, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF0540890, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208180, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208180, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208480, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520CF90, ''
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF053FED0, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208280, '#'
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, 'qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5209480, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5208400, '#'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF458E840, '+'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF5207900, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5207900, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF5208400, '#'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555F20, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF4555A40, '^'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EDC0, ''
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, 'qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EC00, ''
+'class dann5::ocean::Qexpression * __ptr64', sumDiagonals, 000000614C3FBF38, '#|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||'
+'class dann5::ocean::Qexpression::Add * __ptr64', deallocate, 000000614C3FBAC8
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBDA8, 'eXp[3]={d0; d1; d2; }'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBD20, 'v37_'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520CF90, 'v37_3'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520D4D0, 'v37_4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520EDC0, 'v37_5'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBD20, 'v37_'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBD68
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBD68
+'class dann5::ocean::Qequation * __ptr64', +=
+, 000000614C3FBF30, '| v37_0 = 205 | = qtnt0 & d0
+| v37_1 = 205 | = &|100| ^ &|110|
+	&|100| = qtnt0 & d1
+	&|110| = qtnt1 & d0
+| v37_2 = 205 | = +|200| ^ &|210|
+	+|200| = &|2001| + #|v37_1| + &|2021|
+	&|2001| = qtnt0 & d2
+	&|2021| = qtnt1 & d1
+	&|210| = qtnt2 & d0
+| v37_3 = 0 | = +|300| ^ &|310|
+	+|300| = &|3001| + #|+|200|| + #|v37_2|
+	&|3001| = qtnt1 & d2
+	&|310| = qtnt2 & d1
+| v37_4 = 0 | = &|400| + #|+|300|| + #|v37_3|
+	&|400| = qtnt2 & d2
+| v37_5 = 0 | = #|v37_4|
+'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC158, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5209610
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5209600, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5209630
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5209620, 'd = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC150
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC1A0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC190, 'v37_ = (S)'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC1B0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC150, '| v37_0 = 205 | = qtnt0 & d0
+| v37_1 = 205 | = qtnt0 & d1 ^ qtnt1 & d0
+| v37_2 = 205 | = qtnt0 & d2 + #|v37_1| + qtnt1 & d1 ^ qtnt2 & d0
+| v37_3 = 0 | = qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2| ^ qtnt2 & d1
+| v37_4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2|| + #|v37_3|
+| v37_5 = 0 | = #|v37_4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FBF30, '| v37_0 = 205 | = qtnt0 & d0
+| v37_1 = 205 | = qtnt0 & d1 ^ qtnt1 & d0
+| v37_2 = 205 | = qtnt0 & d2 + #|v37_1| + qtnt1 & d1 ^ qtnt2 & d0
+| v37_3 = 0 | = qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2| ^ qtnt2 & d1
+| v37_4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2|| + #|v37_3|
+| v37_5 = 0 | = #|v37_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FBF90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FBF70, 'v37_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBF80
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FBF30
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A80, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207AA0, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207AB0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FBF38, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207E90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207E80, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207EB0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207EA0, 'd = (S)'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EAB0, 'v35_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E810, 'v35_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520E3B0, 'v35_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EA40, 'v35_0'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FBE00, 'M'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E3B0, 'M4'
+'class dann5::ocean::Qoperand * __ptr64', allocate, 000001EAF520E810, 'M5'
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FBE00, 'M'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FBE48
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FBE48
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC150, '| v37_0 = 205 | = qtnt0 & d0
+| v37_1 = 205 | = qtnt0 & d1 ^ qtnt1 & d0
+| v37_2 = 205 | = qtnt0 & d2 + #|v37_1| + qtnt1 & d1 ^ qtnt2 & d0
+| v37_3 = 0 | = qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2| ^ qtnt2 & d1
+| v37_4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|v37_1| + qtnt1 & d1| + #|v37_2|| + #|v37_3|
+| v37_5 = 0 | = #|v37_4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC1B0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC190, 'v37_ = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC1A0
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000001EAF5207880, 'v37_'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EDC0, 'v37_5'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D4D0, 'v37_4'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520CF90, 'v37_3'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D620, 'v37_2'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520D5B0, 'v37_1'
+'class dann5::ocean::Qoperand * __ptr64', deallocate, 000001EAF520EB20, 'v37_0'
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC150
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5209600, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5209610
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5209620, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5209630
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC158, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC298, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5208610
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5208600, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5208630
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5208620, 'd = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC290
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC2E0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC2D0, 'M = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC2F0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC290, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC090, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC0F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC0D0, 'M = 15'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC0E0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC090
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207E80, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207E90
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207EA0, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207EB0
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC098, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC028, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC038
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000000614C3FC470, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A10
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A00, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5207A30
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5207A20, 'd = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000000614C3FC468
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC4B8
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC4A8, 'M = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000000614C3FC4C8
+'class dann5::ocean::Qequation * __ptr64', allocate, 000000614C3FC468, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC290, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC2F0
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC2D0, 'M = 15'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC2E0
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC290
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5208600, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5208610
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5208620, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5208630
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC298, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF296ED28, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5209110
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5209100, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5209130
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5209120, 'd = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF296ED20
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF296ED70
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF296ED60, 'M = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF296ED80
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF296ED20, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000000614C3FC468, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000000614C3FC4C8
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC4A8, 'M = 15'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC4B8
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000000614C3FC468
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A00, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A10
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5207A20, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5207A30
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000000614C3FC470, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qexpression * __ptr64', allocate, 000001EAF296DC48, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF5209690
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF5209680, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF52096B0
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF52096A0, 'd = (S)'
+'class dann5::ocean::Qstatement * __ptr64', allocate, 000001EAF296DC40
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000001EAF296DC90
+'class dann5::ocean::Qvar * __ptr64', allocate, 000001EAF296DC80, 'M = 15'
+'class dann5::ocean::Qequation::Reduct * __ptr64', allocate, 000001EAF296DCA0
+'class dann5::ocean::Qequation * __ptr64', allocate, 000001EAF296DC40, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation * __ptr64', deallocate, 000001EAF296ED20, '| M0 = 1 | = qtnt0 & d0
+| M1 = 1 | = qtnt0 & d1 ^ qtnt1 & d0
+| M2 = 1 | = qtnt0 & d2 + #|M1| + qtnt1 & d1 ^ qtnt2 & d0
+| M3 = 1 | = qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2| ^ qtnt2 & d1
+| M4 = 0 | = qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|M1| + qtnt1 & d1| + #|M2|| + #|M3|
+| M5 = 0 | = #|M4|
+'
+'class dann5::ocean::Qequation::Reduct * __ptr64', deallocate, 000001EAF296ED80
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF296ED60, 'M = 15'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF296ED70
+'class dann5::ocean::Qstatement * __ptr64', deallocate, 000001EAF296ED20
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5209100, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5209110
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000001EAF5209120, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000001EAF5209130
+'class dann5::ocean::Qexpression * __ptr64', deallocate, 000001EAF296ED28, 'eXp[6]={qtnt0 & d0; qtnt0 & d1 ^ qtnt1 & d0; qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0; qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1; qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1|; #|qtnt2 & d2 + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0|| + #|qtnt1 & d2 + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1| + #|qtnt0 & d2 + #|qtnt0 & d1 ^ qtnt1 & d0| + qtnt1 & d1 ^ qtnt2 & d0| ^ qtnt2 & d1||; }'
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D5B0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520D4D0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', allocate, 000001EAF520EAB0
+'class dann5::ocean::QuboTable * __ptr64', deallocate, 000001EAF520EAB0
+'class dann5::ocean::Qequation * __ptr64', solutions, 000001EAF296DC40, '2 of samples'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'qtnt = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'qtnt'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'qtnt'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'd = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'd'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'd'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'qtnt = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'qtnt'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'qtnt'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'qtnt = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC078
+'class dann5::ocean::Qvar * __ptr64', allocate, 000000614C3FC068, 'd = (S)'
+'class dann5::ocean::Qdef * __ptr64', allocate, 000000614C3FC0B0, 'd'
+'class dann5::ocean::Qwhole * __ptr64', allocate, 000000614C3FC108
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC108
+'class dann5::ocean::Qdef * __ptr64', deallocate, 000000614C3FC0B0, 'd'
+'class dann5::ocean::Qvar * __ptr64', deallocate, 000000614C3FC068, 'd = (S)'
+'class dann5::ocean::Qwhole * __ptr64', deallocate, 000000614C3FC078
+'class dann5::ocean::Qequation const * __ptr64', solutions, 000001EAF296DC40, 'qtnt = 3; d = 5; 
+qtnt = 5; d = 3; 
+'
