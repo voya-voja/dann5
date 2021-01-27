@@ -47,6 +47,9 @@
     <ClCompile Include="..\..\ocean\cpp\Qroutine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ocean\cpp\Qsolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
@@ -103,6 +106,9 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\ocean\cpp\include\Qroutine.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ocean\cpp\include\Qsolver.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

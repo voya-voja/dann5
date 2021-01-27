@@ -96,7 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>../../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/libs/Python37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -144,12 +144,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>../../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/include;../../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/Lib/site-packages/pybind11/include;../../ocean/cpp/include;../../../eigen-master</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>../../../../../AppData/Local/Continuum/anaconda3/envs/ocean2/libs/Python37.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -168,6 +170,7 @@
     <ClCompile Include="..\..\ocean\cpp\Qtype.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qvar.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Qsolver.cpp" />
     <ClCompile Include="testApp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +181,7 @@
     <ClInclude Include="..\..\ocean\cpp\include\Qfunction.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qroutine.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Qsolver.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qstatement.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Utility.h" />

@@ -9,6 +9,7 @@
 #include <Qequation.h>
 #include <Qcondition.h>
 #include <Qtype.h>
+#include <Qsolver.h>
 
 #include <pybind11/stl.h>
 #include <pybind11/operators.h>
@@ -17,7 +18,7 @@
 
 using namespace dann5::ocean;
 
-#define VERSION_INFO "0.0.1"
+#define VERSION_INFO "0.0.2"
 
 namespace py = pybind11;
 
@@ -378,9 +379,15 @@ PYBIND11_MODULE(d5o, m) {
 		.def("solutions", &Qequation::solutions)
 		.def("add", &Qequation::add)
 		.def("set", &Qequation::set)
-		.def("toString", &Qequation::toString)
+//		.def("toString", &Qequation::toString) 		//	virtual string toString(bool decomposed = false, Index level = Eigen::Infinity) const;
+		.def("toString", static_cast<string (Qequation::*)() const>(&Qequation::toString), "return string representation")
+		.def("toString", static_cast<string (Qequation::*)(bool) const>(&Qequation::toString), "overload: return string with decomposed representation")
+		.def("toString", static_cast<string (Qequation::*)(bool, Index) const>(&Qequation::toString), "overload: return string with decomposed representation of a specified Qbit level")
 		.def("result", &Qequation::result)
-		.def("qubo", &Qequation::qubo)
+//		.def("qubo", &Qequation::qubo)
+		.def("qubo", static_cast<Qubo (Qequation::*)() const>(&Qequation::qubo), "return finalized qubo representation")
+		.def("qubo", static_cast<Qubo (Qequation::*)(bool) const>(&Qequation::qubo), "overload: return qubo representation")
+		.def("qubo", static_cast<Qubo (Qequation::*)(bool, Index) const>(&Qequation::qubo), "overload: return qubo representation of a specified Qbit level")
 		.def("assign", static_cast<Qequation& (Qequation::*)(const Qequation&)>(&Qequation::operator=), "assign Qequation")
 		.def("assign", static_cast<Qequation& (Qequation::*)(const Qvar&)>(&Qequation::operator=), "assign Qequation")
 		.def(py::self & py::self)
@@ -417,6 +424,14 @@ PYBIND11_MODULE(d5o, m) {
 		py::class_<Qcondition, Qstatement>(m, "Qcondition")
 			.def(py::init<>())
 			.def(py::init<const Qcondition&>());
+
+
+		// specify C++ class->baseclass specialization
+			py::class_<Qsolver>(m, "Qsolver")
+				.def(py::init<const Qubo&>())
+				.def(py::init<const Qubo&, bool>())
+			.def("solution", &Qsolver::solution)
+			.def("nOfNodes", &Qsolver::nOfNodes);
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;

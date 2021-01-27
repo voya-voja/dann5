@@ -219,13 +219,22 @@ Qexpression Qexpression::operator +(const Qexpression& right) const
 		{
 			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
 			if (at < rSize)
+			{
 				pRight = right(at);
+			}
 			if (pLeft == nullptr)
+			{
 				pResult = add();
+			}
+			else if (pRight != nullptr)
+			{
+				pResult = add(pLeft, pRight);
+				pResult = add(pResult);
+			}
 			else
+			{
 				pResult = add(pLeft);
-			if (pRight != nullptr)
-				pResult = add(pResult, pRight);
+			}
 			result(at) = pResult;
 		}
 		else

@@ -5,7 +5,7 @@ Created on Sat Sep  5 17:09:42 2020
 @author: Nebojsa.Vojinovic
 """
 
-from dann5.d5o import Qvar, Qequation
+from dann5.d5o import Qvar, Qequation, Qsolver
 from dimod import ExactSolver
 from dwave.system import DWaveSampler, EmbeddingComposite
 from dwave.cloud.exceptions import SolverNotFoundError
@@ -19,14 +19,14 @@ A = Qvar("A", 15)
 eA = Qequation(A)
 eA.assign( a + b + c + d )
 
-print(eA.toString(False, -1))
-print(eA.toString(True, -1))
+print(eA.toString())
+print(eA.toString(True))
 
-qT = eA.qubo(False, -1)
+qT = eA.qubo(False)
 print("Vectors")
 print(qT)
 
-Q = eA.qubo(True, -1)
+Q = eA.qubo()
 
 print(Q)
 
@@ -43,6 +43,7 @@ except SolverNotFoundError:
 
     
 # EmbeddingComposite maps problem elementss to a structured Chimera sampler node adresses
+solver = Qsolver(Q)
 embedingSampler = ExactSolver()                   # local
 #embedingSampler = EmbeddingComposite(qpu_advantage) 
 #embedingSampler = EmbeddingComposite(qpu_2000q) 
@@ -59,10 +60,12 @@ if 'chain_strength' in embedingSampler.parameters:
     # strength 10 for R 16, 15, 6, works for both, pegasus and chimera
     kwargs['chain_strength'] = 6   
 
-sampleset = embedingSampler.sample_qubo(Q, **kwargs)
+#sampleset = embedingSampler.sample_qubo(Q, **kwargs)
 #sampleset = embedingSampler.sample_qubo(Q)
 #sampleset = embedingSampler.sample_qubo(Q, num_reads=5000)
 
-samples = [dict(sample) for sample in sampleset.lowest().samples()]
+#samples = [dict(sample) for sample in sampleset.lowest().samples()]
+samples = solver.solution()
+
 eA.set(samples)
 print(eA.solutions())

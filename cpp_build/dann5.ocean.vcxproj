@@ -63,8 +63,8 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Nebojsa.Vojinovic\source\repos\dann5\cpp_build\Release\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dann5.ocean.dir\Release\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dann5.ocean.cp37-win_amd64</TargetName>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">d5o.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">d5o.cp38-win_amd64</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.pyd</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Nebojsa.Vojinovic\source\repos\dann5\pybind11\include;C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../ocean/cpp/include;../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/Lib/site-packages/pybind11/include;../../eigen-master;../../../../AppData/Local/Continuum/anaconda3/envs/ocean38/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -161,7 +161,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>C:\Users\Nebojsa.Vojinovic\AppData\Local\Continuum\anaconda3\envs\ocean2\libs\Python37.lib;-LTCG;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>../../../..//AppData/Local/Continuum/anaconda3/envs/ocean38/libs/Python38.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -333,6 +333,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\ocean\cpp\Qoperand.cpp" />
     <ClCompile Include="..\ocean\cpp\Qops.cpp" />
     <ClCompile Include="..\ocean\cpp\Qroutine.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qsolver.cpp" />
     <ClCompile Include="..\ocean\cpp\Qstatement.cpp" />
     <ClCompile Include="..\ocean\cpp\Qubo.cpp" />
     <ClCompile Include="..\ocean\cpp\main.cpp" />
@@ -357,6 +358,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="..\ocean\cpp\include\Qoperand.h" />
     <ClInclude Include="..\ocean\cpp\include\Qops.h" />
     <ClInclude Include="..\ocean\cpp\include\Qroutine.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qsolver.h" />
     <ClInclude Include="..\ocean\cpp\include\Qstatement.h" />
     <ClInclude Include="..\ocean\cpp\include\Qtype.h" />
     <ClInclude Include="..\ocean\cpp\include\Qubo.h" />

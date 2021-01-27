@@ -547,12 +547,12 @@ string Qequation::toString(bool decomposed, Index level) const
 	return sEquation;
 }
 
-void Qequation::add(Sample& sample)
+void Qequation::add(Qsolver::Sample& sample)
 {
 	mSolutions.push_back(sample);
 }
 
-void Qequation::set(Samples& samples)
+void Qequation::set(Qsolver::Samples& samples)
 {
 	_lat("solutions", to_string(samples.size()) + " of samples");
 	mSolutions = samples;
@@ -567,10 +567,20 @@ string Qequation::solutions() const
 		for (auto arg : args)
 		{
 			Qdef definition = as_const(arg).definition();
-			Qwhole value(as_const(arg).value().nobs());
-			int atBit = 0;
-			for (auto bitSymbol : definition)
-				value[atBit++] = sample[bitSymbol->identity()];
+			Qwhole v = as_const(arg).value();
+			Qwhole value(v.nobs());
+			if (v.value() != Qwhole::cUnknown)
+			{
+				value = v;
+			}
+			else
+			{
+				int atBit = 0;
+				for (auto bitSymbol : definition)
+				{
+					value[atBit++] = sample[bitSymbol->identity()];
+				}
+			}
 			values += definition.name() + " = " + value.toString() + "; ";
 		}
 		values += "\n";

@@ -204,12 +204,12 @@ Qaddition::Sp Qxor::assign(const Qoperands& operands)
 		// identify xor operand
 		Qxor::Sp pXor = nullptr;
 		Qoperand::Sp pOperand = nullptr;
-		try
+		pXor = dynamic_pointer_cast<Qxor>(operands[0]);
+		if(pXor != nullptr)
 		{
-			pXor = dynamic_pointer_cast<Qxor>(operands[0]);
 			pOperand = operands[1];
 		}
-		catch(...)
+		else
 		{
 			pOperand = operands[0];
 			pXor = dynamic_pointer_cast<Qxor>(operands[1]);

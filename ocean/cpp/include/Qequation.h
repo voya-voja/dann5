@@ -7,6 +7,7 @@
 
 #include <Qvar.h>
 #include <Qstatement.h>
+#include <Qsolver.h>
 
 using namespace std;
 using namespace Eigen;
@@ -181,29 +182,26 @@ namespace dann5 {
 			// if finalized, returns an expression that replaces symbols with values of
 			// Qbits in deterministic states for all the Q variables, i.e. result and
 			// expression arguments
-			Qubo qubo(bool finalized = true, Index level = Eigen::Infinity) const;
+			Qubo qubo(bool finalized, Index level) const;
+			Qubo qubo(bool finalized) const { return qubo(finalized, -1); };
+			Qubo qubo() const { return qubo(true, -1); };
 
 			// Returns a string representation of this Q equation, 
 			// if not decomposed, returns an equation line per Qbit level
 			// if decomposed, returns a line per Qbit operational expression
-			virtual string toString(bool decomposed = false, Index level = Eigen::Infinity) const;
+			virtual string toString(bool decomposed, Index level) const;
+			string toString(bool decomposed) const { return toString(decomposed, -1); };
+			string toString() const { return toString(false, -1); };
 
 			// returns a shared_pointer on a cloned instance of this Q statement
 			virtual Qstatement::Sp clone() const { return Qstatement::Sp(new Qequation(*this)); };
 
-			// A semple is defined as a dictionary (map) of definition nodes and their values.
-			// The node names are defined by qubo() for each Q equation
-			typedef map<string, q_bit> Sample;
-
-			// A list of samples with the same list of nodes and different combination of values
-			typedef vector<Sample> Samples;
-
 			// Add a sample with a node list defined by qubo() of this Q equation
-			void add(Sample& sample);
+			void add(Qsolver::Sample& sample);
 
 			// Set a sample set with a node list defined by qubo() of this Q equation
 			// the combination of node values should be different for each sample
-			void set(Samples& samples);
+			void set(Qsolver::Samples& samples);
 
 			// For existing samples, returns a string representation of all solutions of 
 			// this Q routine
@@ -242,10 +240,10 @@ namespace dann5 {
 			};
 
 		private:
-			Qvar			mResult;		// result variable, e.g. defined as R = 2 with bits R0 = 0, R1 = 1, ...
-			Reduct			mReduct;		// an instace of object class that symplifies the expression of this Q equation
-			bool			mNoResult;
-			Samples	mSolutions;
+			Qvar				mResult;		// result variable, e.g. defined as R = 2 with bits R0 = 0, R1 = 1, ...
+			Reduct				mReduct;		// an instace of object class that symplifies the expression of this Q equation
+			bool				mNoResult;
+			Qsolver::Samples	mSolutions;
 
 			friend class Reduct;
 		};

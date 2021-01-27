@@ -236,6 +236,11 @@ void test3()
 	cout << endl << eQ.toString(true) << endl;
 	cout << endl << eQ.qubo() << endl;
 
+	Qsolver solver(eQ.qubo());
+	Qsolver::Samples samples = solver.solution();
+	eQ.set(samples);
+	cout << endl << eQ.solutions() << endl;
+
 	Qvar a(2, "a"), b(2, "b"), c(2, "c"), vR("R", 6);
 	Qequation eR(vR);
 	eR = a * b *c;
@@ -423,12 +428,77 @@ void testMultiplication()
 	cout << endl << eX.qubo() << endl;
 }
 
+void testComplexEq()
+{
+	Qvar k(3, "k"), l(2, "l"), m(2, "m"), _2("2", 2), Z("Z", 13);
+	Qequation eZ(Z), e2xK(Qvar(6, "2xK")), eLxM(Qvar(3, "LxM")), eZ2(Qvar("Z2", 11));
+
+	e2xK = _2 * k;
+	cout << endl << e2xK.toString() << endl;
+	cout << endl << e2xK.toString(true) << endl;
+	eLxM = l * m;
+	cout << endl << eLxM.toString() << endl;
+	cout << endl << eLxM.toString(true) << endl;
+	eZ2 = e2xK + eLxM;
+	cout << endl << eZ2.toString() << endl;
+	cout << endl << eZ2.toString(true) << endl;
+
+ 	eZ = _2 * k + l * m;
+	cout << endl << eZ.toString() << endl;
+	cout << endl << eZ.toString(true) << endl;
+
+	cout << endl << eZ.qubo(false) << endl;
+	Qubo Q = eZ.qubo();
+	cout << endl << Q << endl;
+	Qsolver solver(Q);
+	size_t nNodes = solver.nOfNodes();
+	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(long long(pow(2, nNodes))) << endl;
+	Qsolver::Samples samples = solver.solution();
+	eZ.set(samples);
+	cout << endl << eZ.solutions() << endl;
+}
+
+void testSolver()
+{
+	Qvar a(3, "a"), b(2, "b"), c(2, "c"), A("A", 18);
+	Qequation eA(A);
+	eA = a * b;// *c;
+	Qubo Q = eA.qubo();
+	cout << endl << Q << endl;
+	Qsolver solver(Q);
+	size_t nNodes = solver.nOfNodes();
+	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(int(pow(2, nNodes))) << endl;
+	Qsolver::Samples samples = solver.solution();
+	eA.set(samples);
+	cout << endl << eA.solutions() << endl;
+}
+
+void testAddEqs()
+{
+	Qvar a(2, "a"), b(2, "b"), c(2, "c"), d(3, "d"), e(3, "e"), f(3, "f"), A("A", 13);
+	Qequation eA(A), e1(Qvar(2, "e1")), e2(Qvar(3, "e2"));
+
+	e1 = a + b + c;
+	cout << endl << e1.toString() << endl;
+	cout << endl << e1.toString(true) << endl;
+	e2 = d + e;
+	cout << endl << e2.toString() << endl;
+	cout << endl << e2.toString(true) << endl;
+	eA = e1 + e2; 
+	cout << endl << eA.toString() << endl;
+	cout << endl << eA.toString(true) << endl;
+}
 
 int main()
 {
-	testMultiplication();
+	const clock_t begin_time = clock();
+//	testSolver();
+	testComplexEq();
+//	testAddEqs();
 //	testSubAndDiv();
 //	test5short();
+//	test3();
+	cout << endl << "running time: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s";
 
 	_CrtDumpMemoryLeaks();
 }

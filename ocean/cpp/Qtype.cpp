@@ -243,14 +243,16 @@ Qwhole Qwhole::operator +(const Qwhole& right) const
 
 Qwhole& Qwhole::operator +=(const Qwhole& right)
 {
-	if (nobs() < right.nobs())
-		resize(right.nobs());
+	Index tSize(nobs()), rSize(right.nobs());
+	Index size(tSize < rSize ? rSize : tSize);
+	if (tSize < size)
+		resize(size);
 	int carry = 0;
 	bool superposition = false;
 	Qwhole temp(nobs() + 1);
-	for (Index at = 0; at < nobs(); at++)
+	for (Index at = 0; at < size; at++)
 	{
-		Qbit t((*this)(at)), r(right(at));
+		Qbit t((*this)(at)), r(at < rSize ? right(at) : 0);
 		superposition = (t > 1) || (r > 1);
 		if (superposition)
 			(*this)(at) = Qbit::cSuperposition;
@@ -331,6 +333,6 @@ void Qwhole::resize(Index size, const Qbit& qBit)
 string Qwhole::toString() const
 {
 	long v = value();
-	if (v == cUnknown) return "(S)";
+	if (v == cUnknown) return cUnknownSign;
 	return(to_string(v));
 }
