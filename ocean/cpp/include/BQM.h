@@ -32,5 +32,6 @@ namespace dann5 {
 		private:
 		};
 
+		std::ostream& operator << (std::ostream&, const BQM&);
 	};
 };

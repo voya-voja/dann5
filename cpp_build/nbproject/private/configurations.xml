@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name=".vs">
+        <df name="dann5.ocean">
+          <df name="v15">
+            <df name="ipch">
+              <df name="AutoPCH">
+                <df name="17da2ed23cbdf1e0">
+                </df>
+                <df name="275aee67a3b4874c">
+                </df>
+                <df name="35b36532f67f100a">
+                </df>
+                <df name="453b5e7c24af250c">
+                </df>
+                <df name="49e98e9b843c2c39">
+                </df>
+                <df name="5bddffd5dfce2ee8">
+                </df>
+                <df name="6f4f8224080802b0">
+                </df>
+                <df name="71594db9f526d57">
+                </df>
+                <df name="7df1146250c025a">
+                </df>
+                <df name="8a358d9a928f4786">
+                </df>
+                <df name="951b564141ec180c">
+                </df>
+                <df name="a79ff67aba4e7845">
+                </df>
+                <df name="b10b25ffd470055b">
+                </df>
+                <df name="b19cc98781db891e">
+                </df>
+                <df name="bb13026ff3209ad4">
+                </df>
+                <df name="ca987a592aa62696">
+                </df>
+                <df name="d0741259933585b0">
+                </df>
+                <df name="d632628e0e9336f6">
+                </df>
+                <df name="d8e7df9720c48a4">
+                </df>
+                <df name="d9916575eb733af3">
+                </df>
+                <df name="d9ed77c84588d082">
+                </df>
+                <df name="fbf938d989521395">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="CMakeFiles">
+        <df name="3.12.18081601-MSVC_2">
+          <df name="CompilerIdC">
+            <df name="Debug">
+              <df name="CompilerIdC.tlog">
+              </df>
+            </df>
+            <df name="tmp">
+            </df>
+            <in>CMakeCCompilerId.c</in>
+          </df>
+          <df name="CompilerIdCXX">
+            <df name="Debug">
+              <df name="CompilerIdCXX.tlog">
+              </df>
+            </df>
+            <df name="tmp">
+            </df>
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+          <df name="x64">
+            <df name="Debug">
+              <df name="VCTargetsPath.tlog">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="3.19.3">
+          <df name="CompilerIdCXX">
+            <df name="Debug">
+              <df name="CompilerIdCXX.tlog">
+              </df>
+            </df>
+            <df name="tmp">
+            </df>
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+          <df name="x64">
+            <df name="Debug">
+              <df name="VCTargetsPath.tlog">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="45819721208981bf6d6c6fae55301a2b">
+        </df>
+        <df name="60ecb4d1addb2d7a9881976fc957e139">
+        </df>
+        <df name="CMakeTmp">
+        </df>
+        <in>feature_tests.c</in>
+        <in>feature_tests.cxx</in>
+      </df>
+      <df name="cpp_build">
+        <df name="CMakeFiles">
+        </df>
+      </df>
+      <df name="d5o.dir">
+        <df name="Debug">
+          <df name="d5o.tlog">
+          </df>
+        </df>
+        <df name="Release">
+          <df name="d5o.tlog">
+          </df>
+        </df>
+      </df>
+      <df name="dann5.ocean.dir">
+        <df name="Release">
+          <df name="d5o.tlog">
+          </df>
+        </df>
+      </df>
+      <df name="Debug">
+      </df>
+      <df name="Release">
+      </df>
+      <df name="utilities">
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

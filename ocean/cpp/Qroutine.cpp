@@ -102,9 +102,9 @@ Qubo Qroutine::qubo(bool finalized) const
 string Qroutine::toString(bool decomposed) const
 {
 	string routineStr(name() + ":\n");
-	for (auto statement : (*this))
+	for (auto pStatement : mStatements)
 	{
-		routineStr += "\t" + statement->toString(decomposed);
+		routineStr += "\t" + pStatement->toString(decomposed);
 	}
 	return(routineStr);
 }

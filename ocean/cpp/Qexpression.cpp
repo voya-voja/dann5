@@ -37,12 +37,25 @@ Qexpression::~Qexpression()
 	_ldt(toString());
 }
 
+
+Qexpression Qexpression::operator~() const
+{
+	Index size(nobs());
+	Qexpression result(size);
+	for (Index at = 0; at < size; at++)
+	{
+		Qop::Sp pOp = Factory<string, Qop>::Instance().create(NotQT::cMark);
+		pOp->arguments({ (*this)(at) });
+		result(at) = pOp;
+	}
+	return(*this);
+}
+
 Qexpression Qexpression::operation(const string& opMark, const Qexpression& right) const
 {
 	Index tSize = nobs(), rSize = right.nobs();
 	Index size = rSize > tSize ? rSize : tSize;
 	Qexpression result(size);
-	Qoperands operands;
 	for (Index at = 0; at < size; at++)
 	{
 		if (at < tSize)
@@ -54,11 +67,8 @@ Qexpression Qexpression::operation(const string& opMark, const Qexpression& righ
 			{
 
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(opMark);
-				operands.push_back(pLeft);
-				operands.push_back(pRight);
-				pOp->arguments(operands);
+				pOp->arguments({ pLeft, pRight });
 				pResult = pOp;
-				operands.clear();
 			}
 			else if (pLeft != nullptr)
 				pResult = pLeft;
@@ -70,6 +80,135 @@ Qexpression Qexpression::operation(const string& opMark, const Qexpression& righ
 			result(at) = right(at);
 	}
 	_lat(opMark, result.toString());
+	return(result);
+}
+
+Qexpression Qexpression::comparisonOp(const string& opMark, const string& compMark, const Qexpression& right) const
+{
+	Index tSize = nobs(), rSize = right.nobs();
+	Index size = rSize > tSize ? rSize : tSize;
+	Qexpression result(size);
+	Qexpression compare = (*this) + ~right;
+	for (Index at = 0; at < size; at++)
+	{
+		if (at < tSize)
+		{
+			Qoperand::Sp pLeft((*this)(at)), pRight(nullptr), pResult(nullptr);
+			if (at < rSize)
+				pRight = right(at);
+			if (pLeft != nullptr && pRight != nullptr)
+			{
+
+				Qop::Sp pOp = nullptr;
+				if(at == 0) 
+					pOp = Factory<string, Qop>::Instance().create(opMark);
+				else
+					pOp = Factory<string, Qop>::Instance().create(compMark);
+				pOp->add(pLeft);
+				pOp->add(pRight);
+				if (at < size - 1)
+				{
+					pLeft = (*this)(at + 1);
+					if (at + 1 < rSize)
+						pRight = right(at + 1);
+					Qop::Sp pEq = Factory<string, Qop>::Instance().create(EqQT::cMark);
+					pEq->arguments({ pLeft, pRight });
+					Qop::Sp pAnd = Factory<string, Qop>::Instance().create(AndQT::cMark);
+					pAnd->arguments({ pEq, pOp });
+					pOp = pAnd;
+				}
+				pResult = pOp;
+			}
+			else if (pLeft != nullptr)
+				pResult = pLeft;
+			else if (pRight != nullptr)
+				pResult = pRight;
+			result(at) = pResult;
+		}
+		else
+			result(at) = right(at);
+	}
+	_lat(opMark, result.toString());
+	return(result);
+}
+
+Qexpression Qexpression::operator ==(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator ==(re);
+}
+
+Qexpression Qexpression::operator ==(const Qexpression& right) const
+{
+	Qexpression result = operation(EqQT::cMark, right);
+	return result;
+}
+
+Qexpression Qexpression::operator !=(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator !=(re);
+}
+
+Qexpression Qexpression::operator !=(const Qexpression& right) const
+{
+	Qexpression result = operation(NotQT::cMark, right);
+	return(result);
+}
+
+Qexpression Qexpression::operator >(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator >(re);
+}
+
+Qexpression Qexpression::operator >(const Qexpression& right) const
+{
+	Qexpression result = comparisonOp(GtQT::cMark, GeQT::cMark, right);
+	return(result);
+}
+
+Qexpression Qexpression::operator >=(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator >=(re);
+}
+
+Qexpression Qexpression::operator >=(const Qexpression& right) const
+{
+	Qexpression compare = (*this) + ~right;
+	Index size = compare.nobs();
+	Qexpression result(size);
+	for (Index at = 0; at < size; at++)
+	{
+		Qop::Sp pEq = Factory<string, Qop>::Instance().create(GeQT::cMark);
+//		pEq->arguments({ pLeft, pRight });
+	}
+	return(result);
+}
+
+Qexpression Qexpression::operator <(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator <(re);
+}
+
+Qexpression Qexpression::operator <(const Qexpression& right) const
+{
+	
+	Qexpression result = comparisonOp(LtQT::cMark, LeQT::cMark, right);
+	return(result);
+}
+
+Qexpression Qexpression::operator <=(const Qdef& right) const
+{
+	Qexpression re(right);
+	return operator <=(re);
+}
+
+Qexpression Qexpression::operator <=(const Qexpression& right) const
+{
+	Qexpression result = comparisonOp(LeQT::cMark, LeQT::cMark, right);
 	return(result);
 }
 
@@ -292,17 +431,13 @@ qbit_def_matrix Qexpression::thisX(const Qexpression& right) const
 	qbit_def_matrix xMatrix(nobs(), right.nobs());
 	int carry = 0;
 	std::cout << "Matrix " << nobs() << " x " << right.nobs() << endl;
-	Qoperands operands;
 	for (Index atR = 0; atR < nobs(); atR++)
 	{
 		for (Index atC = 0; atC < right.nobs(); atC++)
 		{
 			Qop::Sp pOp = Factory<string, Qop>::Instance().create(AndQT::cMark);
-			operands.push_back((*this)(atR));
-			operands.push_back(right(atC));
-			pOp->arguments(operands);
+			pOp->arguments({ (*this)(atR), right(atC) });
 			xMatrix(atR, atC) = pOp;
-			operands.clear();
 		}
 	}
 	return xMatrix;

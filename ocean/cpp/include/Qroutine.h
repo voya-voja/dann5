@@ -64,7 +64,7 @@ namespace dann5 {
 
 			// A semple is defined as a dictionary (map) of definition nodes and their values.
 			// The node names are defined by qubo() for each Q equation
-			typedef map<string, q_bit> Sample;
+			typedef map<string, QbitV> Sample;
 
 			// A list of samples with the same list of nodes and different combination of values
 			typedef vector<Sample> Samples;

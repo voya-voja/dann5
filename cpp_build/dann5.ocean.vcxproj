@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81CD6486-E8A7-4221-BA2C-8A9BC76EC1F4}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>d5o</ProjectName>
@@ -30,7 +30,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -327,6 +327,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="..\ocean\cpp\BQM.cpp" />
     <ClCompile Include="..\ocean\cpp\Global.cpp" />
     <ClCompile Include="..\ocean\cpp\Logger.cpp" />
+    <ClCompile Include="..\ocean\cpp\Qcomparison.cpp" />
     <ClCompile Include="..\ocean\cpp\Qcondition.cpp" />
     <ClCompile Include="..\ocean\cpp\Qexpression.cpp" />
     <ClCompile Include="..\ocean\cpp\Qfunction.cpp" />
@@ -351,6 +352,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\ocean\cpp\include\BQM.h" />
     <ClInclude Include="..\ocean\cpp\include\Logger.h" />
+    <ClInclude Include="..\ocean\cpp\include\Qcomparison.h" />
     <ClInclude Include="..\ocean\cpp\include\Qcondition.h" />
     <ClInclude Include="..\ocean\cpp\include\Qexpression.h" />
     <ClInclude Include="..\ocean\cpp\include\Factory.h" />

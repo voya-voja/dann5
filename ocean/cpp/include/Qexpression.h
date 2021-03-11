@@ -42,6 +42,26 @@ namespace dann5 {
 			// Return a string representation of this Q expression
 			string toString() const;
 
+			Qexpression operator~() const;
+
+			Qexpression operator ==(const Qdef&) const;
+			Qexpression operator ==(const Qexpression&) const;
+
+			Qexpression operator !=(const Qdef&) const;
+			Qexpression operator !=(const Qexpression&) const;
+
+			Qexpression operator >(const Qdef&) const;
+			Qexpression operator >(const Qexpression&) const;
+
+			Qexpression operator >=(const Qdef&) const;
+			Qexpression operator >=(const Qexpression&) const;
+
+			Qexpression operator <(const Qdef&) const;
+			Qexpression operator <(const Qexpression&) const;
+
+			Qexpression operator <=(const Qdef&) const;
+			Qexpression operator <=(const Qexpression&) const;
+
 			// And operator returns a new Qexpression object by adding Qbits within
 			// this Q expression and right Q defined symbols operand where this object
 			// is a left operand
@@ -178,6 +198,8 @@ namespace dann5 {
 			// Q expression objects. The number of bit levels of resulting Q expression
 			// is equal to number of bit levels of larger Q expression operand
 			Qexpression operation(const string& opMark, const Qexpression& right) const;
+
+			Qexpression comparisonOp(const string& opMark, const string& compMark, const Qexpression& right) const;
 
 		private:
 			// An add functional object augmenting Qexprfession addition operators 

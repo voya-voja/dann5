@@ -16,7 +16,7 @@ namespace dann5 {
 
 		// Quantum condition is a conditional statement with a set of statements to be
 		// executed when condition is true
-		class Qcondition;
+		class Qcomparison;
 
 		// Quantum variable has a variable definition definition (Qdef) and its value (Qwhole)
 		class Qvar
@@ -53,27 +53,27 @@ namespace dann5 {
 
 			// Equal operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator==(const Qvar& right) const;
+			Qcomparison operator==(const Qvar& right) const;
 
 			// Not equal operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator!=(const Qvar& right) const;
+			Qcomparison operator!=(const Qvar& right) const;
 
 			// Greater-then operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator>(const Qvar& right) const;
+			Qcomparison operator>(const Qvar& right) const;
 
 			// Greater-equal operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator>=(const Qvar& right) const;
+			Qcomparison operator>=(const Qvar& right) const;
 
 			// Less-then operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator<(const Qvar& right) const;
+			Qcomparison operator<(const Qvar& right) const;
 
 			// Less-equal operator returns Q condition object by combining 
 			// this and right object definition into a condition statement
-			Qcondition operator<=(const Qvar& right) const;
+			Qcomparison operator<=(const Qvar& right) const;
 
 			// And operator returns this Qvar object as this & right of  
 			// Q variable objects' Qdef and Qwhole members

@@ -52,6 +52,9 @@
     <ClCompile Include="..\ocean\cpp\Qsolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ocean\cpp\Qcomparison.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Nebojsa.Vojinovic\source\repos\dann5\CMakeLists.txt" />
@@ -117,6 +120,9 @@
       <Filter>Include Files</Filter>
     </ClInclude>
     <ClInclude Include="..\ocean\cpp\include\Qsolver.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ocean\cpp\include\Qcomparison.h">
       <Filter>Include Files</Filter>
     </ClInclude>
   </ItemGroup>

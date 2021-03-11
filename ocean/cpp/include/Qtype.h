@@ -20,14 +20,14 @@ namespace dann5 {
 		};
 
 		// Quantum bit is in superposition state for any value except 0 and 1 
-		typedef unsigned char q_bit;
+		typedef unsigned char QbitV;
 
 		class Qbit : public Qtype
 		{
 		public:
 			// Qbit default superposition value, 
 			// though any value except 0 and 1 will be considered superposition
-			static const q_bit cSuperposition = 255;
+			static const QbitV cSuperposition = 255;
 
 			// Qbit superposition and Qwhole undefiined string representation
 			static const string cSuporpositionSign;	// the Qwhole/Qbit unknown sign is "(S)"
@@ -40,13 +40,13 @@ namespace dann5 {
 
 			// Initialized Qbit object with a value 0 or 1, for any other value puts 
 			// Qbit into superposition state
-			Qbit(q_bit value) : mValue(value)
+			Qbit(QbitV value) : mValue(value)
 			{
 				if (value > 1) mValue = cSuperposition;
 			};
 
-			operator q_bit() { return mValue; };
-			operator const q_bit() const { return mValue; };
+			operator QbitV() { return mValue; };
+			operator const QbitV() const { return mValue; };
 
 			Qbit& operator=(const Qbit right) 
 			{ 
@@ -55,7 +55,7 @@ namespace dann5 {
 			};
 			Qbit& operator&=(const Qbit right)
 			{
-				if (mValue == cSuperposition || mValue == cSuperposition)
+				if (mValue == cSuperposition || right.mValue == cSuperposition)
 					mValue = cSuperposition;
 				else
 					mValue &= right.mValue;
@@ -63,7 +63,7 @@ namespace dann5 {
 			};
 			Qbit& operator|=(const Qbit right)
 			{
-				if (mValue == cSuperposition || mValue == cSuperposition)
+				if (mValue == cSuperposition || right.mValue == cSuperposition)
 					mValue = cSuperposition;
 				else
 					mValue |= right.mValue;
@@ -71,7 +71,7 @@ namespace dann5 {
 			};
 			Qbit& operator^=(const Qbit right)
 			{
-				if (mValue == cSuperposition || mValue == cSuperposition)
+				if (mValue == cSuperposition || right.mValue == cSuperposition)
 					mValue = cSuperposition;
 				else
 					mValue ^= right.mValue;
@@ -80,7 +80,7 @@ namespace dann5 {
 
 		protected:
 		private:
-			q_bit mValue;
+			QbitV mValue;
 		};
 
 
@@ -102,7 +102,7 @@ namespace dann5 {
 
 			Qbool& operator=(const Qbool right)
 			{
-				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+				if (mValue == Qbit::cSuperposition || right.mValue == Qbit::cSuperposition)
 					mValue = Qbit::cSuperposition;
 				else
 					mValue = right.mValue;
@@ -110,7 +110,7 @@ namespace dann5 {
 			};
 			Qbool& operator&=(const Qbool right)
 			{
-				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+				if (mValue == Qbit::cSuperposition || right.mValue == Qbit::cSuperposition)
 					mValue = Qbit::cSuperposition;
 				else
 					mValue &= right.mValue;
@@ -118,7 +118,7 @@ namespace dann5 {
 			};
 			Qbool& operator|=(const Qbool right)
 			{
-				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+				if (mValue == Qbit::cSuperposition || right.mValue == Qbit::cSuperposition)
 					mValue = Qbit::cSuperposition;
 				else
 					mValue |= right.mValue;
@@ -126,7 +126,7 @@ namespace dann5 {
 			};
 			Qbool& operator^=(const Qbool right)
 			{
-				if (mValue == Qbit::cSuperposition || mValue == Qbit::cSuperposition)
+				if (mValue == Qbit::cSuperposition || right.mValue == Qbit::cSuperposition)
 					mValue = Qbit::cSuperposition;
 				else
 					mValue ^= right.mValue;
@@ -135,11 +135,11 @@ namespace dann5 {
 
 		protected:
 		private:
-			q_bit mValue;
+			QbitV mValue;
 		};
 
 		// Quantum non-negatve integer is a vector of Qbits
-		typedef Matrix<q_bit, Dynamic, 1> q_binary;
+		typedef Matrix<QbitV, Dynamic, 1> q_binary;
 
 		// Support for Qwhole << operator
 		typedef Eigen::CommaInitializer<q_binary> QintInitializer;
@@ -290,7 +290,7 @@ namespace dann5 {
 
 		protected:
 			// Used by
-			typedef Matrix<q_bit, Dynamic, Dynamic> QbitMatrix;
+			typedef Matrix<QbitV, Dynamic, Dynamic> QbitMatrix;
 
 		private:
 		};

@@ -6,11 +6,11 @@ Created on Mon Jul 27 14:06:44 2020
 """
 #from dwave.system import DWaveSampler, EmbeddingComposite
 import dimod
-import lib.d5o as d5o
+import dann5.d5o as d5o
  
 print("\nEQ gate")
-eqQ = d5o.EqualQubo()
-Q = eqQ.bqm().dictionary()
+eqQ = d5o.EqQT()
+Q = eqQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
@@ -19,54 +19,54 @@ sampleset = sampler.sample_qubo(Q)
 print(sampleset)
 
 print("\nNOT gate")
-neQ = d5o.NotQubo()
-Q = neQ.bqm().dictionary()
+neQ = d5o.NotQT()
+Q = neQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
 #sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print(sampleset.lowest())
+print(sampleset)
 
 print("\nLT gate")
-ltQ = d5o.LessThanQubo()
-Q = ltQ.bqm().dictionary()
+ltQ = d5o.LtQT()
+Q = ltQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
 #sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print(sampleset.lowest())
+print(sampleset)
 
 print("\nLE gate")
-leQ = d5o.LessEqualQubo()
-Q = leQ.bqm().dictionary()
+leQ = d5o.LeQT()
+Q = leQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
 #sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print(sampleset.lowest())
+print(sampleset)
 
 print("\nGT gate")
-gtQ = d5o.GreaterThanQubo()
-Q = gtQ.bqm().dictionary()
+gtQ = d5o.GtQT()
+Q = gtQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
 #sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print(sampleset.lowest())
+print(sampleset)
 
 print("\nGE gate")
-geQ = d5o.GreaterEqualQubo()
-Q = geQ.bqm().dictionary()
+geQ = d5o.GeQT()
+Q = geQ.qubo()
 print(Q)
 sampler = dimod.ExactSolver()                   # local
 sampleset = sampler.sample_qubo(Q)
 #sampler = EmbeddingComposite(DWaveSampler())   # DW_2000Q_6
 #sampleset = sampler.sample_qubo(Q, num_reads=5000)   # DW_2000Q_6
-print(sampleset.lowest())
+print(sampleset)
 
 print("\nAND gate")
 andQ = d5o.AndQubo()

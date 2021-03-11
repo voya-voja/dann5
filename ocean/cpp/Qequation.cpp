@@ -11,26 +11,30 @@ using namespace dann5::ocean;
 
 
 Qequation::Qequation()
-	: Qstatement(), mResult(), mReduct(*this), mNoResult(true)
+	: Qstatement(), mResult(), mNoResult(true)
 {
+	reduct(createReduct());
 	_lct(toString());
 }
 
 Qequation::Qequation(const Qequation& right)
-	: Qstatement(right), mResult(right.mResult), mReduct(*this), mNoResult(right.mNoResult)
+	: Qstatement(right), mResult(right.mResult), mNoResult(right.mNoResult)
 {
-	mReduct();
+	reduct(createReduct());
+	reduct().init();
 	_lct(toString());
 }
 
 Qequation::Qequation(const Qvar& result)
-	: Qstatement(result.nobs()), mResult(result), mReduct(*this), mNoResult(false)
+	: Qstatement(result.nobs()), mResult(result), mNoResult(false)
 {
+	reduct(createReduct());
+	reduct().init();
 	_lct(toString());
 }
 
 Qequation::Qequation(const Qvar& result, const Qexpression& equation, const Qvars& arguments)
-	: Qstatement(equation, arguments), mResult(result), mReduct(*this), mNoResult(false)
+	: Qstatement(equation, arguments), mResult(result), mNoResult(false)
 {
 	// ensure result Q variable and equation Q expression have same number-of-bits
 	Index n(nobs()), rn(mResult.nobs());
@@ -45,7 +49,8 @@ Qequation::Qequation(const Qvar& result, const Qexpression& equation, const Qvar
 			mResult.resize(n);
 		}
 	}
-	mReduct();	// reduct the equation to prepare 
+	reduct(createReduct());
+	reduct().init();	// reduct the equation to prepare 
 	_lct(toString());
 }
 
@@ -60,8 +65,10 @@ Qequation& Qequation::operator=(const Qvar& right)
 	arguments().push_back(right);
 	expression() = right.definition();
 	if (nobs() > mResult.nobs())
+	{
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	}
+	reduct().init();	// prepare for qubo() call 
 	return(*this);
 }
 
@@ -72,12 +79,11 @@ Qequation& Qequation::operator=(const Qequation& right)
 		mResult = right.mResult;
 		mNoResult = false;
 	}
-	arguments().clear();
-	arguments().insert(arguments().end(), right.arguments().begin(), right.arguments().end());
-	expression() = right.expression();
-	if (nobs() > mResult.nobs())
-		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	if (right.nobs() > mResult.nobs())
+	{
+		mResult.resize(right.nobs(), 0);
+	}
+	Qstatement::operator=(right);
 	return(*this);
 }
 
@@ -109,7 +115,7 @@ Qequation& Qequation::operator&=(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("&=\n", toString(true));
 	return(*this);
 }
@@ -127,7 +133,7 @@ Qequation& Qequation::operator&=(const Qequation& right)
 	expression() &= right.expression();
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("&= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -160,7 +166,7 @@ Qequation& Qequation::operator|=(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("|=\n", toString(true));
 	return(*this);
 }
@@ -178,7 +184,7 @@ Qequation& Qequation::operator|=(const Qequation& right)
 	expression() |= right.expression();
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("|= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -211,7 +217,7 @@ Qequation& Qequation::nandMutable(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("~&=\n", toString(true));
 	return(*this);
 }
@@ -229,7 +235,7 @@ Qequation& Qequation::nandMutable(const Qequation& right)
 	expression().nandMutable(right.expression());
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("~&= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -262,7 +268,7 @@ Qequation& Qequation::norMutable(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("~|=\n", toString(true));
 	return(*this);
 }
@@ -280,7 +286,7 @@ Qequation& Qequation::norMutable(const Qequation& right)
 	expression().norMutable(right.expression());
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("~|= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -313,7 +319,7 @@ Qequation& Qequation::operator^=(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("^=\n", toString(true));
 	return(*this);
 }
@@ -331,7 +337,7 @@ Qequation& Qequation::operator^=(const Qequation& right)
 	expression() ^= right.expression();
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("^= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -364,7 +370,7 @@ Qequation& Qequation::operator+=(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat( "+=\n", toString(true) );
 	return(*this);
 }
@@ -382,7 +388,7 @@ Qequation& Qequation::operator+=(const Qequation& right)
 	expression() += right.expression();
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("+= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -432,7 +438,7 @@ Qequation& Qequation::operator*=(const Qvar& right)
 	}
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("+=\n", toString(true));
 	return(*this);
 }
@@ -450,7 +456,7 @@ Qequation& Qequation::operator*=(const Qequation& right)
 	expression() *= right.expression();
 	if (nobs() > mResult.nobs())
 		mResult.resize(nobs(), 0);
-	mReduct();	// prepare for qubo() call 
+	reduct().init();	// prepare for qubo() call 
 	_lat("+= Reducted: \n", toString(true));
 	return(*this);
 }
@@ -470,39 +476,6 @@ Qroutine Qequation::operator/(const Qvar& divisor) const
 	Qroutine multiplication(nobs(), rName);
 	multiplication << (*this) << dividend;
 	return multiplication;
-}
-
-Qubo Qequation::qubo(bool finalized, Index level) const
-{
-	bool iterateAll = level == Eigen::Infinity;
-	Index last = (iterateAll ? nobs() - 1 : level);
-	Qubo rawQubo;
-	for (Index at = 0; at <= last; at++)
-	{
-		if(iterateAll || (!iterateAll && at == level))
-		{
-			Qubo qubo = expression()(at)->qubo(finalized);
-			rawQubo += qubo;
-//			cout << endl << expression()(at)->toString();
-//			cout << endl << qubo << endl << rawQubo << endl;
-		}
-	}
-
-	Qubo qubo;	// Updated Qubo
-	for (auto at = rawQubo.begin(); at != rawQubo.end(); at++)
-	{
-		// remove all quadratic elements with bias 0
-		if (((*at).first.first != (*at).first.second) && ((*at).second == 0))
-			continue;
-
-		QuboKey key = mReduct((*at).first, finalized);
-		if(key != Reduct::cSkip)
-		{
-			// Using a correct key add bias for the buinary quadratic element in updated Qubo 
-			qubo[key] += (*at).second;
-		}
-	}
-	return(qubo);	// return updated Qubo
 }
 
 string Qequation::toString(bool decomposed, Index level) const
@@ -540,53 +513,11 @@ string Qequation::toString(bool decomposed, Index level) const
 		reduces.push_back(pair<string, string>(carryExpression, carryResultSymbol));
 
 		// add a string representing an equation for the current Qbit
-		string resultV = to_string(q_bit(mResult.value()(at)));
+		string resultV = to_string(QbitV(mResult.value()(at)));
 		if(iterateAll || (!iterateAll && at == level))
 			sEquation += "| " + resultS + " = " + resultV + " |" + " = " + exprStr + "\n";
 	}
 	return sEquation;
-}
-
-void Qequation::add(Qsolver::Sample& sample)
-{
-	mSolutions.push_back(sample);
-}
-
-void Qequation::set(Qsolver::Samples& samples)
-{
-	_lat("solutions", to_string(samples.size()) + " of samples");
-	mSolutions = samples;
-}
-
-string Qequation::solutions() const
-{
-	string values("");
-	for (auto sample : mSolutions)
-	{
-		const Qvars& args = arguments();
-		for (auto arg : args)
-		{
-			Qdef definition = as_const(arg).definition();
-			Qwhole v = as_const(arg).value();
-			Qwhole value(v.nobs());
-			if (v.value() != Qwhole::cUnknown)
-			{
-				value = v;
-			}
-			else
-			{
-				int atBit = 0;
-				for (auto bitSymbol : definition)
-				{
-					value[atBit++] = sample[bitSymbol->identity()];
-				}
-			}
-			values += definition.name() + " = " + value.toString() + "; ";
-		}
-		values += "\n";
-	}
-	_lat("solutions", values);
-	return(values);
 }
 
 ostream& dann5::ocean::operator<<(std::ostream& out, const Qequation& statement)
@@ -597,23 +528,17 @@ ostream& dann5::ocean::operator<<(std::ostream& out, const Qequation& statement)
 
 
 /*** Qequation::Reduct code***/
-const QuboKey Qequation::Reduct::cSkip("skip", "skip");
-
 Qequation::Reduct::Reduct(Qequation& equation)
-	:mEquation(equation)
+	:Qstatement::Reduct(equation), mEquation(equation)
 {
 	_lc;
 }
 
-Qequation::Reduct::~Reduct()
+void Qequation::Reduct::init()
 {
-	_ld;
-}
+	Qstatement::Reduct::init();
 
-void Qequation::Reduct::operator() ()
-{
 	string definition(""), expression("");
-
 	for (Index at = 0; at < mEquation.nobs(); at++)
 	{
 		// capture result expression and reduction
@@ -624,108 +549,14 @@ void Qequation::Reduct::operator() ()
 			definition = as_const(mEquation.mResult).definition()(at)->identity();
 			Qbit value = as_const(mEquation.mResult).value()(at);
 			Reduction reduction(definition, value);
-			mReductions[expression] = reduction;
+			reductions()[expression] = reduction;
 
 			// capture expression of carry forward operands in expression
 			expression = Qaddition::Carry::Symbol(expression);
 			definition = Qaddition::Carry::Symbol(definition);
 			value = Qbit::cSuperposition;
 			Reduction carryCorrect(definition, value);
-			mReductions[expression] = carryCorrect;
+			reductions()[expression] = carryCorrect;
 		}
 	}
-
-	// capture reductions for arguments with values different from cSuperposition (i.e. 0 or 1)
-	for (auto atArg = mEquation.arguments().cbegin(); atArg != mEquation.arguments().cend(); atArg++)
-	{
-		for (Index at = 0; at < (*atArg).definition().nobs(); at++)
-		{
-			Qbit value = (*atArg).value()(at);
-			if (value < 2)
-			{
-				string definition = (*atArg).definition()(at)->identity();
-				Reduction reduction(definition, value);
-				mReductions[definition] = reduction;
-			}
-		}
-	}
-}
-
-QuboKey Qequation::Reduct::operator() (const QuboKey& original, bool finalized) const
-{
-	QuboKey key = original;
-	Reductions::const_iterator found1stAt = mReductions.find(original.first);
-	Reductions::const_iterator found2ndAt = mReductions.find(original.second);
-	Reductions::const_iterator end = mReductions.cend();
-	if (found1stAt != end)
-	{
-		// The 1st half of a key of a quadratic element  should be updated with replacement definition
-		Reduction correct1st = (*found1stAt).second;
-		if (found2ndAt != end)
-		{
-			// The 2nd half of a key of a quadratic element should be updated with replacement definition
-			Reduction correct2nd = (*found2ndAt).second;
-			if (!finalized || (correct1st.second == Qbit::cSuperposition && correct2nd.second == Qbit::cSuperposition))
-			{
-				// Always just replace 1st and 2nd symbols without applying condition
-				// or replace 1st and 2nd symbols in binaryquadratic element when condition values are not defined (not 0 or 1)
-				key = QuboKey(correct1st.first, correct2nd.first);
-			}
-			else if (correct1st.second == Qbit::cSuperposition && correct2nd.second == 1)
-			{
-				// otherwise replace with a linear element using 1st replacement when its condition value is 1
-				key = QuboKey(correct1st.first, correct1st.first);
-			}
-			else if (correct1st.second == 1 && correct2nd.second == Qbit::cSuperposition)
-			{
-				// otherwise replace with a linear element using 2nd replacement when its condition value is 1
-				key = QuboKey(correct2nd.first, correct2nd.first);
-			}
-			else
-			{
-				// all other combinations should be skipped as result is 0 or 1 constant
-				key = cSkip;
-			}
-		}
-		else
-		{
-			// Just 1st half of a key of a quadratic element should be updated with replacement definition
-			if (!finalized || correct1st.second == Qbit::cSuperposition)
-			{
-				// Always just replace 1st definition without applying condition
-				// or replace 1st definition in binaryquadratic element when condition value is not defined (not 0 or 1)
-				key = QuboKey(correct1st.first, original.second);
-			}
-			else if (correct1st.second == 1)
-			{
-				// otherwise replace with a linear element using 2nd half of a key when condition value is 1
-				key = QuboKey(original.second, original.second);
-			}
-			else
-			{
-				// all other combinations should be removed as result is 0
-				key = cSkip;
-			}
-		}
-	}
-	else if (found2ndAt != end)
-	{
-		// Just 2st half of a key of a quadratic element should be updated with replacement definition
-		Reduction reduction = (*found2ndAt).second;
-		if (!finalized || reduction.second == Qbit::cSuperposition)
-		{
-			key = QuboKey(original.first, reduction.first);
-		}
-		else if (reduction.second == 1)
-		{
-			// otherwise replace with a linear element using 1st half of a key when condition value is 1
-			key = QuboKey(original.first, original.first);
-		}
-		else
-		{
-			// all other combinations should be removed as result is 0
-			key = cSkip;
-		}
-	}
-	return key;
 }

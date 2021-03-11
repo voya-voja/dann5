@@ -44,7 +44,14 @@ PYBIND11_MODULE(d5o, m) {
 	// without instantiating py::class<QuboTable>
 	py::class_<Qubo>(m, "Qubo", R"pbdoc( a Qubo model dictionary)pbdoc");
 
-	py::class_<QuboTable>(m, "QuboTable", R"pbdoc( a Qubo abstraction)pbdoc")
+	py::class_<Qanalyzer>(m, "Qanalyzer", R"pbdoc(A Qubo analyzer.)pbdoc")
+		.def(py::init<const Qubo&>())
+		.def("nodes", &Qanalyzer::nodes)
+		.def("branches", &Qanalyzer::branches)
+		.def("nodesNo", &Qanalyzer::nodesNo)
+		.def("branchesNo", &Qanalyzer::branchesNo);
+
+	py::class_<QuboTable>(m, "QuboTable", R"pbdoc(A Qubo table abstraction)pbdoc")
 //		.def(py::init<>())
 //		.def("qubo", &QuboTable::qubo)
 	.def("qubo", (Qubo(QuboTable::*)() const) &QuboTable::qubo, "Default Qubo qubo")
@@ -114,7 +121,7 @@ PYBIND11_MODULE(d5o, m) {
 		.def(py::init<>());
 
 	py::class_<QintInitializer>(m, "QintInitializer")
-		.def("push", (QintInitializer& (QintInitializer::*)(const q_bit&)) &QintInitializer::operator,);
+		.def("push", (QintInitializer& (QintInitializer::*)(const QbitV&)) &QintInitializer::operator,);
 
 	py::class_<Qwhole>(m, "Qwhole", 
 		R"pbdoc( Quantum bit is in superposition state for any value except 0 and 1)pbdoc")
@@ -430,8 +437,7 @@ PYBIND11_MODULE(d5o, m) {
 			py::class_<Qsolver>(m, "Qsolver")
 				.def(py::init<const Qubo&>())
 				.def(py::init<const Qubo&, bool>())
-			.def("solution", &Qsolver::solution)
-			.def("nOfNodes", &Qsolver::nOfNodes);
+			.def("solution", &Qsolver::solution);
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;

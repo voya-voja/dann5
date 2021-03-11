@@ -42,6 +42,14 @@ void Qop::arguments(const Qoperands& operands)
 		mArguments.push_back(pOp);
 }
 
+void Qop::add(Qoperand::Sp argument)
+{
+	if (mArguments.size() == mNoArguments)
+		throw invalid_argument("Arguments number will exceed defined size of "
+										+ to_string(argsNumber()));
+	mArguments.push_back(argument);
+}
+
 void Qop::labelFor(const string& id)
 {
 	return labelFor(id, -1);
@@ -101,13 +109,21 @@ Qubo Qop::qubo(bool finalized) const
 	size_t size = args.size();
 	Qubo argsQubo;
 	QuboTable::Labels qubo_arguments(size + 1);
+	vector<Qkey> opKeys;
 	for (size_t atArg = 0; atArg < size; atArg++)
 	{
 		// add sub-qubo from argument operand
 		argsQubo += args[atArg]->qubo(finalized);
 
 		// use names of argument and this operands as unique string describing arguments
-		string aName = arguments()[atArg]->toString();
+		Qoperand::Sp pOperand = arguments()[atArg];
+		string aName = pOperand->toString();
+		Qop::Sp pOp = dynamic_pointer_cast<Qop>(pOperand);
+		if (pOp != nullptr)
+		{
+			Qkey key(aName, aName);
+			opKeys.push_back(key);
+		}
 		qubo_arguments[atArg] = aName;
 
 	}
@@ -117,6 +133,13 @@ Qubo Qop::qubo(bool finalized) const
 	QuboTable::Sp pQubo = Factory<string, QuboTable>::Instance().create(identity());
 	Qubo qubo = pQubo->qubo(qubo_arguments);
 	qubo += argsQubo;
+	auto quboEnd = qubo.end();
+	for (auto opKey : opKeys)
+	{
+		auto opElement = qubo.find(opKey);
+		if (opElement != quboEnd && opElement->second == 0)
+			qubo.erase(opKey);
+	}
 	return(qubo);
 }
 
@@ -173,7 +196,7 @@ Qaddition::Carry::Carry(Qaddition* pAddition)
 }
 
 Qaddition::Carry::Carry(const Carry& right)
-	: Qoperand(right)
+	: Qoperand(right), mpAddition(right.mpAddition)
 {}
 
 Qaddition::Carry::~Carry()
@@ -221,11 +244,7 @@ Qaddition::Sp Qxor::assign(const Qoperands& operands)
 		pXor->carry(nullptr);
 
 		// push adder's tri arguments
-		Qoperands adder_args;
-		adder_args.push_back(pXor->arguments()[0]);
-		adder_args.push_back(pXor->arguments()[1]);
-		adder_args.push_back(pOperand);
-		pAdder->arguments(adder_args);
+		pAdder->arguments({ pXor->arguments()[0], pXor->arguments()[1], pOperand });
 
 		return(pAdder);
 	}

@@ -7,7 +7,6 @@
 
 #include <Qvar.h>
 #include <Qstatement.h>
-#include <Qsolver.h>
 
 using namespace std;
 using namespace Eigen;
@@ -23,6 +22,9 @@ namespace dann5 {
 		class Qequation : public Qstatement
 		{
 		public:
+			// Qequation's shared pointer 
+			typedef shared_ptr<Qequation> Sp;
+
 			// Default constructor creates Q equation witout a result Q variable so the
 			// result definition is an empty string
 			Qequation();
@@ -176,16 +178,6 @@ namespace dann5 {
 			// Returns a constant reference to the result of this Q equation
 			const Qvar& result() const { return mResult; }
 
-			// Returns a qubo representation of this Q equation, 
-			// if not finalized, returns a full qubo definition representation of this Q
-			// equation
-			// if finalized, returns an expression that replaces symbols with values of
-			// Qbits in deterministic states for all the Q variables, i.e. result and
-			// expression arguments
-			Qubo qubo(bool finalized, Index level) const;
-			Qubo qubo(bool finalized) const { return qubo(finalized, -1); };
-			Qubo qubo() const { return qubo(true, -1); };
-
 			// Returns a string representation of this Q equation, 
 			// if not decomposed, returns an equation line per Qbit level
 			// if decomposed, returns a line per Qbit operational expression
@@ -196,54 +188,29 @@ namespace dann5 {
 			// returns a shared_pointer on a cloned instance of this Q statement
 			virtual Qstatement::Sp clone() const { return Qstatement::Sp(new Qequation(*this)); };
 
-			// Add a sample with a node list defined by qubo() of this Q equation
-			void add(Qsolver::Sample& sample);
-
-			// Set a sample set with a node list defined by qubo() of this Q equation
-			// the combination of node values should be different for each sample
-			void set(Qsolver::Samples& samples);
-
-			// For existing samples, returns a string representation of all solutions of 
-			// this Q routine
-			string solutions() const;
-
 			// Insert string representation of a Q equation into an output stream
 			friend std::ostream& operator << (std::ostream&, const Qequation&);
 
 		protected:
-			class Reduct
+			class Reduct : public Qstatement::Reduct
 			{
-				typedef std::pair<string, Qbit> Reduction;
-				typedef std::map<string, Reduction> Reductions;
 			public:
-				static const QuboKey cSkip;
 				// construct reduction object of a given Q equation
 				Reduct(Qequation&);
 
-				// destructor
-				~Reduct();
-
 				// prepare reduction information for a given Q equation 
-				void operator() ();
-
-				// Returns a reduced key derived from a given Qubo key by applying
-				// reduction rules for this Q equation. 
-				// If finalized is true, it will apply discretionary Qbit values for the
-				// Q equation result and arguments.
-				// Otherwise, it will just symplify keys using result Qbit definitions
-				QuboKey operator()(const QuboKey& key, bool finalized) const;
+				virtual void init();
 
 			protected:
 			private:
 				Qequation&	mEquation;
-				Reductions mReductions;
 			};
+
+			virtual Reduct* createReduct() { return new Reduct(*this); };
 
 		private:
 			Qvar				mResult;		// result variable, e.g. defined as R = 2 with bits R0 = 0, R1 = 1, ...
-			Reduct				mReduct;		// an instace of object class that symplifies the expression of this Q equation
 			bool				mNoResult;
-			Qsolver::Samples	mSolutions;
 
 			friend class Reduct;
 		};

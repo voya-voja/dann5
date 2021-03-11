@@ -14,15 +14,39 @@ using namespace Eigen;
 namespace dann5{
 	namespace ocean {
 		// Qubo is a dictionary (map) of a solution graph for a binary objective
-		// function where a node pair is a key (QuboKey) mapped into its bias, which
+		// function where a node pair is a key (Qkey) mapped into its bias, which
 		// corespondes to Quantum energy values for that node 
 		// Qubo corresponds to DWave's dimod.BinaryQuadraticModel class, represented 
 		// as an upper-diagonal matrix Q, where diagonal terms are the linear
 		// coefficients (key pairs with the same Quantum node name) and the nonzero
 		// off-diagonal terms the quadratic coefficients(graph branches, with
 		// different mode names
-		typedef std::pair<string, string> QuboKey;
-		typedef std::map<QuboKey, double> Qubo;
+		typedef std::pair<string, string> Qkey;
+		typedef std::pair<string, double> Qnode;
+		typedef std::pair<Qkey, double> Qelement;
+
+		typedef std::map<Qkey, double> Qubo;
+
+		typedef std::vector<Qnode> Qnodes;
+		typedef std::vector<Qelement> Qbranches;
+
+		class Qanalyzer
+		{
+		public:
+			Qanalyzer(const Qubo& qubo) : mQubo(qubo) {};
+
+			Qnodes& nodes();
+			Qbranches& branches();
+
+			inline size_t nodesNo() { return nodes().size(); };
+			inline size_t branchesNo() { return branches().size(); };
+
+		protected:
+		private:
+			Qubo		mQubo;
+			Qnodes		mNodes;
+			Qbranches	mBranches;
+		};
 
 		// Addition function returns a reference of an updated left operand with added
 		// elements of right Qubo object. The left Qubo object is updated/extened by

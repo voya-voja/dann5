@@ -1,6 +1,6 @@
 #include <math.h> 
 #include <Qequation.h>
-#include <Qcondition.h>
+#include <Qcomparison.h>
 
 #include <Logger.h>
 
@@ -66,40 +66,52 @@ Qvar Qvar::operator~() const
 	return result;
 }
 
-Qcondition Qvar::operator==(const Qvar& right) const
+Qcomparison Qvar::operator==(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression == right.definition();
+	Qcomparison result(expression, { *this , right});
+	return result;
 }
 
-Qcondition Qvar::operator!=(const Qvar& right) const
+Qcomparison Qvar::operator!=(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression != right.definition();
+	Qcomparison result(expression, { *this , right });
+	return result;
 }
 
-Qcondition Qvar::operator>(const Qvar& right) const
+Qcomparison Qvar::operator>(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression > right.definition();
+	Qcomparison result(expression, { *this , right});
+	return result;
 }
 
-Qcondition Qvar::operator>=(const Qvar& right) const
+Qcomparison Qvar::operator>=(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression >= right.definition();
+	Qcomparison result(expression, { *this , right });
+	return result;
 }
 
-Qcondition Qvar::operator<(const Qvar& right) const
+Qcomparison Qvar::operator<(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression < right.definition();
+	Qcomparison result(expression, { *this , right });
+	return result;
 }
 
-Qcondition Qvar::operator<=(const Qvar& right) const
+Qcomparison Qvar::operator<=(const Qvar& right) const
 {
-	Qcondition c;
-	return(c);
+	Qexpression expression(definition());
+	expression <= right.definition();
+	Qcomparison result(expression, { *this , right });
+	return result;
 }
 
 Qvar& Qvar::operator&=(const Qvar& right)

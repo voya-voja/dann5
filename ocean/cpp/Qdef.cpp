@@ -85,7 +85,7 @@ void Qdef::concatenate(const Qdef& right, const string& sign)
 
 Qdef& Qdef::operator~()
 {
-	string sign = "~";
+	string sign = NotQT::cMark;
 	Index size(nobs());
 	mDefinition = sign + mDefinition;
 	for (Index at = 0; at < size; at++)

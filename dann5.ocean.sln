@@ -1,10 +1,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1000
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d5o", "cpp_build\dann5.ocean.vcxproj", "{81CD6486-E8A7-4221-BA2C-8A9BC76EC1F4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp_test", "test\cpp\cpp_test.vcxproj", "{30798AF9-4658-4B43-B08C-4B870165970D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "d5o_test", "test\d5o\d5o_test\d5o_test.vcxproj", "{5AD47D2F-E128-43C6-A017-C0E7962F78CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,22 @@ Global
 		{30798AF9-4658-4B43-B08C-4B870165970D}.RelWithDebInfo|x64.Build.0 = Release|x64
 		{30798AF9-4658-4B43-B08C-4B870165970D}.RelWithDebInfo|x86.ActiveCfg = Release|Win32
 		{30798AF9-4658-4B43-B08C-4B870165970D}.RelWithDebInfo|x86.Build.0 = Release|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Debug|x64.ActiveCfg = Debug|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Debug|x64.Build.0 = Debug|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Debug|x86.ActiveCfg = Debug|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Debug|x86.Build.0 = Debug|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.MinSizeRel|x64.ActiveCfg = Debug|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.MinSizeRel|x64.Build.0 = Debug|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.MinSizeRel|x86.ActiveCfg = Debug|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.MinSizeRel|x86.Build.0 = Debug|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Release|x64.ActiveCfg = Release|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Release|x64.Build.0 = Release|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Release|x86.ActiveCfg = Release|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.Release|x86.Build.0 = Release|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.RelWithDebInfo|x86.ActiveCfg = Release|Win32
+		{5AD47D2F-E128-43C6-A017-C0E7962F78CF}.RelWithDebInfo|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

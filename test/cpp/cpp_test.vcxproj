@@ -23,32 +23,32 @@
     <ProjectGuid>{30798AF9-4658-4B43-B08C-4B870165970D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>TestConsoleApplication</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -158,6 +158,7 @@
     <ClCompile Include="..\..\ocean\cpp\BQM.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Global.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Logger.cpp" />
+    <ClCompile Include="..\..\ocean\cpp\Qcomparison.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qcondition.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qdef.cpp" />
     <ClCompile Include="..\..\ocean\cpp\Qequation.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="..\..\ocean\cpp\include\BQM.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Factory.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Logger.h" />
+    <ClInclude Include="..\..\ocean\cpp\include\Qcomparison.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qcondition.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qfunction.h" />
     <ClInclude Include="..\..\ocean\cpp\include\Qoperand.h" />

@@ -17,7 +17,7 @@ Qubo& dann5::ocean::operator+=(Qubo& left, const Qubo& right)
 {
 	for (auto at = right.cbegin(); at != right.cend(); at++)
 	{
-		QuboKey key = (*at).first;
+		Qkey key = (*at).first;
 		Qubo::iterator item = left.find(key);
 		if (item != left.end())
 			(*item).second += (*at).second;
@@ -25,6 +25,40 @@ Qubo& dann5::ocean::operator+=(Qubo& left, const Qubo& right)
 			left[key] = (*at).second;
 	}
 	return left;
+}
+
+/**** Q Analyzer ****/
+
+Qnodes& Qanalyzer::nodes()
+{
+	if (mNodes.size() == 0)
+	{
+		for (auto element : mQubo)
+		{
+			if (element.first.first == element.first.second)
+			{
+				Qnode node(element.first.first, element.second);
+				mNodes.push_back(node);;
+			}
+		}
+	}
+	return(mNodes);
+}
+
+Qbranches& Qanalyzer::branches()
+{
+	if (mBranches.size() == 0)
+	{
+		for (auto element : mQubo)
+		{
+			if (element.first.first != element.first.second)
+			{
+				Qelement branch(element);
+				mBranches.push_back(branch);
+			}
+		}
+	}
+	return(mBranches);
 }
 
 /**** Qubo Table ****/
@@ -88,7 +122,7 @@ Qubo QuboTable::qubo(const Labels& arguments) const
 Qubo QuboTable::createQubo(const Labels& variables) const
 {
 	int c, r;
-	QuboKey key;
+	Qkey key;
 	Qubo dict;
 	for (r = 0; r < mElements.rows(); r++)
 	{
@@ -127,7 +161,7 @@ QuboTable::Labels OperatorQT::format(const QuboTable::Labels& args) const
 	if (args.rows() == 2) return args;
 
 	QuboTable::Labels fArgs(2);
-	fArgs << args(0), args(2);
+	fArgs << args(0), args(1);
 	return(fArgs);
 }
 

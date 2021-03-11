@@ -31,6 +31,8 @@
 #include <Qroutine.h>
 #include <Qfunction.h>
 
+#include <Utility.h>
+
 using namespace Eigen;
 
 using Eigen::Matrix;
@@ -293,16 +295,16 @@ void test4()
 	p8E2 = prime;
 	p7mE2 = p8 * _8;
 
-	Qcondition p7m_lt8, p7m_ge8;
-	p7m_lt8 = (p7m < _8) << p8E;
-	p7m_ge8 = ~(p7m < _8) << p7mE2;	// not sure operator~
+	Qcondition p7m_lt8(p7m < _8), p7m_ge8(p7m >= _8);
+	p7m_lt8 << p8E;
+	p7m_ge8 << p7mE2;
 
 	Qroutine p_ge8R("prime >= 8");
 	p_ge8R << p7mE1 << p7m_lt8 << p7m_ge8;
 
-	Qcondition p_lt8, p_ge8;
-	p_lt8 = (prime < _8) << p8E2;
-	p_ge8 = ~(p7m < _8) << p_ge8R;
+	Qcondition p_lt8(prime < _8), p_ge8(p7m >= _8);
+	p_lt8 << p8E2;
+	p_ge8 << p_ge8R;
 
 	Qfunction p_mod_8("prime % 8");
 	p_mod_8 << p_lt8 << p_ge8;
@@ -313,9 +315,9 @@ void test4()
 	// variables
 	Qvar s(3, "s"), t(3,"t");
 	Qequation pE(prime);
-	Qcondition p8_eq3;
+	Qcondition p8_eq3(_3 == p_mod_8);
 	pE = s * s + _2 * t * t;
-	p8_eq3 = (_3 == p_mod_8) << pE;
+	p8_eq3 << pE;
 	program << p8_eq3; // << s==t==1(mod 2) << gcd(s,t) = 1
 }
 
@@ -328,11 +330,11 @@ void test5()
 	// variables
 	Qvar prime(6, "p"), s(3, "s"), t(3, "t");
 	Qequation pE(prime), gcdE(_1);
-	Qcondition p8_eq5, s2_eq1, t2_eq1;
+	Qcondition p8_eq5(Qmod(prime, _8) == _5), s2_eq1(Qmod(s, _2) == _1), t2_eq1(Qmod(t, _2) == _1);
 	pE = Qpow(s, 2) + _4 * Qpow(t, 2);
-	p8_eq5 = (Qmod(prime,_8) == _5) << pE;
-	s2_eq1 = (Qmod(s, _2) == _1) << p8_eq5;
-	t2_eq1 = (Qmod(t, _2) == _1) << s2_eq1;
+	p8_eq5 << pE;
+	s2_eq1 << p8_eq5;
+	t2_eq1 << s2_eq1;
 	gcdE = Qgcd(s, t);
 	program << t2_eq1 << gcdE;
 }
@@ -346,11 +348,11 @@ void test6()
 	// variables
 	Qvar prime(6, "p"), s(3, "s"), t(3, "t");
 	Qequation pE(prime), gcdE(_1);
-	Qcondition p8_eq5, s2_eq1, t2_eq1;
+	Qcondition p8_eq5(Qmod(prime, _8) == _7), s2_eq1(Qmod(s, _2) == _1), t2_eq1(Qmod(t, _2) == _1);
 	pE = Qpow(s, 2) + _4 * s * t + _2 * Qpow(t, 2);
-	p8_eq5 = (Qmod(prime, _8) == _7) << pE;
-	s2_eq1 = (Qmod(s, _2) == _1) << p8_eq5;
-	t2_eq1 = (Qmod(t, _2) == _1) << s2_eq1;
+	p8_eq5 << pE;
+	s2_eq1 << p8_eq5;
+	t2_eq1 << s2_eq1;
 	gcdE = Qgcd(s, t);
 	program << t2_eq1 << gcdE;
 }
@@ -364,9 +366,9 @@ void test5short()
 	// variables
 	Qvar p(3, "p"), s(2, "s"), t(2, "t");
 	Qequation eq(p);
-	Qcondition cond;
+	Qcondition cond(Qmod(p, _8) == _5);
 	eq = Qpow(s, 2) + _4 * Qpow(t, 2);
-	cond = (Qmod(p, _8) == _5) << eq;
+	cond << eq;
 	program << cond;
 }
 
@@ -377,6 +379,62 @@ void test7()
 	std::cout << std::endl << "BLV R = A ~& B: " << std::endl << r << std::endl;
 	Qexpression e(a.nor(b));
 	std::cout << std::endl << "BLV R = A ~| B: " << std::endl << e << std::endl;
+}
+
+void testCondition()
+{
+	Qvar a(3, "a"), b(3, "b"), A("A", 4), _2("2_", 2);
+	Qequation eA(A);
+	eA = a + b;
+	cout << endl << eA.toString() << endl;
+	cout << endl << eA.toString(true) << endl;
+	cout << endl << eA.qubo(false) << endl;
+	Qubo Q = eA.qubo();
+	cout << endl << Q << endl;
+	Qanalyzer analyzer(Q);
+	size_t nNodes = analyzer.nodesNo();
+	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(long(pow(2, nNodes))) << endl;
+	const clock_t begin_time = clock();
+	Qsolver solver(Q);
+	Qsolver::Samples samples = solver.solution();
+	cout << endl << "Solving time: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s";
+	eA.set(samples);
+	cout << endl << eA.solutions() << endl;
+
+	Qcondition aGT5(a >= b);
+	aGT5 << eA;
+	cout << endl << aGT5.toString() << endl;
+	cout << endl << aGT5.qubo(false) << endl;
+	Qubo Qc = aGT5.qubo();
+	cout << endl << Qc << endl;
+	Qanalyzer analyzerC(Qc);
+	size_t nNodesC = analyzerC.nodesNo();
+	cout << endl << "Nodes #: " << to_string(nNodesC) << ", Combination #: " << to_string(long(pow(2, nNodesC))) << endl;
+	const clock_t begin_timeC = clock();
+	Qsolver solverC(Qc);
+	Qsolver::Samples samplesC = solverC.solution();
+	cout << endl << "Solving time: " << to_string(float(clock() - begin_timeC) / CLOCKS_PER_SEC) << "s";
+	eA.set(samplesC);
+	cout << endl << eA.solutions() << endl;
+}
+
+void testComparison()
+{
+	Qvar a(3, "a"), b(3, "b"), _2("2_", 2);
+	Qcomparison aGT2(a >= b);
+	cout << endl << aGT2.toString() << endl;
+	cout << endl << aGT2.qubo(false) << endl;
+	Qubo Qc = aGT2.qubo();
+	cout << endl << Qc << endl;
+	Qanalyzer analyzerC(Qc);
+	size_t nNodesC = analyzerC.nodesNo();
+	cout << endl << "Nodes #: " << to_string(nNodesC) << ", Combination #: " << to_string(long(pow(2, nNodesC))) << endl;
+	const clock_t begin_timeC = clock();
+	Qsolver solverC(Qc);
+	Qsolver::Samples samplesC = solverC.solution();
+	cout << endl << "Solving time: " << to_string(float(clock() - begin_timeC) / CLOCKS_PER_SEC) << "s";
+	aGT2.set(samplesC);
+	cout << endl << aGT2.solutions() << endl;
 }
 
 void testQpow()
@@ -450,9 +508,10 @@ void testComplexEq()
 	cout << endl << eZ.qubo(false) << endl;
 	Qubo Q = eZ.qubo();
 	cout << endl << Q << endl;
-	Qsolver solver(Q);
-	size_t nNodes = solver.nOfNodes();
+	Qanalyzer analyzer(Q);
+	size_t nNodes = analyzer.nodesNo();
 	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(long long(pow(2, nNodes))) << endl;
+	Qsolver solver(Q);
 	Qsolver::Samples samples = solver.solution();
 	eZ.set(samples);
 	cout << endl << eZ.solutions() << endl;
@@ -460,15 +519,18 @@ void testComplexEq()
 
 void testSolver()
 {
-	Qvar a(3, "a"), b(2, "b"), c(2, "c"), A("A", 18);
+	Qvar _2("2_",2), a(2, "a"), b(2, "b"), c(2, "c"), A("A", 11);
 	Qequation eA(A);
-	eA = a * b;// *c;
+	eA = _2 * a + b * c;
 	Qubo Q = eA.qubo();
 	cout << endl << Q << endl;
+	Qanalyzer analyzer(Q);
+	size_t nNodes = analyzer.nodesNo();
+	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(long(pow(2, nNodes))) << endl;
+	const clock_t begin_time = clock();
 	Qsolver solver(Q);
-	size_t nNodes = solver.nOfNodes();
-	cout << endl << "Nodes #: " << to_string(nNodes) << ", Combination #: " << to_string(int(pow(2, nNodes))) << endl;
 	Qsolver::Samples samples = solver.solution();
+	cout << endl << "Solving time: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s";
 	eA.set(samples);
 	cout << endl << eA.solutions() << endl;
 }
@@ -489,16 +551,54 @@ void testAddEqs()
 	cout << endl << eA.toString(true) << endl;
 }
 
-int main()
+void testLargeQubo()
 {
 	const clock_t begin_time = clock();
-//	testSolver();
-	testComplexEq();
+	//	Qvar factor1(8, "factor1"), factor2(8, "factor2"), factor3(8, "factor3"), product("product", 8258175);
+	Qvar factor1(5, "a"), factor2(5, "b"), factor3(4 , "c");
+	Qvar product("P", 13020);
+	cout << to_string(as_const(product).value().value()) << endl;
+	cout << endl << "To initialize variables: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s" << endl;
+
+	const clock_t begin_time1 = clock();
+	Qequation eP(product);
+	cout << to_string(eP.result().value().value()) << endl;
+	cout << endl << "To initialize equation: " << to_string(float(clock() - begin_time1) / CLOCKS_PER_SEC) << "s" << endl;
+
+	const clock_t begin_time2 = clock();
+	eP = factor1 * factor2 * factor3;
+	cout << to_string(eP.result().value().value()) << endl;
+	cout << endl << "To multiply variables and assign equation: " << to_string(float(clock() - begin_time2) / CLOCKS_PER_SEC) << "s" << endl;
+
+	const clock_t begin_time3 = clock();
+	cout << eP.toString();
+	cout << endl << "To convert to string: " << to_string(float(clock() - begin_time3) / CLOCKS_PER_SEC) << "s" << endl;
+
+	const clock_t begin_time4 = clock();
+	Qubo Q = eP.qubo();
+	cout << endl << "To create qubo: " << to_string(float(clock() - begin_time4) / CLOCKS_PER_SEC) << "s" << endl;
+
+	size_t nNo = Qanalyzer(Q).nodesNo();
+	cout << endl << "number of nodes: " << to_string(nNo) << " has " << (pow(2, nNo - 1) / 2 + 2 * nNo) << " possible solutions" << endl;
+}
+
+int main()
+{
+	// NOTE(mbozzi): ownership of the newly-allocated facet is assumed by the library
+	// Typically, the following idiom is used:
+	std::cout.imbue(std::locale(std::cout.getloc(), new dann5::group_thousands));
+
+	const clock_t begin_time = clock();
+//	testComparison();
+//	testCondition();
+//	testLargeQubo();
+	testSolver();
+//	testComplexEq();
 //	testAddEqs();
 //	testSubAndDiv();
 //	test5short();
 //	test3();
-	cout << endl << "running time: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s";
+	cout << endl << "Running time: " << to_string(float(clock() - begin_time) / CLOCKS_PER_SEC) << "s";
 
 	_CrtDumpMemoryLeaks();
 }

@@ -42,9 +42,15 @@ namespace dann5 {
 			const Qoperands& arguments() const { return mArguments; };
 
 			// Set Q operation arguments
-			// throw invalid_argument exception when # of arguments in the list is not the
-			// same as value defined by argsNumber() const
+			// throw invalid_argument exception when # of arguments in the list is not
+			// the same as value defined by argsNumber() const
 			virtual void arguments(const Qoperands&);
+
+			// add Q operation argument to the list of the arguments
+			// throw invalid_argument exception preventing a new argument to be added to
+			// the list once the # of arguments is equal to the # defined by
+			// argsNumber() method
+			virtual void add(Qoperand::Sp argument);
 
 			void labelFor(const string& id);
 			string label() const { return mLabel; };
@@ -80,7 +86,7 @@ namespace dann5 {
 			typedef shared_ptr<Qeq> Sp;
 
 			// Instantiate Qeq instance with '&' identity
-			Qeq() : Qop("=") {};
+			Qeq() : Qop(EqQT::cMark, 2) {};
 
 			// Copy constructor
 			Qeq(const Qeq& right) : Qop(right) {};
@@ -103,7 +109,7 @@ namespace dann5 {
 			typedef shared_ptr<Qnot> Sp;
 
 			// Instantiate Qnot instance with '&' identity
-			Qnot() : Qop("~") {};
+			Qnot() : Qop(NotQT::cMark, 2) {};
 
 			// Copy constructor
 			Qnot(const Qnot& right) : Qop(right) {};
@@ -126,7 +132,7 @@ namespace dann5 {
 			typedef shared_ptr<Qlt> Sp;
 
 			// Instantiate Qlt instance with '&' identity
-			Qlt() : Qop("<") {};
+			Qlt() : Qop(LtQT::cMark, 2) {};
 
 			// Copy constructor
 			Qlt(const Qlt& right) : Qop(right) {};
@@ -149,7 +155,7 @@ namespace dann5 {
 			typedef shared_ptr<Qle> Sp;
 
 			// Instantiate Qle instance with '&' identity
-			Qle() : Qop("<=") {};
+			Qle() : Qop(LeQT::cMark, 2) {};
 
 			// Copy constructor
 			Qle(const Qle& right) : Qop(right) {};
@@ -172,7 +178,7 @@ namespace dann5 {
 			typedef shared_ptr<Qgt> Sp;
 
 			// Instantiate Qgt instance with '&' identity
-			Qgt() : Qop(">") {};
+			Qgt() : Qop(GtQT::cMark, 2) {};
 
 			// Copy constructor
 			Qgt(const Qgt& right) : Qop(right) {};
@@ -195,7 +201,7 @@ namespace dann5 {
 			typedef shared_ptr<Qge> Sp;
 
 			// Instantiate Qge instance with '&' identity
-			Qge() : Qop(">=") {};
+			Qge() : Qop(GeQT::cMark, 2) {};
 
 			// Copy constructor
 			Qge(const Qge& right) : Qop(right) {};
@@ -218,7 +224,7 @@ namespace dann5 {
 			typedef shared_ptr<Qand> Sp;
 
 			// Instantiate Qand instance with '&' identity
-			Qand() : Qop("&", 2) {};
+			Qand() : Qop(AndQT::cMark, 2) {};
 
 			// Copy constructor
 			Qand(const Qand& right) : Qop(right) {};
@@ -241,7 +247,7 @@ namespace dann5 {
 			typedef shared_ptr<QnAnd> Sp;
 
 			// Instantiate QnAnd instance with '&' identity
-			QnAnd() : Qop("~&", 2) {};
+			QnAnd() : Qop(NandQT::cMark, 2) {};
 
 			// Copy constructor
 			QnAnd(const QnAnd& right) : Qop(right) {};
@@ -261,10 +267,10 @@ namespace dann5 {
 		{
 		public:
 			// Qor's shared pointer 
-			typedef shared_ptr<Qand> Sp;
+			typedef shared_ptr<Qor> Sp;
 
 			// Instantiate Qor instance with '|' identity
-			Qor() : Qop("|", 2) {};
+			Qor() : Qop(OrQT::cMark, 2) {};
 
 			// Copy constructor
 			Qor(const Qor& right) : Qop(right) {};
@@ -284,10 +290,10 @@ namespace dann5 {
 		{
 		public:
 			// QnOr's shared pointer 
-			typedef shared_ptr<Qand> Sp;
+			typedef shared_ptr<QnOr> Sp;
 
 			// Instantiate QnOr instance with '|' identity
-			QnOr() : Qop("~|", 2) {};
+			QnOr() : Qop(NorQT::cMark, 2) {};
 
 			// Copy constructor
 			QnOr(const QnOr& right) : Qop(right) {};
@@ -380,7 +386,7 @@ namespace dann5 {
 			typedef shared_ptr<Qxor> Sp;
 			
 			// Default constructor
-			Qxor() : Qaddition("^") {};
+			Qxor() : Qaddition(XorQT::cMark) {};
 			
 			// Copy constructor
 			Qxor(const Qxor& right) : Qaddition(right) {};
@@ -413,7 +419,7 @@ namespace dann5 {
 			typedef shared_ptr<Qadder> Sp;
 
 			// Default constructor
-			Qadder() : Qaddition("+", 3) {};
+			Qadder() : Qaddition(AdderQT::cMark, 3) {};
 
 			// Copy constructor
 			Qadder(const Qadder& right) : Qaddition(right) {};
