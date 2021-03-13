@@ -112,6 +112,8 @@ namespace dann5 {
 			Qexpr<Qwhole> operator*(const Qexpr<Qwhole>& right) const;
 
 		protected:
+
+
 		private:
 		};
 	};

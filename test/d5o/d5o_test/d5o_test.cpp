@@ -6,6 +6,7 @@
 #include <Qbit.h>
 #include <Qbool.h>
 #include <Qbinary.h>
+#include <Qwhole.h>
 #include <Qexpr.h>
 
 using namespace dann5::ocean;
@@ -21,6 +22,9 @@ void testTypes()
     Bits bits5("101");
     Qbinary c0(3, "0c"), c1("1c", 33), c2("2c", bits5), c3("3c", 0x7);
     Qexpr<Qbinary> binExpr = c0 & c1 ^ c2 | c3;
+
+    Qwhole w0(4, "0w"), w1("1w", 33), w2("2w", 0b01011), w3("3c", 0x7);
+    Qexpr<Qbinary> wholeExpr = w0 * w1 + w2 * w3;
 }
 
 int main()

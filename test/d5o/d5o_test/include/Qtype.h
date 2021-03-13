@@ -3,13 +3,10 @@
 #include <pybind11/pybind11.h>
 
 #include <utility>
-#include <Eigen/Dense>
 
 #include <Qdef.h>
 
 using namespace std;
-using namespace Eigen;
-
 
 namespace dann5 {
 	namespace ocean {

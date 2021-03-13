@@ -4,6 +4,23 @@
 
 using namespace dann5::ocean;
 
+Qbinary::operator QbitVector()
+{
+	return(operator const QbitVector());
+}
+
+Qbinary::operator const QbitVector() const
+{
+	QbitVector vector(nobs());
+	size_t at = 0;
+	for (auto qbit : value())
+	{
+		vector(at) = qbit;
+		at++;
+	}
+	return(vector);
+}
+
 Qbinary::Qbinary(const string& id)
 	:Qtype(id), mValue(8)
 {
@@ -202,7 +219,7 @@ Qexpr<Qbinary> Qbinary::operator~()
 	size_t size = inverted.nobs();
 	for (size_t at = 0; at < size; at++) ~inverted[at];
 
-	Qexpr<Qbinary> expr = inverted != (*this);
+	Qexpr<Qbinary> expr(inverted != (*this));
 	return expr;
 }
 
@@ -227,6 +244,24 @@ Qexpr<Qbinary> Qbinary::operator|(const Qbinary& right) const
 Qexpr<Qbinary> Qbinary::operator^(const Qbinary& right) const
 {
 	Qop::Sp pOp = Factory<string, Qop>::Instance().create(XorQT::cMark);
+	pOp->arguments({ clone(), right.clone() });
+
+	Qexpr<Qbinary> expr(pOp);
+	return expr;
+}
+
+Qexpr<Qbinary> Qbinary::operator==(const Qbinary& right) const
+{
+	Qop::Sp pOp = Factory<string, Qop>::Instance().create(EqQT::cMark);
+	pOp->arguments({ clone(), right.clone() });
+
+	Qexpr<Qbinary> expr(pOp);
+	return expr;
+}
+
+Qexpr<Qbinary> Qbinary::operator!=(const Qbinary& right) const
+{
+	Qop::Sp pOp = Factory<string, Qop>::Instance().create(NeqQT::cMark);
 	pOp->arguments({ clone(), right.clone() });
 
 	Qexpr<Qbinary> expr(pOp);

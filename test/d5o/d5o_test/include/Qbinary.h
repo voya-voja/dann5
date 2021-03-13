@@ -8,6 +8,9 @@
 
 #include <bitset>
 
+#include <Eigen/Dense>
+
+using namespace Eigen;
 using namespace std;
 
 namespace dann5 {
@@ -18,6 +21,11 @@ namespace dann5 {
 
 		// coresponds to a bitset of the same size and unsigned long long
 		typedef bitset<64> Bits;
+
+		// Quantum non-negatve integer is a vector of Qbits
+		typedef Matrix<QbitV, Dynamic, 1> QbitVector;
+		typedef Matrix<QbitV, Dynamic, Dynamic> QbitMatrix;
+
 
 		// Quantum binary is a Q type supporting instantiation of and operations for 
 		// variables which can have one or more of Qbits. For example Qbinary with 8
@@ -50,9 +58,13 @@ namespace dann5 {
 			// copy constructor
 			Qbinary(const Qbinary& right) : Qtype(right), mValue(right.mValue) {};
 
-			// type conversion operator
+			// type conversion operator to a std::vertor of Qbits
 			operator Qbits() { return mValue; };
 			operator const Qbits() const { return mValue; };
+
+			// type conversion operator to a Eigen::vector of Qbits
+			operator QbitVector();
+			operator const QbitVector() const;
 
 			// Return a Qdef's shared pointer pointing to a copy of this object 
 			virtual Qdef::Sp clone() const { return Qdef::Sp(new Qbinary(*this)); };
@@ -161,6 +173,10 @@ namespace dann5 {
 			// return a reference to a value
 			Qbits& value() { return mValue; };
 			const Qbits& value() const { return mValue; };
+
+			// set a new value
+			void value(const Qbits& value) { mValue = value; };
+
 
 		private:
 			Qbits mValue;

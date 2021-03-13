@@ -253,3 +253,89 @@ Qaddition::Sp Qxor::assign(const Qdefs& operands)
 		return Qaddition::assign(operands);
 	}
 }
+
+/*** Multiplication ***/
+
+string Qmultiplication::toString(bool decomposed) const
+{
+	return "";
+}
+
+Qubo Qmultiplication::qubo(bool finalized) const
+{
+	return Qubo();
+}
+
+/*
+Qexpression& Qmultiplication::execute(const Qexpression& right)
+{
+	qbit_def_matrix xMatrix = thisX(right);	// this * right vectors => xMatrix
+	// Rotate xMatrix left-90-digrees to change the values on main diagonal
+	qbit_def_matrix reversedXMatrix = xMatrix.rowwise().reverse();
+	// sum values on all diagonals into 
+	sumDiagonals(reversedXMatrix);
+	return *this;
+}
+
+qbit_def_matrix Qmultiplication::thisX(const Qexpression& right) const
+{
+	qbit_def_matrix xMatrix(nobs(), right.nobs());
+	int carry = 0;
+	std::cout << "Matrix " << nobs() << " x " << right.nobs() << endl;
+	for (Index atR = 0; atR < nobs(); atR++)
+	{
+		for (Index atC = 0; atC < right.nobs(); atC++)
+		{
+			Qop::Sp pOp = Factory<string, Qop>::Instance().create(AndQT::cMark);
+			pOp->arguments({ (*this)(atR), right(atC) });
+			xMatrix(atR, atC) = pOp;
+		}
+	}
+	return xMatrix;
+}
+
+void Qmultiplication::sumDiagonals(const qbit_def_matrix& xMatrix)
+{
+	// resize this vector to a # of diagonals + 1 of xMatrix
+	Index size = xMatrix.rows() + xMatrix.cols();
+	resize(size);
+	Index last = size - 1;
+
+	// Value of 0 bit is the sum of right-most diagonal
+	Index atDiagonal = xMatrix.cols() - 1;
+
+	// add functional object to add diagonal vectors' bit symbols
+	Add add;
+	for (0; *add < last; add++)
+	{
+		Index at = *add;
+		qbit_def_vector diagonal = xMatrix.diagonal(atDiagonal);
+		Index nDiagElmns = diagonal.rows();
+
+		for (Index atD = 0; atD < nDiagElmns; atD++)
+		{
+			if (atD == 0)
+			{	// add any carry-forward operands
+				(*this)(at) = add(diagonal(atD));
+			}
+			else
+			{
+				(*this)(at) = add((*this)(at), diagonal(atD));
+			}
+		}
+		Index atNext = at + 1;
+		--atDiagonal;
+		_lat("sumDiagonals", (*this)(at)->toString());
+	}
+	Qoperand::Sp pOperand = add();
+	if (pOperand != nullptr)
+	{
+		(*this)(last) = pOperand;	// add any carry-forward operands
+		_lat("sumDiagonals", (*this)(last)->toString());
+	}
+	else
+	{
+		resize(last);
+	}
+}
+*/

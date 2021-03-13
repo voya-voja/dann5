@@ -223,3 +223,12 @@ Creator<string, Qop, Qadder05> gHalfAdderOpCreator(Adder05QT::cName);
 
 Creator<string, Qop, Qadder> gAdderOpCreator_m(AdderQT::cMark);
 Creator<string, Qop, Qadder> gAdderOpCreator((string(AdderQT::cName)));
+
+/**** Multiplication binary operation ****/
+
+const string Qmultiplication::cMark = "*";
+const string Qmultiplication::cName = "multiply";
+
+/**** Factory Creator's of Multiplication ****/
+Creator<string, Qop, Qmultiplication> gMultiplicatinCreator_m(Qmultiplication::cMark);
+Creator<string, Qop, Qmultiplication> gMultiplicatinCreator((string(Qmultiplication::cName)));

@@ -132,7 +132,7 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] == [right root]
+			// expression root points to QeqOp with [previous root] == [right root]
 			Qexpr<Q_Type>& operator==(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(EqQT::cMark);
 				pOp->arguments({ root(), right.root() });
@@ -152,7 +152,7 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] != [right root]
+			// expression root points to QneqOp with [previous root] != [right root]
 			Qexpr<Q_Type>& operator!=(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(NeqQT::cMark);
 				pOp->arguments({ root(), right.root() });
@@ -172,7 +172,7 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] > [right root]
+			// expression root points to QgtOp with [previous root] > [right root]
 			Qexpr<Q_Type>& operator>(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(GtQT::cMark);
 				pOp->arguments({ root(), right.root() });
@@ -192,7 +192,7 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] >= [right root]
+			// expression root points to QgeOp with [previous root] >= [right root]
 			Qexpr<Q_Type>& operator>=(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(GeQT::cMark);
 				pOp->arguments({ root(), right.root() });
@@ -212,7 +212,7 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] < [right root]
+			// expression root points to QltOp with [previous root] < [right root]
 			Qexpr<Q_Type>& operator<(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(LtQT::cMark);
 				pOp->arguments({ root(), right.root() });
@@ -232,9 +232,49 @@ namespace dann5 {
 			};
 
 			// Update Q expression with comparison, e.g. for an argument [right] the
-			// expression root points to QxorOp with [previous root] <= [right root]
+			// expression root points to QleOp with [previous root] <= [right root]
 			Qexpr<Q_Type>& operator<=(const Qexpr<Q_Type>& right) {
 				Qop::Sp pOp = Factory<string, Qop>::Instance().create(LeQT::cMark);
+				pOp->arguments({ root(), right.root() });
+
+				root(pOp);
+				return(*this);
+			};
+
+			// Update Q expression with comparison, e.g. for an argument with id 'x' the 
+			// expression root points to Qadder with [previous root] + 'x'
+			Qexpr<Q_Type>& operator+(const Q_Type& right) {
+				Qop::Sp pOp = Factory<string, Qop>::Instance().create(AdderQT::cMark);
+				pOp->arguments({ root(), right.clone() });
+
+				root(pOp);
+				return(*this);
+			};
+
+			// Update Q expression with comparison, e.g. for an argument [right] the
+			// expression root points to Qadder with [previous root] + [right root]
+			Qexpr<Q_Type>& operator+(const Qexpr<Q_Type>& right) {
+				Qop::Sp pOp = Factory<string, Qop>::Instance().create(AdderQT::cMark);
+				pOp->arguments({ root(), right.root() });
+
+				root(pOp);
+				return(*this);
+			};
+
+			// Update Q expression with comparison, e.g. for an argument with id 'x' the 
+			// expression root points to Qmultiplication with [previous root] * 'x'
+			Qexpr<Q_Type>& operator*(const Q_Type& right) {
+				Qop::Sp pOp = Factory<string, Qop>::Instance().create(Qmultiplication::cMark);
+				pOp->arguments({ root(), right.clone() });
+
+				root(pOp);
+				return(*this);
+			};
+
+			// Update Q expression with comparison, e.g. for an argument [right] the
+			// expression root points to Qmultiplication with [previous root] * [right root]
+			Qexpr<Q_Type>& operator*(const Qexpr<Q_Type>& right) {
+				Qop::Sp pOp = Factory<string, Qop>::Instance().create(Qmultiplication::cMark);
 				pOp->arguments({ root(), right.root() });
 
 				root(pOp);

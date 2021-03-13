@@ -55,6 +55,7 @@ namespace dann5 {
 			void unlabel() { mLabel = ""; };
 			bool isLabeled() const { return mLabel != ""; };
 
+			// convert operation expration into a string
 			virtual string toString(bool decomposed = false) const;
 
 			// return Qubo presentation of this Qdef
@@ -429,6 +430,42 @@ namespace dann5 {
 			virtual Qdef::Sp clone() const { return Qdef::Sp(new Qadder(*this)); };
 
 		protected:
+		private:
+		};
+
+		// A Q multiplication is a specific implementation of a Q operation
+		class Qmultiplication : public Qop
+		{
+		public:
+			// Qaddition's shared pointer 
+			typedef shared_ptr<Qmultiplication> Sp;
+
+			static const string cMark;
+			static const string cName;
+
+			// An Q addition has identity and should have at least two argument
+			Qmultiplication() : Qop(cMark, 2) {};
+
+			// Copy constructor
+			Qmultiplication(const Qaddition& right) : Qop(right) {};
+
+			// Destruct the Q addition instance with a shared pointer to its carry operand
+			~Qmultiplication() {};
+
+			// Return a Qdef's shared pointer pointing to a copy of this object 
+			virtual Qdef::Sp clone() const { return Qdef::Sp(new Qmultiplication(*this)); };
+
+			// convert multiplication expration into a string
+			virtual string toString(bool decomposed = false) const;
+
+			// return Qubo presentation of this Qdef
+			virtual Qubo qubo(bool finalized = true) const;
+
+		protected:
+/*			virtual Qexpression& execute(const Qexpression& right);
+			virtual qbit_def_matrix X(const Qexpression& right) const;
+			virtual void sumDiagonals(const qbit_def_matrix& xMatrix)
+*/
 		private:
 		};
 	};
